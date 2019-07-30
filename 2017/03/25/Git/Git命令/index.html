@@ -1,0 +1,750 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言也算是Git的忠实用户了，但慢慢发现其实自己不会用Git，平时开发不但接触的Git命令少并且也没去尝试学习其他，故在此学习并记录Git的使用 同步fork源代码 首先要先确定一下是否建立了主repo的远程源 1git remote -v  如果里面只能看到你自己的两个源(fetch 和 push)，那就需要添加主repo的源 12git remote add upstream URLgit r">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git使用">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/Git/Git命令/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言也算是Git的忠实用户了，但慢慢发现其实自己不会用Git，平时开发不但接触的Git命令少并且也没去尝试学习其他，故在此学习并记录Git的使用 同步fork源代码 首先要先确定一下是否建立了主repo的远程源 1git remote -v  如果里面只能看到你自己的两个源(fetch 和 push)，那就需要添加主repo的源 12git remote add upstream URLgit r">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-26T12:33:27.705Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git使用">
+<meta name="twitter:description" content="前言也算是Git的忠实用户了，但慢慢发现其实自己不会用Git，平时开发不但接触的Git命令少并且也没去尝试学习其他，故在此学习并记录Git的使用 同步fork源代码 首先要先确定一下是否建立了主repo的远程源 1git remote -v  如果里面只能看到你自己的两个源(fetch 和 push)，那就需要添加主repo的源 12git remote add upstream URLgit r">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/25/Git/Git命令/"/>
+
+
+
+
+
+  <title> Git使用 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/Git/Git命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T23:03:53+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>也算是Git的忠实用户了，但慢慢发现其实自己不会用Git，平时开发不但接触的Git命令少并且也没去尝试学习其他，故在此学习并记录Git的使用</p>
+<h2 id="同步fork源代码"><a href="#同步fork源代码" class="headerlink" title="同步fork源代码"></a>同步fork源代码</h2><ol>
+<li><p>首先要先确定一下是否建立了主repo的远程源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote -v</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果里面只能看到你自己的两个源(fetch 和 push)，那就需要添加主repo的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add upstream URL</div><div class="line">git remote -v`</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后你就能看到upstream了，如果想与主repo合并：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git fetch upstream</div><div class="line">git merge upstream/master</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch <span class="_">-a</span>                     <span class="comment"># 查看所有本地分支和远程分支</span></div><div class="line">git branch -r                     <span class="comment"># 只查看远程分支</span></div></pre></td></tr></table></figure>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch [branchname]           <span class="comment"># 创建本地分支，只是创建分支不切换</span></div><div class="line">git checkout -b [branchname]      <span class="comment"># 创建本地分支且切换到此分支</span></div></pre></td></tr></table></figure>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git branch <span class="_">-d</span> | -D [branchname]   <span class="comment"># 删除分支，大写的D强制删除</span></div><div class="line">git branch <span class="_">-d</span> -r [branchname]     <span class="comment"># 删除远程分支</span></div><div class="line">git push origin --delete [branchName]</div><div class="line"></div><div class="line">git branch <span class="_">-a</span>                     <span class="comment"># 任然显示删除的分支，即使远程已删除</span></div><div class="line">git remote show origin            <span class="comment"># 查看remote地址，远程分支，本地分支与之相对应关系等信息</span></div><div class="line">git remote prune origin           <span class="comment"># 删除远程仓库不存在的分支</span></div></pre></td></tr></table></figure>
+<h3 id="关联远程分支"><a href="#关联远程分支" class="headerlink" title="关联远程分支"></a>关联远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git branch -vv                        查看分支关联</div><div class="line">git branch -u origin/[branchname]     关联远程分支，git push不需要指定远程仓库</div><div class="line">git branch --set-upstream devtest origin/[branchname]</div></pre></td></tr></table></figure>
+<h2 id="Git版本回退"><a href="#Git版本回退" class="headerlink" title="Git版本回退"></a>Git版本回退</h2><h3 id="3种回退方式"><a href="#3种回退方式" class="headerlink" title="3种回退方式"></a>3种回退方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git reset --mixed       默认方式，只保留源码，回退commit和index信息</div><div class="line">git reset --soft        只回退commit的信息，不会恢复到inde xfile一级。如果还要提交，直接commit即可</div><div class="line">git reset --hard        彻底回退到某个版本，本地的源码也会变为上一个版本的内容</div></pre></td></tr></table></figure>
+<h3 id="reset命令"><a href="#reset命令" class="headerlink" title="reset命令"></a>reset命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git reset HEAD^                 回退所有内容到上一个版本</div><div class="line">git reset HEAD^ [file]            回退某个文件的版本到上一个版本  </div><div class="line">git reset –-soft HEAD~3          向前回退到第3个版本  </div><div class="line">git reset –-hard origin/[master]   将本地的状态回退到和远程的一样 </div><div class="line">git reset [<span class="built_in">log</span>]      回退到某个版本</div><div class="line">git revert HEAD      回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit</div></pre></td></tr></table></figure>
+<h3 id="reset和revert区别"><a href="#reset和revert区别" class="headerlink" title="reset和revert区别"></a>reset和revert区别</h3><p>reset是指将当前head的内容重置，不会留任何痕迹<br>revert是撤销某次提交，但是这次撤销也会作为一次提交进行保存<br>git revert撤销某次操作，此次操作之前和之后的commit和history都会保留，并且把这次撤销作为一次最新的提交<br>git reset是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容  </p>
+<h2 id="Git其他命令"><a href="#Git其他命令" class="headerlink" title="Git其他命令"></a>Git其他命令</h2><h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .        将文件的修改，文件的新建，添加到暂存区</div><div class="line">git add -u       将文件的修改、文件的删除，添加到暂存区</div><div class="line">git add -A       将文件的修改，文件的删除，文件的新建，添加到暂存区</div></pre></td></tr></table></figure>
+<h3 id="stash"><a href="#stash" class="headerlink" title="stash"></a>stash</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">git stash                       备份当前的工作区内容到Git栈中</div><div class="line">git stash list                  列出Git栈内的所有备份</div><div class="line">git stash pop stash@&#123;id&#125;        </div><div class="line">恢复到最近一次stash，可恢复到指定的stash，执行后会删除stash list里的stashId</div><div class="line">git stash apply stash@&#123;id&#125;    </div><div class="line">恢复到指定的stash，不会删除继stash list里的stashId</div><div class="line">git stash clear                 清空Git栈</div><div class="line">git stash drop stash@&#123;0&#125;        删除指定队列</div></pre></td></tr></table></figure>
+<h3 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git commit -am <span class="string">"&lt;message&gt;"</span>   将所有修改，但未进stage的改动加入stage，并记录commit信息，前提是被改动文件已被跟踪</div><div class="line">git commit --amend -m <span class="string">"New commit message"</span></div></pre></td></tr></table></figure>
+<h3 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git pull失败，提示：fatal: refusing to merge unrelated histories</span></div><div class="line">git pull origin master --allow-unrelated-histories</div></pre></td></tr></table></figure>
+<h3 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git rebase &lt;branch&gt;</div><div class="line">git rebase --continue</div><div class="line">git rebase --abort</div></pre></td></tr></table></figure>
+<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git clean [参数]</div><div class="line">    -n <span class="comment"># 显示将要删除的文件和目录</span></div><div class="line">    <span class="_">-f</span> <span class="comment"># 删除文件</span></div><div class="line">    -df <span class="comment"># 删除文件和目录</span></div><div class="line"></div><div class="line">git clean -n</div><div class="line">git clean -df</div></pre></td></tr></table></figure>
+<h3 id="HTTPS和SSH切换"><a href="#HTTPS和SSH切换" class="headerlink" title="HTTPS和SSH切换"></a><a href="https://help.github.com/articles/testing-your-ssh-connection/" target="_blank" rel="noopener">HTTPS和SSH切换</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 列出当前远程名现有的url</span></div><div class="line">git remote -v</div><div class="line"><span class="comment"># 从SSH远程的URL更改到HTTPS </span></div><div class="line">git remote <span class="built_in">set</span>-url origin https://github.com/userame/repository.git</div><div class="line"><span class="comment"># 从HTTPS远程的URL更改到SSH</span></div><div class="line">git remote <span class="built_in">set</span>-url origin git@github.com:userame/repository.git</div></pre></td></tr></table></figure>
+<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 重命名分支，如果newbranch名字分支已经存在，则需要使用-M强制重命名，否则，使用-m进行重命名</span></div><div class="line">git branch -m | -M oldbranch newbranch </div><div class="line"></div><div class="line"><span class="comment"># 图形化查看git日志</span></div><div class="line">git <span class="built_in">log</span> --graph --oneline</div><div class="line">git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</div><div class="line"></div><div class="line"><span class="comment"># 将已提交的commit添加到当前分支</span></div><div class="line">git cherry-pick &lt;commit id&gt;</div></pre></td></tr></table></figure>
+<h3 id="清除本地缓存"><a href="#清除本地缓存" class="headerlink" title="清除本地缓存"></a>清除本地缓存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git rm -r --cached .</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">'update gitignore'</span></div></pre></td></tr></table></figure>
+<h3 id="删除大文件记录"><a href="#删除大文件记录" class="headerlink" title="删除大文件记录"></a>删除大文件记录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 获取大文件列表</div><div class="line">git rev-list --objects --all | grep <span class="string">"<span class="variable">$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -5 | awk '&#123;print$1&#125;')</span>"</span></div><div class="line"></div><div class="line">// 删除文件的记录</div><div class="line">git <span class="built_in">log</span> --pretty=oneline --branches -- [big-file.jar]</div><div class="line">git filter-branch --force --index-filter <span class="string">'git rm -rf --cached --ignore-unmatch [big-file.jar]'</span> --prune-empty --tag-name-filter cat -- --all</div><div class="line">git filter-branch --force --index-filter <span class="string">'git rm -rf --cached --ignore-unmatch [big-file.jar]'</span> -- commitId</div><div class="line"></div><div class="line">rm -rf .git/refs/original/</div><div class="line">git reflog expire --expire=now --all</div><div class="line">git fsck --full --unreachable</div><div class="line">git repack -A <span class="_">-d</span></div><div class="line">git gc --aggressive --prune=now</div><div class="line">git push --force [remote] master</div><div class="line"></div><div class="line">// 删除暂存区或分支上的文件</div><div class="line">git rm --cached  // 加cached本地不删除</div></pre></td></tr></table></figure>
+<h2 id="Git常用命令清单"><a href="#Git常用命令清单" class="headerlink" title="Git常用命令清单"></a>Git常用命令清单</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">git status                    // 当前状态</div><div class="line">git add .                     // 添加到缓存区</div><div class="line">git commit -m <span class="string">""</span>              // 提交操作内容</div><div class="line">git push origin master        // 上传master分支</div><div class="line">git status                    // 当前状态</div><div class="line"></div><div class="line">git <span class="built_in">clone</span> github地址          // 获取github上文件</div><div class="line"></div><div class="line">git <span class="built_in">log</span>                       // 列出提交历史，输入q退出查看</div><div class="line">git reset --hard commit       // 恢复到历史的某个版本</div><div class="line">git reset --hard HEAD^        // 恢复到历史第一个版本</div><div class="line"></div><div class="line">git rm file                   // 删除文件</div><div class="line">git mv file                   // 移动文件</div><div class="line"></div><div class="line">git stash save <span class="string">""</span>             // 临时保存</div><div class="line">git stash list                // 查看所有临时保存</div><div class="line">git stash pop                 // 恢复最后一次</div><div class="line"></div><div class="line">git pull origin master        // 获取master分支</div><div class="line"></div><div class="line">git checkout master           // 切换master分支</div><div class="line">git checkout -b master1       // 在当前分支创建并切换到master1新分支</div><div class="line"></div><div class="line">git merge master              // 将master分支合并到当前分支</div><div class="line"></div><div class="line">http://yourname:password@git.oschina.net/name/project.git</div></pre></td></tr></table></figure>
+<h2 id="Git术语"><a href="#Git术语" class="headerlink" title="Git术语"></a>Git术语</h2><ul>
+<li>Organizations: 组织，即多个开发者组成的团体，可包含众多的库和开发团队</li>
+<li>Collaborator: 合作开发者，被库的所有者邀请共同开发某一项目，拥有对库的读写权限</li>
+<li>Contributor: 贡献者，对项目有所贡献(如提交代码，修复bug等)的开发者，但不具备合作开发者的访问权限</li>
+<li>Upstream: 上游，对于一个branch或者fork来说，源库的主分支即是其它修改信息的源头，被称为upstream，相对的其它branch或fork就被称为downstream了</li>
+<li>Pull Request(PR): 即代码合并请求，由其它开发者或用户向项目的collaborators提议的修改请求，collaborators觉得修改信息合理有效即接受，否则拒绝</li>
+<li>Merge: 将一个分支中的修改内容应用到另一个分支的操作就做合并；若两个分支内的修改内容无冲突，则可以通过合并请求(a Pull Request)或命令行(the command line)完成合并操作</li>
+<li>Fork: 对其它开发者的库的个人复制，复制的库存在你自己的账户上，你可以自行修改项目内容而不会影响原始的库，也可以将自己的修改通过合并请求(a pull request)的方式请求原始库的开发者更新你的修改</li>
+<li>Fetch: 取回，表示从在线的库上获取最新的修改信息而不需要合并代码，取回的代码可以与你本地的分支代码进行比较</li>
+<li>Push: 推送，表示将本地的修改内容推送至线上的库，这样其它的开发者就可以通过GitHub网站访问到你的修改内容了</li>
+<li>Remote: 远端版本，即类似于GitHub.com的非本地主机的项目版本，可以连接至本地克隆的版本以实现内容同步</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://help.github.com/articles/github-glossary/" target="_blank" rel="noopener">https://help.github.com/articles/github-glossary/</a></li>
+<li><a href="http://www.codeceo.com/article/how-to-use-git-flow.html" target="_blank" rel="noopener">http://www.codeceo.com/article/how-to-use-git-flow.html</a></li>
+<li><a href="http://blog.csdn.net/firststp/article/details/50390064" target="_blank" rel="noopener">http://blog.csdn.net/firststp/article/details/50390064</a></li>
+<li><a href="http://blog.csdn.net/qq_16885135/article/details/52777871" target="_blank" rel="noopener">http://blog.csdn.net/qq_16885135/article/details/52777871</a></li>
+<li><a href="http://blog.csdn.net/xsckernel/article/details/9021225" target="_blank" rel="noopener">http://blog.csdn.net/xsckernel/article/details/9021225</a></li>
+<li><a href="http://www.cnblogs.com/xueweihan/p/5703144.html" target="_blank" rel="noopener">http://www.cnblogs.com/xueweihan/p/5703144.html</a></li>
+<li><p><a href="http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories" target="_blank" rel="noopener">http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories</a></p>
+</li>
+<li><p><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="noopener">http://gitbook.liuhui998.com/index.html</a></p>
+</li>
+<li><a href="https://blog.csdn.net/hello5orld/article/details/51386218" target="_blank" rel="noopener">修改git全部已提交的用户名和邮箱</a></li>
+<li><a href="https://help.github.com/articles/changing-author-info" target="_blank" rel="noopener">修改git全部已提交的用户名和邮箱(github)</a></li>
+<li><a href="http://jartto.wang/2018/12/11/git-rebase" target="_blank" rel="noopener">彻底搞懂 Git-Rebase</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/25/React全家桶/React学习/" rel="next" title="React学习">
+                <i class="fa fa-chevron-left"></i> React学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/25/React全家桶/Redux学习/" rel="prev" title="Redux学习">
+                Redux学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步fork源代码"><span class="nav-number">2.</span> <span class="nav-text">同步fork源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git分支"><span class="nav-number">3.</span> <span class="nav-text">Git分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看分支"><span class="nav-number">3.1.</span> <span class="nav-text">查看分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建分支"><span class="nav-number">3.2.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除分支"><span class="nav-number">3.3.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联远程分支"><span class="nav-number">3.4.</span> <span class="nav-text">关联远程分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git版本回退"><span class="nav-number">4.</span> <span class="nav-text">Git版本回退</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3种回退方式"><span class="nav-number">4.1.</span> <span class="nav-text">3种回退方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reset命令"><span class="nav-number">4.2.</span> <span class="nav-text">reset命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reset和revert区别"><span class="nav-number">4.3.</span> <span class="nav-text">reset和revert区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git其他命令"><span class="nav-number">5.</span> <span class="nav-text">Git其他命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add"><span class="nav-number">5.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stash"><span class="nav-number">5.2.</span> <span class="nav-text">stash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit"><span class="nav-number">5.3.</span> <span class="nav-text">commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pull"><span class="nav-number">5.4.</span> <span class="nav-text">pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase"><span class="nav-number">5.5.</span> <span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clean"><span class="nav-number">5.6.</span> <span class="nav-text">clean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS和SSH切换"><span class="nav-number">5.7.</span> <span class="nav-text">HTTPS和SSH切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他命令"><span class="nav-number">5.8.</span> <span class="nav-text">其他命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除本地缓存"><span class="nav-number">5.9.</span> <span class="nav-text">清除本地缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除大文件记录"><span class="nav-number">5.10.</span> <span class="nav-text">删除大文件记录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git常用命令清单"><span class="nav-number">6.</span> <span class="nav-text">Git常用命令清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git术语"><span class="nav-number">7.</span> <span class="nav-text">Git术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

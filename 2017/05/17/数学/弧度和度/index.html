@@ -1,0 +1,733 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数学," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言作为一名合格的程序员，英语和数学必须要好，理由就不用多说了，且尤其是做算法、游戏方面的程序员就更要学好数学了，然而我是英语数学都不行，是真的不行，不过我还是毅然决然的成为了一名程序员，当然要想在这条路上走下去还是得学好英语和数学，看来学习之路依然遥远啊 契机今天在学习canvas画圆牵扯到弧度，对此我是一脸懵逼，故百度之，了解到了一些，看来早晚还是的补这些的，欠的东西迟早要还，所以在此记录自己">
+<meta name="keywords" content="数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="弧度和度">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/数学/弧度和度/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言作为一名合格的程序员，英语和数学必须要好，理由就不用多说了，且尤其是做算法、游戏方面的程序员就更要学好数学了，然而我是英语数学都不行，是真的不行，不过我还是毅然决然的成为了一名程序员，当然要想在这条路上走下去还是得学好英语和数学，看来学习之路依然遥远啊 契机今天在学习canvas画圆牵扯到弧度，对此我是一脸懵逼，故百度之，了解到了一些，看来早晚还是的补这些的，欠的东西迟早要还，所以在此记录自己">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="弧度和度">
+<meta name="twitter:description" content="前言作为一名合格的程序员，英语和数学必须要好，理由就不用多说了，且尤其是做算法、游戏方面的程序员就更要学好数学了，然而我是英语数学都不行，是真的不行，不过我还是毅然决然的成为了一名程序员，当然要想在这条路上走下去还是得学好英语和数学，看来学习之路依然遥远啊 契机今天在学习canvas画圆牵扯到弧度，对此我是一脸懵逼，故百度之，了解到了一些，看来早晚还是的补这些的，欠的东西迟早要还，所以在此记录自己">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/17/数学/弧度和度/"/>
+
+
+
+
+
+  <title> 弧度和度 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/数学/弧度和度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                弧度和度
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T22:04:12+08:00">
+                2017-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为一名合格的程序员，英语和数学必须要好，理由就不用多说了，且尤其是做算法、游戏方面的程序员就更要学好数学了，然而我是英语数学都不行，是真的不行，不过我还是毅然决然的成为了一名程序员，当然要想在这条路上走下去还是得学好英语和数学，看来学习之路依然遥远啊</p>
+<h2 id="契机"><a href="#契机" class="headerlink" title="契机"></a>契机</h2><p>今天在学习canvas画圆牵扯到弧度，对此我是一脸懵逼，故百度之，了解到了一些，看来早晚还是的补这些的，欠的东西迟早要还，所以在此记录自己学习数学的知识，便于日后翻阅查看，没办法，记性就是不好，还是写下来的好，好记性不如烂笔头不是。。。</p>
+<h2 id="圆"><a href="#圆" class="headerlink" title="圆"></a>圆</h2><p>所有相关的知识都与圆有关，一切的开始</p>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
+<li>径<ul>
+<li>半径(r)</li>
+<li>直径(d)</li>
+</ul>
+</li>
+<li>弦</li>
+<li>弧(l)</li>
+<li>圆心角(θ)</li>
+<li>圆周率(π)<blockquote>
+<p>圆周长度与圆的直径长度的比值叫做圆周率<br>它是一个无限不循环小数，通常用字母π表示</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><ul>
+<li>周长 <blockquote>
+<p>c = 2πr = πd</p>
+</blockquote>
+</li>
+<li>面积<blockquote>
+<p>s = πr²</p>
+</blockquote>
+</li>
+<li>圆心角<blockquote>
+<p>θ = l/r</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="弧度"><a href="#弧度" class="headerlink" title="弧度"></a>弧度</h3><ul>
+<li>定义<blockquote>
+<p>弧度是角的度量单位<br>弧长等于半径的弧，其所对的圆心角为1弧度<br>弧度制的精髓就在于统一了度量弧与半径的单位，从而大大简化了有关公式及运算</p>
+</blockquote>
+</li>
+</ul>
+<p>圆周长 = 2πr<br>圆周角 = 所对弧长 / 半径 = 圆周长 / 半径 = 2πr / r = 2π 弧度<br>1 圆周角 = 2π 弧度<br>1 圆周角 = 360°<br>2π = 360°<br>π = 180°</p>
+<p>1 弧度 = 360° / (2π) = 180° / π<br>1° = 2π / 360（弧度）= π / 180（弧度）</p>
+<h2 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h2><p>这仅仅是开始，要学要补要记要写的东西还多着呢，别放弃就好，不错的开始呢～～</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/13/动漫/命运石之门/" rel="next" title="命运石之门">
+                <i class="fa fa-chevron-left"></i> 命运石之门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/27/JavaScript/Canvas/" rel="prev" title="Canvas">
+                Canvas <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#契机"><span class="nav-number">2.</span> <span class="nav-text">契机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆"><span class="nav-number">3.</span> <span class="nav-text">圆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">3.1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公式"><span class="nav-number">3.2.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弧度"><span class="nav-number">3.3.</span> <span class="nav-text">弧度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄语"><span class="nav-number">4.</span> <span class="nav-text">寄语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

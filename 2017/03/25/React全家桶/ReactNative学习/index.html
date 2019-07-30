@@ -1,0 +1,964 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React全家桶," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言先接触的ReactNative，后学习的React，其实也都差不多，但ReactNative要稍微局限点，限制较多，但很强大，实现了跨平台开发，正如React所追求的一次编写，随处运行(Writeonce, run anywhere)，现在还记得当时刚接触React一脸懵逼的状态，还好有人带也对其有所了解了 环境搭建iOS Xcode CocoaPods123456789gem update">
+<meta name="keywords" content="React全家桶">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactNative学习">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/React全家桶/ReactNative学习/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言先接触的ReactNative，后学习的React，其实也都差不多，但ReactNative要稍微局限点，限制较多，但很强大，实现了跨平台开发，正如React所追求的一次编写，随处运行(Writeonce, run anywhere)，现在还记得当时刚接触React一脸懵逼的状态，还好有人带也对其有所了解了 环境搭建iOS Xcode CocoaPods123456789gem update">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-26T12:33:27.707Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReactNative学习">
+<meta name="twitter:description" content="前言先接触的ReactNative，后学习的React，其实也都差不多，但ReactNative要稍微局限点，限制较多，但很强大，实现了跨平台开发，正如React所追求的一次编写，随处运行(Writeonce, run anywhere)，现在还记得当时刚接触React一脸懵逼的状态，还好有人带也对其有所了解了 环境搭建iOS Xcode CocoaPods123456789gem update">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/25/React全家桶/ReactNative学习/"/>
+
+
+
+
+
+  <title> ReactNative学习 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/React全家桶/ReactNative学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ReactNative学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T23:17:20+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>先接触的ReactNative，后学习的React，其实也都差不多，但ReactNative要稍微局限点，限制较多，但很强大，实现了跨平台开发，正如React所追求的一次编写，随处运行(Writeonce, run anywhere)，现在还记得当时刚接触React一脸懵逼的状态，还好有人带也对其有所了解了</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><ul>
+<li>Xcode</li>
+<li>CocoaPods<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">gem update --system</div><div class="line">gem sources --remove https://rubygems.org/</div><div class="line">gem sources -a https://gems.ruby-china.org/</div><div class="line">// gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</div><div class="line">gem sources -l</div><div class="line">gem install cocoapods</div><div class="line">gem install -n /usr/local/bin cocoapods</div><div class="line">pod setup</div><div class="line">pod search &apos;AFNetworking&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ul>
+<li>Android Studio </li>
+<li>Android SDK</li>
+<li>Genymotion</li>
+</ul>
+<h3 id="启动指定模拟器"><a href="#启动指定模拟器" class="headerlink" title="启动指定模拟器"></a>启动指定模拟器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xcrun simctl list devices</div><div class="line">react-native run-ios --simulator &quot;iPhone 7 Latest&quot;</div></pre></td></tr></table></figure>
+<h3 id="手动打bundle包"><a href="#手动打bundle包" class="headerlink" title="手动打bundle包"></a>手动打bundle包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo react-native bundle --entry-file index.ios.js --bundle-output ./ios/main.jsbundle --platform ios --assets-dest ./ios --dev false</div></pre></td></tr></table></figure>
+<h3 id="rn开发调试"><a href="#rn开发调试" class="headerlink" title="rn开发调试"></a>rn开发调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 关闭黄屏警告</div><div class="line">console.disableYellowBox = true</div><div class="line">// debug下chrome显示网络请求信息</div><div class="line">GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest</div></pre></td></tr></table></figure>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>只用ReactNatiev开发过一段时间，当时还不熟悉React用法就去写所以RN，写的代码质量很差，还是应先打好基础</p>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><ul>
+<li>react宽度基于pt为单位<ul>
+<li>可以通过Dimensions来获取宽高</li>
+<li>PixelRatio获取密度</li>
+<li>如果想使用百分比，可以通过获取屏幕宽度手动计算</li>
+</ul>
+</li>
+<li>基于flex的布局 <ul>
+<li>view默认宽度为100%</li>
+<li>水平居中用alignItems, 垂直居中用justifyContent</li>
+<li>基于flex能够实现现有的网格系统需求，且网格能够各种嵌套无bug</li>
+</ul>
+</li>
+<li>图片布局 <ul>
+<li>通过Image.resizeMode来适配图片布局，包括contain, cover, stretch</li>
+<li>默认不设置模式等于cover模式</li>
+<li>contain模式自适应宽高，给出高度值即可</li>
+<li>cover铺满容器，但是会做截取</li>
+<li>stretch铺满容器，拉伸</li>
+</ul>
+</li>
+<li>定位 <ul>
+<li>定位相对于父元素，父元素不用设置position也行</li>
+<li>padding 设置在Text元素上的时候会存在bug。所有padding变成了marginBottom</li>
+</ul>
+</li>
+<li>文本元素 <ul>
+<li>文字必须放在Text元素里边</li>
+<li>Text元素可以相互嵌套，且存在样式继承关系</li>
+<li>numberOfLines 需要放在最外层的Text元素上，且虽然截取了文字但是还是会占用空间</li>
+</ul>
+</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>RN支持style传入数组，不同于web端的React</li>
+</ul>
+<h3 id="获取组件的宽度和高度"><a href="#获取组件的宽度和高度" class="headerlink" title="获取组件的宽度和高度"></a>获取组件的宽度和高度</h3><ul>
+<li>onLayout</li>
+<li>UIManager<ul>
+<li>measure</li>
+</ul>
+</li>
+</ul>
+<h2 id="app图标及启动图"><a href="#app图标及启动图" class="headerlink" title="app图标及启动图"></a>app图标及启动图</h2><h3 id="iOS-1"><a href="#iOS-1" class="headerlink" title="iOS"></a>iOS</h3><h4 id="icon"><a href="#icon" class="headerlink" title="icon"></a>icon</h4><table>
+<thead>
+<tr>
+<th>size</th>
+<th>@1x</th>
+<th>@2x</th>
+<th>@3x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20pt</td>
+<td></td>
+<td>40x40</td>
+<td>60x60</td>
+</tr>
+<tr>
+<td>29pt</td>
+<td></td>
+<td>58x58</td>
+<td>87x87</td>
+</tr>
+<tr>
+<td>40pt</td>
+<td></td>
+<td>80x80</td>
+<td>120x120</td>
+</tr>
+<tr>
+<td>60pt</td>
+<td></td>
+<td>120x120</td>
+<td>180x180</td>
+</tr>
+<tr>
+<td>1024pt</td>
+<td>1024x1024</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="启动图"><a href="#启动图" class="headerlink" title="启动图"></a>启动图</h4><table>
+<thead>
+<tr>
+<th>iOS</th>
+<th>@1x</th>
+<th>@2x</th>
+<th>@3x</th>
+<th>Retina4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iOS 5,6</td>
+<td>320×480</td>
+<td>640×960</td>
+<td></td>
+<td>640×1136</td>
+</tr>
+<tr>
+<td>iOS 7+</td>
+<td></td>
+<td>640×960</td>
+<td></td>
+<td>640×1136</td>
+</tr>
+<tr>
+<td>iOS 8+</td>
+<td></td>
+<td>750×1334</td>
+<td>1242×2208</td>
+<td></td>
+</tr>
+<tr>
+<td>iOS x</td>
+<td></td>
+<td></td>
+<td>1125x2436</td>
+</tr>
+</tbody>
+</table>
+<h3 id="android"><a href="#android" class="headerlink" title="android"></a>android</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:left">屏幕比</th>
+<th style="text-align:left">分辨率(启动图)</th>
+<th style="text-align:left">Icon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">drawable-xxhdpi</td>
+<td style="text-align:left">480dpi</td>
+<td style="text-align:left">1080x1920</td>
+<td style="text-align:left">144x144</td>
+</tr>
+<tr>
+<td style="text-align:left">drawable-xhdpi</td>
+<td style="text-align:left">320dpi</td>
+<td style="text-align:left">720x1280</td>
+<td style="text-align:left">96x96</td>
+</tr>
+<tr>
+<td style="text-align:left">drawable-hdpi</td>
+<td style="text-align:left">240dpi</td>
+<td style="text-align:left">480x800</td>
+<td style="text-align:left">72x72</td>
+</tr>
+<tr>
+<td style="text-align:left">drawable-mdpi</td>
+<td style="text-align:left">160dpi</td>
+<td style="text-align:left">320x480</td>
+<td style="text-align:left">48x48</td>
+</tr>
+<tr>
+<td style="text-align:left">drawable-ldpi</td>
+<td style="text-align:left">120dpi</td>
+<td style="text-align:left">240x320</td>
+<td style="text-align:left">36x36</td>
+</tr>
+</tbody>
+</table>
+<h2 id="iOS-2"><a href="#iOS-2" class="headerlink" title="iOS"></a>iOS</h2><ul>
+<li>info.plist<ul>
+<li>NSAppTransportSecurity 请求协议配置<ul>
+<li>NSAllowsArbitraryLoads YES禁用ATS</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h3><ul>
+<li>Provision路径 <code>cd ~/Library/MobileDevice/Provisioning\ Profiles/</code></li>
+</ul>
+<h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><ul>
+<li>创建静态库 File -&gt; New Project</li>
+<li>copy到RN项目</li>
+<li>打开.xcodeproj</li>
+<li>修改Build Setting -&gt; Targets -&gt; Header Search Paths <ul>
+<li>$(SRCROOT)/../../react-native/React recursive</li>
+</ul>
+</li>
+<li>使用<ul>
+<li>拖动到工程中的Library中</li>
+<li>Podfile pod ‘react-native-*‘, :path =&gt; ‘../node_modules/react-native-*‘</li>
+</ul>
+</li>
+</ul>
+<h3 id="RN原生开发"><a href="#RN原生开发" class="headerlink" title="RN原生开发"></a>RN原生开发</h3><ul>
+<li>RCT_EXPORT_MODULE() 指定模块的名字，默认类名</li>
+</ul>
+<h4 id="原生模块"><a href="#原生模块" class="headerlink" title="原生模块"></a>原生模块</h4><ul>
+<li>Module : NSObject <rctbridgemodule><ul>
+<li>RCT_EXPORT_METHOD()</li>
+<li>constantsToExport 导出常量</li>
+</ul>
+</rctbridgemodule></li>
+</ul>
+<h4 id="原生UI"><a href="#原生UI" class="headerlink" title="原生UI"></a>原生UI</h4><ul>
+<li>UIView : RCTViewManager<ul>
+<li>RCT_EXPORT_VIEW_PROPERTY()</li>
+<li>-(UIView *) view</li>
+</ul>
+</li>
+</ul>
+<h2 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h2><h3 id="RN原生开发-1"><a href="#RN原生开发-1" class="headerlink" title="RN原生开发"></a>RN原生开发</h3><ul>
+<li>package implements ReactPackage<ul>
+<li>createViewManagers</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建工程-1"><a href="#创建工程-1" class="headerlink" title="创建工程"></a>创建工程</h3><ul>
+<li>创建Module File -&gt; New Module -&gt; Android Library</li>
+<li>填写模块名和包名及最低sdk版本</li>
+<li>copy到RN项目</li>
+<li>android/app/build.gradle compile project(‘:react-native-*’)</li>
+</ul>
+<h4 id="原生模块-1"><a href="#原生模块-1" class="headerlink" title="原生模块"></a>原生模块</h4><ul>
+<li>Module extends ReactContextBaseJavaModule<ul>
+<li>getName</li>
+<li>@ReactMethod (public void)</li>
+<li>getContants 导出常量</li>
+</ul>
+</li>
+</ul>
+<h4 id="原生UI-1"><a href="#原生UI-1" class="headerlink" title="原生UI"></a>原生UI</h4><ul>
+<li>Manager extends UI组件<ul>
+<li>getName</li>
+<li>createViewInstance</li>
+<li>REACT_CLASS (static final String)</li>
+<li>@ReactModule</li>
+<li>@ReactProp (public void)</li>
+<li>@ReactPropGroup (public void)</li>
+<li>getCommandsMap</li>
+<li>receiveCommand</li>
+<li>onAfterUpdateTransaction 属性都初始化完成后，做一些处理</li>
+</ul>
+</li>
+<li>UIView</li>
+</ul>
+<h2 id="Jenkins构建命令"><a href="#Jenkins构建命令" class="headerlink" title="Jenkins构建命令"></a>Jenkins构建命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#security unlock-keychain -p "1" /Users/terminus/Library/Keychains/login.keychain</span></div><div class="line"><span class="comment">#npm install --registry http://registry.npm.terminus.io/</span></div><div class="line"><span class="comment">#work_path=$(pwd)</span></div><div class="line"><span class="comment">#cd $work_path &amp;&amp; cd android &amp;&amp; ./gradlew clean assembleFlavors_jenkinsRelease -DXHSD_PUSH_ENV=Test &amp;&amp; fir publish app/build/outputs/apk/app-flavors_jenkins-release.apk -T $&#123;FIR_TOKEN&#125; &amp;</span></div><div class="line"><span class="comment">#cd $work_path &amp;&amp; cd ios &amp;&amp; pod update --no-repo-update &amp;&amp; rm -rf build/* &amp;&amp; xcodebuild clean &amp;&amp; xcodebuild -workspace xinhuaMobile.xcworkspace -scheme xinhuaMobile_inHouse_test -configuration Test -derivedDataPath build &amp;&amp; xcrun -sdk iphoneos  PackageApplication -v ./build/Build/Products/Test-iphoneos/xinhuaMobile_inHouse.app -o /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa &amp;&amp; fir publish /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa -T $&#123;FIR_TOKEN&#125;</span></div><div class="line"><span class="comment">#curl 'https://oapi.dingtalk.com/robot/send?access_token=59a79f2f12a2fd8dff337609608c0c337e2af0b1a5216a8befcf253fdd816c0f' -H 'Content-Type:application/json' -d '&#123; "msgtype": "link","link": &#123;"text": "新华书店inHouse_App打包成功，点击链接扫码下载","title": "新华书店App打包成功","picUrl": "","messageUrl": "https://fir.im/97nu"&#125;&#125;'</span></div><div class="line"><span class="comment">#jenkins-mobile-cli build --platform=rn --android-task=assembleFlavors_jenkinsRelease --ios-scheme=xinhuaMobile_inHouse_test --ios-configurations=Test --log-quiet=true --ding-talk-token=59a79f2f12a2fd8dff337609608c0c337e2af0b1a5216a8befcf253fdd816c0f --fir-token=$&#123;FIR_TOKEN&#125; --keychain-file=$&#123;KEYCHANIN_FILE&#125; --keychain-password=$&#123;KEYCHAIN_PASSWORD&#125;</span></div><div class="line"></div><div class="line"><span class="comment">#--ding-talk-token=ba67df9bb2da8156cd8aacc297fc18eab76767bf29c6ff1324573e0ce81301d1</span></div><div class="line"><span class="comment">#test ding talk token a0c0bed514affe974d2644bdabeb408d2d718e1810069fc61ac49fc29ab9429a</span></div><div class="line">jenkins-mobile-cli build --platform=rn --android-task=assembleRelease --android-DTEST=1 --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=jiajiayueMobile_test --ios-configurations=Test   --fir-token=982a194018b86cf315c34ea6e507d541 --keychain-file=<span class="variable">$&#123;KEYCHANIN_FILE&#125;</span> --keychain-password=<span class="variable">$&#123;KEYCHAIN_PASSWORD&#125;</span> --log-quiet=<span class="literal">true</span> --static-scan=<span class="literal">false</span> --ding-talk-token=100eca1a5221071113ca6854ac8198728e7e1f5118bc4d4<span class="built_in">cd</span>9d7cc79f52fee8a</div></pre></td></tr></table></figure>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>debug地址使用localhost来调试，用本机ip网上说有跨域问题<br><code>http://localhost:8081/debugger-ui/</code></p>
+<h2 id="报错收集"><a href="#报错收集" class="headerlink" title="报错收集"></a>报错收集</h2><h2 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">./gradlew --stop</div><div class="line">./gradlew stop然后执行 ./gradlew assembleRelease</div><div class="line"></div><div class="line">watchman watch-del-all</div><div class="line">rm -rf node_modules &amp;&amp; npm install</div><div class="line">npm start -- --reset-cache</div></pre></td></tr></table></figure>
+<h3 id="升级rn导致的错误"><a href="#升级rn导致的错误" class="headerlink" title="升级rn导致的错误"></a>升级rn导致的错误</h3><ul>
+<li><a href="https://faichou.space/upgrade-rn-was-a-chaos/idnex/" target="_blank" rel="noopener">https://faichou.space/upgrade-rn-was-a-chaos/idnex/</a></li>
+<li><a href="https://github.com/facebook/react-native/issues/11721" target="_blank" rel="noopener">第三方依赖找不到react头文件</a></li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://github.com/liuchungui/react-native-BGNativeModuleExample" target="_blank" rel="noopener">https://github.com/liuchungui/react-native-BGNativeModuleExample</a></li>
+<li><a href="https://smallpath.me/post/react-native-debug" target="_blank" rel="noopener">https://smallpath.me/post/react-native-debug</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/40683068" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/40683068</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React全家桶/" rel="tag"># React全家桶</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/25/React全家桶/Redux学习/" rel="next" title="Redux学习">
+                <i class="fa fa-chevron-left"></i> Redux学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/25/Vue系列/Vue学习/" rel="prev" title="Vue学习">
+                Vue学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">2.1.</span> <span class="nav-text">iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">2.2.</span> <span class="nav-text">Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动指定模拟器"><span class="nav-number">2.3.</span> <span class="nav-text">启动指定模拟器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动打bundle包"><span class="nav-number">2.4.</span> <span class="nav-text">手动打bundle包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rn开发调试"><span class="nav-number">2.5.</span> <span class="nav-text">rn开发调试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">3.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布局"><span class="nav-number">3.1.</span> <span class="nav-text">布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">3.1.1.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取组件的宽度和高度"><span class="nav-number">3.2.</span> <span class="nav-text">获取组件的宽度和高度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app图标及启动图"><span class="nav-number">4.</span> <span class="nav-text">app图标及启动图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-1"><span class="nav-number">4.1.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#icon"><span class="nav-number">4.1.1.</span> <span class="nav-text">icon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动图"><span class="nav-number">4.1.2.</span> <span class="nav-text">启动图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android"><span class="nav-number">4.2.</span> <span class="nav-text">android</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS-2"><span class="nav-number">5.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#证书"><span class="nav-number">5.1.</span> <span class="nav-text">证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建工程"><span class="nav-number">5.2.</span> <span class="nav-text">创建工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RN原生开发"><span class="nav-number">5.3.</span> <span class="nav-text">RN原生开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生模块"><span class="nav-number">5.3.1.</span> <span class="nav-text">原生模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生UI"><span class="nav-number">5.3.2.</span> <span class="nav-text">原生UI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-1"><span class="nav-number">6.</span> <span class="nav-text">Android</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RN原生开发-1"><span class="nav-number">6.1.</span> <span class="nav-text">RN原生开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建工程-1"><span class="nav-number">6.2.</span> <span class="nav-text">创建工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生模块-1"><span class="nav-number">6.2.1.</span> <span class="nav-text">原生模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生UI-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">原生UI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins构建命令"><span class="nav-number">7.</span> <span class="nav-text">Jenkins构建命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">8.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报错收集"><span class="nav-number">9.</span> <span class="nav-text">报错收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报错解决"><span class="nav-number">10.</span> <span class="nav-text">报错解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级rn导致的错误"><span class="nav-number">10.1.</span> <span class="nav-text">升级rn导致的错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">11.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

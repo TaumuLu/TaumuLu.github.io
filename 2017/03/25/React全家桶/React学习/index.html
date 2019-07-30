@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React全家桶," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言在此记录React的基础结构、API、知识点 API React context Children map forEach count only   getDefaultProps refs ref   state props children undefined object array   className htmlFor createElement cloneElement    co">
+<meta name="keywords" content="React全家桶">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React学习">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/React全家桶/React学习/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="前言在此记录React的基础结构、API、知识点 API React context Children map forEach count only   getDefaultProps refs ref   state props children undefined object array   className htmlFor createElement cloneElement    co">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.508Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React学习">
+<meta name="twitter:description" content="前言在此记录React的基础结构、API、知识点 API React context Children map forEach count only   getDefaultProps refs ref   state props children undefined object array   className htmlFor createElement cloneElement    co">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/25/React全家桶/React学习/"/>
+
+
+
+
+
+  <title> React学习 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/React全家桶/React学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T13:15:00+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在此记录React的基础结构、API、知识点</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
+<li>React<ul>
+<li>context</li>
+<li>Children<ul>
+<li>map</li>
+<li>forEach</li>
+<li>count</li>
+<li>only</li>
+</ul>
+</li>
+<li>getDefaultProps</li>
+<li>refs<ul>
+<li>ref</li>
+</ul>
+</li>
+<li>state</li>
+<li>props</li>
+<li>children<ul>
+<li>undefined</li>
+<li>object</li>
+<li>array</li>
+</ul>
+</li>
+<li>className</li>
+<li>htmlFor</li>
+<li>createElement</li>
+<li>cloneElement</li>
+</ul>
+</li>
+</ul>
+<h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><p>指定数据并要将数据传递下去的父组件要定义childContextTypes和getChildContext()<br>想要接收到数据的子组件 必须定义contextTypes来使用传递过来的context</p>
+<ul>
+<li>childContextTypes</li>
+<li>getChildContext</li>
+<li>contextTypes</li>
+</ul>
+<h3 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h3><ul>
+<li>type <ul>
+<li>func</li>
+<li>object</li>
+<li>array</li>
+<li>symbol</li>
+<li>string</li>
+<li>number</li>
+<li>bool</li>
+<li>element</li>
+</ul>
+</li>
+<li>prop<ul>
+<li>isRequired</li>
+</ul>
+</li>
+<li>method<ul>
+<li>shape</li>
+<li>oneOf</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
+<li>Component<ul>
+<li>静态属性<ul>
+<li>propTypes</li>
+<li>defaultProps</li>
+</ul>
+</li>
+<li>state</li>
+<li>props</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><ul>
+<li>ES6</li>
+<li>ES5</li>
+<li>函数式<ul>
+<li>无状态</li>
+<li>无this</li>
+<li>没有完整意义的生命周期方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p>纯函数，无副作用，数据不可变</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ul>
+<li>优先使用函数式组件</li>
+<li>添加propTypes和defaultProps静态属性，尽可能的把它们写在组件的最上方</li>
+<li>使用箭头函数确保正确的this</li>
+<li>有依赖上一状态传递函数给setState</li>
+<li>解构Props/state</li>
+<li>使用装饰器(Decorators)</li>
+<li>减少render,传递给自组件的值不要每次创建</li>
+<li>函数式组件避免使用匿名函数(箭头函数)</li>
+<li>判断语句多使用短路语法</li>
+</ul>
+<h3 id="Reselect"><a href="#Reselect" class="headerlink" title="Reselect"></a>Reselect</h3><p>使用Resselect避免不必要的selector计算</p>
+<blockquote>
+<p>mapStateToProps也被叫做selector，在store发生变化的时候就会被调用，而不管是不是selector关心的数据发生改变它都会被调用，所以如果selector计算量非常大，每次更新都重新计算可能会带来性能问题。Reselect能帮你省去这些没必要的重新计算。<br>Reselect 提供 createSelector 函数来创建可记忆的 selector。createSelector 接收一个 input-selectors 数组和一个转换函数作为参数。如果 state tree 的改变会引起 input-selector 值变化，那么 selector 会调用转换函数，传入 input-selectors 作为参数，并返回结果。如果 input-selectors 的值和前一次的一样，它将会直接返回前一次计算的数据，而不会再调用一次转换函数。这样就可以避免不必要的计算，为性能带来提升。</p>
+</blockquote>
+<h3 id="Immutable"><a href="#Immutable" class="headerlink" title="Immutable"></a>Immutable</h3><h2 id="相关库"><a href="#相关库" class="headerlink" title="相关库"></a>相关库</h2><ul>
+<li>Flux<ul>
+<li>Redux</li>
+</ul>
+</li>
+<li>react-addons-perf</li>
+<li>react-addons-update</li>
+<li>recompose</li>
+</ul>
+<h2 id="相关名词"><a href="#相关名词" class="headerlink" title="相关名词"></a>相关名词</h2><ul>
+<li>Redux HOC</li>
+<li>Redux 木偶组件(无状态组件)</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://www.oschina.net/translate/performance-engineering-with-react" target="_blank" rel="noopener">http://www.oschina.net/translate/performance-engineering-with-react</a></li>
+<li><a href="http://www.jianshu.com/p/6e38c66366cd" target="_blank" rel="noopener">http://www.jianshu.com/p/6e38c66366cd</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React全家桶/" rel="tag"># React全家桶</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/22/Record/书签记录/" rel="next" title="书签记录">
+                <i class="fa fa-chevron-left"></i> 书签记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/25/Git/Git命令/" rel="prev" title="Git使用">
+                Git使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">2.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#context"><span class="nav-number">2.1.</span> <span class="nav-text">context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PropTypes"><span class="nav-number">2.2.</span> <span class="nav-text">PropTypes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">3.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建组件"><span class="nav-number">3.1.</span> <span class="nav-text">创建组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">4.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳实践"><span class="nav-number">5.</span> <span class="nav-text">最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reselect"><span class="nav-number">5.1.</span> <span class="nav-text">Reselect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Immutable"><span class="nav-number">5.2.</span> <span class="nav-text">Immutable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关库"><span class="nav-number">6.</span> <span class="nav-text">相关库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关名词"><span class="nav-number">7.</span> <span class="nav-text">相关名词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">8.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

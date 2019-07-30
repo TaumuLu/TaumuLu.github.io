@@ -1,0 +1,864 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="读书总结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="第一部分 Linux的规则与安装第5章5.2 多行输入用反斜杠转义[Enter]，反斜杠后立即跟特殊字符 区分大小写 date 显示日期与时间 echo $LANG 显示当前语言 LANG=en_US(zh_CN) 设置语言 /etc/sysconfig/i18n   cal 显示日历 +%Y/%m/%d +%H:%M   bc 计算器 scale=number   tab 命令补全 文件补全">
+<meta name="keywords" content="读书总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鸟哥的Linux私房菜">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/读书总结/books-鸟哥的Linux私房菜/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="第一部分 Linux的规则与安装第5章5.2 多行输入用反斜杠转义[Enter]，反斜杠后立即跟特殊字符 区分大小写 date 显示日期与时间 echo $LANG 显示当前语言 LANG=en_US(zh_CN) 设置语言 /etc/sysconfig/i18n   cal 显示日历 +%Y/%m/%d +%H:%M   bc 计算器 scale=number   tab 命令补全 文件补全">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="鸟哥的Linux私房菜">
+<meta name="twitter:description" content="第一部分 Linux的规则与安装第5章5.2 多行输入用反斜杠转义[Enter]，反斜杠后立即跟特殊字符 区分大小写 date 显示日期与时间 echo $LANG 显示当前语言 LANG=en_US(zh_CN) 设置语言 /etc/sysconfig/i18n   cal 显示日历 +%Y/%m/%d +%H:%M   bc 计算器 scale=number   tab 命令补全 文件补全">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/读书总结/books-鸟哥的Linux私房菜/"/>
+
+
+
+
+
+  <title> 鸟哥的Linux私房菜 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/读书总结/books-鸟哥的Linux私房菜/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                鸟哥的Linux私房菜
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T22:08:02+08:00">
+                2018-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一部分-Linux的规则与安装"><a href="#第一部分-Linux的规则与安装" class="headerlink" title="第一部分 Linux的规则与安装"></a>第一部分 Linux的规则与安装</h1><h2 id="第5章"><a href="#第5章" class="headerlink" title="第5章"></a>第5章</h2><h3 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h3><ul>
+<li>多行输入用反斜杠转义[Enter]，反斜杠后立即跟特殊字符</li>
+<li>区分大小写</li>
+<li>date 显示日期与时间</li>
+<li>echo $LANG 显示当前语言</li>
+<li>LANG=en_US(zh_CN) 设置语言<ul>
+<li>/etc/sysconfig/i18n</li>
+</ul>
+</li>
+<li>cal 显示日历<ul>
+<li>+%Y/%m/%d</li>
+<li>+%H:%M</li>
+</ul>
+</li>
+<li>bc 计算器<ul>
+<li>scale=number</li>
+</ul>
+</li>
+<li>tab<ul>
+<li>命令补全</li>
+<li>文件补全</li>
+</ul>
+</li>
+<li>ctrl-c 中断程序</li>
+<li>ctrl-d 键盘输入结束代替输入exit</li>
+</ul>
+<h3 id="5-3"><a href="#5-3" class="headerlink" title="5.3"></a>5.3</h3><ul>
+<li>man<ul>
+<li>1 可执行命令或文件</li>
+<li>3 函数与函数库</li>
+<li>5 配置文件或某些文件的格式</li>
+<li>8 管理员可用的管理命令</li>
+</ul>
+</li>
+<li>info</li>
+<li>/usr/share/doc/</li>
+</ul>
+<h3 id="5-4"><a href="#5-4" class="headerlink" title="5.4"></a>5.4</h3><ul>
+<li>nano</li>
+</ul>
+<h3 id="5-5"><a href="#5-5" class="headerlink" title="5.5"></a>5.5</h3><ul>
+<li>who</li>
+<li>netstat -a</li>
+<li>ps -aux</li>
+<li>sync</li>
+<li>shutdown</li>
+<li>reboot</li>
+<li>halt</li>
+<li>poweroff</li>
+</ul>
+<h2 id="第6章"><a href="#第6章" class="headerlink" title="第6章"></a>第6章</h2><h3 id="6-1"><a href="#6-1" class="headerlink" title="6.1"></a>6.1</h3><ul>
+<li>用户与用户组<ul>
+<li>user</li>
+<li>group</li>
+<li>other</li>
+</ul>
+</li>
+<li>ls -al<ul>
+<li>drwxr-xr-x 19 mt staff 608 4 13 15:50 app</li>
+<li>权限 链接 所有者 用户组 文件容量 修改日期 文件名</li>
+</ul>
+</li>
+<li>权限<ul>
+<li>文件类型<ul>
+<li>d - l b c</li>
+</ul>
+</li>
+<li>所有者权限 读写执</li>
+<li>用户组权限 写执</li>
+<li>其他用户权限 读执<ul>
+<li>r w x</li>
+<li>4 2 1</li>
+<li>读 写 执行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2"><a href="#6-2" class="headerlink" title="6.2"></a>6.2</h3><ul>
+<li>更改权限<ul>
+<li>chgrp<ul>
+<li>/etc/group</li>
+<li>chgrp [config] [group] [dirname|filename]…</li>
+</ul>
+</li>
+<li>chown<ul>
+<li>/etc/passwd</li>
+<li>chown [config] [user] [dirname|filename]…</li>
+<li>user中小数点隔开用户组</li>
+</ul>
+</li>
+<li>chmod<ul>
+<li>chmod [config] [mode] [dirname|filename]…</li>
+<li>mode<ul>
+<li>[ugoa][[+-=][rwxX]…][,…]<ul>
+<li>r读权限 w写权限 x执行权限 X当该文件是个子目录或者该文件已经被设定过为可执行</li>
+</ul>
+</li>
+<li>ugo u,g,o各为一个数字，分别表示Owner、Group、及Other的权限<ul>
+<li>r=4 w=2 x=1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cp 源文件 目标文件</li>
+<li>是否能执行由x权限决定<ul>
+<li>windows则由文件扩展名决定</li>
+</ul>
+</li>
+<li>文件w权限不能删除文件本身</li>
+<li>文件夹w权限可以删除，x权限能否成为工作目录</li>
+<li>mkdir</li>
+<li>touch</li>
+<li>su - user</li>
+</ul>
+<h3 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h3><ul>
+<li>四种目录特色<ul>
+<li>shareable</li>
+<li>unshareable</li>
+<li>static</li>
+<li>variable</li>
+</ul>
+</li>
+<li>三层主目录<ul>
+<li>/(root) 与开机系统有关</li>
+<li>/usr 与软件安装/执行有关</li>
+<li>/var 与系统运作过程有关</li>
+</ul>
+</li>
+</ul>
+<h2 id="第7章"><a href="#第7章" class="headerlink" title="第7章"></a>第7章</h2><h3 id="7-1"><a href="#7-1" class="headerlink" title="7.1"></a>7.1</h3><ul>
+<li>特殊目录 . .. - ~ ~user</li>
+<li>cd</li>
+<li>pwd [-P]</li>
+<li>mkdir <ul>
+<li>-p </li>
+<li>-m</li>
+</ul>
+</li>
+<li>rmdir 删除一个空的目录<ul>
+<li>-p</li>
+</ul>
+</li>
+<li>$PATH<ul>
+<li>优先使用先查到的同名命令</li>
+</ul>
+</li>
+<li>mv 源文件 目标文件</li>
+<li>rm</li>
+<li>basename</li>
+<li>dirname</li>
+</ul>
+<h3 id="7-2"><a href="#7-2" class="headerlink" title="7.2"></a>7.2</h3><h2 id="第10章"><a href="#第10章" class="headerlink" title="第10章"></a>第10章</h2><h3 id="10-1"><a href="#10-1" class="headerlink" title="10.1"></a>10.1</h3><ul>
+<li>vi<ul>
+<li>一般模式</li>
+<li>编辑模式<ul>
+<li>i I o O a A r R</li>
+</ul>
+</li>
+<li>命令行模式<ul>
+<li>: / ?</li>
+</ul>
+</li>
+<li>tab与空格的输入不一样</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读书总结/" rel="tag"># 读书总结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/12/Command/Bash/" rel="next" title="Bash">
+                <i class="fa fa-chevron-left"></i> Bash
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/16/构建工具/Babel/" rel="prev" title="Babel">
+                Babel <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分-Linux的规则与安装"><span class="nav-number">1.</span> <span class="nav-text">第一部分 Linux的规则与安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第5章"><span class="nav-number">1.1.</span> <span class="nav-text">第5章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2"><span class="nav-number">1.1.1.</span> <span class="nav-text">5.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3"><span class="nav-number">1.1.2.</span> <span class="nav-text">5.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4"><span class="nav-number">1.1.3.</span> <span class="nav-text">5.4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5"><span class="nav-number">1.1.4.</span> <span class="nav-text">5.5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6章"><span class="nav-number">1.2.</span> <span class="nav-text">第6章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">6.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2"><span class="nav-number">1.2.2.</span> <span class="nav-text">6.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3"><span class="nav-number">1.2.3.</span> <span class="nav-text">6.3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7章"><span class="nav-number">1.3.</span> <span class="nav-text">第7章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">7.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">7.2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10章"><span class="nav-number">1.4.</span> <span class="nav-text">第10章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">10.1</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

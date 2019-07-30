@@ -1,0 +1,1982 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="web前端" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="记录学习前端的点滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taumu的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="记录学习前端的点滴">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Taumu的博客">
+<meta name="twitter:description" content="记录学习前端的点滴">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title> Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/16/IOS/CocoaPods/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/06/16/IOS/CocoaPods/" itemprop="url">
+                  CocoaPods
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-16T23:27:38+08:00">
+                2019-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://guides.cocoapods.org/syntax/podfile.html" target="_blank" rel="noopener">http://guides.cocoapods.org/syntax/podfile.html</a></li>
+<li><a href="https://www.jianshu.com/p/8a7b9232cbab" target="_blank" rel="noopener">https://www.jianshu.com/p/8a7b9232cbab</a></li>
+<li><a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" target="_blank" rel="noopener">http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/</a></li>
+<li><a href="https://faichou.space/upgrade-rn-was-a-chaos/idnex/" target="_blank" rel="noopener">https://faichou.space/upgrade-rn-was-a-chaos/idnex/</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/里程碑/2019年目标/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/05/23/里程碑/2019年目标/" itemprop="url">
+                  2019年目标
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T22:50:17+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="今年2019年的目标"><a href="#今年2019年的目标" class="headerlink" title="今年2019年的目标"></a>今年2019年的目标</h2><ul>
+<li>拿到驾照</li>
+<li>英雄联盟上黄金</li>
+<li>裸辞</li>
+<li>去武汉孝感</li>
+<li>拿到b站offer</li>
+<li>拿到阿里offer</li>
+<li>薪资达到20K+</li>
+<li>日语考试过N1</li>
+<li>锻炼身体</li>
+<li>搭建博客<ul>
+<li>完整的博客系统</li>
+<li>前端vue+lissom服务端渲染</li>
+<li>后端java</li>
+</ul>
+</li>
+<li>github项目<ul>
+<li>完善lissom</li>
+<li>完成genfe-cli</li>
+<li>完成visual-proxy-server</li>
+<li>重写react-native-dynamic-splash</li>
+</ul>
+</li>
+</ul>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>计划制定于2019年5月22日<br>截止日期到2020年1月24日</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/JavaScript/Typescript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/05/23/JavaScript/Typescript/" itemprop="url">
+                  Typescript
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T08:48:40+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="声明文件"><a href="#声明文件" class="headerlink" title="声明文件"></a>声明文件</h2><p>在d.ts文件里面，在最外层声明变量或者函数或者类要在前面加上declare这个关键字<br>在typescript的规则里面，如果一个.ts、.d.ts文件如果没有用到import或者export语法的话，那么最顶层声明的变量就是全局变量  </p>
+<h3 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h3><p>只有function、class和interface 可以直接默认导出，其他的变量需要先定义出来，再默认导出</p>
+<h3 id="三斜线指令"><a href="#三斜线指令" class="headerlink" title="三斜线指令"></a>三斜线指令</h3><p>类似于声明文件中的 import，它可以用来导入另一个声明文件<br>与import的区别是，当且仅当在以下几个场景下，我们才需要使用三斜线指令替代import</p>
+<ul>
+<li>当我们在书写一个全局变量的声明文件时</li>
+<li>当我们需要依赖一个全局变量的声明文件时</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/16/JavaScript/JS框架/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/12/16/JavaScript/JS框架/" itemprop="url">
+                  JS框架
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T16:21:20+08:00">
+                2018-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><ul>
+<li>pawjs <code>pwa渐进式Web应用程序框架</code></li>
+<li>david <code>检查依赖包是否过期</code></li>
+<li>node-cross-spawn <code>node的spawn和spawnSync的跨平台解决方案</code></li>
+<li>getmac <code>获取当前计算机的mac地址</code></li>
+<li>jStat <code>js统计库</code></li>
+<li>chokidar <code>文件监控的库</code></li>
+<li>inversify <code>依赖注入框架</code></li>
+<li>publish-please <code>npm publish的安全且功能强大的替代品</code></li>
+<li><a href="https://johnresig.com/files/htmlparser.js" target="_blank" rel="noopener">htmlparser</a> <code>jquery作者John Resig写的，没有对应的npm包</code></li>
+<li>cherow <code>javascript解析器</code></li>
+<li>gatsby <code>基于React静态网站生成器</code></li>
+<li>hexo <code>博客框架</code></li>
+<li>next <code>轻量级服务端渲染框架</code></li>
+<li>docz <code>生成文档</code></li>
+<li>semver <code>npm语义版本</code></li>
+<li>reflect-metadata <code>元编程库</code></li>
+<li>inversify <code>ioc库，依赖注入、依赖查询</code></li>
+<li>nprogress <code>YouTube风格的web端进度条</code></li>
+<li>progress <code>node端命令行进度条</code></li>
+<li>dragula <code>拖放库</code></li>
+<li>omi <code>腾讯出品，下一代前端统一框架 - 支持桌面Web、移动H5、小程序、云开发</code></li>
+<li>meteor <code>web APP开发框架</code></li>
+<li>jss <code>使用JavaScript的方式以声明css，无冲突和可重用的方式描述样式，与框架无关</code></li>
+<li>react-hot-loader <code>实时调整React组件</code></li>
+<li>hyper <code>基于Web技术构建的终端</code></li>
+<li>sync-request <code>同步web请求</code></li>
+<li>sync-rpc <code>同步远程调用</code></li>
+<li>cloc <code>代码统计工具</code></li>
+</ul>
+<h3 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h3><ul>
+<li>create-react-app <code>快速创建react应用</code></li>
+<li>roadhog <code>类似于create-react-app，提供可定制的配置</code></li>
+<li>vue-cli <code>vue脚手架工具</code></li>
+</ul>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><ul>
+<li>bable <code>js编译器</code></li>
+<li>swc <code>类似于babel的js编译器</code></li>
+</ul>
+<h4 id="bable"><a href="#bable" class="headerlink" title="bable"></a>bable</h4><ul>
+<li>babel-plugin-module-resolver <code>路径解析转化</code></li>
+</ul>
+<h3 id="打包构建"><a href="#打包构建" class="headerlink" title="打包构建"></a>打包构建</h3><ul>
+<li>lerna <code>管理多个包项目的工具</code></li>
+<li>rollup <code>用es6模块打包代码的构建工具(支持css和js打包)</code></li>
+<li>poi <code>一个webpack的封装库，使开发变的简单</code></li>
+<li>fuse-box <code>高性能的JS打包/加载器</code></li>
+<li>parcel <code>快速，零配置的Web应用程序打包器</code></li>
+</ul>
+<h4 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h4><p>模块打包器，打包所有的资源</p>
+<ul>
+<li>webpack-jarvis <code>基于浏览器的Webpack仪表板</code></li>
+<li>webpack-chain <code>用于生成和简化Webpack配置修改的链接api</code></li>
+<li>webpack-merge <code>合并多个webpack配置的工具</code></li>
+<li>webpack-blocks <code>用于webpack配置的功能构建块，简化webpack配置</code></li>
+<li>parallel-webpack <code>并行构建多配置</code></li>
+<li>stats-webpack-plugin <code>写入构建信息到文件</code></li>
+</ul>
+<h5 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h5><ul>
+<li>html-webpack-include-assets-plugin <code>dll资源引用</code></li>
+<li>add-asset-html-webpack-plugin <code>dll资源引用</code></li>
+<li>dll-link-webpack-plugin <code>dll资源引用</code></li>
+</ul>
+<h3 id="react生态"><a href="#react生态" class="headerlink" title="react生态"></a>react生态</h3><ul>
+<li>unstated <code>简明的状态管理工具</code></li>
+<li>mobx <code>响应式状态管理库</code></li>
+<li>react-sticky <code>粘性吸顶react组件</code></li>
+</ul>
+<h3 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h3><ul>
+<li>react-jsonschema-form <code>用于从JSON Schema构建Web表单的React组件</code></li>
+<li>final-form <code>框架无关，高性能，基于订阅的表单状态管理</code></li>
+<li>uform <code>面向复杂场景的中后台表单解决方案</code></li>
+</ul>
+<h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><ul>
+<li>express <code>轻量级Web框架</code></li>
+<li>koa <code>下一代中间件web框架</code></li>
+<li>strongloop <code>node服务，API经济提供动力</code></li>
+<li>restify <code>REST风格服务应用框架</code></li>
+<li>hapi <code>构建应用程序和服务的框架，提供基础设施代码</code></li>
+<li>pm2 <code>进程管理工具</code></li>
+<li>serve-static <code>提供静态文件</code></li>
+<li>cors node <code>CORS中间件</code></li>
+<li>compression <code>node压缩中间件，deflate gzip</code></li>
+<li>thinkjs <code>基于koa实现的node框架</code></li>
+<li>nest <code>渐进式Node.js框架</code></li>
+<li>pandora <code>node.js应用程序管理器</code></li>
+<li>Rendora <code>动态服务器端渲染，为爬虫提供零配置服务器端渲染</code></li>
+<li>lru-cache <code>缓存库，只缓存最频繁访问的内容</code></li>
+</ul>
+<h3 id="http请求库"><a href="#http请求库" class="headerlink" title="http请求库"></a>http请求库</h3><ul>
+<li>axios <code>基于promise的同构请求库</code></li>
+<li>superagent <code>基于promise的同构请求库</code></li>
+<li>supertest</li>
+<li>request</li>
+<li>request-promise</li>
+<li>node-fetch</li>
+<li>isomorphic-unfetch <code>fetch同构请求库</code></li>
+<li>got</li>
+</ul>
+<h3 id="命令工具"><a href="#命令工具" class="headerlink" title="命令工具"></a>命令工具</h3><ul>
+<li>shx <code>用于node端的跨平台Shell命令</code></li>
+<li>rimraf <code>node端的rm -rf工具</code></li>
+<li>minimist <code>解析参数选项</code></li>
+<li>commander <code>命令行界面的完整解决方案</code></li>
+<li>arg <code>命令行选项解析器</code></li>
+<li>yargs <code>解析参数，构建交互式命令行工具</code></li>
+<li>opn <code>打开网站，文件，可执行文件等内容</code></li>
+<li>diff-so-fancy <code>git-diff美化工具</code></li>
+<li>loadtest <code>负载测试</code></li>
+<li>npm-check <code>依赖更新检查库</code></li>
+<li>spy-debugger <code>页面调试，抓包工具</code></li>
+<li>concurrently <code>跨平台同时运行多个命令</code></li>
+<li>npm-run-all <code>并行或顺序运行多个npm脚本</code></li>
+<li>oclif <code>node开放cli框架</code></li>
+<li>meow <code>cli框架</code></li>
+<li>inquirer <code>常用交互式命令行用户界面的集合</code></li>
+<li>ora <code>打印出优雅的文本小图标展示</code></li>
+<li>get-port <code>获取可用的端口号</code></li>
+</ul>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><ul>
+<li>chalk <code>控制台打印带颜色</code></li>
+<li>debug <code>JS调试工具</code></li>
+<li>vorlon <code>用于远程调试和测试JavaScript</code></li>
+<li>easy-monitor <code>node性能监控、分析工具</code></li>
+<li>memwatch <code>检测泄漏检测</code></li>
+<li>heapdump <code>生成内存快照</code></li>
+<li>vconsole <code>一个轻量、可拓展、针对手机网页的前端开发者调试面板</code></li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><ul>
+<li>prettier <code>代码格式化工具</code></li>
+<li>standard <code>javaScript代码规范</code></li>
+<li>pretty-quick <code>基于代码管理工具格式化代码</code></li>
+<li>husky <code>git钩子</code></li>
+<li>commitlint <code>lint提交消息</code></li>
+<li>lint-staged <code>在git staged文件上运行linters</code></li>
+<li>commitizen <code>撰写合格Commit message的工具</code></li>
+<li>xo <code>JavaScript happiness style linter</code></li>
+</ul>
+<h3 id="模版引擎"><a href="#模版引擎" class="headerlink" title="模版引擎"></a>模版引擎</h3><ul>
+<li>mustache <code>模版引擎</code></li>
+<li>handlebars <code>基于mustache的模版引擎</code></li>
+</ul>
+<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><ul>
+<li>sigma <code>专门用于绘图的JavaScript库</code></li>
+<li>pts <code>用于可视化和创意编码的库</code></li>
+<li>shapeshifter <code>适用于Android，iOS和Web的SVG图标动画工具</code></li>
+<li>popmotion <code>精简的动画库</code></li>
+<li>gojs <code>用于交互式流程图，组织结构图，设计工具，规划工具，可视语言的JavaScript图表库</code></li>
+<li>plottable <code>基于D3构建的模块化图表组件库</code></li>
+</ul>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ul>
+<li>jest <code>js自动化测试框架</code></li>
+<li>mocha <code>js自动化测试框架</code></li>
+<li>intern <code>js自动化测试框架</code></li>
+<li>ava <code>并发测试框架</code></li>
+<li>chai <code>js断言库</code></li>
+</ul>
+<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><ul>
+<li>Ace <code>javaScript编写的独立代码编辑器</code></li>
+<li>monaco-editor <code>基于浏览器的代码编辑器</code></li>
+</ul>
+<h4 id="富文本编辑器"><a href="#富文本编辑器" class="headerlink" title="富文本编辑器"></a>富文本编辑器</h4><ul>
+<li>draft-js</li>
+<li>react-draft-wysiwyg</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://www.rollupjs.com/guide/zh" target="_blank" rel="noopener">rollup</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/Record/语言组织/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/08/09/Record/语言组织/" itemprop="url">
+                  语言组织
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T14:45:55+08:00">
+                2018-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>发表或提问前我都会在sublime上打出自己要说的语言，记录下来并反复阅读以重新组织语言达到自己的预期</p>
+<h3 id="next提问"><a href="#next提问" class="headerlink" title="next提问"></a>next提问</h3><ol>
+<li>为何要在dev模式下webpack加入WriteFilePlugin插件以生成文件，这样做是方便服务端require文件，但不能从内存中去读区吗，开发时从内存中读区文件速度更快不是吗，不然用webpack-hot-middleware只是为了做webpack的动态入口不浪费吗  </li>
+<li>webpack为何要在开发模式下分别打两份包，重复打包增加编译时间，而且没有用CommonsChunkPlugin提取公共js，node打包模式不会打包node_modules，但web模式会为每一个单独的入口都打包进所有的文件且包括node_modules，这无疑增加了每次改动webpack的编译时间，随着页面、依赖的增多时间会更加长，开发体验会很差</li>
+</ol>
+<p>我有一套方案且已实践，在开发模式下用生产模式的webpack打包，当然需要改动一些配置，只需要打包web环境的包，且以watch方式监听文件变动，路径保存在dist下，这样服务端渲染时还是引用这个路径的包，但要让服务端能正确require这个不是CommonJS规范的文件需要我们做一些hark，这里只要处理挂载到window上的webpackJsonp函数以及next提供的<strong>NEXT_REGISTER_PAGE全局函数，以同样的方式我们挂载到global上，这样保证require时能正确处理，此外我们还要处理下</strong>webpack_require<strong>函数，以web方式打包会将node_modules里的包都打进来，这里有几个问题，有些包可能提供了node和browser环境下的不同包，比如superagent，还有些包不允许引用多次，比如babel-polyfill，所以我们需要在</strong>webpack_require<strong>这个函数上做点手脚，针对以上问题的包忽略或者从路径提取出包名直接require引用，可能有些包还有其他问题不过理论上在</strong>webpack_require__这里都能处理掉  </p>
+<p>其他问题<br>开发模式下提供监听改动实时打包，在客户端下没有问题，但在服务端有问题，由于node会缓存require的包导致文件变动也不会再次require源文件，这里用delete require.cache[path]的方式删除引用过的包，但并未结束由于用webpack打包，webpack会用一个变量installedModules来缓存所有引用过的包，所以我们还需要清除webpack的缓存，这一点方法很多，通过导出函数来清理即可</p>
+<p>最终<br>至此问题已基本解决，再处理下next的资源文件请求即可，这里可以自行处理，资源文件最好尽快处理，减少无关中间件的执行</p>
+<h3 id="RN回答"><a href="#RN回答" class="headerlink" title="RN回答"></a>RN回答</h3><p>刚好之前的项目是用RN做的，就说下我遇到的坑和理解吧<br>先说RN对原生这块，虽然RN是用前端最熟悉的react来写的，但如其他的回答，如果不懂原生还是很难做好的，不然从打包发布这块就会被卡住，如果需要原生的支持，Xcode的使用也要了解  </p>
+<p>再说RN自身的组件，对android的支持做的就不如ios好，很多组件官方只提供了ios的api，Android还未完善，导致两端预期不一致，这并不是我们想看到的，尤其对两端统一的需求来说  </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/Record/面试题收录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/29/Record/面试题收录/" itemprop="url">
+                  面试题收录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T15:25:13+08:00">
+                2018-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在要面试的时候或者平时也会接触到很多面试相关的文章，虽然面试是为了进公司里面涉及的一些问题或许工作中都不会遇到，但面试一直作为考察应聘者作为公司招聘人才的主要手段还是有原因的，一份好的面试题涉及到了我们所学领域的方方面面，如果这些面试题都答不上，如何证明自己能胜任所聘岗位，虽然可能平时工作都没注意到，自己一直用的很得心应手的东西或许真的回答不上来一些相关问题，语言组织能力是一方面，但能做的更好为何不去做！在此记录自己所见的一些喜欢的面试题积累所学，供日后所用</p>
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p>这里的前端主要指javaScript语言相关的所有知识，毕竟前端 === JavaScript，也包含nodeJs相关知识</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><h4 id="获取m长度值为n的数组"><a href="#获取m长度值为n的数组" class="headerlink" title="获取m长度值为n的数组"></a>获取m长度值为n的数组</h4><p>知乎偶然看到的一个问题，此类实现方法很多<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 最简单的</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(m).fill(n)</div><div class="line"><span class="comment">// 稍复杂了，原理一样，利用Array单参数下会创建长度为参数值的数组</span></div><div class="line"><span class="comment">// 需要注意的是这里的keys，当数组没有初始值时会用empty展示，会使数组的遍历方法不会遍历，这里也有兼容性问题</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shit5</span>(<span class="params">m, n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> [...Array(m).keys()].map(<span class="function"><span class="params">e</span> =&gt;</span> n)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 最复杂的一种方法，递归调用传入函数，每次加一个值，直到m减少到1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shit6</span>(<span class="params">m, n</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="function"><span class="params">f</span> =&gt;</span> f(f))</div><div class="line">    (<span class="function"><span class="params">g</span> =&gt;</span> (m, n) =&gt;</div><div class="line">      m === <span class="number">1</span> ? [n] : g(g)(m - <span class="number">1</span>, n).concat(n)</div><div class="line">    )</div><div class="line">    (m, n)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="可以重复绑定的bind函数"><a href="#可以重复绑定的bind函数" class="headerlink" title="可以重复绑定的bind函数"></a>可以重复绑定的bind函数</h4><p>由于js中bind函数只能绑定一次，之后再如何调用bind函数绑定的this都会是第一次调用绑定<br>重写bind函数，将第一次调用的函数保存起来以供之后的每次bind调用都是用此函数去创建绑定的函数<br>至于怎么保存，可以用闭包或者存在函数的属性上都可以</p>
+<h4 id="parseInt结合map考察"><a href="#parseInt结合map考察" class="headerlink" title="parseInt结合map考察"></a>parseInt结合map考察</h4><p>[“1”, “2”, “3”].map(parseInt) 返回 [1,NaN,NaN]</p>
+<h5 id="parseInt-string-radix"><a href="#parseInt-string-radix" class="headerlink" title="parseInt(string, radix)"></a>parseInt(string, radix)</h5><ul>
+<li>string 必需。要被解析的字符串</li>
+<li>radix 可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间<ul>
+<li>如果省略该参数或其值为 ‘0‘，则数字将以 10 为基础来解析。如果它以 ‘”0x”‘ 或 ‘”0X”‘ 开头，将以 16 为基数</li>
+<li>如果该参数小于 2 或者大于 36，则 ‘parseInt()‘ 将返回 ‘NaN‘</li>
+</ul>
+</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h4 id="width-height-padding-margin设置百分比"><a href="#width-height-padding-margin设置百分比" class="headerlink" title="width/height/padding/margin设置百分比"></a>width/height/padding/margin设置百分比</h4><p>width和height分别相对于父元素的width和heihgt计算<br>padding和margin则都相对最近父级块级元素的width计算的  </p>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>虚拟DOM原理</li>
+<li>setState异步原理</li>
+<li>CMD AMD</li>
+<li>promise all rice 功能 自己实现</li>
+<li>http websocket 差异</li>
+<li>react jquery差异</li>
+<li>Redux 数据流， Provider connect 具体里面做了哪些事情</li>
+<li>webpack plugin 与 loader 区别</li>
+<li>单元素修改react和jquery哪个效率更高</li>
+<li>generator 实现异步执行器描述</li>
+<li>promise.timeout</li>
+<li>svg 与 canvas 的差异</li>
+<li>css position</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/0FG90s7TGP6qWv4rUO5MhQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/0FG90s7TGP6qWv4rUO5MhQ</a></li>
+<li><a href="https://juejin.im/post/5b50a05351882519eb6593ff" target="_blank" rel="noopener">https://juejin.im/post/5b50a05351882519eb6593ff</a></li>
+<li><a href="https://juejin.im/post/5b4de8b16fb9a04fa8672375" target="_blank" rel="noopener">https://juejin.im/post/5b4de8b16fb9a04fa8672375</a></li>
+<li><a href="https://juejin.im/post/5b4d543ce51d4519610dea67" target="_blank" rel="noopener">https://juejin.im/post/5b4d543ce51d4519610dea67</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/构建工具/Webpack源码分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/27/构建工具/Webpack源码分析/" itemprop="url">
+                  Webpack源码分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T10:03:04+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>一直对webpack这类的项目有所畏惧，涉及到DSL、AST的概念及模块缓存等，且对于webpack仅仅是使用它都很难做到得心应手的使用，更不用说去看源码理解他的原理了，但终究是要去学习的，无非早晚，本想等自己段位再升升级后再去看（目前也就是个白银哈哈），但刚好最近在搞ssr，里面涉及到了服务端代码的打包，于是遂开始学习webpack相关</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>每当我学习新知识的时候开始都是不知从何下手，最快的上手方法也就是找个例子去仿写练习，其中涉及的知识理解一部分，当持续使用这类知识也在持续学习，渐渐也就能掌握乃至理解原理，直到有了原来如此的感觉，此时我便会想，如果开始学时我就有此时整体的概念可以把控理解、虽不是面面俱到但有整体的方向感，知道总体在围绕怎样的结构来构建的，就如各个官网的精简描述和总结，是多么的形象体贴，贯彻始终<br>如同react native的一次编写,到处运行  </p>
+<p>扯了这么多，如此对比到webpack上就如官网的图，模块打包机</p>
+<h2 id="参看资料"><a href="#参看资料" class="headerlink" title="参看资料"></a>参看资料</h2><ul>
+<li><p><a href="https://segmentfault.com/a/1190000008060440" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008060440</a></p>
+</li>
+<li><p><a href="https://juejin.im/post/5aa3d2056fb9a028c36868aa" target="_blank" rel="noopener">https://juejin.im/post/5aa3d2056fb9a028c36868aa</a></p>
+</li>
+<li><a href="https://lihuanghe.github.io/2016/05/30/webpack-source-analyse.html" target="_blank" rel="noopener">https://lihuanghe.github.io/2016/05/30/webpack-source-analyse.html</a></li>
+<li><a href="http://taobaofed.org/blog/2016/09/09/webpack-flow/" target="_blank" rel="noopener">http://taobaofed.org/blog/2016/09/09/webpack-flow/</a></li>
+<li><a href="https://github.com/lcxfs1991/blog/issues/1" target="_blank" rel="noopener">https://github.com/lcxfs1991/blog/issues/1</a></li>
+<li><p><a href="https://juejin.im/post/5abf33f16fb9a028e46ec352" target="_blank" rel="noopener">https://juejin.im/post/5abf33f16fb9a028e46ec352</a></p>
+</li>
+<li><p><a href="https://segmentfault.com/a/1190000005614604" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005614604</a></p>
+</li>
+<li><a href="https://juejin.im/post/5a1bcdadf265da430e4ee137" target="_blank" rel="noopener">https://juejin.im/post/5a1bcdadf265da430e4ee137</a></li>
+<li><p><a href="https://github.com/happylindz/blog/issues/6" target="_blank" rel="noopener">https://github.com/happylindz/blog/issues/6</a></p>
+</li>
+<li><p><a href="https://webpack.docschina.org/guides/build-performance/#loader" target="_blank" rel="noopener">https://webpack.docschina.org/guides/build-performance/#loader</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/JavaScript/开发记录总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/27/JavaScript/开发记录总结/" itemprop="url">
+                  开发记录总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T09:38:54+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  state = &#123;</div><div class="line">    <span class="attr">values</span>: &#123;</div><div class="line">      <span class="attr">text</span>: <span class="number">1</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">text</span>: <span class="number">1</span></div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  toggleText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> &#123; text &#125; = <span class="keyword">this</span>.state;</div><div class="line">    <span class="keyword">const</span> newText = text === <span class="number">1</span> ? <span class="number">2</span> : <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">      <span class="attr">values</span>: &#123; <span class="attr">text</span>: newText &#125;,</div><div class="line">      <span class="attr">text</span>: newText</div><div class="line">    &#125;);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  renderButton() &#123;</div><div class="line">    <span class="keyword">const</span> &#123; values &#125; = <span class="keyword">this</span>.state;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;Style.btn&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;this.toggleText&#125;</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;Style.btnText&#125;</span>&gt;</span>&#123;values.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  renderContent() &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.content) <span class="keyword">return</span> <span class="keyword">this</span>.content;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.content = <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.renderButton.bind(this)()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.content;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> &#123; values &#125; = <span class="keyword">this</span>.state;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>测试类组件render<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;values.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        &#123;this.renderContent()&#125;</div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> Style = &#123;</div><div class="line">  <span class="attr">btn</span>: &#123;</div><div class="line">    <span class="attr">height</span>: <span class="string">"50px"</span>,</div><div class="line">    <span class="attr">backgroundColor</span>: <span class="string">"blue"</span>,</div><div class="line">    <span class="attr">display</span>: <span class="string">"flex"</span>,</div><div class="line">    <span class="attr">justifyContent</span>: <span class="string">"center"</span>,</div><div class="line">    <span class="attr">alignItems</span>: <span class="string">"center"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">btnText</span>: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">"#fff"</span>,</div><div class="line">    <span class="attr">fontSize</span>: <span class="string">"22px"</span>,</div><div class="line">    <span class="attr">margin</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">padding</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 这个组件第一次render后会保存起来到this.content，之后子组件点击setState后renderButton里的text值会变化</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/编辑器/Xcode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/06/04/编辑器/Xcode/" itemprop="url">
+                  Xcode
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T21:45:26+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="自定义快捷键"><a href="#自定义快捷键" class="headerlink" title="自定义快捷键"></a>自定义快捷键</h2><p>打开文件 <code>vim /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist</code></p>
+<h3 id="剪切当前行"><a href="#剪切当前行" class="headerlink" title="剪切当前行"></a>剪切当前行</h3><p>Insertions and Indentations键最后添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>Duplicate Current Line<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>moveToBeginningOfText:, moveToEndOfTextAndModifySelection:, copy:, moveToBeginningOfLine:, deleteToBeginningOfLine:, moveToEndOfLine:, deleteToBeginningOfLine:, deleteBackward:, moveDown:, moveToEndOfLine:<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>key的名字可以自定义，string我参考网上给出最好的配置，只会剪切当前代码不包括缩进，剪切完后光标移到下一行代码的最后</p>
+<h3 id="上一行插入"><a href="#上一行插入" class="headerlink" title="上一行插入"></a>上一行插入</h3><p>Insertions and Indentations键最后添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>Insert Up Newline<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>moveUp:, moveToEndOfText:, insertNewline:<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>参考系统其他命令写的，和其他编辑器的向上插入效果一致</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="升级Xcode插件失效"><a href="#升级Xcode插件失效" class="headerlink" title="升级Xcode插件失效"></a>升级Xcode插件失效</h3><ul>
+<li>获取Xcode的UUID <code>defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</code></li>
+<li>进入插件所在目录 <code>cd ~/Library/Application&#39; &#39;Support/Developer/Shared/Xcode/Plug-ins</code></li>
+<li>右键显示包内容，打开Info.plist</li>
+<li>在key为DVTPlugInCompatibilityUUIDs中的值里加入刚获取Xcode的UUID</li>
+</ul>
+<h3 id="清除Xcode插件设置"><a href="#清除Xcode插件设置" class="headerlink" title="清除Xcode插件设置"></a>清除Xcode插件设置</h3><p>Xcode弹框提示是否加载插件选择Load Bundles<br>若不小心点接了Skip Bundles，则需要清除Xcode插件设置<br>运行以下命令清除，命令中的Xcode-X.X改成自己的Xcode版本</p>
+<p><code>defaults delete  com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-X.X</code></p>
+<h3 id="使用vim开发"><a href="#使用vim开发" class="headerlink" title="使用vim开发"></a>使用vim开发</h3><p>让Xcode支持Vim操作，不得不说Xcode的自带的快捷键操作太少也不不好用了，更加坚定了我要用Vim做所有编辑器开发的决心  </p>
+<h4 id="XVim"><a href="#XVim" class="headerlink" title="XVim"></a><a href="https://github.com/XVimProject/XVim2" target="_blank" rel="noopener">XVim</a></h4><p>项目地址有完整的安装说明，已用有几个小bug，也算不影戏使用<br>还是要多用vim，方便不同编辑器的快速开发，正在努力适应中  </p>
+<h2 id="升级Xcode10"><a href="#升级Xcode10" class="headerlink" title="升级Xcode10"></a>升级Xcode10</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib</div><div class="line"></div><div class="line">-l&quot;stdc++.6.0.9&quot;</div><div class="line">libstdc++.6.tbd</div><div class="line">libstdc++.6.0.9.tbd</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>~/Library/MobileDevice/Provisioning&quot; &quot;Profiles</code></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.csdn.net/garrison_Z/article/details/44730417" target="_blank" rel="noopener">https://blog.csdn.net/garrison_Z/article/details/44730417</a><br><a href="https://www.jianshu.com/p/507d7e3ab10b" target="_blank" rel="noopener">https://www.jianshu.com/p/507d7e3ab10b</a><br><a href="http://www.jubeat.net/2016/12/05/how-to-install-multi-xcode/" target="_blank" rel="noopener">http://www.jubeat.net/2016/12/05/how-to-install-multi-xcode/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/算法/背包问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/05/算法/背包问题/" itemprop="url">
+                  背包问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T14:44:23+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+          
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

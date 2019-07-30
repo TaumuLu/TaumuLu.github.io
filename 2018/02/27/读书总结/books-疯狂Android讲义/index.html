@@ -1,0 +1,853 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="读书总结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="疯狂Android讲义Android应用和开发环境命令 android emulator monitor adb install -r -s ‘file’ uninstall -k ‘package’   mksdcard keytool  目录 app libs build src androidTest test main java res AndroidManifest.xml">
+<meta name="keywords" content="读书总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="疯狂Android讲义">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/读书总结/books-疯狂Android讲义/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="疯狂Android讲义Android应用和开发环境命令 android emulator monitor adb install -r -s ‘file’ uninstall -k ‘package’   mksdcard keytool  目录 app libs build src androidTest test main java res AndroidManifest.xml">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="疯狂Android讲义">
+<meta name="twitter:description" content="疯狂Android讲义Android应用和开发环境命令 android emulator monitor adb install -r -s ‘file’ uninstall -k ‘package’   mksdcard keytool  目录 app libs build src androidTest test main java res AndroidManifest.xml">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/27/读书总结/books-疯狂Android讲义/"/>
+
+
+
+
+
+  <title> 疯狂Android讲义 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/读书总结/books-疯狂Android讲义/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                疯狂Android讲义
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T16:27:48+08:00">
+                2018-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="疯狂Android讲义"><a href="#疯狂Android讲义" class="headerlink" title="疯狂Android讲义"></a>疯狂Android讲义</h1><h2 id="Android应用和开发环境"><a href="#Android应用和开发环境" class="headerlink" title="Android应用和开发环境"></a>Android应用和开发环境</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
+<li>android</li>
+<li>emulator</li>
+<li>monitor</li>
+<li>adb<ul>
+<li>install -r -s ‘file’</li>
+<li>uninstall -k ‘package’</li>
+</ul>
+</li>
+<li>mksdcard</li>
+<li>keytool</li>
+</ul>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li>app<ul>
+<li>libs</li>
+<li>build</li>
+<li>src<ul>
+<li>androidTest</li>
+<li>test</li>
+<li>main<ul>
+<li>java</li>
+<li>res</li>
+<li>AndroidManifest.xml</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>build</li>
+<li>gradle</li>
+</ul>
+<h4 id="res"><a href="#res" class="headerlink" title="res"></a>res</h4><ul>
+<li>R.java 资源字典<ul>
+<li>layout</li>
+<li>string</li>
+<li>id</li>
+</ul>
+</li>
+<li>引用资源 @&lt;资源类名&gt;/&lt;资源名&gt;</li>
+<li>未定义资源 @+id/&lt;标识符代号&gt;</li>
+</ul>
+<h4 id="AndroidManifest-xml"><a href="#AndroidManifest-xml" class="headerlink" title="AndroidManifest.xml"></a>AndroidManifest.xml</h4><ul>
+<li>包名</li>
+<li>组件</li>
+<li>兼容版本</li>
+<li>系统权限</li>
+<li>访问权限</li>
+</ul>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
+<li>Activity<ul>
+<li>setContentView()</li>
+<li>findViewById()</li>
+<li>getWindow()</li>
+<li>setTheme()</li>
+</ul>
+</li>
+<li>Service</li>
+<li>BroadcastReceiver<ul>
+<li>onReceive</li>
+<li>sendBroadcast()</li>
+<li>sendStickyBroadcast()</li>
+<li>sendOrderedBroadcast()</li>
+<li>注册<ul>
+<li>Content.registReceiver()</li>
+<li>AndroidManifest.xml receiver标签</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ContentProvider</p>
+<ul>
+<li>insert</li>
+<li>delete</li>
+<li>update</li>
+<li>query</li>
+<li>ContentResolver</li>
+</ul>
+</li>
+<li><p>intent 胶水</p>
+<ul>
+<li>显式</li>
+<li>隐式 intentFilter</li>
+</ul>
+</li>
+<li>Context 环境信息和功能</li>
+</ul>
+<h3 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h3><ul>
+<li>Android Studio</li>
+<li>keytool</li>
+<li>jarsigner</li>
+</ul>
+<h2 id="Android应用界面"><a href="#Android应用界面" class="headerlink" title="Android应用界面"></a>Android应用界面</h2><ul>
+<li>View<ul>
+<li>ViewGroup<ul>
+<li>LayoutParams</li>
+<li>MarginLayoutParams</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>layout <ul>
+<li>layout_height</li>
+<li>layout_width<ul>
+<li>fill_parent</li>
+<li>match_parent</li>
+<li>wrap_parent</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h3><ul>
+<li>match_parent 与父元素相同</li>
+<li>wrap_content 与包含的内容相同，本身的尺寸</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>setOnClickListener()</li>
+</ul>
+<h3 id="组件-1"><a href="#组件-1" class="headerlink" title="组件"></a>组件</h3><p>ViewGroup</p>
+<h4 id="线性布局"><a href="#线性布局" class="headerlink" title="线性布局"></a>线性布局</h4><ul>
+<li>LinerLayout<ul>
+<li>不会换行</li>
+<li>子元素受到LinerLayout.LayoutParams控制</li>
+<li>TableLayout<ul>
+<li>TableRow</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>FrameLayout<ul>
+<li>子元素受到FrameLayout.LayoutParams控制</li>
+</ul>
+</li>
+<li>RelativeLayout<ul>
+<li>子元素受到RelativeLayout.LayoutParams控制</li>
+</ul>
+</li>
+<li>GridLayout<ul>
+<li>子元素受到GridLayout.LayoutParams控制</li>
+</ul>
+</li>
+<li>AbsoluteLayout</li>
+</ul>
+<h2 id="深入理解Activity与Fragment"><a href="#深入理解Activity与Fragment" class="headerlink" title="深入理解Activity与Fragment"></a>深入理解Activity与Fragment</h2><ul>
+<li>Activity<ul>
+<li>onCreate()</li>
+</ul>
+</li>
+</ul>
+<p>Toast.maketext()</p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><ul>
+<li>基于监听的事件处理</li>
+<li><p>基于回调的事件处理</p>
+</li>
+<li><p>先触发监听后触发回调</p>
+</li>
+</ul>
+<p>为某个组件添加事件监听对象时，直接使用this作为事件监听对象即可</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a href="https://www.zhihu.com/question/26947538" target="_blank" rel="noopener">https://www.zhihu.com/question/26947538</a><br><a href="https://www.zhihu.com/question/51608979" target="_blank" rel="noopener">https://www.zhihu.com/question/51608979</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/读书总结/" rel="tag"># 读书总结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/25/IOS/Objective-C学习/" rel="next" title="Objective-C学习">
+                <i class="fa fa-chevron-left"></i> Objective-C学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/27/搭建环境/install/" rel="prev" title="install">
+                install <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#疯狂Android讲义"><span class="nav-number">1.</span> <span class="nav-text">疯狂Android讲义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android应用和开发环境"><span class="nav-number">1.1.</span> <span class="nav-text">Android应用和开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.1.2.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#res"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">res</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AndroidManifest-xml"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">AndroidManifest.xml</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">1.1.3.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#签名"><span class="nav-number">1.1.4.</span> <span class="nav-text">签名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android应用界面"><span class="nav-number">1.2.</span> <span class="nav-text">Android应用界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性值"><span class="nav-number">1.2.1.</span> <span class="nav-text">属性值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性布局"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">线性布局</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入理解Activity与Fragment"><span class="nav-number">1.3.</span> <span class="nav-text">深入理解Activity与Fragment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">1.4.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关链接"><span class="nav-number">1.5.</span> <span class="nav-text">相关链接</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

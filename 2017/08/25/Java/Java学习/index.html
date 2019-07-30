@@ -1,0 +1,1165 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="命令 运行 java 编译 javac 分解器 javap  基础语法 变量 byte  int  char  short  long  float  double  boolean   基本类型初始值 数值型: 0 布尔值: false 其他类型: null   构造器 构造器的名字和类的名字相同 构造器没有返回值   方法重载  方法名 + 参数列表 =&amp;gt; 实际调用哪一个方法  构造器和">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习">
+<meta property="og:url" content="http://yoursite.com/2017/08/25/Java/Java学习/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="命令 运行 java 编译 javac 分解器 javap  基础语法 变量 byte  int  char  short  long  float  double  boolean   基本类型初始值 数值型: 0 布尔值: false 其他类型: null   构造器 构造器的名字和类的名字相同 构造器没有返回值   方法重载  方法名 + 参数列表 =&amp;gt; 实际调用哪一个方法  构造器和">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java学习">
+<meta name="twitter:description" content="命令 运行 java 编译 javac 分解器 javap  基础语法 变量 byte  int  char  short  long  float  double  boolean   基本类型初始值 数值型: 0 布尔值: false 其他类型: null   构造器 构造器的名字和类的名字相同 构造器没有返回值   方法重载  方法名 + 参数列表 =&amp;gt; 实际调用哪一个方法  构造器和">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/25/Java/Java学习/"/>
+
+
+
+
+
+  <title> Java学习 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/Java/Java学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T17:39:12+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li>运行 java</li>
+<li>编译 javac</li>
+<li>分解器 javap</li>
+</ul>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
+<li>变量<ul>
+<li>byte </li>
+<li>int </li>
+<li>char </li>
+<li>short </li>
+<li>long </li>
+<li>float </li>
+<li>double </li>
+<li>boolean</li>
+</ul>
+</li>
+<li>基本类型初始值<ul>
+<li>数值型: 0</li>
+<li>布尔值: false</li>
+<li>其他类型: null</li>
+</ul>
+</li>
+<li>构造器<ul>
+<li>构造器的名字和类的名字相同</li>
+<li>构造器没有返回值</li>
+</ul>
+</li>
+<li>方法重载<br>  方法名 + 参数列表 =&gt; 实际调用哪一个方法<br>  构造器和普通方法都可以进行重载</li>
+<li>修饰符<ul>
+<li>public</li>
+<li>private</li>
+<li>protected</li>
+<li>default</li>
+</ul>
+<ul>
+<li>static</li>
+<li>final<ul>
+<li>final基本类型: 定值，只能赋值一次，不能再被修改</li>
+<li>final方法: 该方法不能被重写，private的方法默认为final的方法</li>
+<li>final类: 该类不能被继承</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>interface <ul>
+<li>使用implements来实施</li>
+<li>interface中的方法默认为public</li>
+<li>我们用implements关键字来实施interface，一旦在类中实施了某个interface，必须至少在该类中定义interface的所有方法</li>
+<li>一个类可以实施不止一个的interface</li>
+</ul>
+</li>
+<li>包管理<ul>
+<li>import</li>
+<li>package</li>
+</ul>
+</li>
+<li>继承 extends</li>
+<li>abstract<ul>
+<li>当一个类中出现abstract方法时，这个类的声明必须加上abstract关键字</li>
+<li>abstract类不能用于创建对象</li>
+<li>继承抽象类必须用完整的方法定义，覆盖抽象类中的抽象方法，否则，衍生类依然是一个抽象类</li>
+</ul>
+</li>
+<li>参数按值传递</li>
+<li>类型转换<ul>
+<li>基本类型转换<ul>
+<li>收缩变换</li>
+<li>宽松变换</li>
+</ul>
+</li>
+<li>引用类型转换<ul>
+<li>衍生类对象成为基类对象Java会正确识别对象本身的类型</li>
+<li>基类引用成为衍生类引用，该基类引用所指向的对象已是衍生类对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>String类<ul>
+<li>唯一一个不需要new关键字 来创建对象的类</li>
+<li>不可变对象</li>
+<li>方法<ul>
+<li>length</li>
+<li>charAt</li>
+<li>subString</li>
+<li>indexOf</li>
+<li>startWith</li>
+<li>endWith</li>
+<li>equals</li>
+<li>compareTo</li>
+<li>trim</li>
+<li>toUpperCase</li>
+<li>toLowerCase</li>
+<li>splace</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>异常处理<ul>
+<li>Throwable类</li>
+<li>throws Exception <ul>
+<li>异常声明，对异常不处理，收到异常我也向外抛</li>
+</ul>
+</li>
+<li>getMessage()</li>
+<li>自定义异常</li>
+</ul>
+</li>
+<li>IO<ul>
+<li>FileReader</li>
+<li>BufferedReader<ul>
+<li>readLine</li>
+</ul>
+</li>
+<li>BufferedWriter</li>
+</ul>
+</li>
+<li>RTTI<ul>
+<li>Class类<ul>
+<li>getClass()</li>
+<li>forName</li>
+<li>.class</li>
+<li>getName()</li>
+<li>getPackage()</li>
+<li>newInstance()</li>
+<li>getFields()</li>
+<li>getMethods()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run-Time </li>
+<li>TypeIdentification</li>
+<li>多线程<ul>
+<li>Thread(class)<ul>
+<li>getName</li>
+<li>run</li>
+<li>start</li>
+<li>join</li>
+<li>setDaemon</li>
+</ul>
+</li>
+<li>Runnable(interface)<ul>
+<li>run</li>
+</ul>
+</li>
+<li>修饰符<ul>
+<li>synchronized</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>container 容器    <ul>
+<li>数组<ul>
+<li>类型加一个[]</li>
+<li>需要声明数组的大小</li>
+<li>使用{}初始化数组</li>
+<li>System.arraycopy()</li>
+</ul>
+</li>
+<li>Collection<ul>
+<li>List<ul>
+<li><class\>的方式声明类型</class\></li>
+<li>只能放入class类及其衍生类的对象</li>
+<li>add</li>
+<li>get</li>
+<li>remove</li>
+<li>size</li>
+</ul>
+</li>
+<li>Set<ul>
+<li>add</li>
+<li>size</li>
+<li>contains</li>
+<li>remove</li>
+</ul>
+</li>
+<li>iterator()<ul>
+<li>next()</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>put</li>
+<li>get</li>
+<li>keySet(Set)</li>
+<li>values(List)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嵌套类<ul>
+<li>定义内部类时，我们同样有 访问权限控制(public, private, protected)</li>
+<li>我们在创建内部类对象时，必须基于一个外部类对象，并通过该外部类对象来创建对象</li>
+<li>闭包</li>
+<li>嵌套static类</li>
+</ul>
+</li>
+<li>向上转型只能够调用子类重写的方法，子类独有的方法在父类中根本没有定义，所以父类无法找到子类独有的方法</li>
+</ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>编译期执行<br>泛型的本质是为了参数化类型<br>泛型只在编译阶段有效<br>常见的如T、E、K、V等形式的参数常用于表示泛型</p>
+<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><p>泛型的类型参数只能是类类型，不能是简单类型<br>不能对确切的泛型类型使用instanceof操作</p>
+<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><p>未传入泛型实参时，与泛型类的定义相同，在声明类的时候，需将泛型的声明也一起加到类中<br>在实现类实现泛型接口时，如已将泛型类型传入实参类型，则所有使用泛型的地方都要替换成传入的实参类型</p>
+<h3 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h3><p>同一种泛型可以对应多个版本（因为参数类型是不确定的），不同版本的泛型类实例是不兼容的<br>类型通配符一般是使用？代替具体的类型实参(是类型实参，而不是类型形参)</p>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>如果静态方法要使用类上的泛型，必须将静态方法也定义成泛型方法</p>
+<h3 id="泛型上下边界"><a href="#泛型上下边界" class="headerlink" title="泛型上下边界"></a>泛型上下边界</h3><p>泛型的上下边界添加，必须与泛型的声明在一起</p>
+<h3 id="泛型数组"><a href="#泛型数组" class="headerlink" title="泛型数组"></a>泛型数组</h3><p>不能创建一个确切的泛型类型的数组<br>数组的类型不可以是类型变量，除非是采用通配符的方式</p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><ul>
+<li>Override</li>
+<li>Deprecated</li>
+<li>SuppressWarnings</li>
+</ul>
+<h3 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h3><ul>
+<li>源码注解</li>
+<li>编译时注解</li>
+<li>运行时注解</li>
+</ul>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>使用@interface关键定义注解<br>成员无参无异常声明<br>可以用default为成员指定一个默认值</p>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><ul>
+<li>Target<ul>
+<li>ElementType<ul>
+<li>CONSTRUCTOR</li>
+<li>FIELD</li>
+<li>LOCAL_VARIABLE</li>
+<li>METHOD</li>
+<li>PACKAGE</li>
+<li>PARAMETER</li>
+<li>TYPE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Retention<ul>
+<li>RetentionPolicy<ul>
+<li>SOURCE</li>
+<li>CLASS</li>
+<li>RUNTIME</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inherited</li>
+<li>Documented</li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>运行时执行，绕过编译</p>
+<ul>
+<li><p>Class</p>
+<ul>
+<li>类是class类的实例对象</li>
+<li>获取当前类的类类型<ul>
+<li>[currentClass].class</li>
+<li>[instance].getClass()</li>
+<li>Class.forName(‘当前类的全称’)<ul>
+<li>.newInstance() 实例化获取的类类型，只能调用无参构造方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编译时刻静态加载类<ul>
+<li>new</li>
+</ul>
+</li>
+<li>运行时刻动态加载类<ul>
+<li>forName</li>
+</ul>
+</li>
+<li>基本的数据类型<ul>
+<li>void关键字都存在类类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ClassInfo</p>
+<ul>
+<li>Method<ul>
+<li>getMethods 获取所有public的函数，包括父类继承而来的</li>
+<li>getDeclaredMethods 获取该类所有，自己声明的方法</li>
+<li>getDeclaredMethod<ul>
+<li>getName 得到方法的名称</li>
+<li>getReturnName 得到方法返回值的类型的类类型 </li>
+<li>getParameterTypes 得到参数列表的类型的类类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Field<ul>
+<li>getFields 获取所有public的成员变量</li>
+<li>getDeclaredFields 获取该类自己所有声明的成员变量</li>
+<li>getDeclaredField<ul>
+<li>getName</li>
+<li>getType 得到成员变量的类型的类类型</li>
+<li>getModifiers 权限修饰符</li>
+<li>setAccessible() 设置Java的权限控制检查，针对private变量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Constructor<ul>
+<li>getConstructor() 获取所有public的构造函数</li>
+<li>getConstructors() 获得类中所有的构造函数</li>
+<li>getDeclaredConstructor() 获取该类自己所有声明的构造函数</li>
+</ul>
+</li>
+<li>Interfaces<ul>
+<li>getInterfaces() 获得类所实现的接口</li>
+</ul>
+</li>
+<li>Inherit<ul>
+<li>getSuperclass() 获得类所继承的父类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="涉及类包"><a href="#涉及类包" class="headerlink" title="涉及类包"></a>涉及类包</h3><p>java.lang.class<br>java.lang.reflect.Field<br>java.lang.reflect.Constructor</p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><ul>
+<li>普通代码块 类中方法的方法体</li>
+<li>构造代码块 构造块会在创建对象时被调用，每次创建时都会被调用，优先于类构造函数执行</li>
+<li>静态代码块 用static {}包裹起来的代码片段，只会执行一次。静态代码块优先于构造块执行，有自己的作用域</li>
+<li>同步代码块 使用synchronized() {}包裹起来的代码块，在多线程环境下，对共享数据的读写操作是需要互斥进行的，否则会导致数       据的不一致性。同步代码块需要写在方法中</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>静态代码按顺序执行，依次加载</p>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><ul>
+<li>Integer<ul>
+<li>valueOf()</li>
+<li>parseInt()</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>get()</li>
+<li>entrySet()<ul>
+<li>iterator()</li>
+<li>getKey()</li>
+<li>getValue()</li>
+</ul>
+</li>
+<li>keySet()</li>
+<li>valueSet()</li>
+</ul>
+</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li>同一个行为具有多个不同表现形式或形态的能力</li>
+<li>多态的分类<ul>
+<li>编译时多态（重载，严格说不能算作多态）</li>
+<li>运行时多态（重写）</li>
+</ul>
+</li>
+<li>运行时多态的前提<ul>
+<li>继承（实现）</li>
+<li>重写</li>
+<li>向上转型</li>
+</ul>
+</li>
+<li>向上转型与向下转型</li>
+<li>继承链中对象方法的调用的优先级<ul>
+<li>this.show(O)</li>
+<li>super.show(O)</li>
+<li>this.show((super)O)</li>
+<li>super.show((super)O)</li>
+</ul>
+</li>
+</ul>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ul>
+<li>静态导入 <code>import static [package];</code></li>
+<li>静态变量<ul>
+<li>不能在方法体中定义static变量，只有类变量，不包括方法内部的变量</li>
+</ul>
+</li>
+<li>静态方法</li>
+<li>静态代码块</li>
+<li>静态内部类</li>
+</ul>
+<h2 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h2><ul>
+<li>枚举变量的定义放在第一行，多个枚举变量直接用逗号隔开</li>
+<li>以分号结束以区分自定义变量，没有的自定义变量分号可以省略</li>
+<li>构造函数必须私有化，写private是多余的，默认并强制是private，也只能写private，写public是不能通过编译的</li>
+<li>枚举类不能继承其他类，也不能被其他类继承(因为已经继承了枚举类)</li>
+<li>枚举类中可以定义抽象方法，此时枚举类会编译为抽象类，一般枚举类会被编译为final的普通类(所以无法被继承)</li>
+<li>枚举类相当于定义的变量==static new当前枚举类</li>
+<li>枚举类不能继承其他类，但是还是可以实现接口</li>
+</ul>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><ul>
+<li>不可new实例化</li>
+<li>接口没有构造函数</li>
+<li>接口的方法全部为public</li>
+<li>接口中的方法都是抽象的需要实现</li>
+<li>接口可以继承接口</li>
+<li>接口内的变量自动设置为public static final</li>
+<li>接口无修饰符缺省为package内可见，或者为public</li>
+<li>一个类可以实现多个接口</li>
+</ul>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
+<li>不可new实例化</li>
+<li>抽象类有构造函数</li>
+<li>抽象类中可以有非抽象方法</li>
+<li>抽象类的方法可以是public，protected or private</li>
+</ul>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li>Throwable<ul>
+<li>Error</li>
+<li>Exception<ul>
+<li>RuntimeException</li>
+<li>IOException</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><ul>
+<li>创建线程<ul>
+<li>Thread</li>
+<li>Runnable</li>
+</ul>
+</li>
+<li>线程周期概念一个线程有4种状态<ul>
+<li>创建(new)状态: 调用new 方法产生一个线程对象后、调用 start 方法前所处的状态。线程对象虽然已经创建,但还没有调用 start 方法启动,因此无法执行。当线程处于创建状态时,线程对象可以调用 start 方法进入启动状态,也可以调用 stop 方法进入停止状态。</li>
+<li>可运行(runnable)状态: 当线程对象执行 start()方法后,线程就转到可运行状态。进入此状态只是说明线程对象具有了可以运行的条件,但线程并不一定处于运行状态。因为在单处理器系统中运行多线程程序时,一个时间点只有一个线程运行,系统通过调度机制实现宏观意义上的运行线程共享处理器。因此一个线程是否在运行,除了线程必须处于 Runnable 状态之外,还取决于优先级和调度。</li>
+<li>不可运行(non Runnable)状态: 线程处于不可运行状态是由于线程被挂起或者发生阻塞,例如对一个线程调用 wait()函数后,它就可能进入阻塞状态;调用线程的notify 或 notifyAll 方法后它才能再次回到可执行状态。</li>
+<li>退出(done)状态: 一个线程可以从任何一个状态中调用 stop 方法进入退出状态。线程一旦进入退出状态就不存在了,不能再返回到其他的状态。除此之外,如果线程执行完 run 方法,也会自动进入退出状态。 </li>
+</ul>
+</li>
+<li>Java中锁机制的实现方法是共享代码之前加入 synchronized 关键字</li>
+<li>线程通信<ul>
+<li>Java 中线程之间的通信是通过Object 类中的 wait()、notify()、notifyAll()等几种方法实现的。Java 中每个对象内部不仅有一个对象锁之外,还有一个线程等待队列,这个队列用于存放所有等待对象锁的线程。wait 方法调用的前提条件是当前线程获取了这个对象的锁,也就是说 wait 方法必须放在同步块或同步方法中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li>强引用</li>
+<li>弱引用<ul>
+<li>WeakReference</li>
+</ul>
+</li>
+<li>软引用</li>
+<li>虚引用</li>
+</ul>
+<h2 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h2><ul>
+<li>J2SE 桌面应用软件的编程</li>
+<li>J2ME 嵌入式系统开发</li>
+<li>J2EE 分布式的网络程序的开发<ul>
+<li>Jsp</li>
+<li>Servlet</li>
+<li>JavaBean</li>
+<li>EJB</li>
+<li>JDBC</li>
+<li>JavaMail</li>
+</ul>
+</li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul>
+<li>Java中实现真正的克隆，继承Cloneable接口</li>
+<li>注意如果一个类的成员也是一个类，而又希望支持类克隆，则要对逐级类都实现克隆</li>
+<li>Overload和Override的区别<ul>
+<li>Overloaded的方法是否可以改变返回值的类型?</li>
+<li>方法的重写Overriding和重载Overloading是Java多态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。子类的对象使用这个方法时，将调用子类中的定义，对它而言，父类中的定义如同被“屏蔽”了。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型</li>
+</ul>
+</li>
+</ul>
+<h3 id="开源程序"><a href="#开源程序" class="headerlink" title="开源程序"></a>开源程序</h3><ul>
+<li>Jive <a href="http://www.jdon.com" target="_blank" rel="noopener">http://www.jdon.com</a></li>
+<li>Pet Store</li>
+</ul>
+<h3 id="java名词"><a href="#java名词" class="headerlink" title="java名词"></a>java名词</h3><ul>
+<li>aop</li>
+<li>bean</li>
+</ul>
+<h3 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h3><ul>
+<li>编码：隐匿在计算机软硬件背后的语言</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.csdn.net/s10461/article/details/53941091" target="_blank" rel="noopener">http://blog.csdn.net/s10461/article/details/53941091</a><br><a href="https://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html" target="_blank" rel="noopener">Java中的泛型方法</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/09/函数式编程/Lambda表达式/" rel="next" title="Lambda表达式">
+                <i class="fa fa-chevron-left"></i> Lambda表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/24/Android/Android/" rel="prev" title="Android">
+                Android <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础语法"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型类"><span class="nav-number">3.1.</span> <span class="nav-text">泛型类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型接口"><span class="nav-number">3.2.</span> <span class="nav-text">泛型接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型通配符"><span class="nav-number">3.3.</span> <span class="nav-text">泛型通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型方法"><span class="nav-number">3.4.</span> <span class="nav-text">泛型方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型上下边界"><span class="nav-number">3.5.</span> <span class="nav-text">泛型上下边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型数组"><span class="nav-number">3.6.</span> <span class="nav-text">泛型数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解"><span class="nav-number">4.</span> <span class="nav-text">注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行机制"><span class="nav-number">4.1.</span> <span class="nav-text">运行机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义注解"><span class="nav-number">4.2.</span> <span class="nav-text">自定义注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元注解"><span class="nav-number">4.3.</span> <span class="nav-text">元注解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射"><span class="nav-number">5.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及类包"><span class="nav-number">5.1.</span> <span class="nav-text">涉及类包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码块"><span class="nav-number">6.</span> <span class="nav-text">代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">6.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">7.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">8.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">9.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enum"><span class="nav-number">10.</span> <span class="nav-text">Enum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface"><span class="nav-number">11.</span> <span class="nav-text">Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">12.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">13.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">14.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">15.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体系"><span class="nav-number">16.</span> <span class="nav-text">体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">17.</span> <span class="nav-text">Other</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开源程序"><span class="nav-number">17.1.</span> <span class="nav-text">开源程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java名词"><span class="nav-number">17.2.</span> <span class="nav-text">java名词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关书籍"><span class="nav-number">17.3.</span> <span class="nav-text">相关书籍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">18.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

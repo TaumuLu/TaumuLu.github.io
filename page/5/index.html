@@ -1,0 +1,1832 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="web前端" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="记录学习前端的点滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Taumu的博客">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="记录学习前端的点滴">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Taumu的博客">
+<meta name="twitter:description" content="记录学习前端的点滴">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/5/"/>
+
+
+
+
+
+  <title> Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/函数式编程/Lambda表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/09/函数式编程/Lambda表达式/" itemprop="url">
+                  Lambda表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T17:32:30+08:00">
+                2017-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.zhihu.com/question/20125256" target="_blank" rel="noopener">https://www.zhihu.com/question/20125256</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/React全家桶/React高阶组件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/09/React全家桶/React高阶组件/" itemprop="url">
+                  React高阶组件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T16:33:51+08:00">
+                2017-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>React高阶组件即HOC，类似于函数中的高阶函数，你看名字都这么像是吧，接受组件返回包装后组件，就像函数一样接受函数返回一个函数(这不就是闭包吗)</p>
+<h2 id="为何学习"><a href="#为何学习" class="headerlink" title="为何学习"></a>为何学习</h2><p>在学习一些东西无果或厌烦时，我总在想为何需要学习它，它能带给我什么好处，现阶段的知识不能解决吗，如果能那为何又要花成本去学习它，所以我也总是在想如果知道了这些后再去学它就会有个明确的目标了，以及学习之后所带来的收益</p>
+<h2 id="HOC"><a href="#HOC" class="headerlink" title="HOC"></a>HOC</h2><p>组件分离，让组件职责更专一，具体为提高展示组件的复用，而hoc用来配置增强这些展示组件</p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
+<li>组件复用</li>
+<li>增强props</li>
+<li>渲染劫持</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
+<li>高阶函数</li>
+<li>继承</li>
+</ul>
+<h2 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h2><p>即使不用高阶组件的形式普通组件也能实现高阶组件的效果，但个人觉得意义在于复用，高阶组件可以为多个组件提供相同的功能</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/English/英语学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/09/English/英语学习/" itemprop="url">
+                  英语学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T12:18:51+08:00">
+                2017-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2017年7月9日，三个月过去了，离我下决心要学习之时</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>还是要给自己立个目标，之前心里想的是一年之内有所改变，如今看来还未实现，是未开始去实现，还是以一年为基准，还有9个月</p>
+<h2 id="回忆"><a href="#回忆" class="headerlink" title="回忆"></a>回忆</h2><p>每每在想我可能后悔的事，英语没学好都是首当其冲，至今也在后悔当时有人教有时间学的情况下就这么浪费了，这也总是想到学生时代老师总是说现在不学以后会后悔的话，现在也算是体验到了</p>
+<p>之前时常认为之所以现在英语差很大程度是因为小学没学英语，如果学过就不一样了，其实也是自欺欺人，也总能回想起看到儿时伙伴在即将升入初中的假期里上补习班学习英语的事，也只是在看</p>
+<p>这样在一想便回忆起更多，中学的英语老师们，高中下决心要学习英语，大学下决心要学习英语，以及现在下决心要学习英语的我</p>
+<h2 id="如今"><a href="#如今" class="headerlink" title="如今"></a>如今</h2><p>如今的我还在努力，期望学好的心情已不容再拖，还是要付诸行动，坚持下去也许就不一样了，嗯，肯定！</p>
+<hr>
+<h2 id="再次学学习"><a href="#再次学学习" class="headerlink" title="再次学学习"></a>再次学学习</h2><p>现在是2018-05-05离开始写这篇学英语的文章快1年了，什么都没改变，反而要丢了写文章的习惯</p>
+<p>这次再次下定决心，为了今后的目标，学好英语是必须跨过的第一步，不能再拖了</p>
+<h3 id="学习点"><a href="#学习点" class="headerlink" title="学习点"></a>学习点</h3><ul>
+<li>音标(发音)</li>
+<li>语法</li>
+<li>词汇</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.zhihu.com/question/19988840" target="_blank" rel="noopener">https://www.zhihu.com/question/19988840</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/编程理解/写最简单的代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/08/编程理解/写最简单的代码/" itemprop="url">
+                  写最简单的代码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T16:28:07+08:00">
+                2017-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="感慨"><a href="#感慨" class="headerlink" title="感慨"></a>感慨</h2><p>忙于当下，陷入于实现需求，却忘记了编程本质</p>
+<p>编程的最高境界难道不是写出常人都能看懂理解且完美实现功能的代码吗</p>
+<p>类型判读，时常陷入类型错误的问题中</p>
+<p>简单明了，易于查找，恰到好处</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/JavaScript/推拽/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/08/JavaScript/推拽/" itemprop="url">
+                  推拽
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T16:27:45+08:00">
+                2017-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>js推拽效果由来以久，十分常见，可以很好的让用户和页面交流，用户体验很好，因此在交互丰富的项目上拖拽效果都是必备需求</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>js实现完全的拖拽效果需要借助H5中的拖拽事件来实现</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li><p>被拖拽元素上触发的事件</p>
+<ul>
+<li>ondragstart<br>  用户开始拖动元素时触发</li>
+<li>ondrag<br>  元素正在拖动时触发</li>
+<li>ondragend<br>  用户完成元素拖动后触发</li>
+</ul>
+</li>
+<li><p>目标元素上触发的事件</p>
+<ul>
+<li>ondragenter<br>  当被鼠标拖动的对象进入其容器范围内时触发此事件</li>
+<li>ondragover<br>  当某被拖动的对象在另一对象容器范围内拖动时触发此事件</li>
+<li>ondragleave<br>  当被鼠标拖动的对象离开其容器范围内时触发此事件</li>
+<li>ondrop<br>  在一个拖动过程中，释放鼠标键时触发此事件</li>
+</ul>
+</li>
+</ul>
+<h3 id="拖拽事件的Event对象"><a href="#拖拽事件的Event对象" class="headerlink" title="拖拽事件的Event对象"></a>拖拽事件的Event对象</h3><ul>
+<li>preventDefault</li>
+<li>effectAllowed<br>  拖拽的效果</li>
+<li>dataTransfer<ul>
+<li>属性<ul>
+<li>dropEffect</li>
+<li>effectAllowed</li>
+<li>items</li>
+<li>types</li>
+</ul>
+</li>
+<li>方法<ul>
+<li>setData</li>
+<li>getData</li>
+<li>clearData</li>
+<li>addElement</li>
+<li>setDragImage</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>ondrop事件默认不会被触发需要在ondragover中执行preventDefault()<br>从其他应用软件或是文件中拖东西进来，尤其是图片的时候，默认的动作是显示这个图片或是相关信息，此时需要用用document的ondragover事件中执行preventDefault()</p>
+<p>被拖拽或拖拽元素的子元素也会触发事件，有时会造成一些问题，需要判断下触发事件的元素</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/编程理解/编程思想/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/02/编程理解/编程思想/" itemprop="url">
+                  编程思想
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T13:53:13+08:00">
+                2017-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本来欲周六写篇对reduce的理解用法，但却不得不解释了函数式编程，遂昨天又new了一篇对函数式编程的理解，但又陷入了对编程的理解，遂今天再new了一篇自己对编程的理解，虽然总觉得自己理解的并不合适，也查了很多资料，但还是决定动手写下来，留作日后再理解的积累</p>
+<h2 id="起点"><a href="#起点" class="headerlink" title="起点"></a>起点</h2><p>从学习编程起就一直在理解编程这一行为，也一直觉得编程思想是最为重要，编程的目的、意图、过程、结果、实践方式又是怎样的，编程与人之间的联系</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>想要理解就得从原理去寻找，编程的本质是与计算机交流来让计算机去做事，这里就想到计算机语言就是编程的工具，所以要从语言这里入手理解，随即又想到计算机语言也是在进步发展的，分类为低级语言和高级语言，区别又是什么，如果低级语言本身就够用那么高级语言存的的意义是什么，想想觉得就是在抽象，想让别人能理解我们的意图，这和人与人之间差不多？</p>
+<h3 id="与人沟通"><a href="#与人沟通" class="headerlink" title="与人沟通"></a>与人沟通</h3><p>如果两个人的语言不通该如何沟通，能想到的结果是：</p>
+<ol>
+<li>互相学习对方的语言，成本为2n；</li>
+<li>一方去学习另一方的语言，成本为n； 3. 都不学习对方的语言，成本为0；<blockquote>
+<p>这里说下3虽然成本为0，但是没达到互相沟通理解的目的，如何呢，我想是还有翻译者这个角色，可以让两人在不学习对方语言的前提下达到互相沟通的目的，这个翻译者可以是人或是翻译软件</p>
+</blockquote>
+</li>
+</ol>
+<p>回到刚才的话题，将这种关系映射到人和计算机来看，我们和计算机沟通是如何实现呢，开始我想结果是3，因为人并不是直接与计算机沟通的而是通过计算机语言即编程来实现的，语言又被编译为二进制，即计算机只认识的0和1，这里不深入考虑二进制与计算机，所以我认为翻译者是语言到二进制这里，但是后来觉得错了，如果是第三种方式那么成本为0为何还要学习编程，其实是2的实现方式，我们学习计算机的语言，让它为我们办事必然需要去学习如何指挥它即这里所说的沟通，这里暂停下，让我想起刚接触计算机时听到的一句话，计算机是很笨的，只认识0和1，确实很笨，但它能做人类无法做到的事，具体为他能做重复的事，而且速度很快，且能存储很大的东西(这些取决于你给他按多少个cup和多大的硬盘)，这就厉害了，试想下你要是脑子容量很大，过目不忘且脑运算很快，有多快，具体为光速，特体查了下电流的速度约等于光速，(突然有个想法，计算机为什么又叫电脑，嗯，电脑)，正于此，我们才要利用计算机，开发计算机语言去与它沟通为我们做事，终于回到了计算机语言上</p>
+<h3 id="与计算机沟通"><a href="#与计算机沟通" class="headerlink" title="与计算机沟通"></a>与计算机沟通</h3><p>如何沟通，现在看来是计算机语言，它又是如何沟通，前面说到我们要学习计算机语言，所以不应该是0和1吗，怎么是高级语言，也就是英文这玩意，这不是人类语言吗，这里就要说下计算机语言的发展史</p>
+<h4 id="计算机语言"><a href="#计算机语言" class="headerlink" title="计算机语言"></a>计算机语言</h4><ul>
+<li>机器语言<br>  二进制是计算机的语言的基础，即使用0和1去编写程序</li>
+<li>汇编语言<br>  用简洁的英文字母、符号串代表一个特定的指令的二进制串，需要编译再被翻译回二进制，只是简化了记忆，本质并没有改变，没任何人类思想</li>
+<li>高级语言<br>  将多条机器指令合成为单条指令，需要编译再被翻译回二进制，但简化了操作，忽略了细节，可以用人类的思维去描述要做的事情</li>
+</ul>
+<h3 id="高级语言"><a href="#高级语言" class="headerlink" title="高级语言"></a>高级语言</h3><p>说这么多，终于说到了和主题有关的高级语言上了，这些编程思想的体现就是由高级语言来实现的，这些思想包括了面向过程编程，面向对象编程，函数式编程<br>这些思想又有各自的模式和特性，抽象、封装、继承、多态、扩展等的这不就是面向对象吗，好吧，就不一一列举了</p>
+<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>写到这里就已经可以停下了，</p>
+<h2 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h2><p>花这么大的篇幅写如此正常、普通、理所应当的事？现以编程为生的我，是该停下脚步审视自己所作，意义何在，吾等为何而做，理解自己的工作是件很好的事呢</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/函数式编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/01/函数式编程/函数式编程/" itemprop="url">
+                  函数式编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T10:14:14+08:00">
+                2017-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从学习编程起就一直在理解编程这一行为，也一直觉得编程思想是最为重要，编程的目的、意图、过程、结果、实践方式又是怎样的，编程与人之间的联系</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><blockquote>
+<p>函数式编程是面向数学的抽象，一种数学运算，将计算描述为一种表达式求值，函数式程序就是一个表达式，原始目的就是求值</p>
+</blockquote>
+<p>函数就是一个管道，函数式编程就是把一个个管道连接起来(组合)<br>函数式编程有两个最基本的运算：合成和柯里化  </p>
+<p>主要理论基础是lambda 演算，规则也很简单  </p>
+<p>无类型的lambda 演算其实规则很简单 只有三条  </p>
+<ol>
+<li>变量 (variable)</li>
+<li>函数 (lambda-abstraction)</li>
+<li>替代 (beta-reduction)</li>
+</ol>
+<h3 id="函数式编程特性"><a href="#函数式编程特性" class="headerlink" title="函数式编程特性"></a>函数式编程特性</h3><ul>
+<li>高阶函数</li>
+<li>柯里化</li>
+<li>闭包</li>
+<li>递归</li>
+<li>归并</li>
+<li>惰性求值</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><blockquote>
+<p>函数式编程关心数据的映射，命令式编程关心解决问题的步骤</p>
+</blockquote>
+<p>函数式编程如同生产流水线，流水线上的机器就是一个个函数，一层层处理原料即数据，最终完成自己要得到的，需要什么就放什么原料，相同的原料必然产出相同的东西(这才是纯的、没有副作用合格的函数)<br>那面向对象编程是不是就像工厂的各个车间，不用的车间生产不同的零件，最后统一组装成成品，我是这样理解的</p>
+<p>还有就是参考别人所说理解，函数式编程屏蔽了细节实现，抽象提取这一类问题的解决方法达到通用复用，需要站在实现结果之上去思考整体函数的编写，还有函数的细化，粒度越小复用越大，但也会带来调用的复杂</p>
+<p>高阶函数<br>没有副作用</p>
+<p>函数式编程，是一种编程范式，不是专门为函数式编程设计的编程语言，只要具备一定的特性，都可以用来编写函数式的程序的</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.zhihu.com/question/28292740" target="_blank" rel="noopener">https://www.zhihu.com/question/28292740</a><br><a href="https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/" target="_blank" rel="noopener">https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/归并/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/01/函数式编程/归并/" itemprop="url">
+                  redece应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T01:23:40+08:00">
+                2017-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上周就想来写下reduce这个充满函数式编程方法的理解，奈何自己怠惰了，如今再过一周，觉的还是的写下来，因为觉得reduce的实现真是太强大优美了</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>说起reduce不得不说函数式编程这种编程范式？编程思想，抽象变达实现，我也描述不清，理解就是就是函数调函数，函数传函数，函数相互组合调用来完成功能，对于函数式编程我还需要再研究下</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>好了，再来说我如何关注到reduce，从开始知道这个方法的时候说起，那是并不在意，原因在于用不到，或是用不出来，也就只是看过api没有去深入了解用过，直到学习redux时注意到其中有叫reducer的api，开始自然是不理解，只是在用，之后尝试看了redux的源码才知道为何叫做reducer以及其中一个叫做compose的方法，顾名思义即是组合在一起将reducer，这里便涉及到了reduce的使用</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在我看来要学习使用一个东西前，先要知道为何要学习它，再其次就要知道如何要使用，那么什么情况下需要用这个方法呢，这便是上面说到的组合时需要用到，这也是主要用途，在我们需要把很多东西，如数字、字符串、对象或是函数也好要变为一个时，就像加法运算那样，这是就可以用reduce来解决</p>
+<p>具体为循环要组合的东西组成的数组，接受一个回调函数和一个初始值，此回调函数接受4个参数，分别为前一个值，当前值，当前值的索引，以及当前数组，别看这么多参数是很好理解的，而此初始值也是很有用的，可以为你省去很多麻烦，在这里说下初始值的用法，是你期望调用reduce后返回的值，这个期望值若和你的数组中的元素是相同类型便不必传入初始值，若不相同此时便可传入初始值</p>
+<p>再来就是若调用reduce的数组长度等于1时是不会触发reduce的回调的，若想触发可传入初始值</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>这里写过一个方法，我们要计算几个数组内的元素不考虑自身进行全排序，知道自身对应每个数组的索引和每个数组的长度，计算它在排列中的序号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 归并计算index</span></div><div class="line"><span class="keyword">const</span> getCurrentCount = <span class="function">(<span class="params">indList, lenList</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 只有一个数组不排序，返回自身索引</span></div><div class="line">    <span class="keyword">if</span> (indList.length === <span class="number">1</span>) <span class="keyword">return</span> indList[<span class="number">0</span>];</div><div class="line">    <span class="keyword">return</span> indList.slice().reduceRight(<span class="function">(<span class="params">pre, cur, ind</span>) =&gt;</span> &#123;</div><div class="line">        <span class="comment">// 反向计算，因为最后一项的索引是不用计算直接相加就好，所以用reduceRight方法更合适</span></div><div class="line">        <span class="keyword">return</span> pre + cur * reLenList.slice(<span class="number">0</span>, ind).reduceRight(<span class="function">(<span class="params">p, c</span>) =&gt;</span> p * c);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总之还是觉得这些东西都是在自己学习实践后才会更加理解并运用自如，本身便如此</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/数学/圆内接四边形/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/30/数学/圆内接四边形/" itemprop="url">
+                  圆内接四边形
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T23:28:34+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天写一个效果，计算圆中的矩形宽高，随即想到圆的内接四边形，及其如何面积最大，当然内接四边形为正方形最大了，求其宽高即边长</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>知道自己数学差，但没想到如此的差，故此写一写，以后肯定会有这方面的学习补充，数学虐我千百遍 我待数学如初恋</p>
+<h2 id="共式"><a href="#共式" class="headerlink" title="共式"></a>共式</h2><h3 id="勾股定理"><a href="#勾股定理" class="headerlink" title="勾股定理"></a>勾股定理</h3><p>a<em>a + b</em>b = c*c，其中c是斜边长</p>
+<h3 id="内接最大四边形"><a href="#内接最大四边形" class="headerlink" title="内接最大四边形"></a>内接最大四边形</h3><p>a = b<br>c<em>c = 2 </em> a<em>a，a是直角边长<br>c = sqrt(2) </em> a，sqrt(2)是计算机函数的”根号2”</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/计算机基础/并发和并行/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/04/计算机基础/并发和并行/" itemprop="url">
+                  并发和并行
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-04T21:40:54+08:00">
+                2017-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>知乎看到关于并发和并行的讨论，刚好也似懂非懂遂进去看了看，也想起node的高并发和高性能</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>是否能处理对个任务以及是否能同时处理</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a href="https://www.zhihu.com/question/33515481" target="_blank" rel="noopener">https://www.zhihu.com/question/33515481</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+          
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

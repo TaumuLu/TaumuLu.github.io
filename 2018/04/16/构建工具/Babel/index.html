@@ -1,0 +1,841 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="构建工具," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Babelbabel是一个转译器，作用的将es高版本规则翻译成低版本规则，目的旨是在让不支持es高版本的运行环境能够运行高版本es   babel转译需要做两个支持 es新标准引入的语法 箭头函数、模版字符串、let、const等 依靠plugins处理支持   es新标准引入的新的原生对象及API 新对象 Set、Map、Symbol、Proxy、Iterator、Reflect、Promise">
+<meta name="keywords" content="构建工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Babel">
+<meta property="og:url" content="http://yoursite.com/2018/04/16/构建工具/Babel/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="Babelbabel是一个转译器，作用的将es高版本规则翻译成低版本规则，目的旨是在让不支持es高版本的运行环境能够运行高版本es   babel转译需要做两个支持 es新标准引入的语法 箭头函数、模版字符串、let、const等 依靠plugins处理支持   es新标准引入的新的原生对象及API 新对象 Set、Map、Symbol、Proxy、Iterator、Reflect、Promise">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Babel">
+<meta name="twitter:description" content="Babelbabel是一个转译器，作用的将es高版本规则翻译成低版本规则，目的旨是在让不支持es高版本的运行环境能够运行高版本es   babel转译需要做两个支持 es新标准引入的语法 箭头函数、模版字符串、let、const等 依靠plugins处理支持   es新标准引入的新的原生对象及API 新对象 Set、Map、Symbol、Proxy、Iterator、Reflect、Promise">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/16/构建工具/Babel/"/>
+
+
+
+
+
+  <title> Babel | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/构建工具/Babel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Babel
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T16:15:27+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>babel是一个转译器，作用的将es高版本规则翻译成低版本规则，目的旨是在让不支持es高版本的运行环境能够运行高版本es  </p>
+<h3 id="babel转译需要做两个支持"><a href="#babel转译需要做两个支持" class="headerlink" title="babel转译需要做两个支持"></a>babel转译需要做两个支持</h3><ul>
+<li>es新标准引入的语法<ul>
+<li>箭头函数、模版字符串、let、const等</li>
+<li>依靠plugins处理支持</li>
+</ul>
+</li>
+<li>es新标准引入的新的原生对象及API<ul>
+<li>新对象 Set、Map、Symbol、Proxy、Iterator、Reflect、Promise、Generator等</li>
+<li>新API Object、Array等原有对象新加的方法<ul>
+<li>静态方法</li>
+<li>实例方法(挂载到原型上的方法)  </li>
+</ul>
+</li>
+<li>依靠polyfill处理支持<ul>
+<li>babel-runtime<ul>
+<li>将转译的代码写进要处理的模块中</li>
+<li>提供plugins的方式babel-plugin-transform-runtime，以头部引入的方式</li>
+<li>不管何种方式都是babel-runtime提供支持</li>
+<li>为何是runtime呢，因为并非转译改写了处理代码，而是提供了支持的模块供代码引入使用，当代码执行到此处时才去支持</li>
+</ul>
+</li>
+<li>bable-polyfill<ul>
+<li>暴力引入</li>
+</ul>
+</li>
+<li>core-js和regenerator-runtime才是真正的代码实现，以上两种支持都引用自它</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="bable转译有几个流程"><a href="#bable转译有几个流程" class="headerlink" title="bable转译有几个流程"></a>bable转译有几个流程</h3><ul>
+<li>parsing<ul>
+<li>babylon进行语法解析</li>
+<li>babel-core将代码解析成ast</li>
+</ul>
+</li>
+<li>transforming<ul>
+<li>babel-traverse遍历ast，供plugins使用</li>
+<li>babel-plugin-transform-xxx类的插件依次对ast进行转译</li>
+</ul>
+</li>
+<li>generating<ul>
+<li>babel-generator根据ast生成代码</li>
+</ul>
+</li>
+</ul>
+<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p>babel会从当前转译的文件所在目录下查找配置文件，如果没有找到，就顺着文档目录树一层层往上查找，一直到.babelrc文件存在或者带babel字段的package.json文件存在为止<br>bable的配置可以通过以下方式进行配置  </p>
+<ul>
+<li>package.json 添加babel字段进行配置</li>
+<li>.babelrc 根目录下独立的配置json格式<ul>
+<li>所有babel API的options（除了回调函数之外）都能够支持</li>
+<li>API <a href="https://babeljs.io/docs/usage/api/#options" target="_blank" rel="noopener">https://babeljs.io/docs/usage/api/#options</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="env"><a href="#env" class="headerlink" title="env"></a>env</h3><p>多环境配置，通过env字段配置不同环境变量下的babel配置<br>env的值优先取自process.env.BABEL_ENV，其次为process.env.NODE_ENV的值，都没有设置时为”development”</p>
+<h3 id="presets"><a href="#presets" class="headerlink" title="presets"></a>presets</h3><p>babel转码真正需要的是plugins，presets是建立在plugin之上的概念，插件的集合<br>要加载和使用的preset列表，preset名前的babel-preset-可省略，presets列表按从尾到头的逆序运行（为了兼容用户使用习惯）  </p>
+<ul>
+<li>babel-preset-es2015 ES2015转码规则</li>
+<li>babel-preset-react react转码规则</li>
+<li>babel-preset-react-native react-native转码规则<ul>
+<li>babel-preset-react-native-stage-0</li>
+</ul>
+</li>
+<li>stage-[number] 当年最新规范的草案，每年更新<ul>
+<li>babel-preset-stage-0</li>
+<li>babel-preset-stage-1</li>
+<li>babel-preset-stage-2</li>
+<li>babel-preset-stage-3</li>
+</ul>
+</li>
+</ul>
+<h4 id="stage-X"><a href="#stage-X" class="headerlink" title="stage-X"></a>stage-X</h4><p>ES不同阶段语法提案的转码规则，规则向下兼容，这点可以从stage-X的源码处看到，每个stage-X包含当前一些转码规则plugins以及下一阶段的stage-(X-1)的presets</p>
+<blockquote>
+<p>es作为一门语音，它的规范制定是由某个委员会来统筹的。就像法律一样，一个标准的诞生是要经过很多次的讨论的：一开始是一些不成熟的想法(stage-0:Strawman)，通过之后变成提议(stage-1:Proposal)，再通过进入草案(stage-2: Draft），再通过进入候选(stage-3: Candidate)，最后才能进入标准(stage-4:finished)。标准里面的每一条都得经过层层的筛选，并不是所有都能在最后进入标准的，所以使用stage-x里面的新特性是有一定风险的，比如我们用得很多的async和await，它就是属于stage3，还差一点就进入标准了。所以，如果你想使用还没有进入标准的一些新特性，你就需要包含相应的stage-x-preset或者plugins</p>
+</blockquote>
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>要加载和使用的插件列表，插件名前的babel-plugin-可省略，plugin列表按从头到尾的顺序运行<br>plugins先于presets运行  </p>
+<ul>
+<li>babel-plugin-transform-runtime</li>
+<li>babel-plugin-import</li>
+<li>transform-decorators-legacy</li>
+<li>babel-plugin-transform-decorators-legacy<ul>
+<li>vsCode支持需要在jsconfig.json里添加experimentalDecorators: true</li>
+</ul>
+</li>
+</ul>
+<h2 id="babel-cli"><a href="#babel-cli" class="headerlink" title="babel-cli"></a>babel-cli</h2><p>Babel提供babel-cli工具，用于命令行转码</p>
+<ul>
+<li>文件转码<ul>
+<li>–out-file</li>
+<li>-o</li>
+<li><code>babel example.js --out-file compiled.js</code></li>
+</ul>
+</li>
+<li>目录转码<ul>
+<li>–out-dir</li>
+<li>-d</li>
+<li><code>babel src --out-file lib</code></li>
+</ul>
+</li>
+<li>-s source map文件</li>
+<li>–presets 转码规则</li>
+</ul>
+<h3 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node</h3><p>babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境<br>babel-node就进入PEPL环境<br>可以用babel-node替代node执行代码，可以不用做转码处理  </p>
+<h2 id="babel-register"><a href="#babel-register" class="headerlink" title="babel-register"></a>babel-register</h2><p>babel-register可以将通过require引用的js先用Babel进行转码<br>.js、jsx、.es、es6 后缀的模块都会先转码  </p>
+<h3 id="使用事项"><a href="#使用事项" class="headerlink" title="使用事项"></a>使用事项</h3><ul>
+<li>当前文件不会被转码</li>
+<li>需首先加载 babel-register</li>
+<li>由于是实时转码，只适合开发环境</li>
+</ul>
+<h2 id="babel-core"><a href="#babel-core" class="headerlink" title="babel-core"></a>babel-core</h2><p>babel-core的作用是把js代码分析成ast，方便各个插件分析语法进行相应的处理<br>提供了babel的转译API，用于对代码进行转译，webpack的babel-loader使用了babel-core的api<br>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API</p>
+<h2 id="polyfill"><a href="#polyfill" class="headerlink" title="polyfill"></a>polyfill</h2><p>支持新的原生对象及API<br>真正的实现代码为core-js和regenerator-runtime  </p>
+<h3 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h3><p>JS标准新增的原生对象和API的shim，实现上仅仅是core-js和regenerator-runtime两个包的封装<br>以全局变量的形式polyfill Map、Set、Promise 之类的类型，注入污染原生对象原型  </p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
+<li>使用import或者require在入口顶部直接引入polyfill</li>
+<li>webpack中entry数组最前处加入babel-polyfill</li>
+</ul>
+<h5 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h5><p>以上的引入方式会引入所有的polyfill，增加项目打包文件的大小，可以按需加载使用polyfill</p>
+<ul>
+<li>使用import或者require直接引入core-js/fn/*中需要的模块，会污染全局变量</li>
+<li>使用import或者require直接引入core-js/library/*中需要的模块，不会污染全局变量，模块内使用</li>
+<li>使用::这个符号而不是.来调用实例方式，不会污染全局变量，模块内使用</li>
+</ul>
+<h3 id="babel-runtime"><a href="#babel-runtime" class="headerlink" title="babel-runtime"></a>babel-runtime</h3><p>功能类似babel-polyfill，提供了regenerator、core-js和helpers的运行时库<br>一般用于library或plugin中，不会污染全局作用域<br>对新类型自动且按需进行polyfill<br>原声类型静态方法也会被插件polyfill，但实例方法不会polyfill(需要使用babel-polyfill)<br>会将一些帮助函数生成在模块中，导致重复和编译后的代码体积变大  </p>
+<h4 id="babel-plugin-transform-runtime"><a href="#babel-plugin-transform-runtime" class="headerlink" title="babel-plugin-transform-runtime"></a>babel-plugin-transform-runtime</h4><p>作为插件使用，依赖babel-runtime，解决babel-runtime生成重复代码的问题，通过引用babel-runtime提供的公共模块，而不是生成在代码中</p>
+<h3 id="core-js"><a href="#core-js" class="headerlink" title="core-js"></a><a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener">core-js</a></h3><p>三种使用方式</p>
+<ul>
+<li>默认直接引入 <ul>
+<li><code>require(&#39;core-js&#39;)</code></li>
+<li>类似于babel-polyfill</li>
+</ul>
+</li>
+<li>模块方式引入<ul>
+<li><code>var core = require(&#39;core-js/library&#39;)</code></li>
+<li>类似于babel-runtime</li>
+</ul>
+</li>
+<li>shim方式引入<ul>
+<li><code>require(&#39;core-js/shim&#39;)</code></li>
+<li>仅包含es标准特性</li>
+</ul>
+</li>
+</ul>
+<h3 id="regenerator-runtime"><a href="#regenerator-runtime" class="headerlink" title="regenerator-runtime"></a>regenerator-runtime</h3><p>实现ES6/ES7中generators、yield、async及await等相关的polyfills<br>babel-polyfill和babel-runtime都引用了此包  </p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/01/babel.html</a><br><a href="https://juejin.im/post/5a3700a45188252582277880" target="_blank" rel="noopener">https://juejin.im/post/5a3700a45188252582277880</a>  </p>
+<p><a href="https://www.jianshu.com/p/3b27dfc6785c" target="_blank" rel="noopener">https://www.jianshu.com/p/3b27dfc6785c</a><br><a href="https://github.com/youngwind/blog/issues/68" target="_blank" rel="noopener">https://github.com/youngwind/blog/issues/68</a><br><a href="https://github.com/brunoyang/blog/issues/20" target="_blank" rel="noopener">https://github.com/brunoyang/blog/issues/20</a>  </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/构建工具/" rel="tag"># 构建工具</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/13/读书总结/books-鸟哥的Linux私房菜/" rel="next" title="鸟哥的Linux私房菜">
+                <i class="fa fa-chevron-left"></i> 鸟哥的Linux私房菜
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/16/构建工具/Eslint/" rel="prev" title="Eslint">
+                Eslint <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Babel"><span class="nav-number">1.</span> <span class="nav-text">Babel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#babel转译需要做两个支持"><span class="nav-number">1.1.</span> <span class="nav-text">babel转译需要做两个支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bable转译有几个流程"><span class="nav-number">1.2.</span> <span class="nav-text">bable转译有几个流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Config"><span class="nav-number">2.</span> <span class="nav-text">Config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#env"><span class="nav-number">2.1.</span> <span class="nav-text">env</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#presets"><span class="nav-number">2.2.</span> <span class="nav-text">presets</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stage-X"><span class="nav-number">2.2.1.</span> <span class="nav-text">stage-X</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-number">2.3.</span> <span class="nav-text">plugins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-cli"><span class="nav-number">3.</span> <span class="nav-text">babel-cli</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#babel-node"><span class="nav-number">3.1.</span> <span class="nav-text">babel-node</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-register"><span class="nav-number">4.</span> <span class="nav-text">babel-register</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用事项"><span class="nav-number">4.1.</span> <span class="nav-text">使用事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#babel-core"><span class="nav-number">5.</span> <span class="nav-text">babel-core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#polyfill"><span class="nav-number">6.</span> <span class="nav-text">polyfill</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#babel-polyfill"><span class="nav-number">6.1.</span> <span class="nav-text">babel-polyfill</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">6.1.1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#按需加载"><span class="nav-number">6.1.1.1.</span> <span class="nav-text">按需加载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#babel-runtime"><span class="nav-number">6.2.</span> <span class="nav-text">babel-runtime</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#babel-plugin-transform-runtime"><span class="nav-number">6.2.1.</span> <span class="nav-text">babel-plugin-transform-runtime</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-js"><span class="nav-number">6.3.</span> <span class="nav-text">core-js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#regenerator-runtime"><span class="nav-number">6.4.</span> <span class="nav-text">regenerator-runtime</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

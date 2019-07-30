@@ -1,0 +1,1215 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="IOS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="基础语法 #import 引入 &amp;lt;.h&amp;gt; 在编译器的安装目录的标准库中开始查找 “.h” 在当前的工程所在的文件夹开始寻找   @interface 接口 @implementation 实施 @end 结束语句 : 继承 @property 属性 @synthesize 生成setter与getter方法实现 @autoreleasepool 在此关键字后面的程序自动进行内存回收 -">
+<meta name="keywords" content="IOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Objective-C学习">
+<meta property="og:url" content="http://yoursite.com/2018/02/25/IOS/Objective-C学习/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="基础语法 #import 引入 &amp;lt;.h&amp;gt; 在编译器的安装目录的标准库中开始查找 “.h” 在当前的工程所在的文件夹开始寻找   @interface 接口 @implementation 实施 @end 结束语句 : 继承 @property 属性 @synthesize 生成setter与getter方法实现 @autoreleasepool 在此关键字后面的程序自动进行内存回收 -">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.504Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Objective-C学习">
+<meta name="twitter:description" content="基础语法 #import 引入 &amp;lt;.h&amp;gt; 在编译器的安装目录的标准库中开始查找 “.h” 在当前的工程所在的文件夹开始寻找   @interface 接口 @implementation 实施 @end 结束语句 : 继承 @property 属性 @synthesize 生成setter与getter方法实现 @autoreleasepool 在此关键字后面的程序自动进行内存回收 -">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/25/IOS/Objective-C学习/"/>
+
+
+
+
+
+  <title> Objective-C学习 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/IOS/Objective-C学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Objective-C学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T10:37:46+08:00">
+                2018-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>#import 引入<ul>
+<li>&lt;.h&gt; 在编译器的安装目录的标准库中开始查找</li>
+<li>“.h” 在当前的工程所在的文件夹开始寻找</li>
+</ul>
+</li>
+<li>@interface 接口</li>
+<li>@implementation 实施</li>
+<li>@end 结束语句</li>
+<li>: 继承</li>
+<li>@property 属性</li>
+<li>@synthesize 生成setter与getter方法实现</li>
+<li>@autoreleasepool 在此关键字后面的程序自动进行内存回收</li>
+<li>- 减号方法 普通方法即对象方法申明，对象调用</li>
+<li>+ 加号方法 类方法即静态方法申明，类名调用</li>
+<li>goto 跳转关键词</li>
+<li>* 表示指针类型的数据</li>
+<li>new [Class new] == [[Class alloc] init]<ul>
+<li>alloc 为对象分配空间</li>
+<li>init 初始无参构造函数</li>
+<li>initWith 带参构造函数</li>
+</ul>
+</li>
+<li>函数调用使用 [Object method]</li>
+<li>#define 宏定义</li>
+<li>typedef 定义类型<ul>
+<li>定义新类型 typedef 类型 新类型</li>
+<li>函数指针 typedef 返回值类型 (*新类型) (参数列表)</li>
+<li>typedef 结构体和枚举<ul>
+<li>NS_ENUM</li>
+<li>NS_OPTIONS</li>
+<li>enum</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><ul>
+<li>@public</li>
+<li>@private</li>
+<li>@protected</li>
+<li>@package</li>
+</ul>
+<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><ul>
+<li>int</li>
+<li>float</li>
+<li>double</li>
+<li>char</li>
+<li>BOOL</li>
+</ul>
+<h3 id="限定词"><a href="#限定词" class="headerlink" title="限定词"></a>限定词</h3><ul>
+<li>long</li>
+<li>long long</li>
+<li>short</li>
+<li>unsined</li>
+<li>signed</li>
+<li>readnly</li>
+<li>const</li>
+<li>extern</li>
+<li>static</li>
+</ul>
+<h3 id="其他类型"><a href="#其他类型" class="headerlink" title="其他类型"></a>其他类型</h3><ul>
+<li>指针类型 *p</li>
+<li>自定义类型</li>
+<li>id 万能类型<ul>
+<li>类型已经被预定义为指针类型，不需要加一个*号</li>
+</ul>
+</li>
+<li>instancetype 未知类型<ul>
+<li>只可作为返回值，使那些非关联返回类型的方法返回所在类的类型</li>
+</ul>
+</li>
+<li>NSString @”” 不加@为C语言字符串类型</li>
+<li>NSNumber</li>
+<li>NSInteger</li>
+<li>CGfloat</li>
+<li>NSArray</li>
+<li>NSMutableArray</li>
+<li>NSMutableDictionary</li>
+<li>NSDictionary</li>
+<li>RSLog<ul>
+<li>%d</li>
+<li>%p</li>
+<li>%@</li>
+</ul>
+</li>
+</ul>
+<h3 id="扩展名"><a href="#扩展名" class="headerlink" title="扩展名"></a>扩展名</h3><table>
+<thead>
+<tr>
+<th>语言</th>
+<th>头文件</th>
+<th>实现文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c语言</td>
+<td>.h</td>
+<td>.c</td>
+</tr>
+<tr>
+<td>c++语言</td>
+<td>.h</td>
+<td>.cpp</td>
+</tr>
+<tr>
+<td>oc语言</td>
+<td>.h</td>
+<td>.m</td>
+</tr>
+<tr>
+<td>oc&amp;c++</td>
+<td>.h</td>
+<td>.mm</td>
+</tr>
+</tbody>
+</table>
+<h4 id="h文件"><a href="#h文件" class="headerlink" title=".h文件"></a>.h文件</h4><ul>
+<li>定义对外的接口</li>
+<li>实例变量和方法声明的头文件</li>
+<li>对外开放的方法、变量放到.h文件中</li>
+</ul>
+<h4 id="m文件"><a href="#m文件" class="headerlink" title=".m文件"></a>.m文件</h4><ul>
+<li>类方法实现的文件</li>
+<li>在此声明的类为私有的成员</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>实例变量</li>
+<li>静态变量 内部全局变量==java类变量</li>
+<li>常量</li>
+<li>全局变量</li>
+<li>局部变量</li>
+</ul>
+<h3 id="实例变量"><a href="#实例变量" class="headerlink" title="实例变量"></a>实例变量</h3><ul>
+<li>类内使用实例变量类外使用属性</li>
+<li>访问权限<ul>
+<li>@public</li>
+<li>@private</li>
+<li>@protected 默认</li>
+</ul>
+</li>
+</ul>
+<h4 id="声明方式"><a href="#声明方式" class="headerlink" title="声明方式"></a>声明方式</h4><ul>
+<li>两种声明方式</li>
+<li>通过第二种方式声明的实例变量的访问权限是@private，子类是不能继承该实例变量的，若想实现继承使用第一种声明方式<ul>
+<li>.h文件中声明的成员变量，默认是protected</li>
+<li>.m文件中声明的成员变量，默认是private</li>
+<li>@synthesize找不到同名实例变量，系统会自动生成该成员变量且为private权限</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// 第一种，旧式声明</div><div class="line">// Test.h</div><div class="line">@interface Test : NSObject &#123;</div><div class="line">    // 权限默认@protected</div><div class="line">    // @public，类外可使用指向-&gt;访问</div><div class="line">    // 实例变量是私有的，在类外部不能使用</div><div class="line">    NSString *_field;</div><div class="line">&#125;</div><div class="line">@property(nonatomic, copy) NSString *field;</div><div class="line">@end</div><div class="line">// Test.m</div><div class="line">@implementation Test</div><div class="line">@synthesize field = _field // 关联到实例变量</div><div class="line">@end</div><div class="line"></div><div class="line">// 第二种，新式声明</div><div class="line">// Test.h</div><div class="line">@interface Test : NSObject </div><div class="line">// 定义属性供外部使用， 生成了getter和setter方法声明</div><div class="line">// Xcode4.4开始，编译器会自动为每一条@property都添加一条对应的@synthesize，不用再写@synthesize</div><div class="line">// @synthesize自动生成实例变量getter和setter实现</div><div class="line">// 不再需要为属性声明实例变量了，因为@synthesize默认会去访问的同名，如果找不到同名实例变量，会自动生成一个私有同名实例变量</div><div class="line">@property(nonatomic, copy) NSString *field;</div><div class="line">@end</div><div class="line">// Test.m</div><div class="line">@implementation Test</div><div class="line">// @synthesize field // property默认添加，可以不用再写了</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><ul>
+<li>@property免去访问器的声明</li>
+<li>@synthesize免去访问器的实现</li>
+<li>两者旨是在免去手动声明并实现getter和setter方法</li>
+</ul>
+<h4 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h4><ul>
+<li>生成getter和setter方法声明</li>
+<li>现编译器会自动为每一条@property都添加一条对应的@synthesize</li>
+<li>接收参数<ul>
+<li>原子性<ul>
+<li>atomic(默认) 线程安全的，表示只有一个线程访问实例变量</li>
+<li>nonatomic 不加同步机制，不能保证线程安全，可以被多个线程访问，性能较高</li>
+</ul>
+</li>
+<li>存取器控制<ul>
+<li>readwrite(默认) 既有getter，也有setter<ul>
+<li>可以修改setter和getter访问器方法名</li>
+</ul>
+</li>
+<li>readonly 只有getter，没有setter</li>
+<li>readwrite、readonly两个属性是互相排斥的，只能存在一个</li>
+</ul>
+</li>
+<li>内存管理<ul>
+<li>assign(默认) 简单赋值，不更引用计数，适用于值类型</li>
+<li>retain setter方法中，对传入的对象引用计数加1</li>
+<li>strong 强引用，跟retain相同并产生相同的代码，语意上更好</li>
+<li>weak setter方法中，对传入的对象引用计数不加1<ul>
+<li>对象被释放后，用weak声明的实例变量指向nil，即实例变量的值为0</li>
+<li>delegate和Outlet一般用weak来声明</li>
+</ul>
+</li>
+<li>copy 与strong类似，但区别在于实例变量是对传入对象的副本拥有所有权，而非对象本身</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可使用位置<ul>
+<li>类的声明处，该属性对应的存取器是可以被其他类使用的，该属性对应的实例变量是私有的</li>
+<li>类的extension处，该属性对应的存取器是私有的，属性对应的实例变量也是私有的</li>
+</ul>
+</li>
+<li>不可使用位置<ul>
+<li>类的实现处，使用会报错</li>
+<li>类的分类(category)<ul>
+<li>类的分类不可以声明实例变量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="synthesize"><a href="#synthesize" class="headerlink" title="@synthesize"></a>@synthesize</h4><ul>
+<li>生成getter和setter实现</li>
+<li>默认访问属性同名的实例变量，找不到自动生成一个带下划线的同名实例变量<ul>
+<li>在.m文件中执行，所以在此声明的实例变量权限为private</li>
+<li>下划线实例变量可类内直接使用</li>
+<li>下划线实例变量 == self.属性访问</li>
+</ul>
+</li>
+<li>getter方法名 == virableName，setter方法名 == setVirableName<ul>
+<li>设置@property中的setter和getter参数可以修改访问器方法名 <code>@property(getter=[getName],setter=[setName])</code></li>
+<li>设置readonly属性后不能再设置setter属性</li>
+</ul>
+</li>
+<li>重写setter和getter实现<ul>
+<li>只重写setter和getter其中之一，可以直接重写</li>
+<li>同时重写setter和getter，需要加上@synthesize propertyName = _propertyName;<ul>
+<li>系统不会帮你自动生成这个实例变量，所以需要手动加上@synthesize，此时实例变量权限为protected</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><ul>
+<li>语法 <code>static type virableName;</code></li>
+<li>static修饰的变量不可能被其他类使用，只能在本文件中使用</li>
+<li>static修饰全局变量<ul>
+<li>全局变量就被定义成为一个全局静态变量，全局静态变量和全局变量的生命周期是一样的，都是在堆中的静态区，在整个工程执行期间内一直存在</li>
+<li>全局静态变量<ul>
+<li>静态存储区没变（静态存储区在整个程序运行期间都存在）</li>
+<li>全局静态变量在声明他的文件之外是不可见的，准确地讲从定义之处开始到文件结尾</li>
+<li>全局静态变量则限制了作用域，即只在定义该变量的源文件内有效，在同一源程序的其它源文件中不能使用它</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>static修饰局部变量<ul>
+<li>局部变量就被定义成为一个局部静态变量</li>
+<li>局部静态变量<ul>
+<li>由栈变为静态存储区rw data，生存期为整个源程序，只能在定义该变量的函数内使用</li>
+<li>作用域仍为局部作用域，当定义它的函数或者语句块结束的时候，作用域随之结束</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>static修饰函数<ul>
+<li>函数的定义和声明默认情况下是extern的，但静态函数只是在声明他的文件当中可见，不能被其他文件所用</li>
+</ul>
+</li>
+<li>静态变量只初始化一次（和java中是一样的）</li>
+<li>静态变量外部访问<ul>
+<li>定义获取静态变量的get/set方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><ul>
+<li>语法 <code>extern type virableName;</code></li>
+<li>extern只能用来修饰全局变量</li>
+<li>凡是定义在函数或方法之外的变量（除静态变量之外）都是外部全局变量</li>
+<li>在.h文件中声明<ul>
+<li>带有extern会被认为是全局变量</li>
+<li>在.m文件对全局变量的赋值必须是：type virableName(与声明一致) = value。并且在调用的时候，必须导入.h文件</li>
+</ul>
+</li>
+<li>extern引用变量<ul>
+<li>不用导入.h文件，通过extern去直接访问</li>
+<li>用于变量的声明，告诉编译器：已经存在一个全局变量，但是不在当前的编译单元内</li>
+</ul>
+</li>
+<li>extern声明<ul>
+<li>extern声明，仅适于修饰全局变量，不能去修饰其他的变量。一般情况下默认，定义的全局变量都带有extern</li>
+</ul>
+</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
+<li>语法 <code>const type virableName;</code><ul>
+<li>const</li>
+<li>*const</li>
+</ul>
+</li>
+<li>const修饰右边的变量，用来限制变量为只读属性</li>
+</ul>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li>接⼝ .h文件</li>
+<li>实现 .m文件</li>
+<li>多态<ul>
+<li>方法重写</li>
+<li>方法重载 OC不支持</li>
+</ul>
+</li>
+<li>super 父类</li>
+<li>self 当前类</li>
+<li>实例化<ul>
+<li>new</li>
+<li>[[Class alloc] init]</li>
+</ul>
+</li>
+<li>对象方法 +</li>
+<li>类方法 -</li>
+</ul>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承(:)"></a>继承(:)</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 定义</div><div class="line">@interface 类名 : 父类 &#123;</div><div class="line">    定义实例属性</div><div class="line">    // 只做声不能赋值</div><div class="line">&#125;</div><div class="line">定义方法</div><div class="line">// 方法类型 (返回类型)方法名:(参数类型)参数名称 参数二签名:(参数二类型)参数二名称</div><div class="line">// 调用方法</div><div class="line">// [对象 方法名:参数 参数二签名:参数二 参数三签名:参数三]</div><div class="line">// 方法内真正使用参数名，签名只是区分方法的</div><div class="line">@end</div><div class="line">// 实现</div><div class="line">@implementation 类名</div><div class="line">@end</div></pre></td></tr></table></figure>
+<ul>
+<li>OC中任何一个类都是继承NSObject</li>
+<li>自定义初始化方法，以initWith开头<ul>
+<li>调用父类的初始化方法 <code>self = [super init]</code></li>
+</ul>
+</li>
+<li>点语法只能适用于set/get方法，其他能访问的属性使用-&gt;访问</li>
+</ul>
+<h3 id="Category-类别"><a href="#Category-类别" class="headerlink" title="Category(类别)"></a>Category(类别)</h3><h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@interface 已有类名 (类别名)</div><div class="line">定义方法</div><div class="line">@end</div><div class="line">@implementation NSString (Extend)</div><div class="line">实现方法</div><div class="line">@end</div></pre></td></tr></table></figure>
+<ul>
+<li>命名<ul>
+<li>类名+类别名称</li>
+<li>使用xCode，新建Object-C Fie选File Type为Category会自动创建</li>
+</ul>
+</li>
+<li>类似用java聚合类的使用</li>
+<li>可以添加实例方法，类方法，甚至可以实现协议，添加属性，不能增加实例变量<ul>
+<li>利用RunTime也可以在Category中添加实例变量</li>
+</ul>
+</li>
+<li>分类方法的实现中可以访问原来类中的成员变量</li>
+<li>分类可以重写原来类中的方法，但是会覆盖掉原来的方法，导致原来的方法无法再使用</li>
+<li>方法调用的优先级：分类-&gt;原来的类-&gt;父类，若包含有多个分类，则最后参与编译的分类优先</li>
+<li>一个类是可以定义多个类目的</li>
+<li>类目可以被继承，子类可以使用super调用</li>
+</ul>
+<h3 id="Extension-扩展"><a href="#Extension-扩展" class="headerlink" title="Extension(扩展)"></a>Extension(扩展)</h3><h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@interface 已有类名 (可写可不写)</div><div class="line">定义属性</div><div class="line">定义方法</div><div class="line">@end</div></pre></td></tr></table></figure>
+<ul>
+<li>命名同Category</li>
+<li>Extension是Category的一个特例，和类别相似，但是小括号里面没有扩展的名字，就像匿名的类别</li>
+<li>对一个类的方法或属性进行扩展，.h文件中@interface的补充</li>
+<li>可以添加实例变量，属性和方法，重新定义属性，更改属性权限</li>
+<li>可定义在.h和.m文件中，一般的将类扩展直接写在.m文件中，而不单独建立类扩展文件<ul>
+<li>单独创建的.h扩展文件中的内容和.m实现文件中扩展的内容是一样的</li>
+<li>需要将类扩展的.h引入到.m文件并实现该扩展方法</li>
+</ul>
+</li>
+<li>类扩展只能针对自定义的类，不能给系统类增加类扩展</li>
+<li>类扩展定义的方法必须在类的实现中进行实现</li>
+</ul>
+<h3 id="Protocol-协议"><a href="#Protocol-协议" class="headerlink" title="Protocol(协议)"></a>Protocol(协议)</h3><h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@protocol 协议名Delegate &lt;父协议|NSObject&gt;</div><div class="line">// 在此声明协议方法</div><div class="line">// @requires修饰的声明方法，代理方必须实现</div><div class="line">// @optional修饰的声明方法，代理方可以不实现</div><div class="line">@end</div></pre></td></tr></table></figure>
+<ul>
+<li>命名同Category<ul>
+<li>类名+Delegate</li>
+<li>使用vsCode，新建Object-C Fie选File Type为Protocol会自动创建</li>
+</ul>
+</li>
+<li>类似于java里的接口和抽象类<ul>
+<li>只有@requires和接口一样</li>
+<li>@requires和@optional都有时和抽象类一样</li>
+</ul>
+</li>
+<li>@required修饰的方法必须实现，@optional修饰的方法可选实现</li>
+<li>可单独定义.h或者定义在其他类的.h文件中，一般将协议制定在委托方的.h文件中</li>
+<li>协议就是定义了一组方法，然后让其他类去实现</li>
+<li>一个协议可以扩展自另一个协议</li>
+<li>一个类可以同时实现多个协议，中间通过逗号分隔，协议通过&lt;&gt;进行实现</li>
+<li>协议的实现只能在类的声明上，不能放到类的实现上</li>
+<li>协议中不能定义属性、成员变量等，只能定义方法</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><h4 id="继承和Category的区别"><a href="#继承和Category的区别" class="headerlink" title="继承和Category的区别"></a>继承和Category的区别</h4><ul>
+<li>都是给一个类进行扩展</li>
+<li>类别是对方法的扩展，不能添加成员变量。继承可以在原来父类的成员变量的基础上，添加新的成员变量</li>
+<li>类别只能添加新的方法，不能修改和删除原来的方法。继承可以增加、修改和删除方法</li>
+<li>类别不能对原有的方法进行重载。继承可以通过使用super对原来方法进行重载</li>
+<li>类别可以被继承，如果一个父类中定义了类别，那么其子类中也会继承此类别</li>
+</ul>
+<h4 id="Category和Extension区别"><a href="#Category和Extension区别" class="headerlink" title="Category和Extension区别"></a>Category和Extension区别</h4><ul>
+<li>形式上看：extension 是匿名的category</li>
+<li>extension中声明的方法需要在implementation中实现，而category不做强制要求</li>
+<li>extension 可以添加属性、成员变量，而category不可以</li>
+</ul>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针是一个变量即指针变量，存储变量内存地址的变量，其指向的值是另一个变量，指针地址指向的内存位置<br>OC中的类最终都会转化成一个结构体而存在，而类的实例对象其实是一个指向该结构体的指针<br>OC系统类型的变量、自定义类型的变量都是指针<br>指针相当于间接访问  </p>
+<blockquote>
+<p>操作系统会为每个内存单元进行编号，这个编号就是内存单元的地址，指针也就是指这些单元的内存地址<br>变量的内存地址就是该变量的指针，而用于保存内存地址（指针）的变量就是指针变量  </p>
+</blockquote>
+<h3 id="先说结论"><a href="#先说结论" class="headerlink" title="先说结论"></a>先说结论</h3><p><strong>OC语言中除了基本数据类型之外的变量类型都为指针类型，对象是通过指针对其进行操作的</strong><br>这句话有几个含义</p>
+<ul>
+<li>基础类型不用*声明，但却有真实的引用，可以用&amp;获取引用，声明的变量就是真实的地址(基础类型也保存在栈上)，赋值时改变的也是真实的值</li>
+<li>指针变量指向其他变量(可以是基本类型，结构体，甚至其他指针变量)，但本身并不是真实的地址<ul>
+<li>所以只能用-&gt;来访问真实地址的属性</li>
+<li>如果用<em>解引用到的是真实地址，可以用.去直接访问(</em>obj)._property</li>
+</ul>
+</li>
+<li>指针 *<ul>
+<li>取值运算符，代表读取星号后边这个地址指向的值</li>
+<li>声明时加*表示声明了一个指针变量</li>
+<li>使用时加<em>表示解引用，取</em>后面指针变量指向的内存地址(真正的值)</li>
+<li>指针访问用箭头符号-&gt;</li>
+</ul>
+</li>
+<li>引用 &amp;<ul>
+<li>取地址运算符，代表读取&amp;后边这个值的指针地址</li>
+<li>声明时加&amp;表示创建一个变量的别名</li>
+<li>使用时不用加&amp;，直接使用声明的引用名</li>
+<li>如果在使用加了&amp;表示取这个变量的指针地址</li>
+</ul>
+</li>
+<li>区别<ul>
+<li>有const指针，没有const引用</li>
+<li>指针可以有很多级，而引用只有一级（比如int **p是合法的，而int &amp;&amp;b是不合法的）</li>
+<li>指针可以为空，而引用不能为空，定义的时候必须对其进行初始化</li>
+<li>指针的值可以在初始化之后改变，而引用在初始化之后就不能变了</li>
+<li>sizeof(引用)得到的是引用所表示的变量的大小，而sizeof(指针)得到的是指针本身的大小</li>
+</ul>
+</li>
+<li>用处<ul>
+<li>OC方法的形参变量都是对实参变量进行了拷贝（拷贝基本类型变量的值，或者拷贝指针变量存储的地址），如果方法内部想改变外部的变量那么只要传递外部变量的地址即可</li>
+</ul>
+</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h2 id="struct结构体"><a href="#struct结构体" class="headerlink" title="struct结构体"></a>struct结构体</h2><p>结构体自定义了一种数据类型<br>结构体名字和结构体变量必须有其一，也可以两者都存在<br>结构体变量可以声明多个<br>结构体成员访问和赋值使用点语法<br>结构体指针成员访问和赋值使用箭头语法<br>只有使用结构体名字声明可以用花括号一次性做初始化  </p>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">struct 结构体名字 &#123;</div><div class="line">    类型 名字;</div><div class="line">    类型 名字;</div><div class="line">    类型 名字;</div><div class="line">    ... </div><div class="line">&#125; 结构体变量, ...;</div><div class="line"></div><div class="line">// 使用typedef可以创建新类型，可以使用structExt定义新的结构体变量</div><div class="line">typedef struct &#123;</div><div class="line">    char *name;</div><div class="line">    int tag;</div><div class="line">&#125; 结构体变量;</div></pre></td></tr></table></figure>
+<h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><ol>
+<li><p>给实例对象发送消息的过程(调用对象方法)<br>根据对象的isA指针去该对象的类方法中查找，如果找到了就执行<br>如果没有找到，就去该类的父类类对象中查找<br>如果没有找到就一直往上找，直到跟类（NSObject）<br>如果都没有找到就报错</p>
+</li>
+<li><p>给类对象发送消息(调用类方法)<br>根据类对象的isA指针去元对象中查找，如果找到了就执行<br>如果没有找到就去父元对象中查找<br>如果如果没有找到就一直往上查找，直到根类（NSOject）<br>如果都没有找到就报错</p>
+</li>
+</ol>
+<h2 id="其他定义"><a href="#其他定义" class="headerlink" title="其他定义"></a>其他定义</h2><h3 id="代码块Block"><a href="#代码块Block" class="headerlink" title="代码块Block"></a>代码块Block</h3><ul>
+<li>实质是为了给函数传一个回调函数</li>
+<li>Block就是一个函数体（匿名函数）</li>
+<li>Block类型定义<ul>
+<li>使用typedef定义</li>
+<li>返回值类型(^ 变量名)(参数列表)</li>
+</ul>
+</li>
+<li>Block的实现<ul>
+<li>^(参数列表){操作主体}</li>
+</ul>
+</li>
+<li>Block中可以读取块外面定义的变量但是不能修改，如果要修改那么这个变量必须声明_block修饰</li>
+</ul>
+<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><p>宏作用在预编译时期，其真正的效果就是代码替换，而且是直接替换</p>
+<ul>
+<li>语法 <code>#define, 宏的名字, 主体</code></li>
+<li>#运算符被用于利用宏参数创建字符串</li>
+<li>##宏定义中的连接运算符</li>
+<li>类对象宏</li>
+<li>类函数宏</li>
+<li>…、__VA<em>ARGS\</em>_ 定义可变参数宏的，放在参数的最后</li>
+</ul>
+<h3 id="SEL类型"><a href="#SEL类型" class="headerlink" title="SEL类型"></a>SEL类型</h3><ul>
+<li>SEL类型的定义<code>typeof struct objc_selector *SEL</code></li>
+<li>SEL类型代表着方法的签名，在类对象的方法列表中存储着该签名与方法代码的对应关系</li>
+<li>每个类的方法列表都存储在类对象中</li>
+<li>每个方法都有一个与之对应的SEL类型的对象</li>
+<li>根据一个SEL对象就可以找到方法的地址，进而调用方法</li>
+</ul>
+<blockquote>
+<p>在方法的查找过程中会有缓存，第一次找的时候是一个一个的找，非常耗性能，之后再用到的时候就直接使用</p>
+</blockquote>
+<h4 id="获取SEL类型"><a href="#获取SEL类型" class="headerlink" title="获取SEL类型"></a>获取SEL类型</h4><ul>
+<li>编译时，通过编译器指令\@selector来获取<ul>
+<li><code>SEL aSelector = @selector(methodName);</code></li>
+</ul>
+</li>
+<li>运行时，通过字符串来获取一个方法名NSSelectorFromString<ul>
+<li><code>SEL aSelector = NSSelectorFromString(@&quot;methodName&quot;);</code></li>
+</ul>
+</li>
+<li>将SEL对象转为NSString对象<ul>
+<li><code>NSString *str = NSStringFromSelector(@selector(methodName));</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="SEL的使用"><a href="#SEL的使用" class="headerlink" title="SEL的使用"></a>SEL的使用</h4><ul>
+<li>检验对象是否实现了某个方法<ul>
+<li><code>- (BOOL) respondsToSelector:(SEL)selector;</code> 检查实例方法</li>
+<li><code>+ (BOOL) instancesRespondToSelector:(SEL)aSelector;</code> 检查静态方法</li>
+</ul>
+</li>
+<li>让对象执行某个方法<ul>
+<li><code>- (id) performSelector:(SEL)aSelector;</code></li>
+<li><code>- (id) performSelector:(SEL)aSelector withObject:(id)object;</code></li>
+<li><code>- (id) performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>OC中点相当于调用set和get方法，OC中的方法调用也不能用点，实例属性没有写get/set方法用箭头(-&gt;)调用(要有访问权限)</li>
+<li>类本身也是一个对象，是class类型的对象，简称类对象</li>
+<li>当程序启动时，就会加载项目中所有的类和分类，而且加载后会调用每个类和分类的+load方法，只会调用一次</li>
+<li>当第一次使用某个类时，就会调用当前类的+initialize方法</li>
+<li>先加载父类，再加载子类（先调用父类的+load方法，再调用子类的+load方法，最后调用分类的+load方法），先初始化父类，再初始化子类（先调用父类的+initialize方法，再调用子类的+initialize方法）<ul>
+<li>在初始化的时候，如果在分类中重写了+initialize方法，则会覆盖掉父类的</li>
+<li>重写+initialize方法可以监听类的使用情况</li>
+</ul>
+</li>
+<li>respondsToSelector:@selector(方法名) 判断当前对象中是否定义了一个方法<ul>
+<li>有参数的方法名要加上引号</li>
+</ul>
+</li>
+<li>在.h文件中如果使用了另一个文件的类或协议我们可以通过@class或者@protocol进行声明，而不必导入这个文件，这样可以提高编译效率<ul>
+<li>但是在.m文件中则必须导入对应的类声明文件或协议文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="import和-include的区别"><a href="#import和-include的区别" class="headerlink" title="#import和#include的区别"></a>#import和#include的区别</h3><blockquote>
+<p>当我们在代码中使用两次#include的时候会报错：因为#include相当于拷贝头文件中的声明内容，所以会报重复定义的错误<br>但是使用两次#import的话，不会报错，所以他可以解决重复导入的问题，他会做一次判断，如果已经导入一次就不导入了 </p>
+</blockquote>
+<h3 id="class的作用"><a href="#class的作用" class="headerlink" title="@class的作用"></a>@class的作用</h3><ul>
+<li>@class解决两个类相互引入的问题，相互引用.h编译通不过</li>
+<li>在.h文件中使用@class引入类，不用import引入，在.h文件中不会使用其类的属性和方法</li>
+<li>在.m文件中引入@class类声明的.h文件，使用其类的属性和方法</li>
+<li>@class不会将类的.h拷贝过来，只是告诉编译器这个类有定义</li>
+</ul>
+<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><ul>
+<li>#pragma 标记后面的方法都是协议中的方法</li>
+<li>#warning 标记此处代码有一个警告，Xcode会在此处显示黄色标记</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.jianshu.com/p/d9759dd1fb2e" target="_blank" rel="noopener">https://www.jianshu.com/p/d9759dd1fb2e</a><br><a href="https://www.devtalking.com/articles/you-should-to-know-property/" target="_blank" rel="noopener">https://www.devtalking.com/articles/you-should-to-know-property/</a><br><a href="https://blog.csdn.net/csdn_howe/article/details/53393980" target="_blank" rel="noopener">https://blog.csdn.net/csdn_howe/article/details/53393980</a><br><a href="https://my.oschina.net/cobish/blog/356550" target="_blank" rel="noopener">https://my.oschina.net/cobish/blog/356550</a></p>
+<p><a href="https://tech.meituan.com/DiveIntoCategory.html" target="_blank" rel="noopener">https://tech.meituan.com/DiveIntoCategory.html</a></p>
+<h3 id="指针-1"><a href="#指针-1" class="headerlink" title="指针"></a>指针</h3><p><a href="http://skx926.me/2017/03/03/pointer-and-reference/" target="_blank" rel="noopener">http://skx926.me/2017/03/03/pointer-and-reference/</a><br>    <a href="https://github.com/skx926/skx926.github.io/blob/master/2017/03/03/pointer-and-reference/index.html" target="_blank" rel="noopener">https://github.com/skx926/skx926.github.io/blob/master/2017/03/03/pointer-and-reference/index.html</a><br><a href="https://blog.csdn.net/senwin2009/article/details/48439361" target="_blank" rel="noopener">https://blog.csdn.net/senwin2009/article/details/48439361</a></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.jianshu.com/p/eba015a543a5" target="_blank" rel="noopener">https://www.jianshu.com/p/eba015a543a5</a></p>
+<h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><p><a href="https://blog.csdn.net/pengpengpeng85/article/details/46984407" target="_blank" rel="noopener">https://blog.csdn.net/pengpengpeng85/article/details/46984407</a></p>
+<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><p><a href="https://www.jianshu.com/p/bc9792f86850" target="_blank" rel="noopener">https://www.jianshu.com/p/bc9792f86850</a><br><a href="https://www.cnblogs.com/dsxniubility/p/4757760.html" target="_blank" rel="noopener">https://www.cnblogs.com/dsxniubility/p/4757760.html</a></p>
+<h3 id="selector"><a href="#selector" class="headerlink" title="selector"></a>selector</h3><p><a href="https://blog.csdn.net/dkq972958298/article/details/69942077" target="_blank" rel="noopener">https://blog.csdn.net/dkq972958298/article/details/69942077</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IOS/" rel="tag"># IOS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/15/JavaScript/再谈js继承/" rel="next" title="再谈Js继承">
+                <i class="fa fa-chevron-left"></i> 再谈Js继承
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/27/读书总结/books-疯狂Android讲义/" rel="prev" title="疯狂Android讲义">
+                疯狂Android讲义 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符"><span class="nav-number">1.2.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型"><span class="nav-number">1.3.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限定词"><span class="nav-number">1.4.</span> <span class="nav-text">限定词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他类型"><span class="nav-number">1.5.</span> <span class="nav-text">其他类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展名"><span class="nav-number">1.6.</span> <span class="nav-text">扩展名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#h文件"><span class="nav-number">1.6.1.</span> <span class="nav-text">.h文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m文件"><span class="nav-number">1.6.2.</span> <span class="nav-text">.m文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例变量"><span class="nav-number">2.1.</span> <span class="nav-text">实例变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#声明方式"><span class="nav-number">2.1.1.</span> <span class="nav-text">声明方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">2.1.2.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#property"><span class="nav-number">2.1.3.</span> <span class="nav-text">@property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synthesize"><span class="nav-number">2.1.4.</span> <span class="nav-text">@synthesize</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态变量"><span class="nav-number">2.2.</span> <span class="nav-text">静态变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量"><span class="nav-number">2.3.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">2.4.</span> <span class="nav-text">常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">3.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">3.1.</span> <span class="nav-text">继承(:)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Category-类别"><span class="nav-number">3.2.</span> <span class="nav-text">Category(类别)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法-2"><span class="nav-number">3.2.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extension-扩展"><span class="nav-number">3.3.</span> <span class="nav-text">Extension(扩展)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法-3"><span class="nav-number">3.3.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Protocol-协议"><span class="nav-number">3.4.</span> <span class="nav-text">Protocol(协议)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法-4"><span class="nav-number">3.4.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">3.5.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#继承和Category的区别"><span class="nav-number">3.5.1.</span> <span class="nav-text">继承和Category的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Category和Extension区别"><span class="nav-number">3.5.2.</span> <span class="nav-text">Category和Extension区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针"><span class="nav-number">4.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先说结论"><span class="nav-number">4.1.</span> <span class="nav-text">先说结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct结构体"><span class="nav-number">6.</span> <span class="nav-text">struct结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-5"><span class="nav-number">6.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法调用"><span class="nav-number">7.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他定义"><span class="nav-number">8.</span> <span class="nav-text">其他定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块Block"><span class="nav-number">8.1.</span> <span class="nav-text">代码块Block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏"><span class="nav-number">8.2.</span> <span class="nav-text">宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEL类型"><span class="nav-number">8.3.</span> <span class="nav-text">SEL类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取SEL类型"><span class="nav-number">8.3.1.</span> <span class="nav-text">获取SEL类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SEL的使用"><span class="nav-number">8.3.2.</span> <span class="nav-text">SEL的使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">9.</span> <span class="nav-text">知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#import和-include的区别"><span class="nav-number">9.1.</span> <span class="nav-text">#import和#include的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class的作用"><span class="nav-number">9.2.</span> <span class="nav-text">@class的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标记"><span class="nav-number">9.3.</span> <span class="nav-text">标记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">10.</span> <span class="nav-text">参考资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指针-1"><span class="nav-number">10.1.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">10.2.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存文件"><span class="nav-number">10.3.</span> <span class="nav-text">保存文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报错"><span class="nav-number">10.4.</span> <span class="nav-text">报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selector"><span class="nav-number">10.5.</span> <span class="nav-text">selector</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

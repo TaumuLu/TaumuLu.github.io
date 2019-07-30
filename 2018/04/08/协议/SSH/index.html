@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="协议," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval=60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
+<meta name="keywords" content="协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH">
+<meta property="og:url" content="http://yoursite.com/2018/04/08/协议/SSH/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval=60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.512Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSH">
+<meta name="twitter:description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval=60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/08/协议/SSH/"/>
+
+
+
+
+
+  <title> SSH | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/协议/SSH/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SSH
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T21:36:58+08:00">
+                2018-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>SSH是一种网络协议，用于计算机之间的加密登录</p>
+<h2 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h2><p>生成密钥对，默认RSA<br><code>ssh-keygen</code></p>
+<h3 id="密钥类型"><a href="#密钥类型" class="headerlink" title="密钥类型"></a>密钥类型</h3><ul>
+<li>RSA</li>
+<li>RSA1</li>
+<li>DSA</li>
+<li>ECDSA</li>
+<li>ED25519</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><ul>
+<li>ssh <ul>
+<li>host</li>
+<li>user@host</li>
+<li>-p port</li>
+<li>-i id_rsa</li>
+<li>-o ServerAliveInterval=60 </li>
+</ul>
+</li>
+<li>ssh-copy-id user@host</li>
+</ul>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><h3 id="口令登录"><a href="#口令登录" class="headerlink" title="口令登录"></a>口令登录</h3><p>登录前提示，登录后保存在文件$HOME/.ssh/known_hosts<br>系统所有用户可信赖的远程主机的公钥有保存在/etc/ssh/ssh_known_hosts</p>
+<h3 id="公钥登录"><a href="#公钥登录" class="headerlink" title="公钥登录"></a>公钥登录</h3><ul>
+<li>生成公钥 <ul>
+<li>ssh-keygen</li>
+<li>id_rsa.pub&amp;id_rsa</li>
+</ul>
+</li>
+<li>ssh-copy-id user@host</li>
+<li><p>/etc/ssh/sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RSAAuthentication yes</div><div class="line">PubkeyAuthentication yes</div><div class="line">AuthorizedKeysFile .ssh/authorized_keys</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启远程主机ssh服务</p>
+<ul>
+<li>ubuntu <code>service ssh restart</code></li>
+<li>debian <code>/etc/init.d/ssh restart</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h3><p>远程主机保存用户的公钥 $HOME/.ssh/authorized_keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
+<h2 id="ssh"><a href="#ssh" class="headerlink" title=".ssh"></a>.ssh</h2><ul>
+<li>known_hosts</li>
+<li>authorized_keys</li>
+<li>config</li>
+</ul>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Host [Host]  // 配置名</div><div class="line">  HostName [HostName]  // 服务器ip</div><div class="line">  Port [22]  // 端口</div><div class="line">  User [currentUser]  // 用户</div><div class="line">  ProxyCommand [none]  // 代理命令</div><div class="line">  IdentityFile [~/.ssh/id_rsa]  // 密钥文件</div><div class="line">  PasswordAuthentication [no]  // 用户密码</div><div class="line"></div><div class="line">ServerAliveInterval 60  // 每隔60秒发送一次请求给server，然后server响应，从而保持连接</div><div class="line">ServerAliveCountMax 3  // 发出请求后，服务器端没有响应得次数达到3，就自动断开连接</div><div class="line">ConnectTimeout=3  // 连接时超时时间</div><div class="line">ConnectionAttempts=5  // 连接失败后重试次数</div><div class="line">TCPKeepAlive no  // 保持tcp连接</div><div class="line">StrictHostKeyChecking no // 是否记录密匙到known_hosts</div></pre></td></tr></table></figure>
+<h4 id="ProxyCommand"><a href="#ProxyCommand" class="headerlink" title="ProxyCommand"></a>ProxyCommand</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh user@host -W %h:%p</div><div class="line">ssh user@host -W $(<span class="built_in">echo</span> %h|awk -F <span class="string">'test'</span> <span class="string">'&#123;print $2&#125;'</span>):%p 2&gt; /dev/null</div></pre></td></tr></table></figure>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Host gateway</div><div class="line">    HostName 192.168.0.1</div><div class="line">    Port 8888</div><div class="line">    User root</div><div class="line">    ProxyCommand none</div><div class="line">    IdentityFile ~/.ssh/id_rsa</div><div class="line">    PasswordAuthentication no</div><div class="line"></div><div class="line">Host product</div><div class="line">    HostName 192.168.0.2</div><div class="line">    Port 8888</div><div class="line">    User root</div><div class="line">    IdentityFile ~/.ssh/id_rsa_gateway</div><div class="line">    ProxyCommand ssh -q -W gateway %h:%p</div><div class="line">    // ProxyCommand ssh gateway nc %h %p</div><div class="line">    PasswordAuthentication no</div><div class="line"></div><div class="line"></div><div class="line">ssh xzc@180.97.33.108 -p 998 &apos;echo &quot;select * from user;&quot; | mysql xzc_db -uxzc -pxzcpwd&apos; &gt; user.txt</div><div class="line">ssh hisense-paas1 &apos;ssh hisense-test-web &quot;cat test.txt&quot;&apos; &gt; test.txt</div></pre></td></tr></table></figure>
+<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh -CfNg -L 7072:hisense-test-web:6379 hisense-paas1</div><div class="line">// ssh -L &lt;<span class="built_in">local</span> port&gt;:&lt;remote host&gt;:&lt;remote port&gt; &lt;SSH hostname&gt;</div></pre></td></tr></table></figure>
+<h3 id="ssh免密登录"><a href="#ssh免密登录" class="headerlink" title="ssh免密登录"></a>ssh免密登录</h3><ul>
+<li><a href="https://wiki.centos.org/HowTos/Network/SecuringSSH" target="_blank" rel="noopener">HowTos/Network/SecuringSSH - CentOS Wiki</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host &apos;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&apos; &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<h3 id="ssh相关命令"><a href="#ssh相关命令" class="headerlink" title="ssh相关命令"></a>ssh相关命令</h3><ul>
+<li>ssh -vvv</li>
+<li>/usr/sbin/sshd -d -p 2222 (在2222端口启动一个带debug输出的sshd)</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/协议/" rel="tag"># 协议</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/05/Service/Docker/" rel="next" title="Docker">
+                <i class="fa fa-chevron-left"></i> Docker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/10/Command/npm/" rel="prev" title="npm">
+                npm <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH"><span class="nav-number">1.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密钥"><span class="nav-number">2.</span> <span class="nav-text">密钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#密钥类型"><span class="nav-number">2.1.</span> <span class="nav-text">密钥类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录"><span class="nav-number">4.</span> <span class="nav-text">登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#口令登录"><span class="nav-number">4.1.</span> <span class="nav-text">口令登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公钥登录"><span class="nav-number">4.2.</span> <span class="nav-text">公钥登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#authorized-keys"><span class="nav-number">4.3.</span> <span class="nav-text">authorized_keys</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh"><span class="nav-number">5.</span> <span class="nav-text">.ssh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config"><span class="nav-number">5.1.</span> <span class="nav-text">config</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ProxyCommand"><span class="nav-number">5.1.1.</span> <span class="nav-text">ProxyCommand</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-number">5.1.2.</span> <span class="nav-text">Example</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Command"><span class="nav-number">6.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh免密登录"><span class="nav-number">6.1.</span> <span class="nav-text">ssh免密登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh相关命令"><span class="nav-number">6.2.</span> <span class="nav-text">ssh相关命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

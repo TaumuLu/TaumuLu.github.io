@@ -1,0 +1,948 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Node," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="基础全局对象 global console log() error() trace()process argv stdout write()    stdin resume()   stderr nextTick(callback)    NodeJS有三大核心 CallBack回调 Event事件 Stream流  慕课网学习    一、关注        1、nodejs.org看看nodej">
+<meta name="keywords" content="Node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node学习">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/Node/Node学习/index.html">
+<meta property="og:site_name" content="Taumu的博客">
+<meta property="og:description" content="基础全局对象 global console log() error() trace()process argv stdout write()    stdin resume()   stderr nextTick(callback)    NodeJS有三大核心 CallBack回调 Event事件 Stream流  慕课网学习    一、关注        1、nodejs.org看看nodej">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T05:17:02.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node学习">
+<meta name="twitter:description" content="基础全局对象 global console log() error() trace()process argv stdout write()    stdin resume()   stderr nextTick(callback)    NodeJS有三大核心 CallBack回调 Event事件 Stream流  慕课网学习    一、关注        1、nodejs.org看看nodej">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/27/Node/Node学习/"/>
+
+
+
+
+
+  <title> Node学习 | Taumu的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Taumu的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不以物喜，不以己悲</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/Node/Node学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Node学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T16:46:55+08:00">
+                2017-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="全局对象-global"><a href="#全局对象-global" class="headerlink" title="全局对象 global"></a>全局对象 global</h3><ul>
+<li>console<ul>
+<li>log()</li>
+<li>error()</li>
+<li>trace()<br>process</li>
+<li>argv</li>
+<li>stdout<ul>
+<li>write() </li>
+</ul>
+</li>
+<li>stdin<ul>
+<li>resume()</li>
+</ul>
+</li>
+<li>stderr</li>
+<li>nextTick(callback)</li>
+</ul>
+</li>
+</ul>
+<h3 id="NodeJS有三大核心"><a href="#NodeJS有三大核心" class="headerlink" title="NodeJS有三大核心"></a>NodeJS有三大核心</h3><ul>
+<li>CallBack回调</li>
+<li>Event事件</li>
+<li>Stream流</li>
+</ul>
+<p>慕课网学习<br>    一、关注<br>        1、nodejs.org看看nodejs的版本升级，新特性的加入，重要bug的修复等<br>        2、www.npmjs.com模块社区，看他人源代码，省力<br>        3、github.com大量的项目和 源码<br>        4、stackoverflow.com技术解答社区以及查询相关资源，环境配置，异常均可找到答案<br>    二、安装事项<br>        1、Node.js版本<br>            偶数位为稳定版，奇数位为开发版<br>        2、Windows下安装，Path下环境变量<br>    三、Node.js<br>        1、全局变量process<br>    四、模块与包管理工具<br>        Commonjs<br>            一套规范<br>            模块独立但不孤立，三个部分定义、标识、引用<br>        1、依赖关系<br>        2、命名空间<br>        3、代码组织<br>        Nodejs通过npm来引入管理模块/包<br>        模块 {<br>            核心模块<br>            文件模块<br>            第三方模块<br>        }<br>        Nodejs模块对象 {<br>            require对象<br>                从外部获取模块的接口，即所获取模块的exports对象<br>            exports对象<br>                公开接口<br>                module.exports     真正的接口<br>                exports            辅助工具，最终返回给调用的是module.exports而不是exports<br>            exports 是指向的 module.exports 的引用<br>            module.exports 初始值为一个空对象 {}，所以 exports 初始值也是 {}<br>            require() 返回的是 module.exports 而不是 exports</p>
+<pre><code>        exports和module.exports的关系是:exports 起初是一個指向 module.exports 对象的变量
+    }
+五、Nodejs API
+    URI =&gt; URL
+    URL {
+        url.pase()
+        url.format()
+        url.resolve()
+    }
+    QueryString {
+        querystring.stringify()
+        querystring.parse()
+        querystring.escape()
+        querystring.unescape()
+    }
+    HTTP {
+        chrome://net-internals/#dns
+        浏览器自身DNS缓存
+        系统自身DNS缓存
+        读取本地HOST文件
+            宽带运营商查看本地缓存
+            运营商服务器发起一个迭代的DNS解析请求
+        浏览器发起一个DNS的系统调用
+        浏览器获得域名对应的IP地址后发起HTTP三次握手
+
+        请求、响应 {
+            http头和正文信息
+        }
+        模块 {
+
+        }
+    }
+    Events {
+        EventEmitter {
+            addListener()
+            removeListener()
+                removeAllListeners()
+            setMaxListeners()
+            emit()
+            listeners
+                EventEmitter.listenerCount()
+        }
+    }
+</code></pre><p>网上学习<br>    一、Node.js基础<br>        1、Node.js是<br>            Nodejs就是一个解析器<br>            运行在浏览器中的JS的用途是操作DOM，浏览器就提供了document之类的内置对象<br>            运行在NodeJS中的JS的用途是操作磁盘文件或搭建HTTP服务器，NodeJS就相应提供了fs、http等内置对象<br>            NodeJS的目的是为了实现高性能Web服务器，事件机制和异步IO模型<br>        2、模块<br>            编写每个模块时，都有require、exports、module三个预先定义好的变量可供使用<br>            require<br>                在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。<br>                模块名可使用相对路径（以./开头）或绝对路径（以/或C:之类的盘符开头），模块名中的.js扩展名可以省略<br>            exports<br>                当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象<br>            module<br>                访问到当前模块的一些相关信息，最多的用途是替换当前模块的导出对象。如模块导出对象默认是一个普通对象，如果想改成一个函数的话，可以使用<br>            模块初始化<br>                一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。<br>            主模块<br>                通过命令行参数传递给NodeJS以启动程序的模块为主模块。主模块负责调度组成整个程序的其它模块完成工作<br>        3、二进制模块<br>            NodeJS支持使用C/C++编写二进制模块，编译好的二进制模块除了文件扩展名是.node外，和JS模块的使用方式相同<br>    二、代码的组织和部署<br>        1、模块路径解析规则<br>            之前两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，牵一发而动全身。因此，require函数支持第三种形式的路径，写法类似于foo/bar，并依次按照以下规则解析路径，直到找到模块位置<br>                内置模块<br>                node_modules目录<br>                NODE_PATH环境变量<br>        2、包<br>            由多个子模块组成的大模块为包，所有子模块放在同一个目录里<br>            index.js<br>                当模块的文件名是index.js，加载模块时可以使用模块所在目录的路径代替模块文件路径<br>            package.json<br>                自定义入口模块的文件名和存放位置，就需要在包目录下包含一个package.json文件，并在其中指定入口模块的路径。<br>        3、命令程序<br>            用NodeJS编写，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。<br>            Windows<br>                靠.cmd文件来解决问题。假设node-echo.js存放在C:\Users\user\bin目录，并且该目录已经添加到PATH环境变量里了。接下来需要在该目录下新建一个名为node-echo.cmd的文件，文件内容如下：<br>                @node “C:\User\user\bin\node-echo.js” %*<br>                这样处理后，我们就可以在任何目录下使用node-echo命令了。<br>        4、工程目录<br>            编写一个命令行程序，一般我们会同时提供命令行模式和API模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。<br>        5、npm<br>            npm是随同NodeJS一起安装的包管理工具，常见的使用场景有以下几种<br>                允许用户从npm服务器下载别人编写的三方包到本地使用<br>                允许用户从npm服务器下载并安装别人编写的命令行程序到本地使用<br>                允许用户将自己编写的包或命令行程序上传到npm服务器供别人使用<br>            下载三方包<br>                npm install package<br>                下载好之后，包就放在了工程目录下的node_modules目录中，在代码中只需要通过require(‘package’)的方式就好，无需指定三方包路径。<br>                    想要下载指定版本的话，可以在包名后边加上@<version><br>                如果使用到的三方包比较多，在终端下一个包一条命令地安装太繁琐。因此npm对package.json的字段做了扩展，允许在其中申明三方包依赖。<br>                npm会根据包中申明的三方包依赖自动下载进一步依赖的三方包<br>            安装命令行程序<br>                从npm服务上下载安装一个命令行程序的方法与三方包类似。只要package自己配置好了相关的package.json字段，只需要使用命令安装程序。<br>                参数g表示全局安装，npm会自动创建好Linux系统下需要的软链文件或Windows系统下需要的.cmd文件。<br>                Windows默认安装位置</version></p>
+<pre><code>                - %APPDATA%\npm\
+                    - node_modules\
+                        + package\
+                    ...
+                    node-echo.cmd
+        发布代码
+        版本号
+            使用npm下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码
+                语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。
+                    如果只是修复bug，需要更新Z位。
+                    如果是新增了功能，但是向下兼容，需要更新Y位。
+                    如果有大变动，向下不兼容，需要更新X位。
+            版本号有了这个保证后，在申明三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。NPM支持的所有版本号范围指定方式可以查看官方文档。
+        灵机一点
+三、文件操作
+</code></pre><p>Node.js {<br>    基本模块 {<br>        global<br>            唯一全局对象<br>        process {<br>            代表当前Node.js进程<br>            process.nextTick()<br>                下一事件响应中执行<br>        }<br>    }<br>    内置模块 {<br>        fs {<br>            文件系统模块，负责读写文件，可同步异步<br>            读取文件 {<br>                readFile() {<br>                    异步执行<br>                    err 正常读取时返回null，错误时返回错误对象<br>                    data 正常读取时返回string，错误时返回undefined<br>                }<br>                readFileSync() {<br>                    同步执行<br>                    直接返回回调函数的data<br>                }<br>            }<br>            写入文件 {<br>                writeFile() {<br>                    同步执行<br>                    回调函数只返回err参数<br>                }<br>                writeFileSync()<br>            }<br>            stat() {<br>                异步执行<br>                返回stat对象，获取文件详细信息<br>            }<br>            statSync() {<br>                同步执行<br>            }<br>            同步或是异步 {<br>                由于Node环境执行的JavaScript代码是服务器端代码，所以，绝大部分需要在服务器运行期反复执行业务逻辑的代码，必须使用异步代码，否则，同步代码在执行时期，服务器将停止响应，因为JavaScript只有一个执行线程。</p>
+<pre><code>            服务器启动时如果需要读取配置文件，或者结束时需要写入到状态文件时，可以使用同步代码，因为这些代码只在启动和结束时执行一次，不影响服务器正常运行时的异步执行。
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>核心模块 {<br>    util {<br>        inherits(constructor, superConstructor)<br>        inspect(object, [showHidden], [depth], [colors])<br>    }<br>    events {<br>        EventEmitter {<br>            on(event, listener)<br>            once(event, listener)<br>            emit(event, [arg1], [arg2], […])<br>            removeListener(event, listener)<br>            removeAllListeners([event])</p>
+<pre><code>        事件 {
+            error
+        }
+        继承者 {
+            fs,net,http
+        }
+    }
+}
+fs {
+    readFile(filename, [encoding], [callback(err,data)])
+    readFileSync(filename, [encoding])
+
+    writeFile(filename, data, [encoding], [callback(err)])
+    writeFileSync(filename, data, [encoding])
+
+    open(path, flags, [mode=0666], [callback(err, fd)])
+    openSync(path, flags, [mode])
+
+    unlink(path, [callback(err)])
+    unlinkSync(path)
+
+    mkdir(path, [mode], [callback(err)])
+    mkdirSync(path, [mode])
+
+    rmdir(path, [callback(err)])
+    rmdirSync(path)
+
+    readdir(path, [callback(err, files)])
+    readdirSync(path)
+
+    realpath(path, [callback(err, resolvedPath)])
+    realpathSync(path)
+
+    write(fd, buffer, offset, length, position, [callback(err, bytesWritten, buffer)])
+    writeSync(fd, buffer, offset, length, position)
+
+    read(fd, buffer, offset, length, position, [callback(err, bytesRead, buffer)])
+    readSync(fd, buffer, offset, length, position)
+
+    close(fd, [callback(err)])
+    closeSync(fd)
+
+    补充 {
+        同步方式操作的文件内容会以函数返回值的形式返回, 如果有错误发生, fs将会抛出异常, 需要使用  try和 catch捕捉并处理异常
+
+        [encoding] {
+            如果指定了encoding, data是一个解析后的字符串, 否则 data将会是以 Buffer形式表示的二进制数据
+        }
+        [flags] {
+            r, r+, w, w+, a, a+
+        }
+    }
+}
+http {
+    Server {
+        事件 {
+            request(req, res) {
+                req =&gt; http.ServerRequest
+                res =&gt; http.ServerResponse
+            }
+            connection(socket) {
+                socket =&gt; net.socket
+            }
+            close
+            checkContinue
+            upgrade
+            clientError
+        }
+    }
+    createServer([requestListener])
+    http.ServerRequest {
+        complete
+        httpVersion
+        method
+        url
+        headers
+        trailers
+        connection   当前 HTTP连接套接字, 为 net.Socket的实例
+        socket       connection属性的别名
+        client
+
+        事件 {
+            data(chunk)
+                如果该事件没有被监听, 那么请求体将会被抛弃, 该事件可能会被调用多次
+            end
+            close
+                用户当前请求结束时被触发, 不同于 end, 如果用户强制终止了传输, 也还是调用 close
+        }
+    }
+    http.ServerResponse {
+        writeHead(statusCode, [headers])
+            headers函数在一个请求内最多只能调用一次, 不调用会自动生成一个响应头
+        write(data, [encoding])
+            data是字符串, 那么需要指定 encoding来说明它的编码方式, 默认utf-8
+            可以被多次调用
+        end([data], [encoding], [callback])
+            该函数必须被调用一次, 如果不调用该函数，客户端将永远处于等待状态
+    }
+
+    request(options, callback) {
+        options {
+            host
+            port = 80
+            method = GET
+            path = &apos;/&apos;
+            headers
+        }
+        callback =&gt; http.ClientResponse
+
+        return http.ClientRequest实例
+    }
+    get(options, callback) {
+        区别在于 http.get自动将请求方法设为了 GET请求, 同时不需要手动调用 req.end()
+    }
+    http.ClientRequest {
+        write()
+        end()
+            所有写结束以后必须调用 end函数以通知服务器, 否则请求无效
+        abort()
+        setTimeout(timeout, [callback])
+        setNoDelay([noDelay])
+        setSocketKeepAlive([enable], [initialDelay])
+
+        事件 {
+            response
+        }
+    }
+    http.ClientResponse {
+        statusCode
+        httpVersion
+        headers
+        trailers
+
+        setEncoding([encoding])
+            data事件被触发时, 数据将会以 encoding编码, 默认是 null, 即不编码 Buffer形式存储
+        pause()
+        resume()
+
+        事件 {
+            data(chunk)
+            end
+            close
+        }
+    }
+}
+url {
+    parse()
+}
+querystring {
+    parse()
+}
+</code></pre><p>}</p>
+<p>node-inspector</p>
+<p>调试工具（基于npm安装）：node-inspector</p>
+<p>执行流程：</p>
+<p>1、安装 node-inspector</p>
+<p>npm install node-inspector -g</p>
+<p>2、监听端口（执行）</p>
+<p>node-inspector</p>
+<p>run</p>
+<p>3、cmd到你的目录下执行node debug模式</p>
+<p>node –debug-brk server.js</p>
+<p>run</p>
+<p>4、打开谷歌浏览器，在地址栏输入以上显示的地址：<a href="http://127.0.0.1:8080/debug?port=5858" target="_blank" rel="noopener">http://127.0.0.1:8080/debug?port=5858</a> 就可以进行调试了，成功后会到以下页面，按F8即可执行到你打断点处，如果没打则直接结束。（如果不行请刷新下）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node/" rel="tag"># Node</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/25/Record/记录/" rel="next" title="记录">
+                <i class="fa fa-chevron-left"></i> 记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/12/里程碑/开始/" rel="prev" title="开启博客之旅">
+                开启博客之旅 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="MT" />
+          <p class="site-author-name" itemprop="name">MT</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录学习前端的点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TaumuLu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Taumu" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局对象-global"><span class="nav-number">1.1.</span> <span class="nav-text">全局对象 global</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NodeJS有三大核心"><span class="nav-number">1.2.</span> <span class="nav-text">NodeJS有三大核心</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MT</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
