@@ -261,359 +261,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/JavaScript/JS模块化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/17/JavaScript/JS模块化/" itemprop="url">
-                  JS模块化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T19:51:06+08:00">
-                2017-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ul>
-<li>模块化解决 <ol>
-<li>命名冲突</li>
-<li>文件依赖</li>
-</ol>
-</li>
-<li>模块化设计 <ol>
-<li>信息隐藏</li>
-<li>内聚度</li>
-<li>耦合度</li>
-</ol>
-</li>
-</ul>
-<h2 id="Js模块化"><a href="#Js模块化" class="headerlink" title="Js模块化"></a>Js模块化</h2><ul>
-<li>自执行匿名函数</li>
-<li>多级命名空间</li>
-<li>CommonJS</li>
-<li>AMD</li>
-<li>CMD</li>
-<li>ES6</li>
-</ul>
-<h2 id="模块化实现"><a href="#模块化实现" class="headerlink" title="模块化实现"></a>模块化实现</h2><p><strong> Modules/Wrappings规范 </strong> </p>
-<blockquote>
-<p>定义模块用module变量，它有一个方法declare<br>declare接受一个函数类型的参数，如称为factory<br>factory有三个参数分别为require、exports、module<br>factory使用返回值和exports导出API<br>factory如果是对象类型，则将该对象作为模块输出</p>
-</blockquote>
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
-<li>引用模块(require)</li>
-<li>定义模块(exports)</li>
-<li>模块标识(module)</li>
-</ul>
-<h4 id="加载方式"><a href="#加载方式" class="headerlink" title="加载方式"></a>加载方式</h4><ul>
-<li>CommonJS为服务器端JS的表现来制定的规范，同步模块</li>
-<li>CommonJS模块间相互依赖需同步加载，限制了客户端的实现</li>
-</ul>
-<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><ul>
-<li>定义模块 define(id?, dependencies?, factory)<ul>
-<li>id：可选参数，用来定义模块的标识，如果没有提供该参数，脚本文件名</li>
-<li>dependencies：一个当前模块依赖的模块名称数组<ul>
-<li>如果dependencies省略不写，则默认为[“require”, “exports”, “module”]，factory中也会默认传入require,exports,module</li>
-<li>在factory中传入形参需与依赖模块一一对应</li>
-<li>如果factory为函数，模块对外暴漏API的方法有三种：return任意类型的数据、exports.xxx=xxx、module.exports=xxx</li>
-<li>如果factory为对象，则该对象即为模块的返回值</li>
-</ul>
-</li>
-<li>factory：工厂方法，模块初始化要执行的函数或对象。如果为函数，它应该只被执行一次。如果是对象，此对象应该为模块的输出值</li>
-</ul>
-</li>
-<li>加载模块 require([dependencies], callback)<ul>
-<li>dependencies：一个要加载的模块名称数组</li>
-<li>callback：加载成功之后的回调函数</li>
-</ul>
-</li>
-</ul>
-<h4 id="加载方式-1"><a href="#加载方式-1" class="headerlink" title="加载方式"></a>加载方式</h4><ul>
-<li>AMD为客户端JS的表现来制定规范，异步模块，通过回调函数实现</li>
-</ul>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
-<li>会预先下载并执行所需要的模块</li>
-<li>在定义模块的时候，要把所有依赖模块都罗列一遍，而且还要在factory中作为形参传进去，要写两遍很大一串模块名称</li>
-<li>懒加载的话必须得实时下载代码然后在回调中才能执行</li>
-</ul>
-<blockquote>
-<p>好的一点是，AMD保留了commonjs中的require、exprots、module这三个功能<br>也可以不把依赖罗列在dependencies数组中，而是在代码中用require来引入</p>
-</blockquote>
-<h4 id="后续修改"><a href="#后续修改" class="headerlink" title="后续修改"></a>后续修改</h4><blockquote>
-<p>部分兼容Modules/Wrappings的写法，dependencies数组为空<br>但是factory函数的形参必须手工写上require,exports,module，（这不同于之前的dependencies和factory形参全不写）</p>
-</blockquote>
-<h4 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h4><ul>
-<li><p>require.config</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    <span class="attr">baseUrl</span>: <span class="string">'指定基目录'</span>,</div><div class="line">    <span class="attr">paths</span>: <span class="string">'指定个模块加载路径'</span>,</div><div class="line">    </div><div class="line">    <span class="comment">// 加载非规范的模块</span></div><div class="line">    shim: &#123;</div><div class="line">        <span class="attr">deps</span>: <span class="string">'模块的依赖'</span>,</div><div class="line">        <span class="attr">exports</span>: <span class="string">'输出的变量名'</span>,  </div><div class="line">    &#125; </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>require.js自身插件</p>
-<ul>
-<li>domready 让回调函数在页面DOM结构加载完成后再运行</li>
-<li>text 加载文本</li>
-<li>image 加载图片</li>
-</ul>
-</li>
-</ul>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><ul>
-<li>定义模块 define(factory)<ul>
-<li>factory：需手动传入形参require,exports,module</li>
-</ul>
-</li>
-<li>加载模块 <ul>
-<li>require(id)<ul>
-<li>同步执行，预先下载</li>
-<li>id: 模块名称</li>
-</ul>
-</li>
-<li>require.async(id, callback?)<ul>
-<li>异步执行，执行时下载</li>
-<li>id: 模块名称</li>
-<li>可选，异步加载后的回调函数</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ul>
-<li><p>define.cmd</p>
-<blockquote>
-<p>一个空对象，可用来判定当前页面是否有 CMD 模块加载器</p>
-</blockquote>
-</li>
-<li><p>require.resolve(id)</p>
-<blockquote>
-<p>使用模块系统内部的路径解析机制来解析并返回模块路径。该函数不会加载模块，只返回解析后的绝对路径<br>这可以用来获取模块路径，一般用在插件环境或需动态拼接模块路径的场景下</p>
-</blockquote>
-</li>
-<li><p>seajs.use(id/[], callback?)</p>
-</li>
-</ul>
-<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><ul>
-<li>引用模块(import xxx from ‘xxx’)</li>
-<li>导出模块(export)</li>
-</ul>
-<h4 id="加载方式-2"><a href="#加载方式-2" class="headerlink" title="加载方式"></a>加载方式</h4><ul>
-<li>静态加载，编译时就能确定模块的依赖关系，以及输入和输出的变量</li>
-</ul>
-<h4 id="API-1"><a href="#API-1" class="headerlink" title="API"></a>API</h4><ul>
-<li><p>import</p>
-<blockquote>
-<p>import后面的from指定模块文件的位置，可以是相对路径，也可以是绝对路径<br>import命令具有提升效果，会提升到整个模块的头部，首先执行<br>import是静态执行，所以不能使用表达式和变量，这些只有在运行时才能得到结果的语法结构<br>import语句会执行所加载的模块，可以直接import 模块名使用<br>多次重复执行同一句import语句，只会执行一次，而不会执行多次</p>
-</blockquote>
-</li>
-<li><p>export</p>
-<blockquote>
-<p>export命令规定的是对外的接口，不能只是一个值<br>export语句输出的接口，与其对应的值是动态绑定关系，即通过该接口，可以取到模块内部实时的值<br>export命令可以出现在模块的任何位置，只要处于模块顶层就可以</p>
-</blockquote>
-</li>
-<li><p>default export </p>
-<blockquote>
-<p>export default命令，为模块指定默认输出<br>import 命令可以指定任意名字<br>import命令后面，不使用大括号<br>export default命令其实只是输出一个叫做default的变量，所以它后面不能跟变量声明语句<br>export default 本质是将该命令后面的值，赋给default 变量以后再默认，所以可以直接将一个值写在export default之后</p>
-</blockquote>
-</li>
-<li><p>as</p>
-<blockquote>
-<p>用as 语句后的值重命名as 前的值</p>
-</blockquote>
-</li>
-<li><p>*</p>
-<blockquote>
-<p>指定一个对象，所有输出值都加载在* 这个对象上面</p>
-</blockquote>
-</li>
-<li><p>import()</p>
-<blockquote>
-<p>动态加载函数<br>import()返回一个Promise 对象<br>import()类似于 Node 的require方法，区别主要是前者是异步加载，后者是同步加载</p>
-</blockquote>
-</li>
-<li><p>export 与import 的复合写法</p>
-<blockquote>
-<p>export和import语句可以结合在一起，写成一行<br>模块的接口改名和整体输出，也可以采用这种写法</p>
-</blockquote>
-</li>
-<li><p>export 和default export 的区别</p>
-<blockquote>
-<p>export时，对应的import语句需要使用大括号<br>export default时，对应的import语句不需要使用大括号<br>export default命令用于指定模块的默认输出<br>一个模块只能有一个默认输出，因此export default 命令只能使用一次<br>所以import 命令后面才不用加大括号，因为只可能对应一个方法<br>本质上，export default 就是输出一个叫做default 的变量或方法，然后系统允许你为它取任意名字</p>
-</blockquote>
-</li>
-<li><p>其他<br>静态加载可以做静态优化<br>ES6 模块之中，顶层的this指向undefined，即不应该在顶层代码使用this</p>
-</li>
-</ul>
-<h4 id="import-声明"><a href="#import-声明" class="headerlink" title="import 声明"></a>import 声明</h4><p>尽管import声明不符合解构的规则，但其表现十分类似，类似于解构但是不是解构赋值<br>当你使用import书写模块声明时，你可以引入模块API中的任意模块</p>
-<p>import声明有其不一样的语法，与解构相比较，以下的import语句均不起作用</p>
-<ul>
-<li>使用默认值，import {series = noop} from ‘contra’</li>
-<li>嵌套解构风格，import {map: { series }} from ‘contra’</li>
-<li>别名语法，import {map: mapAsync} from ‘contra’</li>
-</ul>
-<p>这些限制的主要原因在于import声明有一个绑定，不是一个引用或者一个值</p>
-<h4 id="ES6浏览器加载规则"><a href="#ES6浏览器加载规则" class="headerlink" title="ES6浏览器加载规则"></a>ES6浏览器加载规则</h4><h5 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h5><ul>
-<li>defer 要等到整个页面正常渲染结束，才会执行</li>
-<li>async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染</li>
-</ul>
-<blockquote>
-<p>script 标签打开defer或async属性，脚本就会异步加载。渲染引擎遇到这一行命令，就会&gt; 开始下载外部脚本，但不会等它下载和执行，而是直接执行后面的命令<br>defer是“渲染完再执行”，async是“下载完就执行”<br>如果有多个defer脚本，会按照它们在页面出现的顺序加载，而多个async脚本是不能保证加载顺序的</p>
-</blockquote>
-<h5 id="加载规则"><a href="#加载规则" class="headerlink" title="加载规则"></a>加载规则</h5><ul>
-<li>浏览器加载ES6 模块，也使用script 标签，但是要加入type=”module”属性</li>
-<li>浏览器对于带有type=”module” 的script，都是异步加载，不会造成堵塞浏览器，即等到整个页面渲染完，再执行模块脚本，等同于打开了script标签的defer属性，也可以手动设置async属性</li>
-<li>ES6 模块也允许内嵌在网页中，语法行为与加载外部脚本完全一致</li>
-</ul>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="ES6与CommonJS模块的差异"><a href="#ES6与CommonJS模块的差异" class="headerlink" title="ES6与CommonJS模块的差异"></a>ES6与CommonJS模块的差异</h3><h4 id="输出方式"><a href="#输出方式" class="headerlink" title="输出方式"></a>输出方式</h4><ul>
-<li>CommonJS 模块输出的是一个值的拷贝</li>
-<li>ES6 模块输出的是值的引用</li>
-</ul>
-<blockquote>
-<p>CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值<br>ES6 模块下JS 引擎对脚本静态分析的时候，遇到模块加载命令import，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值<br>ES6 模块不会缓存运行结果，而是动态地去被加载的模块取值，并且变量总是绑定其所在的模块<br>ES6 输入的模块变量，只是一个“符号连接”，所以这个变量是只读的，对它进行重新赋值会报错<br>export输出的是同一个值，不同的脚本加载这个接口，得到的都是同样的实例</p>
-</blockquote>
-<h4 id="运行方式"><a href="#运行方式" class="headerlink" title="运行方式"></a>运行方式</h4><ul>
-<li>CommonJS 模块是运行时加载</li>
-<li>ES6 模块是编译时输出接口</li>
-</ul>
-<blockquote>
-<p>因为 CommonJS 加载的是一个对象（即module.exports属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成</p>
-</blockquote>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
-<li>ES6 模块之中，顶层的this指向undefined</li>
-<li>CommonJS 模块的顶层this指向当前模块</li>
-</ul>
-<h3 id="AMD和CMD"><a href="#AMD和CMD" class="headerlink" title="AMD和CMD"></a>AMD和CMD</h3><h4 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h4><h5 id="导出模块"><a href="#导出模块" class="headerlink" title="导出模块"></a>导出模块</h5><ul>
-<li>exports.xxx = xxx</li>
-<li>module.exports = xxx</li>
-<li>return</li>
-<li>factory === Object</li>
-</ul>
-<h5 id="定义模块"><a href="#定义模块" class="headerlink" title="定义模块"></a>定义模块</h5><p>都支持Modules/Wrappings的写法，dependencies数组为空，但是factory函数的形参必须手工写上require,exports,module</p>
-<h4 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h4><ul>
-<li>AMD：提前执行（异步加载：依赖先执行）+延迟执行</li>
-<li>CMD：延迟执行（运行到需加载，根据顺序执行）</li>
-</ul>
-<h5 id="模块定义时对依赖的处理不同"><a href="#模块定义时对依赖的处理不同" class="headerlink" title="模块定义时对依赖的处理不同"></a>模块定义时对依赖的处理不同</h5><blockquote>
-<p>AMD推崇依赖前置，在定义模块的时候就要声明其依赖的模块<br>CMD推崇就近依赖，只有在用到某个模块的时候再去require<br>这种区别各有优劣，只是语法上的差距，而且requireJS和SeaJS都支持对方的写法</p>
-</blockquote>
-<h5 id="对依赖模块的执行时机处理不同，注意不是加载的时机或者方式不同"><a href="#对依赖模块的执行时机处理不同，注意不是加载的时机或者方式不同" class="headerlink" title="对依赖模块的执行时机处理不同，注意不是加载的时机或者方式不同"></a>对依赖模块的执行时机处理不同，注意不是加载的时机或者方式不同</h5><blockquote>
-<p>加载模块都是异步的，只不过AMD依赖前置，js可以方便知道依赖模块是谁，立即加载，而CMD就近依赖，需要使用把模块变为字符串解析一遍才知道依赖了那些模块，这也是很多人诟病CMD的一点，牺牲性能来带来开发的便利性，实际上解析模块用的时间短到可以忽略</p>
-<p>AMD在加载模块完成后就会执行改模块，所有模块都加载执行完后会进入require的回调函数，执行主逻辑，这样的效果就是依赖模块的执行顺序和书写顺序不一定一致，看网络速度，哪个先下载下来，哪个先执行，但是主逻辑一定在所有依赖加载完成后才执行</p>
-<p>CMD加载完某个依赖模块后并不执行，只是下载而已，在所有依赖模块加载完成后进入主逻辑，遇到require语句的时候才执行对应的模块，这样模块的执行顺序和书写顺序是完全一致的</p>
-</blockquote>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="exports和module-exports"><a href="#exports和module-exports" class="headerlink" title="exports和module.exports"></a>exports和module.exports</h3><p>module.exports     真正的接口<br>exports            辅助工具，最终返回给调用的是module.exports而不是exports</p>
-<p>exports 是指向的 module.exports 的引用<br>module.exports 初始值为一个空对象 {}，所以 exports 初始值也是 {}<br>require() 返回的是 module.exports 而不是 exports</p>
-<blockquote>
-<p>exports 起初是一个指向 module.exports 对象的变量<br>exports 仅仅是 module.exports 的一个引用。在 factory 内部给 exports 重新赋值时，并不会改变module.exports 的值<br>module 是一个对象，上面存储了与当前模块相关联的一些属性和方法</p>
-</blockquote>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="AMD-1"><a href="#AMD-1" class="headerlink" title="AMD"></a>AMD</h3><ul>
-<li><a href="http://efe.baidu.com/blog/dissecting-amd-what/" target="_blank" rel="noopener">玩转AMD系列 - 设计思路篇</a></li>
-<li><a href="http://efe.baidu.com/blog/dissecting-amd-how/" target="_blank" rel="noopener">玩转AMD系列 - 应用实践篇</a></li>
-<li><a href="http://efe.baidu.com/blog/dissecting-amd-loader/" target="_blank" rel="noopener">玩转AMD系列 - Loader篇</a></li>
-<li><a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" rel="noopener">AMD spec</a></li>
-<li><a href="https://github.com/amdjs/amdjs-api/wiki/require" target="_blank" rel="noopener">AMD Require</a></li>
-<li><a href="https://github.com/amdjs/amdjs-api/wiki/Common-Config" target="_blank" rel="noopener">AMD Common-Config</a></li>
-<li><a href="https://github.com/amdjs/amdjs-api/wiki/Loader-Plugins" target="_blank" rel="noopener">AMD Loader-Plugins</a></li>
-<li><a href="https://ponyfoo.com/articles/es6-destructuring-in-depth" target="_blank" rel="noopener">https://ponyfoo.com/articles/es6-destructuring-in-depth</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/JavaScript/移动端开发/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1142,17 +789,17 @@
 <h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>查找变量先从作用域的前端开始，即当前环境的变量对象或活动对象查，之后若在函数中再沿着Scope中保存的父变量对象的层级链向上查找至全局对象，浏览器中即window对象，之后再进行二维作用域链查找，因window继承于Object.prototype对象，所以查到Object.prototype为止</p>
 <h4 id="函数参数解构赋值"><a href="#函数参数解构赋值" class="headerlink" title="函数参数解构赋值"></a>函数参数解构赋值</h4><p>解构赋值function({x=1,y=2}={})，{}为默认值，即没有传入参数将{}对象做为默认值，因为默认值为空对象，所以又触发设置默认的对象解构赋值所以参数为1，2</p>
 <h4 id="函数参数传递"><a href="#函数参数传递" class="headerlink" title="函数参数传递"></a>函数参数传递</h4><p>函数参数只能按值传递，因此传递引用类型时并非按引用访问，而是存储实参到变量对象中并与传进的变量引用内存中的同一个引用类型，因此将参数指向另一个引用类型时并不会影响到传进函数的变量所引用的值</p>
-<h4 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h4><p>js逐行解释执行代码，当执行到函数调用时，此时调用函数内部的作用域链为Scope + 当前函数的AO对象<br>但Scope保存的对象为调用此函数的AO/VO对象，仅为预编译保存的值 + 调用函数之前的代码执行值<br>所以在调用函数之后才赋值的变量是取不到的，即使是闭包也如此(单线程执行代码即同步)  </p>
+<h4 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h4><p>js逐行解释执行代码，当执行到函数调用时，此时调用函数内部的作用域链为Scope + 当前函数的AO对象<br>但Scope保存的对象为调用此函数的AO/VO对象，仅为预编译保存的值 + 调用函数之前的代码执行值<br>所以在调用函数之后才赋值的变量是取不到的，即使是闭包也如此(单线程执行代码即同步)</p>
 <h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>加标志g 会引起交替返回true 和false<br>使用标志g 不会在匹配第一个项时就停止，而会保留状态，直到没有匹配才会重置<br>可以写RegExp.lastIndex = 0重置这种状态</p>
 <h4 id="比较操作符"><a href="#比较操作符" class="headerlink" title="==比较操作符"></a>==比较操作符</h4><p>参数数据类型相同直接进行比较</p>
 <ul>
-<li>不同 <ul>
+<li>不同<ul>
 <li>布尔值：转换为数值进行比较</li>
 <li>字符串：如果另一比较类型为数值会转化为数值通过Number()方法转换</li>
 <li>对象：先调用valueOf()比较，不行再调用toString()比较(得到基本类型)</li>
 </ul>
 </li>
-<li>规则 <ul>
+<li>规则<ul>
 <li>null和undefined不会转换且互相相等</li>
 <li>NaN不等于任何值，即使是NaN</li>
 <li>两个对象会比较引用即指针</li>
@@ -1183,6 +830,10 @@
 <li>验证数字包括负数和小数 <code>const reg = /^(-)?\d+(\.\d+)?$/g;</code></li>
 </ul>
 <h3 id="Code-Snippet"><a href="#Code-Snippet" class="headerlink" title="Code Snippet"></a>Code Snippet</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 为所有元素添加、移除不同颜色边框</span></div><div class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  a.style.outline=<span class="string">"1px solid #"</span>+(~~(<span class="built_in">Math</span>.random()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).toString(<span class="number">16</span>);</div><div class="line">&#125;)</div><div class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  a.style.outline=<span class="string">"none"</span>;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// &lt;&lt;是左移位，是位操作符的一种</span></div><div class="line"><span class="comment">// 举例说a&lt;&lt;b就是先将a化为二进制数，然后向左移动b个位置</span></div><div class="line"><span class="comment">// 例如：00000001&lt;&lt;2就变成了00000100</span></div></pre></td></tr></table></figure>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><ul>
+<li>getEventListeners</li>
+<li>monitorEvents unmonitorEvents</li>
+</ul>
 <p>对象赋值属性失败情况 {<br>    属性为只读，defineProperty()除外<br>    属性是继承属性，且为只读，不能通过同名自有属性覆盖只读的继承属性<br>    不存在自有属性，没有使用setter方法继承，且不可扩展<br>}</p>
 <p>DOM对象通过直接获取属性和getAttribute()方法获取属性<br>    直接通过.操作符获取属性得到绝对路径<br>    通过getAttribute()获取的为相对路径<br>        IE返回也是绝对路径，通过getAttribute()方法的第二个方法 {<br>            0: 默认值，搜索属性时大小写不敏感<br>            1: 搜索属性时大小写敏感，大小和小写字母必须完全匹配<br>            2: 返回BSTR形式的属性值？此标识对事件属性无效( 设置此值可返回相对路径 )<br>            4: 返回完整路径URL地址。只对URL属性有效<br>        }</p>
 <p>undefined 表示”默认缺少值”，就是此处应该有一个值，但是还没有定义。<br>典型用法是 {<br>    变量被声明了，但没有赋值时，就等于 undefined<br>    调用函数时，应该提供的参数没有提供，该参数等于 undefined<br>    对象没有赋值的属性，该属性的值为 undefined<br>    函数没有返回值时，默认返回 undefined<br>}</p>
@@ -1598,7 +1249,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
 <li>trace()<br>process</li>
 <li>argv</li>
 <li>stdout<ul>
-<li>write() </li>
+<li>write()</li>
 </ul>
 </li>
 <li>stdin<ul>
@@ -1966,6 +1617,82 @@ querystring {
             <h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><ul>
 <li><a href="http://patorjk.com" target="_blank" rel="noopener">http://patorjk.com</a> <code>好玩的、文本到ASCII艺术生成器</code></li>
 <li><a href="https://www.pixiv.net" target="_blank" rel="noopener">https://www.pixiv.net</a> <code>插画网</code></li>
+<li><a href="https://www.remove.bg/" target="_blank" rel="noopener">https://www.remove.bg/</a> <code>移除图片背景</code></li>
+<li><a href="https://smallpdf.com/" target="_blank" rel="noopener">https://smallpdf.com/</a>  <code>在线PDF工具</code></li>
+<li><a href="https://web.airdroid.com/" target="_blank" rel="noopener">https://web.airdroid.com/</a>  <code>web的手机管理软件</code></li>
+<li><a href="https://tophub.today/" target="_blank" rel="noopener">https://tophub.today/</a>  <code>聚合全网新闻社区热点排行榜</code></li>
+<li><a href="https://www.pexels.com/" target="_blank" rel="noopener">https://www.pexels.com/</a>  <code>免费素材照片</code></li>
+<li><a href="https://leetcode.com/" target="_blank" rel="noopener">https://leetcode.com/</a>  <code>leetcode</code></li>
+<li><a href="https://carbon.now.sh/" target="_blank" rel="noopener">https://carbon.now.sh/</a>  <code>制作代码语法高亮图片</code></li>
+<li><a href="https://www.cn-ki.net/" target="_blank" rel="noopener">https://www.cn-ki.net/</a>  <code>知识检索</code></li>
+<li><a href="https://www.pianyuan.la/" target="_blank" rel="noopener">https://www.pianyuan.la/</a>  <code>片源网</code></li>
+<li><a href="http://www.aigei.com/" target="_blank" rel="noopener">http://www.aigei.com/</a></li>
+<li><a href="https://ss64.com/" target="_blank" rel="noopener">https://ss64.com/</a>  <code>查阅命令信息</code></li>
+<li><a href="https://dict.cn/" target="_blank" rel="noopener">https://dict.cn/</a>  <code>海词</code></li>
+<li><a href="https://www.mojidict.com/" target="_blank" rel="noopener">https://www.mojidict.com/</a>  <code>MOJI辞书</code></li>
+<li><a href="https://play.google.com/" target="_blank" rel="noopener">https://play.google.com/</a>  <code>google play</code></li>
+<li><a href="https://demo.glyptodon.com/" target="_blank" rel="noopener">https://demo.glyptodon.com/</a>  <code>web版window系统</code></li>
+<li><a href="https://www.photopea.com/" target="_blank" rel="noopener">https://www.photopea.com/</a>  <code>在线photopea</code></li>
+<li><a href="https://shields.io/" target="_blank" rel="noopener">https://shields.io/</a>  <code>生成标签图片</code></li>
+<li><a href="https://www.behance.net/" target="_blank" rel="noopener">https://www.behance.net/</a> <code>Behance</code></li>
+<li><a href="https://www.videofk.com/" target="_blank" rel="noopener">https://www.videofk.com/</a> <code>下载视频网站</code></li>
+<li><a href="https://www.allhistory.com/" target="_blank" rel="noopener">https://www.allhistory.com/</a> <code>全历史</code></li>
+<li><a href="https://uzer.me/" target="_blank" rel="noopener">https://uzer.me/</a></li>
+<li><a href="https://www.chongbuluo.com/" target="_blank" rel="noopener">https://www.chongbuluo.com/</a></li>
+<li><a href="https://www.fotor.com/cn/" target="_blank" rel="noopener">https://www.fotor.com/cn/</a></li>
+<li><a href="https://www.dogedoge.com/" target="_blank" rel="noopener">https://www.dogedoge.com/</a></li>
+<li><a href="https://www.ipaddress.com/" target="_blank" rel="noopener">https://www.ipaddress.com/</a> <code>查看网站ip地址</code></li>
+</ul>
+<h3 id="日语"><a href="#日语" class="headerlink" title="日语"></a>日语</h3><ul>
+<li><a href="https://res.wokanxing.info/jpgramma/index.html" target="_blank" rel="noopener">https://res.wokanxing.info/jpgramma/index.html</a></li>
+<li><a href="https://jisho.org/" target="_blank" rel="noopener">https://jisho.org/</a></li>
+</ul>
+<h3 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h3><ul>
+<li><a href="https://imgchr.com/" target="_blank" rel="noopener">https://imgchr.com/</a></li>
+<li><a href="https://imgur.com/" target="_blank" rel="noopener">https://imgur.com/</a></li>
+<li><a href="https://jpg.dog/" target="_blank" rel="noopener">https://jpg.dog/</a></li>
+<li><a href="https://www.tu260.com/" target="_blank" rel="noopener">https://www.tu260.com/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener">https://sm.ms/</a></li>
+<li><a href="https://www.superbed.cn/" target="_blank" rel="noopener">https://www.superbed.cn/</a></li>
+<li><a href="https://imgurl.org/" target="_blank" rel="noopener">https://imgurl.org/</a></li>
+<li><a href="https://www.picgd.com/" target="_blank" rel="noopener">https://www.picgd.com/</a></li>
+<li><a href="https://imgrpost.com/" target="_blank" rel="noopener">https://imgrpost.com/</a></li>
+<li><a href="https://vgy.me/" target="_blank" rel="noopener">https://vgy.me/</a></li>
+</ul>
+<h3 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h3><ul>
+<li><a href="https://www.vocabulary.com/" target="_blank" rel="noopener">https://www.vocabulary.com/</a> <code>查单词</code></li>
+<li><a href="http://www.etymon.cn" target="_blank" rel="noopener">http://www.etymon.cn</a> <code>英语词根词源在线字典</code></li>
+<li><a href="https://www.merriam-webster.com/" target="_blank" rel="noopener">https://www.merriam-webster.com/</a></li>
+</ul>
+<h3 id="下载破解软件"><a href="#下载破解软件" class="headerlink" title="下载破解软件"></a>下载破解软件</h3><ul>
+<li><a href="https://xclient.info/" target="_blank" rel="noopener">https://xclient.info/</a></li>
+<li><a href="https://www.naodai.org/" target="_blank" rel="noopener">https://www.naodai.org/</a></li>
+<li><a href="https://www.waitsun.com/" target="_blank" rel="noopener">https://www.waitsun.com/</a></li>
+</ul>
+<h3 id="追剧网站"><a href="#追剧网站" class="headerlink" title="追剧网站"></a>追剧网站</h3><ul>
+<li><a href="https://www.rijutv.com/" target="_blank" rel="noopener">https://www.rijutv.com/</a></li>
+<li><a href="https://cn.gimy.tv/" target="_blank" rel="noopener">https://cn.gimy.tv/</a></li>
+</ul>
+<h3 id="追番网站"><a href="#追番网站" class="headerlink" title="追番网站"></a>追番网站</h3><ul>
+<li><a href="http://www.dilidili.name/" target="_blank" rel="noopener">http://www.dilidili.name/</a></li>
+<li><a href="http://www.bimibimi.tv/" target="_blank" rel="noopener">http://www.bimibimi.tv/</a></li>
+<li><a href="http://www.zzzfun.com/" target="_blank" rel="noopener">http://www.zzzfun.com/</a></li>
+<li><a href="http://www.halihali.in/" target="_blank" rel="noopener">http://www.halihali.in/</a></li>
+<li><a href="http://www.acgsou.com/" target="_blank" rel="noopener">http://www.acgsou.com/</a></li>
+<li><a href="http://dm.pnext.top/" target="_blank" rel="noopener">http://dm.pnext.top/</a></li>
+<li><a href="http://www.yhdm.tv/" target="_blank" rel="noopener">http://www.yhdm.tv/</a></li>
+<li><a href="https://www.mandao.tv/" target="_blank" rel="noopener">https://www.mandao.tv/</a></li>
+<li><a href="https://www.clicli.us/" target="_blank" rel="noopener">https://www.clicli.us/</a></li>
+<li><a href="https://www.5dm.tv/" target="_blank" rel="noopener">https://www.5dm.tv/</a></li>
+<li><a href="http://www.idm.vip/" target="_blank" rel="noopener">http://www.idm.vip/</a></li>
+<li><a href="https://opacg.com/" target="_blank" rel="noopener">https://opacg.com/</a></li>
+<li><a href="https://fcdm.cn/" target="_blank" rel="noopener">https://fcdm.cn/</a></li>
+</ul>
+<h3 id="nes游戏"><a href="#nes游戏" class="headerlink" title="nes游戏"></a>nes游戏</h3><ul>
+<li><a href="https://www.yikm.net/" target="_blank" rel="noopener">https://www.yikm.net/</a></li>
+<li><a href="https://romsmania.cc/" target="_blank" rel="noopener">https://romsmania.cc/</a></li>
+<li><a href="https://www.downloadroms.io/" target="_blank" rel="noopener">https://www.downloadroms.io/</a></li>
+<li><a href="https://wowroms.com/" target="_blank" rel="noopener">https://wowroms.com/</a> (igo-kyuu-roban-taikyoku)</li>
 </ul>
 <h2 id="书名"><a href="#书名" class="headerlink" title="书名"></a>书名</h2><ul>
 <li>任天堂游戏编程探密</li>
@@ -1976,6 +1703,7 @@ querystring {
 <h2 id="文学"><a href="#文学" class="headerlink" title="文学"></a>文学</h2><ul>
 <li>你总说毕业遥遥无期，转眼大家就各奔东西；总有太多的不舍和留念。不能还能否和我的室友们来一场告别旅行。再来一次深夜卧谈会，我们卧谈会主题上到国家大事，下到家长里短。那些慷慨激昂日还剩多少。。。。</li>
 <li>小时候我们词不达意，长大了我们言不由衷</li>
+<li>很多事情不是因为有希望才去坚持，而是坚持了才有希望</li>
 </ul>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>三国Kill qq号/lmt生日</li>
@@ -1986,13 +1714,14 @@ querystring {
 </li>
 </ul>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3><ol>
-<li>到网站 <a href="http://idea.lanyus.com/" target="_blank" rel="noopener">http://idea.lanyus.com/</a> 获取注册码  </li>
+<li>到网站 <a href="http://idea.lanyus.com" target="_blank" rel="noopener">http://idea.lanyus.com</a>  获取注册码</li>
 <li>填入下面的license server<ul>
 <li><a href="http://intellij.mandroid.cn/" target="_blank" rel="noopener">http://intellij.mandroid.cn/</a></li>
 <li><a href="http://idea.imsxm.com/" target="_blank" rel="noopener">http://idea.imsxm.com/</a></li>
 <li><a href="http://idea.iteblog.com/key.php" target="_blank" rel="noopener">http://idea.iteblog.com/key.php</a></li>
 </ul>
 </li>
+<li><a href="https://songzixian.com/windowstooluse/817.html" target="_blank" rel="noopener">https://songzixian.com/windowstooluse/817.html</a></li>
 </ol>
 <h2 id="花名"><a href="#花名" class="headerlink" title="花名"></a>花名</h2><h3 id="已定"><a href="#已定" class="headerlink" title="已定"></a>已定</h3><ul>
 <li>花名 贤也</li>
@@ -2015,9 +1744,7 @@ querystring {
 <li>千咲</li>
 <li>秋良</li>
 </ul>
-<h2 id="Sublime-Test激活码"><a href="#Sublime-Test激活码" class="headerlink" title="Sublime Test激活码"></a>Sublime Test激活码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ZYNGA INC.</div><div class="line">50 User License</div><div class="line">EA7E-811825</div><div class="line">927BA117 84C9300F 4A0CCBC4 34A56B44</div><div class="line">985E4562 59F2B63B CCCFF92F 0E646B83</div><div class="line">0FD6487D 1507AE29 9CC4F9F5 0A6F32E3</div><div class="line">0343D868 C18E2CD5 27641A71 25475648</div><div class="line">309705B3 E468DDC4 1B766A18 7952D28C</div><div class="line">E627DDBA 960A2153 69A2D98A C87C0607</div><div class="line">45DC6049 8C04EC29 D18DFA40 442C680B</div><div class="line"></div><div class="line">1342224D 44D90641 33A3B9F2 46AADB8F</div></pre></td></tr></table></figure>
-<h2 id="other"><a href="#other" class="headerlink" title="other"></a>other</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line">T-Release </div><div class="line">为什么会有？</div><div class="line">提测信息需（只）要（能）靠邮件或人肉通知，冒烟结果是测试准入的主（唯）要（一）依据，质量数据难（无）以（法）横向对比。</div><div class="line">怎么好用了？</div><div class="line">1：填写提测信息及人员信息；</div><div class="line">2：从Dice自动拉取有权限的项目&amp;应用&amp;分支的UT数据，并设置准入门槛（可配置）；</div><div class="line">3：关键状态的流转会有钉钉信息温馨提示；</div><div class="line">4：质量数据的自动拉取计算及质量大盘一览；</div><div class="line">将来还会怎么更好用？</div><div class="line">1：从PMP直接拉取更多的质量信息，如用例执行情况、BUG各项指标；</div><div class="line">2：推动应用UT体系的建设，创立UT质量大盘；</div><div class="line">3：对接自动化测试平台，进一步完善质量体系建设；</div><div class="line">4：与Dice、PMP完成整合，形成完整闭环；</div><div class="line">去哪里了解或者使用？</div><div class="line">https://uc.terminus.io/login?redirectUrl=https://t-release.app.terminus.io/release</div><div class="line"></div><div class="line"></div><div class="line">从Dice拉取分支信息：</div><div class="line"></div><div class="line"></div><div class="line">再一睹质量大盘的风采：</div><div class="line"></div><div class="line">Jarvis</div><div class="line">为什么会有？</div><div class="line">现在前端对接，实际上是将后端的接口文档翻译成前端可用的js文件。这部分可量化的工作都可以通过自动化工具帮我们实现掉。</div><div class="line">怎么好用了？</div><div class="line">1、通过接口文档为前端生成接口SDK、数据模型等文件，减少前端的重复声明文件。 </div><div class="line">2、提供了一个免配置、按需的 Mock功能，可根据后端返回的HTTP状态码动态使用Mock功能。</div><div class="line"> 3、接口变更生成了一份CHANGELOG.md 方便前端知悉接口发生了哪些变化。</div><div class="line">到哪里去了解和使用？</div><div class="line">https://yuque.antfin-inc.com/ypg1qo/gito6c/ealq5w</div><div class="line"></div><div class="line"></div><div class="line">RSS(Really Simple Syndication)</div><div class="line">shadowsocks-R</div><div class="line"></div><div class="line">lissom</div><div class="line">是什么？</div><div class="line">轻量级服务端渲染框架(ssr)</div><div class="line">做什么？</div><div class="line">ssr带来的好处无非就两点SEO和首屏渲染</div><div class="line">为什么会有？</div><div class="line">目前项目接入ssr的成本高、侵入性强，对于老项目迁移成本会很高，除去ssr化必须做的改动外，框架自身的约束带来的改动更大，且限制更多，开发体验也不够友好</div><div class="line">怎么好用了？</div><div class="line">提升开发体验，提高用户体验</div><div class="line">更专注于ssr，以最小代价引入ssr，除去ssr化必须的改动外，迁移项目的成本也很低</div><div class="line">支持按需加载、异步操作</div><div class="line">是我要为你做ssr，无需改动原有打包配置、目录结构、技术栈等</div><div class="line">将来还会怎么更好用？</div><div class="line">服务端支持引入dll</div><div class="line">支持其他框架服务端渲染，如vue</div><div class="line">更友好的处理异步操作方式期待react新的服务器渲染器</div><div class="line">到哪里去了解和使用？</div><div class="line">https://github.com/TaumuLu/lissom</div><div class="line"></div><div class="line"></div><div class="line">cd ./android &amp;&amp; rm -rf app/build &amp;&amp; ./gradlew clean &amp;&amp; ./gradlew assembleFlavors_testRelease &amp;&amp; cd ../</div><div class="line"></div><div class="line"></div><div class="line">#security unlock-keychain -p &quot;1&quot; /Users/terminus/Library/Keychains/login.keychain</div><div class="line">#npm install --registry http://registry.npm.terminus.io/</div><div class="line">#work_path=$(pwd)</div><div class="line">#cd $work_path &amp;&amp; cd android &amp;&amp; ./gradlew clean assembleFlavors_jenkinsRelease -DXHSD_PUSH_ENV=Test &amp;&amp; fir publish app/build/outputs/apk/app-flavors_jenkins-release.apk -T $&#123;FIR_TOKEN&#125; &amp;</div><div class="line">#cd $work_path &amp;&amp; cd ios &amp;&amp; pod update --no-repo-update &amp;&amp; rm -rf build/* &amp;&amp; xcodebuild clean &amp;&amp; xcodebuild -workspace xinhuaMobile.xcworkspace -scheme xinhuaMobile_inHouse_test -configuration Test -derivedDataPath build &amp;&amp; xcrun -sdk iphoneos PackageApplication -v ./build/Build/Products/Test-iphoneos/xinhuaMobile_inHouse.app -o /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa &amp;&amp; fir publish /Users/terminus/terminus/ipa/xinhuaMobile_inHouse_test.ipa -T $&#123;FIR_TOKEN&#125;</div><div class="line">#curl &apos;https://oapi.dingtalk.com/robot/send?access_token=59a79f2f12a2fd8dff337609608c0c337e2af0b1a5216a8befcf253fdd816c0f&apos; -H &apos;Content-Type:application/json&apos; -d &apos;&#123; &quot;msgtype&quot;: &quot;link&quot;,&quot;link&quot;: &#123;&quot;text&quot;: &quot;新华书店inHouse_App打包成功，点击链接扫码下载&quot;,&quot;title&quot;: &quot;新华书店App打包成功&quot;,&quot;picUrl&quot;: &quot;&quot;,&quot;messageUrl&quot;: &quot;https://fir.im/97nu&quot;&#125;&#125;&apos;</div><div class="line">#jenkins-mobile-cli build --platform=rn --android-task=assembleFlavors_jenkinsRelease --ios-scheme=xinhuaMobile_inHouse_test --ios-configurations=Test --log-quiet=true --ding-talk-token=59a79f2f12a2fd8dff337609608c0c337e2af0b1a5216a8befcf253fdd816c0f --fir-token=$&#123;FIR_TOKEN&#125; --keychain-file=$&#123;KEYCHANIN_FILE&#125; --keychain-password=$&#123;KEYCHAIN_PASSWORD&#125;</div><div class="line"></div><div class="line">#--ding-talk-token=ba67df9bb2da8156cd8aacc297fc18eab76767bf29c6ff1324573e0ce81301d1</div><div class="line">#test ding talk token a0c0bed514affe974d2644bdabeb408d2d718e1810069fc61ac49fc29ab9429a</div><div class="line">jenkins-mobile-cli build --platform=rn --android-task=assembleChannelDevRelease --android-DTEST=1 --android-DABI_FILTER=0 --android-DENV_SWITCH=1 --android-DENV_TYPE=prepub --ios-scheme=jiajiayueMobile_test --ios-configurations=Test --GCC_PREPROCESSOR_DEFINITIONS=&apos;$(inherited) TERMINUS_ENV_TYPE=\@\&quot;prepub\&quot;&apos; --fir-token=982a194018b86cf315c34ea6e507d541 --keychain-file=$&#123;KEYCHANIN_FILE&#125; --keychain-password=$&#123;KEYCHAIN_PASSWORD&#125; --log-quiet=true --static-scan=false --ding-talk-token=100eca1a5221071113ca6854ac8198728e7e1f5118bc4d4cd9d7cc79f52fee8a</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#730daeee43a8b295f2148807e82edd73012be006725a12fbdac5ed7a98e20da4</div><div class="line">#11673f5616a00cb380d3155cd9650b6e7ddedaaf913f887c63876c88420b8b23</div><div class="line">#--ding-talk-token=11673f5616a00cb380d3155cd9650b6e7ddedaaf913f887c63876c88420b8b23</div><div class="line">#jenkins-mobile-cli build --platform=rn --android-task=assembleRelease --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=cnoocWebMobile --ios-configurations=Test --log-quiet=true --static-scan=false --fir-token=982a194018b86cf315c34ea6e507d541 --keychain-file=$&#123;KEYCHANIN_FILE&#125; --keychain-password=$&#123;KEYCHAIN_PASSWORD&#125;</div><div class="line">rm -rf ./node_modules/react-native-safe-area-view/.git</div><div class="line">rm -rf ./node_modules/@react-navigation/native/node_modules/react-native-safe-area-view/.git</div><div class="line">jenkins-mobile-cli build --platform=rn-android --android-task=assembleRelease --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --android-DENV_CHECK=0 --ios-scheme=cnoocWebMobile --ios-configurations=Test --log-quiet=true --static-scan=false --fir-token=982a194018b86cf315c34ea6e507d541</div><div class="line">rm -rf ./node_modules/react-native-safe-area-view/.git</div><div class="line">rm -rf ./node_modules/@react-navigation/native/node_modules/react-native-safe-area-view/.git</div><div class="line">jenkins-mobile-cli build --platform=rn-ios --android-task=assembleRelease --android-DABI_FILTER=1 --android-DENV_SWITCH=1 --ios-scheme=cnoocWebMobile_test --ios-configurations=Test --log-quiet=true --static-scan=false --fir-token=982a194018b86cf315c34ea6e507d541 --ding-talk-token=11673f5616a00cb380d3155cd9650b6e7ddedaaf913f887c63876c88420b8b23 --keychain-file=$&#123;KEYCHANIN_FILE&#125; --keychain-password=$&#123;KEYCHAIN_PASSWORD&#125;</div><div class="line"></div><div class="line"></div><div class="line">#!/usr/bin/env node</div><div class="line">var option = require(&apos;minimist&apos;)(process.argv.slice(2))</div><div class="line">var spawn = require(&apos;child_process&apos;).spawn</div><div class="line"></div><div class="line">var &#123; GlobalConfig, GlobalConfigParse, GlobalHelp, GlobalUsage&#125; = require(&apos;./global-config&apos;)</div><div class="line">var BuildTool = require(&apos;./options/build&apos;)</div><div class="line">var BundleTool = require(&apos;./options/bundle&apos;)</div><div class="line">var PatchTool = require(&apos;./options/patch&apos;)</div><div class="line"></div><div class="line">function printHelp()&#123;</div><div class="line">console.log(GlobalUsage)</div><div class="line">console.log(GlobalHelp)</div><div class="line">&#125;</div><div class="line"></div><div class="line">function command()&#123;</div><div class="line">var commands = option._</div><div class="line">if(!commands || commands.length &lt; 1)&#123;</div><div class="line">console.log(GlobalUsage)</div><div class="line">console.log(GlobalHelp)</div><div class="line">return</div><div class="line">&#125;</div><div class="line">var command = commands[0]</div><div class="line">try&#123;</div><div class="line">GlobalConfigParse(option)</div><div class="line">&#125;catch(err) &#123;</div><div class="line">printHelp()</div><div class="line">throw err</div><div class="line">&#125;</div><div class="line">try&#123;</div><div class="line">if(command === &apos;build&apos; || command === &apos;build-release&apos;) &#123;</div><div class="line">BuildTool.execute(option, command === &apos;build-release&apos;)</div><div class="line">&#125; else if(command === &apos;bundle&apos;)&#123;</div><div class="line">BundleTool.execute()</div><div class="line">&#125; else if(command === &apos;patch&apos;) &#123;</div><div class="line">PatchTool.execute(option)</div><div class="line">&#125;else&#123;</div><div class="line">printHelp()</div><div class="line">&#125;</div><div class="line">&#125;catch(err) &#123;</div><div class="line">console.log(err)</div><div class="line">//throw err</div><div class="line">console.log(&apos;==============================build failed================================&apos;)</div><div class="line">process.exitCode = 1</div><div class="line">process.exit(1)</div><div class="line">process.kill(process.pid, &apos;SIGHUP&apos;)</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">968947</div><div class="line">hbs/1234</div><div class="line"></div><div class="line"></div><div class="line">defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock</div><div class="line">alias clean=&quot;defaults write com.apple.dock ResetLaunchPad True &amp;&amp; killall Dock&quot;</div></pre></td></tr></table></figure>
-
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Lissom介绍"><a href="#Lissom介绍" class="headerlink" title="Lissom介绍"></a>Lissom介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">RSS(Really Simple Syndication)</div><div class="line">shadowsocks-R</div><div class="line"></div><div class="line">lissom</div><div class="line">是什么？</div><div class="line">轻量级服务端渲染框架(ssr)</div><div class="line">做什么？</div><div class="line">ssr带来的好处无非就两点SEO和首屏渲染</div><div class="line">为什么会有？</div><div class="line">目前项目接入ssr的成本高、侵入性强，对于老项目迁移成本会很高，除去ssr化必须做的改动外，框架自身的约束带来的改动更大，且限制更多，开发体验也不够友好</div><div class="line">怎么好用了？</div><div class="line">提升开发体验，提高用户体验</div><div class="line">更专注于ssr，以最小代价引入ssr，除去ssr化必须的改动外，迁移项目的成本也很低</div><div class="line">支持按需加载、异步操作</div><div class="line">是我要为你做ssr，无需改动原有打包配置、目录结构、技术栈等</div><div class="line">将来还会怎么更好用？</div><div class="line">服务端支持引入dll</div><div class="line">支持其他框架服务端渲染，如vue</div><div class="line">更友好的处理异步操作方式期待react新的服务器渲染器</div><div class="line">到哪里去了解和使用？</div><div class="line">https://github.com/TaumuLu/lissom</div></pre></td></tr></table></figure>
           
         
       
@@ -2644,7 +2371,7 @@ querystring {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-count">89</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2719,7 +2446,7 @@ querystring {
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

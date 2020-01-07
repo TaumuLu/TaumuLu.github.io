@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="前言在此记录自己平时学习知识点时自己恍然大悟的理解及体会，不一定理解准确，但定是当时最棒的理解了 日常积累Scope共享的Scope，所以循环中创建多个函数会只取得最后一次循环变量的赋值 鼠标事件js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决 表达式赋值(operation)()赋值运算再">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.506Z">
+<meta property="og:updated_time" content="2020-01-03T09:21:04.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS积累">
 <meta name="twitter:description" content="前言在此记录自己平时学习知识点时自己恍然大悟的理解及体会，不一定理解准确，但定是当时最棒的理解了 日常积累Scope共享的Scope，所以循环中创建多个函数会只取得最后一次循环变量的赋值 鼠标事件js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决 表达式赋值(operation)()赋值运算再">
@@ -340,17 +340,17 @@
 <h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><p>查找变量先从作用域的前端开始，即当前环境的变量对象或活动对象查，之后若在函数中再沿着Scope中保存的父变量对象的层级链向上查找至全局对象，浏览器中即window对象，之后再进行二维作用域链查找，因window继承于Object.prototype对象，所以查到Object.prototype为止</p>
 <h4 id="函数参数解构赋值"><a href="#函数参数解构赋值" class="headerlink" title="函数参数解构赋值"></a>函数参数解构赋值</h4><p>解构赋值function({x=1,y=2}={})，{}为默认值，即没有传入参数将{}对象做为默认值，因为默认值为空对象，所以又触发设置默认的对象解构赋值所以参数为1，2</p>
 <h4 id="函数参数传递"><a href="#函数参数传递" class="headerlink" title="函数参数传递"></a>函数参数传递</h4><p>函数参数只能按值传递，因此传递引用类型时并非按引用访问，而是存储实参到变量对象中并与传进的变量引用内存中的同一个引用类型，因此将参数指向另一个引用类型时并不会影响到传进函数的变量所引用的值</p>
-<h4 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h4><p>js逐行解释执行代码，当执行到函数调用时，此时调用函数内部的作用域链为Scope + 当前函数的AO对象<br>但Scope保存的对象为调用此函数的AO/VO对象，仅为预编译保存的值 + 调用函数之前的代码执行值<br>所以在调用函数之后才赋值的变量是取不到的，即使是闭包也如此(单线程执行代码即同步)  </p>
+<h4 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h4><p>js逐行解释执行代码，当执行到函数调用时，此时调用函数内部的作用域链为Scope + 当前函数的AO对象<br>但Scope保存的对象为调用此函数的AO/VO对象，仅为预编译保存的值 + 调用函数之前的代码执行值<br>所以在调用函数之后才赋值的变量是取不到的，即使是闭包也如此(单线程执行代码即同步)</p>
 <h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>加标志g 会引起交替返回true 和false<br>使用标志g 不会在匹配第一个项时就停止，而会保留状态，直到没有匹配才会重置<br>可以写RegExp.lastIndex = 0重置这种状态</p>
 <h4 id="比较操作符"><a href="#比较操作符" class="headerlink" title="==比较操作符"></a>==比较操作符</h4><p>参数数据类型相同直接进行比较</p>
 <ul>
-<li>不同 <ul>
+<li>不同<ul>
 <li>布尔值：转换为数值进行比较</li>
 <li>字符串：如果另一比较类型为数值会转化为数值通过Number()方法转换</li>
 <li>对象：先调用valueOf()比较，不行再调用toString()比较(得到基本类型)</li>
 </ul>
 </li>
-<li>规则 <ul>
+<li>规则<ul>
 <li>null和undefined不会转换且互相相等</li>
 <li>NaN不等于任何值，即使是NaN</li>
 <li>两个对象会比较引用即指针</li>
@@ -381,6 +381,10 @@
 <li>验证数字包括负数和小数 <code>const reg = /^(-)?\d+(\.\d+)?$/g;</code></li>
 </ul>
 <h3 id="Code-Snippet"><a href="#Code-Snippet" class="headerlink" title="Code Snippet"></a>Code Snippet</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 为所有元素添加、移除不同颜色边框</span></div><div class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  a.style.outline=<span class="string">"1px solid #"</span>+(~~(<span class="built_in">Math</span>.random()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).toString(<span class="number">16</span>);</div><div class="line">&#125;)</div><div class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  a.style.outline=<span class="string">"none"</span>;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// &lt;&lt;是左移位，是位操作符的一种</span></div><div class="line"><span class="comment">// 举例说a&lt;&lt;b就是先将a化为二进制数，然后向左移动b个位置</span></div><div class="line"><span class="comment">// 例如：00000001&lt;&lt;2就变成了00000100</span></div></pre></td></tr></table></figure>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><ul>
+<li>getEventListeners</li>
+<li>monitorEvents unmonitorEvents</li>
+</ul>
 <p>对象赋值属性失败情况 {<br>    属性为只读，defineProperty()除外<br>    属性是继承属性，且为只读，不能通过同名自有属性覆盖只读的继承属性<br>    不存在自有属性，没有使用setter方法继承，且不可扩展<br>}</p>
 <p>DOM对象通过直接获取属性和getAttribute()方法获取属性<br>    直接通过.操作符获取属性得到绝对路径<br>    通过getAttribute()获取的为相对路径<br>        IE返回也是绝对路径，通过getAttribute()方法的第二个方法 {<br>            0: 默认值，搜索属性时大小写不敏感<br>            1: 搜索属性时大小写敏感，大小和小写字母必须完全匹配<br>            2: 返回BSTR形式的属性值？此标识对事件属性无效( 设置此值可返回相对路径 )<br>            4: 返回完整路径URL地址。只对URL属性有效<br>        }</p>
 <p>undefined 表示”默认缺少值”，就是此处应该有一个值，但是还没有定义。<br>典型用法是 {<br>    变量被声明了，但没有赋值时，就等于 undefined<br>    调用函数时，应该提供的参数没有提供，该参数等于 undefined<br>    对象没有赋值的属性，该属性的值为 undefined<br>    函数没有返回值时，默认返回 undefined<br>}</p>
@@ -521,7 +525,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-count">89</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -589,7 +593,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常积累"><span class="nav-number">2.</span> <span class="nav-text">日常积累</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scope"><span class="nav-number">2.0.1.</span> <span class="nav-text">Scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标事件"><span class="nav-number">2.0.2.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式赋值"><span class="nav-number">2.0.3.</span> <span class="nav-text">表达式赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">2.0.4.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数解构赋值"><span class="nav-number">2.0.5.</span> <span class="nav-text">函数参数解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数传递"><span class="nav-number">2.0.6.</span> <span class="nav-text">函数参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js执行机制"><span class="nav-number">2.0.7.</span> <span class="nav-text">js执行机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.0.8.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较操作符"><span class="nav-number">2.0.9.</span> <span class="nav-text">==比较操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stack"><span class="nav-number">2.0.10.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-同步调用"><span class="nav-number">2.0.11.</span> <span class="nav-text">异步/同步调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EventLoop"><span class="nav-number">2.0.12.</span> <span class="nav-text">EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-gt-回调-gt-EventLoop"><span class="nav-number">2.0.13.</span> <span class="nav-text">异步 =&gt; 回调 =&gt; EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in运算符"><span class="nav-number">2.0.14.</span> <span class="nav-text">in运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.0.15.</span> <span class="nav-text">Promise</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label"><span class="nav-number">2.1.</span> <span class="nav-text">Label</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#head"><span class="nav-number">2.1.1.</span> <span class="nav-text">head</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">2.2.</span> <span class="nav-text">JSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式-1"><span class="nav-number">2.3.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Snippet"><span class="nav-number">2.4.</span> <span class="nav-text">Code Snippet</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常积累"><span class="nav-number">2.</span> <span class="nav-text">日常积累</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scope"><span class="nav-number">2.0.1.</span> <span class="nav-text">Scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标事件"><span class="nav-number">2.0.2.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式赋值"><span class="nav-number">2.0.3.</span> <span class="nav-text">表达式赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">2.0.4.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数解构赋值"><span class="nav-number">2.0.5.</span> <span class="nav-text">函数参数解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数传递"><span class="nav-number">2.0.6.</span> <span class="nav-text">函数参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js执行机制"><span class="nav-number">2.0.7.</span> <span class="nav-text">js执行机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.0.8.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较操作符"><span class="nav-number">2.0.9.</span> <span class="nav-text">==比较操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stack"><span class="nav-number">2.0.10.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-同步调用"><span class="nav-number">2.0.11.</span> <span class="nav-text">异步/同步调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EventLoop"><span class="nav-number">2.0.12.</span> <span class="nav-text">EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-gt-回调-gt-EventLoop"><span class="nav-number">2.0.13.</span> <span class="nav-text">异步 =&gt; 回调 =&gt; EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in运算符"><span class="nav-number">2.0.14.</span> <span class="nav-text">in运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.0.15.</span> <span class="nav-text">Promise</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label"><span class="nav-number">2.1.</span> <span class="nav-text">Label</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#head"><span class="nav-number">2.1.1.</span> <span class="nav-text">head</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">2.2.</span> <span class="nav-text">JSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式-1"><span class="nav-number">2.3.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Snippet"><span class="nav-number">2.4.</span> <span class="nav-text">Code Snippet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件处理"><span class="nav-number">2.5.</span> <span class="nav-text">事件处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -612,7 +616,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

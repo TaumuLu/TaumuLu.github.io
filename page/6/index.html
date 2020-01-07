@@ -1531,67 +1531,15 @@
         
           
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于一直在用Windows开发的我来说直接上手Mac有点麻烦且又要学习使用Mac，当然最大的阻碍还是不习惯，但是这是3、4天前的感受，短短几天时间我就深深体会到了Mac的优雅强大，工作开发起来简直不要太爽，要离不开的感觉，有种以前用windows开发都在浪费时间的感觉，哈哈，不过Mac对程序员还真是友好，故此记录下Mac的一些东西，随便写写玩了</p>
-<p>2018.02.27<br>这次又看了一堆正确使用Mac的知识，不禁感叹距自己会用Mac还差的很远，尤其是作为程序员的我来说更要优雅的使用Mac，以提示自己的使用效率，继续学习一点点积累记录</p>
-<h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><ul>
-<li>homebrew<ul>
-<li>install<ul>
-<li>git</li>
-<li>git-flow</li>
-<li>nginx</li>
-<li>node</li>
-<li>mysql</li>
-<li>python</li>
-<li>python3</li>
-<li>maven</li>
-<li>archey</li>
-<li>tree</li>
-<li>autojump</li>
-</ul>
-</li>
-<li>cask install<ul>
-<li>java</li>
-<li>react-native-debugger</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>XCode</li>
-<li>iTerm2</li>
-<li>Oh My ZSH</li>
-<li>VSCode</li>
-<li>Sublime Text</li>
-<li>IDEA</li>
-<li>Switch Hosts</li>
-<li>XX-Net</li>
-<li>ShadowsockesX-NG</li>
-<li>SourceTree</li>
-<li>Chrome</li>
-<li>The Unarchiver</li>
-<li>PDF Expert</li>
-<li>Alfred</li>
-<li>QQ</li>
-<li>微信</li>
-<li>网易云音乐</li>
-<li>钉钉</li>
-<li>其他<ul>
-<li>CheatSheet</li>
-<li>AppCleaner</li>
-<li>istat menus</li>
-</ul>
-</li>
-</ul>
-<h3 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h3><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">brew search [TEXT|/REGEX/]</div><div class="line">brew (info|home|options) [FORMULA...]</div><div class="line">brew install FORMULA...</div><div class="line">brew update</div><div class="line">brew upgrade [FORMULA...]</div><div class="line">brew uninstall FORMULA...</div><div class="line">brew list [FORMULA...]</div><div class="line"></div><div class="line">brew update &amp;&amp; brew cask install react-native-debugger</div></pre></td></tr></table></figure>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>install和cask install的区别</p>
-<blockquote>
-<p>brew主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发，brew cask主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在mac中直接运行使用<br>brew install curl可以安装curl第三方库，这样你在开发时就可以使用它的库来进行开发<br>brew cask install chrome可以安装谷歌浏览器应用程序，可直接运行brew偏管理第三方库和命令行工具方面的东东brew cask可以看作是苹果官方app store的补充</p>
-</blockquote>
+<h4 id="2018-02-27"><a href="#2018-02-27" class="headerlink" title="2018.02.27"></a>2018.02.27</h4><p>这次又看了一堆正确使用Mac的知识，不禁感叹距自己会用Mac还差的很远，尤其是作为程序员的我来说更要优雅的使用Mac，以提示自己的使用效率，继续学习一点点积累记录</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><h3 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h3><h4 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h4><p>brew主要用来下载一些不带界面的命令行下的工具和第三方库来进行二次开发</p>
+<h4 id="brew-cask"><a href="#brew-cask" class="headerlink" title="brew cask"></a>brew cask</h4><p>brew cask主要用来下载一些带界面的应用软件，下载好后会自动安装，并能在mac中直接运行使用</p>
 <h3 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h3><h4 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysqld_safe --skip-grant-tables</div><div class="line">mysql -u root -p</div><div class="line">UPDATE mysql.user SET authentication_string=PASSWORD(&apos;root&apos;) WHERE User=&apos;root&apos;;</div><div class="line">FLUSH PRIVILEGES;</div><div class="line">\q;</div></pre></td></tr></table></figure>
 <h3 id="Alfred"><a href="#Alfred" class="headerlink" title="Alfred"></a>Alfred</h3><p>安装之后几乎没有怎么去使用，毕竟需要学习成本，今天开始学新使用，瞬间觉得差点就错过了这个很好的工具，确实很强大，配合各种workflows和其他特性</p>
 <h4 id="Workflows"><a href="#Workflows" class="headerlink" title="Workflows"></a>Workflows</h4><p><a href="https://github.com/zenorocha/alfred-workflows" target="_blank" rel="noopener">https://github.com/zenorocha/alfred-workflows</a></p>
 <h4 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h4><p><a href="https://sspai.com/post/32979" target="_blank" rel="noopener">https://sspai.com/post/32979</a><br><a href="https://zhuanlan.zhihu.com/p/19986749?columnSlug=pinapps" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/19986749?columnSlug=pinapps</a><br><a href="https://www.zhihu.com/question/20205127" target="_blank" rel="noopener">https://www.zhihu.com/question/20205127</a></p>
 <h2 id="重装系统"><a href="#重装系统" class="headerlink" title="重装系统"></a>重装系统</h2><p>比Windows要操作简单，主要介绍U盘重装</p>
-<ul>
-<li>准备工作<ul>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
 <li>备份</li>
 <li>U盘</li>
 <li>下载OS<ul>
@@ -1600,8 +1548,7 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>格式化U盘<ul>
+<h3 id="格式化U盘"><a href="#格式化U盘" class="headerlink" title="格式化U盘"></a>格式化U盘</h3><ul>
 <li>应用程序 -&gt; 实用工具 -&gt; 磁盘工具</li>
 <li>将U盘「抹掉」(格式化)<ul>
 <li>Mac OS X 扩展（日志式）格式</li>
@@ -1610,9 +1557,7 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><p>输入终端命令开始制作启动盘</p>
-<ul>
+<h3 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h3><ul>
 <li>应用程序 -&gt; 实用工具 -&gt; 终端</li>
 <li><p>将下面的一段命令复制并粘贴进去</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction</div></pre></td></tr></table></figure>
@@ -1620,71 +1565,17 @@
 <li><p>回车并执行该命令，输入管理员密码开始制作过程，等待Done</p>
 </li>
 </ul>
-</li>
-<li>U盘启动安装Mac OS X<ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
 <li>关机</li>
 <li>按下电源键开机，当听到“噹”的一声时，按住 Option 键不放，直到出现启动菜单选项</li>
 <li>格式化系统盘</li>
 <li>退回U盘重装</li>
 </ul>
-</li>
-</ul>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
-<li>control+shift+power               息屏，程序继续运行</li>
-<li>command+option+power              睡眠，等于合盖</li>
-<li>control+power                     显示重启、关机、睡眠对话框 </li>
-<li>command+control+power             重新启动 </li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="安全设置显示任何来源选项"><a href="#安全设置显示任何来源选项" class="headerlink" title="安全设置显示任何来源选项"></a>安全设置显示任何来源选项</h3><p><code>sudo spctl --master-disable</code></p>
-<h3 id="关闭自动开机"><a href="#关闭自动开机" class="headerlink" title="关闭自动开机"></a>关闭自动开机</h3><p><code>sudo nvram AutoBoot=%00</code></p>
-<h3 id="隐藏文件设置"><a href="#隐藏文件设置" class="headerlink" title="隐藏文件设置"></a>隐藏文件设置</h3><ul>
-<li>显示 <code>defaults write com.apple.finder AppleShowAllFiles -bool true</code></li>
-<li>隐藏 <code>defaults write com.apple.finder AppleShowAllFiles -bool false</code></li>
-</ul>
-<p><code>KillAll Finder</code></p>
-<h3 id="清除DNS缓存"><a href="#清除DNS缓存" class="headerlink" title="清除DNS缓存"></a>清除DNS缓存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo dscacheutil -flushcache</div><div class="line">sudo killall -HUP mDNSResponder;say DNS cache has been flushed</div></pre></td></tr></table></figure>
-<h3 id="更改截图位置"><a href="#更改截图位置" class="headerlink" title="更改截图位置"></a>更改截图位置</h3><p><code>defaults write com.apple.screencapture location /CustomPath</code></p>
-<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p>如果当前shell为zsh，则不加载bash相关文件，依次加载，可以source引入即可</p>
-<ul>
-<li>~/.zlogin</li>
-<li>~/.zshrc</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 查看当前shell</div><div class="line">echo $SHELL</div><div class="line">ps -p $$</div></pre></td></tr></table></figure>
-<h3 id="设置开机自启"><a href="#设置开机自启" class="headerlink" title="设置开机自启"></a>设置开机自启</h3><p>利用Launchctl来设置，通过写在/Library/LaunchDaemons/下的.plist文件</p>
-<ul>
-<li><p>brew<br>通过brew安装的软件去/usr/local/opt下找到对应的.plist文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo cp /usr/<span class="built_in">local</span>/opt/nginx/*.plist /Library/LaunchDaemons</div><div class="line">sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist</div></pre></td></tr></table></figure>
-</li>
-<li><p>验证.plist文件<br>sudo plutil -lint /Library/LaunchDaemons/com.mysql.plist</p>
-</li>
-<li><p>注册系统服务<br>sudo launchctl load -w /Library/LaunchDaemons/*.plist </p>
-</li>
-<li><p>卸载注册服务<br>sudo launchctl unload -w /Library/LaunchDaemons/*.plist</p>
-</li>
-<li><p>修改执行权限<br>sudo chown root:wheel /Library/LaunchDaemons/*.plist</p>
-</li>
-</ul>
-<h3 id="Network-Link-Conditioner"><a href="#Network-Link-Conditioner" class="headerlink" title="Network Link Conditioner"></a>Network Link Conditioner</h3><p><code>Additional tools for Xcode</code></p>
-<h2 id="bash命令安装应用"><a href="#bash命令安装应用" class="headerlink" title="bash命令安装应用"></a>bash命令安装应用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/usr/bin/env zsh</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> ! [ <span class="_">-e</span> <span class="string">"<span class="variable">$HOME</span>/.ssh/id_rsa.pub"</span> ]</div><div class="line"><span class="keyword">then</span></div><div class="line">  <span class="built_in">echo</span> <span class="string">"Generating ssh key..."</span></div><div class="line">  <span class="built_in">echo</span> <span class="string">"Please enter the email you want to associate with your ssh key: \c"</span></div><div class="line">  <span class="built_in">read</span> email</div><div class="line">  ssh-keygen -t rsa -C <span class="string">"<span class="variable">$email</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> [[ ! -x $(/usr/bin/<span class="built_in">which</span> <span class="_">-s</span> brew) ]]; <span class="keyword">then</span></div><div class="line">  <span class="built_in">echo</span> <span class="string">"Installing Homebrew..."</span></div><div class="line">  /usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">  ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)</span>"</span></div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Put Homebrew location earlier in PATH ..."</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"\n# recommended by brew doctor"</span> &gt;&gt; ~/.zshrc</div><div class="line"><span class="built_in">echo</span> <span class="string">"export PATH='/usr/local/bin:<span class="variable">$PATH</span>'\n"</span> &gt;&gt; ~/.zshrc</div><div class="line"><span class="built_in">source</span> ~/.zshrc</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Homebrew Versions..."</span></div><div class="line">brew tap homebrew/versions</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Git..."</span></div><div class="line">brew install git git-flow</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Tools..."</span></div><div class="line">brew install autojump zsh-autosuggestions</div><div class="line"></div><div class="line">brew update</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Build Essentials..."</span></div><div class="line">brew install readline openssl coreutils</div><div class="line">brew link --force openssl</div><div class="line">brew link --force readline</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Handy Tools..."</span></div><div class="line">brew install wget curl tree ctags hub ssh-copy-id keychain zsh vim tmux</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Databases..."</span></div><div class="line">brew install mysql redis</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Web Servers..."</span></div><div class="line">brew install nginx</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Web Python..."</span></div><div class="line">brew install python python3</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing NVM and Node"</span></div><div class="line">\wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash</div><div class="line"><span class="built_in">source</span> ~/.zshrc</div><div class="line"></div><div class="line"><span class="built_in">echo</span> nvm version: $(nvm --version)</div><div class="line">NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install 9</div><div class="line"><span class="built_in">echo</span> npm version: $(npm -v)</div><div class="line"><span class="built_in">echo</span> node version: $(node -v)</div><div class="line">npm config <span class="built_in">set</span> @ali:registry http://registry.npm.alibaba-inc.com/</div><div class="line">npm config <span class="built_in">set</span> @alife:registry http://registry.npm.alibaba-inc.com/</div><div class="line">npm config <span class="built_in">set</span> @terminus:registry http://registry.npm.terminus.io/</div><div class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</div><div class="line">npm i -g @terminus/herd</div><div class="line">npm i -g @terminus/shepherd</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Embracing Cask..."</span></div><div class="line">brew tap phinze/homebrew-cask</div><div class="line">brew install brew-cask</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"Installing Essential Applications with Cask..."</span></div><div class="line">brew cask install google-chrome virtualbox iterm2 sequel-pro alfred3 visual-studio-code sublime-text android-studio intellij-idea java</div><div class="line">brew cask alfred3 link</div></pre></td></tr></table></figure>
-<h2 id="QuickLook"><a href="#QuickLook" class="headerlink" title="QuickLook"></a>QuickLook</h2><ul>
-<li><a href="https://github.com/sindresorhus/quick-look-plugins" target="_blank" rel="noopener">https://github.com/sindresorhus/quick-look-plugins</a></li>
-<li><a href="https://sspai.com/post/31927" target="_blank" rel="noopener">https://sspai.com/post/31927</a></li>
-<li><a href="https://www.jianshu.com/p/34d5e66dcf52" target="_blank" rel="noopener">https://www.jianshu.com/p/34d5e66dcf52</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html" target="_blank" rel="noopener">http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html</a></li>
-<li><a href="http://freemacsoft.net/" target="_blank" rel="noopener">http://freemacsoft.net/</a></li>
-<li><a href="http://reactide.io/" target="_blank" rel="noopener">http://reactide.io/</a></li>
-</ul>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 转发远程端口到本地端口</span></div><div class="line">ssh -N -D 127.0.0.1:9090 root@远程地址</div><div class="line"></div><div class="line"><span class="comment"># 查看唤醒日志记录</span></div><div class="line">pmset -g <span class="built_in">log</span> | grep <span class="_">-e</span> <span class="string">" Sleep  "</span> <span class="_">-e</span> <span class="string">" Wake  "</span></div><div class="line"></div><div class="line"><span class="comment"># 查看id</span></div><div class="line">osascript <span class="_">-e</span> <span class="string">'id of app "Chrome"'</span></div></pre></td></tr></table></figure>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html" target="_blank" rel="noopener">http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html</a></li>
 <li><a href="https://www.zhihu.com/question/22624898/answer/105234217" target="_blank" rel="noopener">https://www.zhihu.com/question/22624898/answer/105234217</a></li>
-<li><a href="http://www.cnblogs.com/52php/p/5684348.html" target="_blank" rel="noopener">http://www.cnblogs.com/52php/p/5684348.html</a></li>
 <li><a href="http://macshuo.com/?p=676" target="_blank" rel="noopener">http://macshuo.com/?p=676</a></li>
-<li><a href="https://blog.csdn.net/waneto2008/article/details/52486433" target="_blank" rel="noopener">https://blog.csdn.net/waneto2008/article/details/52486433</a></li>
-</ul>
-<h2 id="破解软件"><a href="#破解软件" class="headerlink" title="破解软件"></a>破解软件</h2><ul>
-<li><a href="http://xclient.info/s/sizeup.html?t=444caf1f97867f539878507e77b1f7f48e4b7434" target="_blank" rel="noopener">SizeUp</a>  </li>
-<li><a href="https://pqrs.org/osx/karabiner/" target="_blank" rel="noopener">karabiner</a></li>
 </ul>
 
           
@@ -2018,7 +1909,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-count">89</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2093,7 +1984,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

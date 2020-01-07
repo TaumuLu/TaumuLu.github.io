@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="自定义快捷键打开文件 vim /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist 剪切当前行Insertions and Indentations键最后添加12&amp;lt;key&amp;gt;Duplicate Current Line&amp;lt;/key&amp;gt;&amp;lt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.516Z">
+<meta property="og:updated_time" content="2019-09-19T16:27:44.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode">
 <meta name="twitter:description" content="自定义快捷键打开文件 vim /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist 剪切当前行Insertions and Indentations键最后添加12&amp;lt;key&amp;gt;Duplicate Current Line&amp;lt;/key&amp;gt;&amp;lt">
@@ -345,7 +345,7 @@
 <li>在key为DVTPlugInCompatibilityUUIDs中的值里加入刚获取Xcode的UUID</li>
 </ul>
 <h3 id="清除Xcode插件设置"><a href="#清除Xcode插件设置" class="headerlink" title="清除Xcode插件设置"></a>清除Xcode插件设置</h3><p>Xcode弹框提示是否加载插件选择Load Bundles<br>若不小心点接了Skip Bundles，则需要清除Xcode插件设置<br>运行以下命令清除，命令中的Xcode-X.X改成自己的Xcode版本</p>
-<p><code>defaults delete  com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-X.X</code></p>
+<p><code>defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-X.X</code></p>
 <h3 id="使用vim开发"><a href="#使用vim开发" class="headerlink" title="使用vim开发"></a>使用vim开发</h3><p>让Xcode支持Vim操作，不得不说Xcode的自带的快捷键操作太少也不不好用了，更加坚定了我要用Vim做所有编辑器开发的决心  </p>
 <h4 id="XVim"><a href="#XVim" class="headerlink" title="XVim"></a><a href="https://github.com/XVimProject/XVim2" target="_blank" rel="noopener">XVim</a></h4><p>项目地址有完整的安装说明，已用有几个小bug，也算不影戏使用<br>还是要多用vim，方便不同编辑器的快速开发，正在努力适应中  </p>
 <h2 id="升级Xcode10"><a href="#升级Xcode10" class="headerlink" title="升级Xcode10"></a>升级Xcode10</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib</div><div class="line"></div><div class="line">-l&quot;stdc++.6.0.9&quot;</div><div class="line">libstdc++.6.tbd</div><div class="line">libstdc++.6.0.9.tbd</div></pre></td></tr></table></figure>
@@ -471,7 +471,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">90</span>
+                <span class="site-state-item-count">89</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -562,7 +562,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
