@@ -261,6 +261,999 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/JavaScript/Input光标操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/13/JavaScript/Input光标操作/" itemprop="url">
+                  Input光标操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T22:22:57+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="IE"><a href="#IE" class="headerlink" title="IE"></a>IE</h2><ul>
+<li><p>document</p>
+<ul>
+<li>selection<ul>
+<li>createRange<ul>
+<li>moveStart</li>
+</ul>
+</li>
+<li>empty</li>
+<li>clear</li>
+<li>type</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>element</p>
+<ul>
+<li>createTextRange<ul>
+<li>moveStart</li>
+<li>moveEnd</li>
+<li>collapse</li>
+<li>select</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Chrome等"><a href="#Chrome等" class="headerlink" title="Chrome等"></a>Chrome等</h2><ul>
+<li>element<ul>
+<li>selectionStart</li>
+<li>selectionEnd</li>
+<li>setSelectionRange(start, end)</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/24/Android/Android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/24/Android/Android/" itemprop="url">
+                  Android
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-24T15:49:36+08:00">
+                2017-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="启动模式"><a href="#启动模式" class="headerlink" title="启动模式"></a>启动模式</h2><ul>
+<li>Standard(default)</li>
+<li>SingleTop</li>
+<li>SingleTask</li>
+<li>SingleInstance</li>
+</ul>
+<p>SingleTop和SingleTask有额外的钩子函数onNewIntent</p>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><ul>
+<li>Manifest.xml中指定Activity启动模式 android:launchMode=”singleTask” 无法指定FLAG_ACTIVITY_CLEAR_TOP</li>
+<li>Intent中指定启动模式去创建Activity 无法指定singleInstance<ul>
+<li>Flags<ul>
+<li>FLAG_ACTIVITY_NEW_TASK SingleTask</li>
+<li>FLAG_ACTIVITY_SINGLE_TOP SingleTop</li>
+<li>FLAG_ACTIVITY_CLEAN_TOP</li>
+<li>FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS android:excludeFromRecents=”trure”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h2><p>R文件（R.java）是由Android 资源打包工具AAPT（Android Asset Packaging Tool）自动生成，包含了res目录下所有资源的Id。每当创建一个新资源，会自动地在R文件中添加该资源的id。我们可以在代码中使用该id，执行任何有关该资源的操作。注意，如果我们手动删除R文件，编译器会自动创建。 </p>
+<p>R文件是一个java文件，因为它是被自动创建的，所以Android studio 会把它进行隐藏，具体位置在 app/build/generated/source/r/debug</p>
+<h2 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h2><ul>
+<li>应用模块 apk</li>
+<li>库模块 AAR<ul>
+<li>包含代码及Android的资源文件和manifest文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul>
+<li>New Module</li>
+<li>应用模块转库模块<ul>
+<li>build.gradle<ul>
+<li><code>java apply plugin: &#39;com.android.library&#39;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>settings.gradle<ul>
+<li><code>include &#39;:myLibrary&#39;</code></li>
+</ul>
+</li>
+<li>应用模块<ul>
+<li>build.gralde<ul>
+<li><code>compile project(&quot;:myLibrary&quot;)</code></li>
+</ul>
+</li>
+<li>应用模块的 minSdkVersion 必须大于或等于库定义的版本</li>
+</ul>
+</li>
+</ul>
+<h3 id="AAR文件"><a href="#AAR文件" class="headerlink" title="AAR文件"></a>AAR文件</h3><ul>
+<li>资源<ul>
+<li>默认公开状态</li>
+<li>私有<ul>
+<li>res/values/public.xml</li>
+<li>如果想让库中的所有资源都为私有的，你必须要在public.xml中定义至少一个属性</li>
+</ul>
+</li>
+<li>资源合并默认使用应用模块的资源</li>
+<li>用库的R文件和应用的R文件都能访问到库的资源，但无法用库的R文件访问应用资源</li>
+<li>使用同名资源，tools标记为重写状态<ul>
+<li><code>tools:override=&quot;true&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h3><ul>
+<li>Library Module生成的R.java文件中，所有的IDs非final的(应用模块是final)<ul>
+<li>switch语句的case操作必须是一个常量</li>
+</ul>
+</li>
+</ul>
+<h2 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h2><p>触摸事件是种责任链模式，上层到下层的分发，下层到上层的反馈<br>触摸事件的类为MotionEvent，类似于js里的event<br>一个手势（Gesture）被定义为以ACTION_DOWN开始，以ACTION_UP结束，中间穿插其他事件<br>android的事件流和dom有点类似三个阶段：捕捉，目标，冒泡  </p>
+<h3 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h3><ul>
+<li>ACTION_DOWN</li>
+<li>ACTION_UP</li>
+<li>ACTION_MOVE</li>
+<li>ACTION_POINTER_DOWN</li>
+<li>ACTION_POINTER_UP</li>
+<li>ACTION_CANCEL</li>
+</ul>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><ul>
+<li>dispatchTouchEvent 分发</li>
+<li>onInterceptTouchEvent 拦截</li>
+<li>onTouchEvent 消费</li>
+</ul>
+<h4 id="事件传递流程"><a href="#事件传递流程" class="headerlink" title="事件传递流程"></a>事件传递流程</h4><ul>
+<li>ACTION_DOWN</li>
+<li>dispatchTouchEvent</li>
+<li>onInterceptTouchEvent</li>
+<li>onTouchEvent</li>
+</ul>
+<h4 id="dispatchTouchEvent"><a href="#dispatchTouchEvent" class="headerlink" title="dispatchTouchEvent"></a>dispatchTouchEvent</h4><p>分发事件的方法，在此控制拦截、处理事件以及分发给下级  </p>
+<h5 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 将dispatchTouchEvent的返回值交给上层组件，用作上层判断子view是否消费</div><div class="line">public boolean dispatchTouchEvent(MotionEvent ev) &#123;</div><div class="line">    boolean result = false;             // 默认状态为没有消费过</div><div class="line"></div><div class="line">    if (!onInterceptTouchEvent(ev)) &#123;   // 如果没有拦截交给子View</div><div class="line">        result = child.dispatchTouchEvent(ev);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (!result) &#123;                      // 如果事件没有被子View消费，询问自身onTouchEvent</div><div class="line">        result = onTouchEvent(ev);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result;                      // 如果自身onTouchEvent也没消费，返回false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="onInterceptTouchEvent"><a href="#onInterceptTouchEvent" class="headerlink" title="onInterceptTouchEvent"></a>onInterceptTouchEvent</h4><p>拦截事件的方法，dispatchTouchEvent方法分发时会调用，且只关心此方法的返回值，返回true交由自身的onTouchEvent处理，返回false则传递给下级处理<br>顶层Activity和底层View没有此方法，因为两者是事件的起点和终点，拦截没有意义，在dispatchTouchEvent处会直接调用onTouchEvent，不需要拦截判断  </p>
+<h4 id="onTouchEvent"><a href="#onTouchEvent" class="headerlink" title="onTouchEvent"></a>onTouchEvent</h4><p>处理事件的方法，用作消费事件，返回true表示消费此事件，此次和之后的事件不会再流入下级处理，返回false则代表不消费事件，交由下级处理</p>
+<h3 id="事件描述"><a href="#事件描述" class="headerlink" title="事件描述"></a>事件描述</h3><ul>
+<li>整个过程由顶层Activity开始分发，直到底层View，再回传回顶层Activity</li>
+<li>多个子View时计算Touch事件的坐标，判断哪个子View接收Touch事件</li>
+<li>一但组件处理了Down，之后的MOVE和UP会直接到当前处理组件的onTouchEvent中不会再流入下级处理</li>
+<li>Down是关键，他到哪里被处理，之后的MOVE和UP就同样到那里</li>
+</ul>
+<h3 id="触摸冲突"><a href="#触摸冲突" class="headerlink" title="触摸冲突"></a>触摸冲突</h3><p>某层组件一旦拦截处理了本次触摸事件，那么之后的同一事件序列在下次触摸事件之前都不会再分发给子组件，直接进入当前组件的onTouchEvent方法中，但之后的同一事件序列还是会经过当前组件的所有父组件，且每个手势事件都会触发父组件的dispatchTouchEvent和onInterceptTouchEvent方法，所以父组件是可以随时拦截处理掉，但父组件一旦拦截处理，就和开始说的当前组件拦截一样，之后的同一事件序列也不会再分发给当前组件直至下次触摸事件  </p>
+<p>所以说android不支持嵌套滚动，一旦父组件拦截处理，子组件在当前事件就再也没有机会参与处理，所以android又提供了NestedScrolling这套API 来支持嵌入滑动机制  </p>
+<h2 id="android-JNI实现"><a href="#android-JNI实现" class="headerlink" title="android JNI实现"></a>android JNI实现</h2><h3 id="JNI"><a href="#JNI" class="headerlink" title="JNI"></a>JNI</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
+<li>定义 Java Native Interface</li>
+<li>作用 使得Java与本地其他类型语言（如C、C++）交互<ul>
+<li>即在 Java代码 里调用 C、C++等语言的代码 或 C、C++代码调用 Java 代码</li>
+</ul>
+</li>
+<li>概念<ul>
+<li>JNI是 Java 调用 Native 语言的一种特性</li>
+<li>JNI 是属于 Java 的，与 Android 无直接关系</li>
+</ul>
+</li>
+</ul>
+<h3 id="NDK"><a href="#NDK" class="headerlink" title="NDK"></a>NDK</h3><h4 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h4><ul>
+<li>定义 Native Development Kit，是Android的一个工具开发包</li>
+<li>作用 快速开发C、 C++的动态库，并自动将so和应用一起打包成 APK<ul>
+<li>即可通过 NDK在 Android中 使用 JNI与本地代码（如C、C++）交互</li>
+</ul>
+</li>
+<li>概念<ul>
+<li>NDK是属于 Android 的，与Java并无直接关系</li>
+</ul>
+</li>
+</ul>
+<h3 id="NDK与JNI关系"><a href="#NDK与JNI关系" class="headerlink" title="NDK与JNI关系"></a>NDK与JNI关系</h3><p>JNI是实现目的，NDK是android实现JNI的手段</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.csdn.net/michael1112/article/details/54579911" target="_blank" rel="noopener">https://blog.csdn.net/michael1112/article/details/54579911</a><br><a href="https://blog.csdn.net/carson_ho/article/details/73250163" target="_blank" rel="noopener">https://blog.csdn.net/carson_ho/article/details/73250163</a></p>
+<p><a href="https://blog.csdn.net/mcryeasy/article/details/53523562" target="_blank" rel="noopener">https://blog.csdn.net/mcryeasy/article/details/53523562</a><br><a href="https://juejin.im/post/591094ae2f301e006c2d4a61" target="_blank" rel="noopener">https://juejin.im/post/591094ae2f301e006c2d4a61</a></p>
+<h3 id="触摸事件-1"><a href="#触摸事件-1" class="headerlink" title="触摸事件"></a>触摸事件</h3><p><a href="https://blog.csdn.net/a_long_/article/details/52124606" target="_blank" rel="noopener">https://blog.csdn.net/a_long_/article/details/52124606</a><br><a href="https://race604.com/android-nested-scrolling/" target="_blank" rel="noopener">https://race604.com/android-nested-scrolling/</a><br><a href="https://www.jianshu.com/p/7ff768a77410" target="_blank" rel="noopener">https://www.jianshu.com/p/7ff768a77410</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/Java/Java学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/25/Java/Java学习/" itemprop="url">
+                  Java学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T17:39:12+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li>运行 java</li>
+<li>编译 javac</li>
+<li>分解器 javap</li>
+</ul>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
+<li>变量<ul>
+<li>byte</li>
+<li>int</li>
+<li>char</li>
+<li>short</li>
+<li>long</li>
+<li>float</li>
+<li>double</li>
+<li>boolean</li>
+</ul>
+</li>
+<li>基本类型初始值<ul>
+<li>数值型: 0</li>
+<li>布尔值: false</li>
+<li>其他类型: null</li>
+</ul>
+</li>
+<li>构造器<ul>
+<li>构造器的名字和类的名字相同</li>
+<li>构造器没有返回值</li>
+</ul>
+</li>
+<li>方法重载<br>  方法名 + 参数列表 =&gt; 实际调用哪一个方法<br>  构造器和普通方法都可以进行重载</li>
+<li>修饰符<ul>
+<li>public</li>
+<li>private</li>
+<li>protected</li>
+<li>default</li>
+</ul>
+<ul>
+<li>static</li>
+<li>final<ul>
+<li>final基本类型: 定值，只能赋值一次，不能再被修改</li>
+<li>final方法: 该方法不能被重写，private的方法默认为final的方法</li>
+<li>final类: 该类不能被继承</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>interface<ul>
+<li>使用implements来实施</li>
+<li>interface中的方法默认为public</li>
+<li>我们用implements关键字来实施interface，一旦在类中实施了某个interface，必须至少在该类中定义interface的所有方法</li>
+<li>一个类可以实施不止一个的interface</li>
+</ul>
+</li>
+<li>包管理<ul>
+<li>import</li>
+<li>package</li>
+</ul>
+</li>
+<li>继承 extends</li>
+<li>abstract<ul>
+<li>当一个类中出现abstract方法时，这个类的声明必须加上abstract关键字</li>
+<li>abstract类不能用于创建对象</li>
+<li>继承抽象类必须用完整的方法定义，覆盖抽象类中的抽象方法，否则，衍生类依然是一个抽象类</li>
+</ul>
+</li>
+<li>参数按值传递</li>
+<li>类型转换<ul>
+<li>基本类型转换<ul>
+<li>收缩变换</li>
+<li>宽松变换</li>
+</ul>
+</li>
+<li>引用类型转换<ul>
+<li>衍生类对象成为基类对象Java会正确识别对象本身的类型</li>
+<li>基类引用成为衍生类引用，该基类引用所指向的对象已是衍生类对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>String类<ul>
+<li>唯一一个不需要new关键字 来创建对象的类</li>
+<li>不可变对象</li>
+<li>方法<ul>
+<li>length</li>
+<li>charAt</li>
+<li>subString</li>
+<li>indexOf</li>
+<li>startWith</li>
+<li>endWith</li>
+<li>equals</li>
+<li>compareTo</li>
+<li>trim</li>
+<li>toUpperCase</li>
+<li>toLowerCase</li>
+<li>splace</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>异常处理<ul>
+<li>Throwable类</li>
+<li>throws Exception<ul>
+<li>异常声明，对异常不处理，收到异常我也向外抛</li>
+</ul>
+</li>
+<li>getMessage()</li>
+<li>自定义异常</li>
+</ul>
+</li>
+<li>IO<ul>
+<li>FileReader</li>
+<li>BufferedReader<ul>
+<li>readLine</li>
+</ul>
+</li>
+<li>BufferedWriter</li>
+</ul>
+</li>
+<li>RTTI<ul>
+<li>Class类<ul>
+<li>getClass()</li>
+<li>forName</li>
+<li>.class</li>
+<li>getName()</li>
+<li>getPackage()</li>
+<li>newInstance()</li>
+<li>getFields()</li>
+<li>getMethods()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run-Time</li>
+<li>TypeIdentification</li>
+<li>多线程<ul>
+<li>Thread(class)<ul>
+<li>getName</li>
+<li>run</li>
+<li>start</li>
+<li>join</li>
+<li>setDaemon</li>
+</ul>
+</li>
+<li>Runnable(interface)<ul>
+<li>run</li>
+</ul>
+</li>
+<li>修饰符<ul>
+<li>synchronized</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>container 容器<ul>
+<li>数组<ul>
+<li>类型加一个[]</li>
+<li>需要声明数组的大小</li>
+<li>使用{}初始化数组</li>
+<li>System.arraycopy()</li>
+</ul>
+</li>
+<li>Collection<ul>
+<li>List<ul>
+<li><class\>的方式声明类型</class\></li>
+<li>只能放入class类及其衍生类的对象</li>
+<li>add</li>
+<li>get</li>
+<li>remove</li>
+<li>size</li>
+</ul>
+</li>
+<li>Set<ul>
+<li>add</li>
+<li>size</li>
+<li>contains</li>
+<li>remove</li>
+</ul>
+</li>
+<li>iterator()<ul>
+<li>next()</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>put</li>
+<li>get</li>
+<li>keySet(Set)</li>
+<li>values(List)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嵌套类<ul>
+<li>定义内部类时，我们同样有 访问权限控制(public, private, protected)</li>
+<li>我们在创建内部类对象时，必须基于一个外部类对象，并通过该外部类对象来创建对象</li>
+<li>闭包</li>
+<li>嵌套static类</li>
+</ul>
+</li>
+<li>向上转型只能够调用子类重写的方法，子类独有的方法在父类中根本没有定义，所以父类无法找到子类独有的方法</li>
+</ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>编译期执行<br>泛型的本质是为了参数化类型<br>泛型只在编译阶段有效<br>常见的如T、E、K、V等形式的参数常用于表示泛型</p>
+<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><p>泛型的类型参数只能是类类型，不能是简单类型<br>不能对确切的泛型类型使用instanceof操作</p>
+<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><p>未传入泛型实参时，与泛型类的定义相同，在声明类的时候，需将泛型的声明也一起加到类中<br>在实现类实现泛型接口时，如已将泛型类型传入实参类型，则所有使用泛型的地方都要替换成传入的实参类型</p>
+<h3 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h3><p>同一种泛型可以对应多个版本（因为参数类型是不确定的），不同版本的泛型类实例是不兼容的<br>类型通配符一般是使用？代替具体的类型实参(是类型实参，而不是类型形参)</p>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>如果静态方法要使用类上的泛型，必须将静态方法也定义成泛型方法</p>
+<h3 id="泛型上下边界"><a href="#泛型上下边界" class="headerlink" title="泛型上下边界"></a>泛型上下边界</h3><p>泛型的上下边界添加，必须与泛型的声明在一起</p>
+<h3 id="泛型数组"><a href="#泛型数组" class="headerlink" title="泛型数组"></a>泛型数组</h3><p>不能创建一个确切的泛型类型的数组<br>数组的类型不可以是类型变量，除非是采用通配符的方式</p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><ul>
+<li>Override</li>
+<li>Deprecated</li>
+<li>SuppressWarnings</li>
+</ul>
+<h3 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h3><ul>
+<li>源码注解</li>
+<li>编译时注解</li>
+<li>运行时注解</li>
+</ul>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>使用@interface关键定义注解<br>成员无参无异常声明<br>可以用default为成员指定一个默认值</p>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><ul>
+<li>Target<ul>
+<li>ElementType<ul>
+<li>CONSTRUCTOR</li>
+<li>FIELD</li>
+<li>LOCAL_VARIABLE</li>
+<li>METHOD</li>
+<li>PACKAGE</li>
+<li>PARAMETER</li>
+<li>TYPE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Retention<ul>
+<li>RetentionPolicy<ul>
+<li>SOURCE</li>
+<li>CLASS</li>
+<li>RUNTIME</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inherited</li>
+<li>Documented</li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>运行时执行，绕过编译</p>
+<ul>
+<li><p>Class</p>
+<ul>
+<li>类是class类的实例对象</li>
+<li>获取当前类的类类型<ul>
+<li>[currentClass].class</li>
+<li>[instance].getClass()</li>
+<li>Class.forName(‘当前类的全称’)<ul>
+<li>.newInstance() 实例化获取的类类型，只能调用无参构造方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编译时刻静态加载类<ul>
+<li>new</li>
+</ul>
+</li>
+<li>运行时刻动态加载类<ul>
+<li>forName</li>
+</ul>
+</li>
+<li>基本的数据类型<ul>
+<li>void关键字都存在类类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ClassInfo</p>
+<ul>
+<li>Method<ul>
+<li>getMethods 获取所有public的函数，包括父类继承而来的</li>
+<li>getDeclaredMethods 获取该类所有，自己声明的方法</li>
+<li>getDeclaredMethod<ul>
+<li>getName 得到方法的名称</li>
+<li>getReturnName 得到方法返回值的类型的类类型</li>
+<li>getParameterTypes 得到参数列表的类型的类类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Field<ul>
+<li>getFields 获取所有public的成员变量</li>
+<li>getDeclaredFields 获取该类自己所有声明的成员变量</li>
+<li>getDeclaredField<ul>
+<li>getName</li>
+<li>getType 得到成员变量的类型的类类型</li>
+<li>getModifiers 权限修饰符</li>
+<li>setAccessible() 设置Java的权限控制检查，针对private变量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Constructor<ul>
+<li>getConstructor() 获取所有public的构造函数</li>
+<li>getConstructors() 获得类中所有的构造函数</li>
+<li>getDeclaredConstructor() 获取该类自己所有声明的构造函数</li>
+</ul>
+</li>
+<li>Interfaces<ul>
+<li>getInterfaces() 获得类所实现的接口</li>
+</ul>
+</li>
+<li>Inherit<ul>
+<li>getSuperclass() 获得类所继承的父类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="涉及类包"><a href="#涉及类包" class="headerlink" title="涉及类包"></a>涉及类包</h3><p>java.lang.class<br>java.lang.reflect.Field<br>java.lang.reflect.Constructor</p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><ul>
+<li>普通代码块 类中方法的方法体</li>
+<li>构造代码块 构造块会在创建对象时被调用，每次创建时都会被调用，优先于类构造函数执行</li>
+<li>静态代码块 用static {}包裹起来的代码片段，只会执行一次。静态代码块优先于构造块执行，有自己的作用域</li>
+<li>同步代码块 使用synchronized() {}包裹起来的代码块，在多线程环境下，对共享数据的读写操作是需要互斥进行的，否则会导致数       据的不一致性。同步代码块需要写在方法中</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>静态代码按顺序执行，依次加载</p>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><ul>
+<li>Integer<ul>
+<li>valueOf()</li>
+<li>parseInt()</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>get()</li>
+<li>entrySet()<ul>
+<li>iterator()</li>
+<li>getKey()</li>
+<li>getValue()</li>
+</ul>
+</li>
+<li>keySet()</li>
+<li>valueSet()</li>
+</ul>
+</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li>同一个行为具有多个不同表现形式或形态的能力</li>
+<li>多态的分类<ul>
+<li>编译时多态（重载，严格说不能算作多态）</li>
+<li>运行时多态（重写）</li>
+</ul>
+</li>
+<li>运行时多态的前提<ul>
+<li>继承（实现）</li>
+<li>重写</li>
+<li>向上转型</li>
+</ul>
+</li>
+<li>向上转型与向下转型</li>
+<li>继承链中对象方法的调用的优先级<ul>
+<li>this.show(O)</li>
+<li>super.show(O)</li>
+<li>this.show((super)O)</li>
+<li>super.show((super)O)</li>
+</ul>
+</li>
+</ul>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ul>
+<li>静态导入 <code>import static [package];</code></li>
+<li>静态变量<ul>
+<li>不能在方法体中定义static变量，只有类变量，不包括方法内部的变量</li>
+</ul>
+</li>
+<li>静态方法</li>
+<li>静态代码块</li>
+<li>静态内部类</li>
+</ul>
+<h2 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h2><ul>
+<li>枚举变量的定义放在第一行，多个枚举变量直接用逗号隔开</li>
+<li>以分号结束以区分自定义变量，没有的自定义变量分号可以省略</li>
+<li>构造函数必须私有化，写private是多余的，默认并强制是private，也只能写private，写public是不能通过编译的</li>
+<li>枚举类不能继承其他类，也不能被其他类继承(因为已经继承了枚举类)</li>
+<li>枚举类中可以定义抽象方法，此时枚举类会编译为抽象类，一般枚举类会被编译为final的普通类(所以无法被继承)</li>
+<li>枚举类相当于定义的变量==static new当前枚举类</li>
+<li>枚举类不能继承其他类，但是还是可以实现接口</li>
+</ul>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><ul>
+<li>不可new实例化</li>
+<li>接口没有构造函数</li>
+<li>接口的方法全部为public</li>
+<li>接口中的方法都是抽象的需要实现</li>
+<li>接口可以继承接口</li>
+<li>接口内的变量自动设置为public static final</li>
+<li>接口无修饰符缺省为package内可见，或者为public</li>
+<li>一个类可以实现多个接口</li>
+</ul>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
+<li>不可new实例化</li>
+<li>抽象类有构造函数</li>
+<li>抽象类中可以有非抽象方法</li>
+<li>抽象类的方法可以是public，protected or private</li>
+</ul>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li>Throwable<ul>
+<li>Error</li>
+<li>Exception<ul>
+<li>RuntimeException</li>
+<li>IOException</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><ul>
+<li>创建线程<ul>
+<li>Thread</li>
+<li>Runnable</li>
+</ul>
+</li>
+<li>线程周期概念一个线程有4种状态<ul>
+<li>创建(new)状态: 调用new 方法产生一个线程对象后、调用 start 方法前所处的状态。线程对象虽然已经创建,但还没有调用 start 方法启动,因此无法执行。当线程处于创建状态时,线程对象可以调用 start 方法进入启动状态,也可以调用 stop 方法进入停止状态。</li>
+<li>可运行(runnable)状态: 当线程对象执行 start()方法后,线程就转到可运行状态。进入此状态只是说明线程对象具有了可以运行的条件,但线程并不一定处于运行状态。因为在单处理器系统中运行多线程程序时,一个时间点只有一个线程运行,系统通过调度机制实现宏观意义上的运行线程共享处理器。因此一个线程是否在运行,除了线程必须处于 Runnable 状态之外,还取决于优先级和调度。</li>
+<li>不可运行(non Runnable)状态: 线程处于不可运行状态是由于线程被挂起或者发生阻塞,例如对一个线程调用 wait()函数后,它就可能进入阻塞状态;调用线程的notify 或 notifyAll 方法后它才能再次回到可执行状态。</li>
+<li>退出(done)状态: 一个线程可以从任何一个状态中调用 stop 方法进入退出状态。线程一旦进入退出状态就不存在了,不能再返回到其他的状态。除此之外,如果线程执行完 run 方法,也会自动进入退出状态。 </li>
+</ul>
+</li>
+<li>Java中锁机制的实现方法是共享代码之前加入 synchronized 关键字</li>
+<li>线程通信<ul>
+<li>Java 中线程之间的通信是通过Object 类中的 wait()、notify()、notifyAll()等几种方法实现的。Java 中每个对象内部不仅有一个对象锁之外,还有一个线程等待队列,这个队列用于存放所有等待对象锁的线程。wait 方法调用的前提条件是当前线程获取了这个对象的锁,也就是说 wait 方法必须放在同步块或同步方法中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li>强引用</li>
+<li>弱引用<ul>
+<li>WeakReference</li>
+</ul>
+</li>
+<li>软引用</li>
+<li>虚引用</li>
+</ul>
+<h2 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h2><ul>
+<li>J2SE 桌面应用软件的编程</li>
+<li>J2ME 嵌入式系统开发</li>
+<li>J2EE 分布式的网络程序的开发<ul>
+<li>Jsp</li>
+<li>Servlet</li>
+<li>JavaBean</li>
+<li>EJB</li>
+<li>JDBC</li>
+<li>JavaMail</li>
+</ul>
+</li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul>
+<li>Java中实现真正的克隆，继承Cloneable接口</li>
+<li>注意如果一个类的成员也是一个类，而又希望支持类克隆，则要对逐级类都实现克隆</li>
+<li>Overload和Override的区别<ul>
+<li>Overloaded的方法是否可以改变返回值的类型?</li>
+<li>方法的重写Overriding和重载Overloading是Java多态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。子类的对象使用这个方法时，将调用子类中的定义，对它而言，父类中的定义如同被“屏蔽”了。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型</li>
+</ul>
+</li>
+</ul>
+<h3 id="开源程序"><a href="#开源程序" class="headerlink" title="开源程序"></a>开源程序</h3><ul>
+<li>Jive <a href="http://www.jdon.com" target="_blank" rel="noopener">http://www.jdon.com</a></li>
+<li>Pet Store</li>
+</ul>
+<h3 id="java名词"><a href="#java名词" class="headerlink" title="java名词"></a>java名词</h3><ul>
+<li>aop</li>
+<li>bean</li>
+</ul>
+<h3 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h3><ul>
+<li>编码：隐匿在计算机软硬件背后的语言</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.csdn.net/s10461/article/details/53941091" target="_blank" rel="noopener">http://blog.csdn.net/s10461/article/details/53941091</a><br><a href="https://www.cnblogs.com/iyangyuan/archive/2013/04/09/3011274.html" target="_blank" rel="noopener">Java中的泛型方法</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/函数式编程/Lambda表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1196,378 +2189,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/归并/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/01/函数式编程/归并/" itemprop="url">
-                  redece应用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T01:23:40+08:00">
-                2017-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上周就想来写下reduce这个充满函数式编程方法的理解，奈何自己怠惰了，如今再过一周，觉的还是的写下来，因为觉得reduce的实现真是太强大优美了</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>说起reduce不得不说函数式编程这种编程范式？编程思想，抽象变达实现，我也描述不清，理解就是就是函数调函数，函数传函数，函数相互组合调用来完成功能，对于函数式编程我还需要再研究下</p>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>好了，再来说我如何关注到reduce，从开始知道这个方法的时候说起，那是并不在意，原因在于用不到，或是用不出来，也就只是看过api没有去深入了解用过，直到学习redux时注意到其中有叫reducer的api，开始自然是不理解，只是在用，之后尝试看了redux的源码才知道为何叫做reducer以及其中一个叫做compose的方法，顾名思义即是组合在一起将reducer，这里便涉及到了reduce的使用</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在我看来要学习使用一个东西前，先要知道为何要学习它，再其次就要知道如何要使用，那么什么情况下需要用这个方法呢，这便是上面说到的组合时需要用到，这也是主要用途，在我们需要把很多东西，如数字、字符串、对象或是函数也好要变为一个时，就像加法运算那样，这是就可以用reduce来解决</p>
-<p>具体为循环要组合的东西组成的数组，接受一个回调函数和一个初始值，此回调函数接受4个参数，分别为前一个值，当前值，当前值的索引，以及当前数组，别看这么多参数是很好理解的，而此初始值也是很有用的，可以为你省去很多麻烦，在这里说下初始值的用法，是你期望调用reduce后返回的值，这个期望值若和你的数组中的元素是相同类型便不必传入初始值，若不相同此时便可传入初始值</p>
-<p>再来就是若调用reduce的数组长度等于1时是不会触发reduce的回调的，若想触发可传入初始值</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>这里写过一个方法，我们要计算几个数组内的元素不考虑自身进行全排序，知道自身对应每个数组的索引和每个数组的长度，计算它在排列中的序号</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 归并计算index</span></div><div class="line"><span class="keyword">const</span> getCurrentCount = <span class="function">(<span class="params">indList, lenList</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 只有一个数组不排序，返回自身索引</span></div><div class="line">    <span class="keyword">if</span> (indList.length === <span class="number">1</span>) <span class="keyword">return</span> indList[<span class="number">0</span>];</div><div class="line">    <span class="keyword">return</span> indList.slice().reduceRight(<span class="function">(<span class="params">pre, cur, ind</span>) =&gt;</span> &#123;</div><div class="line">        <span class="comment">// 反向计算，因为最后一项的索引是不用计算直接相加就好，所以用reduceRight方法更合适</span></div><div class="line">        <span class="keyword">return</span> pre + cur * reLenList.slice(<span class="number">0</span>, ind).reduceRight(<span class="function">(<span class="params">p, c</span>) =&gt;</span> p * c);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总之还是觉得这些东西都是在自己学习实践后才会更加理解并运用自如，本身便如此</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/数学/圆内接四边形/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/30/数学/圆内接四边形/" itemprop="url">
-                  圆内接四边形
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T23:28:34+08:00">
-                2017-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天写一个效果，计算圆中的矩形宽高，随即想到圆的内接四边形，及其如何面积最大，当然内接四边形为正方形最大了，求其宽高即边长</p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>知道自己数学差，但没想到如此的差，故此写一写，以后肯定会有这方面的学习补充，数学虐我千百遍 我待数学如初恋</p>
-<h2 id="共式"><a href="#共式" class="headerlink" title="共式"></a>共式</h2><h3 id="勾股定理"><a href="#勾股定理" class="headerlink" title="勾股定理"></a>勾股定理</h3><p>a<em>a + b</em>b = c*c，其中c是斜边长</p>
-<h3 id="内接最大四边形"><a href="#内接最大四边形" class="headerlink" title="内接最大四边形"></a>内接最大四边形</h3><p>a = b<br>c<em>c = 2 </em> a<em>a，a是直角边长<br>c = sqrt(2) </em> a，sqrt(2)是计算机函数的”根号2”</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/计算机基础/并发和并行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/04/计算机基础/并发和并行/" itemprop="url">
-                  并发和并行
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-04T21:40:54+08:00">
-                2017-06-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>知乎看到关于并发和并行的讨论，刚好也似懂非懂遂进去看了看，也想起node的高并发和高性能</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>是否能处理对个任务以及是否能同时处理</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a href="https://www.zhihu.com/question/33515481" target="_blank" rel="noopener">https://www.zhihu.com/question/33515481</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1612,7 +2238,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">89</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1625,7 +2251,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

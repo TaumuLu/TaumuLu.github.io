@@ -261,6 +261,377 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/JavaScript/开发记录总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/27/JavaScript/开发记录总结/" itemprop="url">
+                  开发记录总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T09:38:54+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  state = &#123;</div><div class="line">    <span class="attr">values</span>: &#123;</div><div class="line">      <span class="attr">text</span>: <span class="number">1</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">text</span>: <span class="number">1</span></div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  toggleText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> &#123; text &#125; = <span class="keyword">this</span>.state;</div><div class="line">    <span class="keyword">const</span> newText = text === <span class="number">1</span> ? <span class="number">2</span> : <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">      <span class="attr">values</span>: &#123; <span class="attr">text</span>: newText &#125;,</div><div class="line">      <span class="attr">text</span>: newText</div><div class="line">    &#125;);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  renderButton() &#123;</div><div class="line">    <span class="keyword">const</span> &#123; values &#125; = <span class="keyword">this</span>.state;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;Style.btn&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;this.toggleText&#125;</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;Style.btnText&#125;</span>&gt;</span>&#123;values.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  renderContent() &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.content) <span class="keyword">return</span> <span class="keyword">this</span>.content;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.content = <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.renderButton.bind(this)()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.content;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> &#123; values &#125; = <span class="keyword">this</span>.state;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>测试类组件render<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;values.text&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        &#123;this.renderContent()&#125;</div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> Style = &#123;</div><div class="line">  <span class="attr">btn</span>: &#123;</div><div class="line">    <span class="attr">height</span>: <span class="string">"50px"</span>,</div><div class="line">    <span class="attr">backgroundColor</span>: <span class="string">"blue"</span>,</div><div class="line">    <span class="attr">display</span>: <span class="string">"flex"</span>,</div><div class="line">    <span class="attr">justifyContent</span>: <span class="string">"center"</span>,</div><div class="line">    <span class="attr">alignItems</span>: <span class="string">"center"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">btnText</span>: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">"#fff"</span>,</div><div class="line">    <span class="attr">fontSize</span>: <span class="string">"22px"</span>,</div><div class="line">    <span class="attr">margin</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">padding</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 这个组件第一次render后会保存起来到this.content，之后子组件点击setState后renderButton里的text值会变化</span></div></pre></td></tr></table></figure>
+<p>useEffect执行发生在渲染完成后，先执行上次useEffect返回的函数，然后再执行本次useEffect<br>使用函数式setState可以保证基于最新的state计算值<br>dispatch函数, setState函数, useRef的值在组件的声明周期内保持不变</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/编辑器/Xcode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/06/04/编辑器/Xcode/" itemprop="url">
+                  Xcode
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T21:45:26+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="自定义快捷键"><a href="#自定义快捷键" class="headerlink" title="自定义快捷键"></a>自定义快捷键</h2><p>打开文件 <code>vim /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist</code></p>
+<h3 id="剪切当前行"><a href="#剪切当前行" class="headerlink" title="剪切当前行"></a>剪切当前行</h3><p>Insertions and Indentations键最后添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>Duplicate Current Line<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>moveToBeginningOfText:, moveToEndOfTextAndModifySelection:, copy:, moveToBeginningOfLine:, deleteToBeginningOfLine:, moveToEndOfLine:, deleteToBeginningOfLine:, deleteBackward:, moveDown:, moveToEndOfLine:<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>key的名字可以自定义，string我参考网上给出最好的配置，只会剪切当前代码不包括缩进，剪切完后光标移到下一行代码的最后</p>
+<h3 id="上一行插入"><a href="#上一行插入" class="headerlink" title="上一行插入"></a>上一行插入</h3><p>Insertions and Indentations键最后添加<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>Insert Up Newline<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>moveUp:, moveToEndOfText:, insertNewline:<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>参考系统其他命令写的，和其他编辑器的向上插入效果一致</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="升级Xcode插件失效"><a href="#升级Xcode插件失效" class="headerlink" title="升级Xcode插件失效"></a>升级Xcode插件失效</h3><ul>
+<li>获取Xcode的UUID <code>defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</code></li>
+<li>进入插件所在目录 <code>cd ~/Library/Application&#39; &#39;Support/Developer/Shared/Xcode/Plug-ins</code></li>
+<li>右键显示包内容，打开Info.plist</li>
+<li>在key为DVTPlugInCompatibilityUUIDs中的值里加入刚获取Xcode的UUID</li>
+</ul>
+<h3 id="清除Xcode插件设置"><a href="#清除Xcode插件设置" class="headerlink" title="清除Xcode插件设置"></a>清除Xcode插件设置</h3><p>Xcode弹框提示是否加载插件选择Load Bundles<br>若不小心点接了Skip Bundles，则需要清除Xcode插件设置<br>运行以下命令清除，命令中的Xcode-X.X改成自己的Xcode版本</p>
+<p><code>defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-X.X</code></p>
+<h3 id="使用vim开发"><a href="#使用vim开发" class="headerlink" title="使用vim开发"></a>使用vim开发</h3><p>让Xcode支持Vim操作，不得不说Xcode的自带的快捷键操作太少也不不好用了，更加坚定了我要用Vim做所有编辑器开发的决心  </p>
+<h4 id="XVim"><a href="#XVim" class="headerlink" title="XVim"></a><a href="https://github.com/XVimProject/XVim2" target="_blank" rel="noopener">XVim</a></h4><p>项目地址有完整的安装说明，已用有几个小bug，也算不影戏使用<br>还是要多用vim，方便不同编辑器的快速开发，正在努力适应中  </p>
+<h2 id="升级Xcode10"><a href="#升级Xcode10" class="headerlink" title="升级Xcode10"></a>升级Xcode10</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib</div><div class="line"></div><div class="line">-l&quot;stdc++.6.0.9&quot;</div><div class="line">libstdc++.6.tbd</div><div class="line">libstdc++.6.0.9.tbd</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>~/Library/MobileDevice/Provisioning&quot; &quot;Profiles</code></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.csdn.net/garrison_Z/article/details/44730417" target="_blank" rel="noopener">https://blog.csdn.net/garrison_Z/article/details/44730417</a><br><a href="https://www.jianshu.com/p/507d7e3ab10b" target="_blank" rel="noopener">https://www.jianshu.com/p/507d7e3ab10b</a><br><a href="http://www.jubeat.net/2016/12/05/how-to-install-multi-xcode/" target="_blank" rel="noopener">http://www.jubeat.net/2016/12/05/how-to-install-multi-xcode/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/算法/背包问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/05/算法/背包问题/" itemprop="url">
+                  背包问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T14:44:23+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/CSS/PostCss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1747,418 +2118,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/协议/SSH/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/08/协议/SSH/" itemprop="url">
-                  SSH
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T21:36:58+08:00">
-                2018-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>SSH是一种网络协议，用于计算机之间的加密登录</p>
-<h2 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h2><p>生成密钥对，默认RSA<br><code>ssh-keygen</code></p>
-<h3 id="密钥类型"><a href="#密钥类型" class="headerlink" title="密钥类型"></a>密钥类型</h3><ul>
-<li>RSA</li>
-<li>RSA1</li>
-<li>DSA</li>
-<li>ECDSA</li>
-<li>ED25519</li>
-</ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><ul>
-<li>ssh <ul>
-<li>host</li>
-<li>user@host</li>
-<li>-p port</li>
-<li>-i id_rsa</li>
-<li>-o ServerAliveInterval=60 </li>
-</ul>
-</li>
-<li>ssh-copy-id user@host</li>
-</ul>
-<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><h3 id="口令登录"><a href="#口令登录" class="headerlink" title="口令登录"></a>口令登录</h3><p>登录前提示，登录后保存在文件$HOME/.ssh/known_hosts<br>系统所有用户可信赖的远程主机的公钥有保存在/etc/ssh/ssh_known_hosts</p>
-<h3 id="公钥登录"><a href="#公钥登录" class="headerlink" title="公钥登录"></a>公钥登录</h3><ul>
-<li>生成公钥 <ul>
-<li>ssh-keygen</li>
-<li>id_rsa.pub&amp;id_rsa</li>
-</ul>
-</li>
-<li>ssh-copy-id user@host</li>
-<li><p>/etc/ssh/sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RSAAuthentication yes</div><div class="line">PubkeyAuthentication yes</div><div class="line">AuthorizedKeysFile .ssh/authorized_keys</div></pre></td></tr></table></figure>
-</li>
-<li><p>重启远程主机ssh服务</p>
-<ul>
-<li>ubuntu <code>service ssh restart</code></li>
-<li>debian <code>/etc/init.d/ssh restart</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h3><p>远程主机保存用户的公钥 $HOME/.ssh/authorized_keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
-<h2 id="ssh"><a href="#ssh" class="headerlink" title=".ssh"></a>.ssh</h2><ul>
-<li>known_hosts</li>
-<li>authorized_keys</li>
-<li>config</li>
-</ul>
-<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Host [Host]  // 配置名</div><div class="line">  HostName [HostName]  // 服务器ip</div><div class="line">  Port [22]  // 端口</div><div class="line">  User [currentUser]  // 用户</div><div class="line">  ProxyCommand [none]  // 代理命令</div><div class="line">  IdentityFile [~/.ssh/id_rsa]  // 密钥文件</div><div class="line">  PasswordAuthentication [no]  // 用户密码</div><div class="line"></div><div class="line">ServerAliveInterval 60  // 每隔60秒发送一次请求给server，然后server响应，从而保持连接</div><div class="line">ServerAliveCountMax 3  // 发出请求后，服务器端没有响应得次数达到3，就自动断开连接</div><div class="line">ConnectTimeout=3  // 连接时超时时间</div><div class="line">ConnectionAttempts=5  // 连接失败后重试次数</div><div class="line">TCPKeepAlive no  // 保持tcp连接</div><div class="line">StrictHostKeyChecking no // 是否记录密匙到known_hosts</div></pre></td></tr></table></figure>
-<h4 id="ProxyCommand"><a href="#ProxyCommand" class="headerlink" title="ProxyCommand"></a>ProxyCommand</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh user@host -W %h:%p</div><div class="line">ssh user@host -W $(<span class="built_in">echo</span> %h|awk -F <span class="string">'test'</span> <span class="string">'&#123;print $2&#125;'</span>):%p 2&gt; /dev/null</div></pre></td></tr></table></figure>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Host gateway</div><div class="line">    HostName 192.168.0.1</div><div class="line">    Port 8888</div><div class="line">    User root</div><div class="line">    ProxyCommand none</div><div class="line">    IdentityFile ~/.ssh/id_rsa</div><div class="line">    PasswordAuthentication no</div><div class="line"></div><div class="line">Host product</div><div class="line">    HostName 192.168.0.2</div><div class="line">    Port 8888</div><div class="line">    User root</div><div class="line">    IdentityFile ~/.ssh/id_rsa_gateway</div><div class="line">    ProxyCommand ssh -q -W gateway %h:%p</div><div class="line">    // ProxyCommand ssh gateway nc %h %p</div><div class="line">    PasswordAuthentication no</div><div class="line"></div><div class="line"></div><div class="line">ssh xzc@180.97.33.108 -p 998 &apos;echo &quot;select * from user;&quot; | mysql xzc_db -uxzc -pxzcpwd&apos; &gt; user.txt</div><div class="line">ssh hisense-paas1 &apos;ssh hisense-test-web &quot;cat test.txt&quot;&apos; &gt; test.txt</div></pre></td></tr></table></figure>
-<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh -CfNg -L 7072:hisense-test-web:6379 hisense-paas1</div><div class="line">// ssh -L &lt;<span class="built_in">local</span> port&gt;:&lt;remote host&gt;:&lt;remote port&gt; &lt;SSH hostname&gt;</div></pre></td></tr></table></figure>
-<h3 id="ssh免密登录"><a href="#ssh免密登录" class="headerlink" title="ssh免密登录"></a>ssh免密登录</h3><ul>
-<li><a href="https://wiki.centos.org/HowTos/Network/SecuringSSH" target="_blank" rel="noopener">HowTos/Network/SecuringSSH - CentOS Wiki</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host &apos;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&apos; &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
-<h3 id="ssh相关命令"><a href="#ssh相关命令" class="headerlink" title="ssh相关命令"></a>ssh相关命令</h3><ul>
-<li>ssh -vvv</li>
-<li>/usr/sbin/sshd -d -p 2222 (在2222端口启动一个带debug输出的sshd)</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/Service/Docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/05/Service/Docker/" itemprop="url">
-                  Docker
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T21:50:43+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/03/编辑器/Android-Studio使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/03/编辑器/Android-Studio使用/" itemprop="url">
-                  Android-Studio使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T17:28:37+08:00">
-                2018-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2203,7 +2167,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">89</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2216,7 +2180,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
