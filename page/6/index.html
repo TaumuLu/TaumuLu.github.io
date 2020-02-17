@@ -261,6 +261,289 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/编程理解/编程思想/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/02/编程理解/编程思想/" itemprop="url">
+                  编程思想
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T13:53:13+08:00">
+                2017-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本来欲周六写篇对reduce的理解用法，但却不得不解释了函数式编程，遂昨天又new了一篇对函数式编程的理解，但又陷入了对编程的理解，遂今天再new了一篇自己对编程的理解，虽然总觉得自己理解的并不合适，也查了很多资料，但还是决定动手写下来，留作日后再理解的积累</p>
+<h2 id="起点"><a href="#起点" class="headerlink" title="起点"></a>起点</h2><p>从学习编程起就一直在理解编程这一行为，也一直觉得编程思想是最为重要，编程的目的、意图、过程、结果、实践方式又是怎样的，编程与人之间的联系</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>想要理解就得从原理去寻找，编程的本质是与计算机交流来让计算机去做事，这里就想到计算机语言就是编程的工具，所以要从语言这里入手理解，随即又想到计算机语言也是在进步发展的，分类为低级语言和高级语言，区别又是什么，如果低级语言本身就够用那么高级语言存的的意义是什么，想想觉得就是在抽象，想让别人能理解我们的意图，这和人与人之间差不多？</p>
+<h3 id="与人沟通"><a href="#与人沟通" class="headerlink" title="与人沟通"></a>与人沟通</h3><p>如果两个人的语言不通该如何沟通，能想到的结果是：</p>
+<ol>
+<li>互相学习对方的语言，成本为2n；</li>
+<li>一方去学习另一方的语言，成本为n； 3. 都不学习对方的语言，成本为0；<blockquote>
+<p>这里说下3虽然成本为0，但是没达到互相沟通理解的目的，如何呢，我想是还有翻译者这个角色，可以让两人在不学习对方语言的前提下达到互相沟通的目的，这个翻译者可以是人或是翻译软件</p>
+</blockquote>
+</li>
+</ol>
+<p>回到刚才的话题，将这种关系映射到人和计算机来看，我们和计算机沟通是如何实现呢，开始我想结果是3，因为人并不是直接与计算机沟通的而是通过计算机语言即编程来实现的，语言又被编译为二进制，即计算机只认识的0和1，这里不深入考虑二进制与计算机，所以我认为翻译者是语言到二进制这里，但是后来觉得错了，如果是第三种方式那么成本为0为何还要学习编程，其实是2的实现方式，我们学习计算机的语言，让它为我们办事必然需要去学习如何指挥它即这里所说的沟通，这里暂停下，让我想起刚接触计算机时听到的一句话，计算机是很笨的，只认识0和1，确实很笨，但它能做人类无法做到的事，具体为他能做重复的事，而且速度很快，且能存储很大的东西(这些取决于你给他按多少个cup和多大的硬盘)，这就厉害了，试想下你要是脑子容量很大，过目不忘且脑运算很快，有多快，具体为光速，特体查了下电流的速度约等于光速，(突然有个想法，计算机为什么又叫电脑，嗯，电脑)，正于此，我们才要利用计算机，开发计算机语言去与它沟通为我们做事，终于回到了计算机语言上</p>
+<h3 id="与计算机沟通"><a href="#与计算机沟通" class="headerlink" title="与计算机沟通"></a>与计算机沟通</h3><p>如何沟通，现在看来是计算机语言，它又是如何沟通，前面说到我们要学习计算机语言，所以不应该是0和1吗，怎么是高级语言，也就是英文这玩意，这不是人类语言吗，这里就要说下计算机语言的发展史</p>
+<h4 id="计算机语言"><a href="#计算机语言" class="headerlink" title="计算机语言"></a>计算机语言</h4><ul>
+<li>机器语言<br>  二进制是计算机的语言的基础，即使用0和1去编写程序</li>
+<li>汇编语言<br>  用简洁的英文字母、符号串代表一个特定的指令的二进制串，需要编译再被翻译回二进制，只是简化了记忆，本质并没有改变，没任何人类思想</li>
+<li>高级语言<br>  将多条机器指令合成为单条指令，需要编译再被翻译回二进制，但简化了操作，忽略了细节，可以用人类的思维去描述要做的事情</li>
+</ul>
+<h3 id="高级语言"><a href="#高级语言" class="headerlink" title="高级语言"></a>高级语言</h3><p>说这么多，终于说到了和主题有关的高级语言上了，这些编程思想的体现就是由高级语言来实现的，这些思想包括了面向过程编程，面向对象编程，函数式编程<br>这些思想又有各自的模式和特性，抽象、封装、继承、多态、扩展等的这不就是面向对象吗，好吧，就不一一列举了</p>
+<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>写到这里就已经可以停下了，</p>
+<h2 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h2><p>花这么大的篇幅写如此正常、普通、理所应当的事？现以编程为生的我，是该停下脚步审视自己所作，意义何在，吾等为何而做，理解自己的工作是件很好的事呢</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/函数式编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/01/函数式编程/函数式编程/" itemprop="url">
+                  函数式编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T10:14:14+08:00">
+                2017-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从学习编程起就一直在理解编程这一行为，也一直觉得编程思想是最为重要，编程的目的、意图、过程、结果、实践方式又是怎样的，编程与人之间的联系</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><blockquote>
+<p>函数式编程是面向数学的抽象，一种数学运算，将计算描述为一种表达式求值，函数式程序就是一个表达式，原始目的就是求值</p>
+</blockquote>
+<p>函数就是一个管道，函数式编程就是把一个个管道连接起来(组合)<br>函数式编程有两个最基本的运算：合成和柯里化  </p>
+<p>主要理论基础是lambda 演算，规则也很简单  </p>
+<p>无类型的lambda 演算其实规则很简单 只有三条  </p>
+<ol>
+<li>变量 (variable)</li>
+<li>函数 (lambda-abstraction)</li>
+<li>替代 (beta-reduction)</li>
+</ol>
+<h3 id="函数式编程特性"><a href="#函数式编程特性" class="headerlink" title="函数式编程特性"></a>函数式编程特性</h3><ul>
+<li>高阶函数</li>
+<li>柯里化</li>
+<li>闭包</li>
+<li>递归</li>
+<li>归并</li>
+<li>惰性求值</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><blockquote>
+<p>函数式编程关心数据的映射，命令式编程关心解决问题的步骤</p>
+</blockquote>
+<p>函数式编程如同生产流水线，流水线上的机器就是一个个函数，一层层处理原料即数据，最终完成自己要得到的，需要什么就放什么原料，相同的原料必然产出相同的东西(这才是纯的、没有副作用合格的函数)<br>那面向对象编程是不是就像工厂的各个车间，不用的车间生产不同的零件，最后统一组装成成品，我是这样理解的</p>
+<p>还有就是参考别人所说理解，函数式编程屏蔽了细节实现，抽象提取这一类问题的解决方法达到通用复用，需要站在实现结果之上去思考整体函数的编写，还有函数的细化，粒度越小复用越大，但也会带来调用的复杂</p>
+<p>高阶函数<br>没有副作用</p>
+<p>函数式编程，是一种编程范式，不是专门为函数式编程设计的编程语言，只要具备一定的特性，都可以用来编写函数式的程序的</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.zhihu.com/question/28292740" target="_blank" rel="noopener">https://www.zhihu.com/question/28292740</a><br><a href="https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/" target="_blank" rel="noopener">https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/归并/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1330,284 +1613,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/编辑器/VSCode使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/10/编辑器/VSCode使用/" itemprop="url">
-                  VSCode使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T21:51:28+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>刚写完Sublime没多久就马上来补VSCode，并非我抛弃了Sublime，Sublime在我心中永远不可替代，哈哈，工具会的越多越好，各取其长，且最近工作一直在用VSCode开发，对其也更加熟练了，不写篇文章来赞美下吗</p>
-<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>首先既是VSCode是开源的，人人都能贡献代码，可要等到我能贡献的那天哈，其次VSCode在前端er的影响越来越大，加之其强大的功能及体验，大家对他评价也很好，个人也感觉确实好用，对前端很友好</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>还是记录下自己的配置，及相应技巧</p>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ul>
-<li>vscode-icons</li>
-<li>ESlint</li>
-<li>EditorConfig for VS Code</li>
-<li>JS-CSS-HTML Formatter</li>
-<li>Auto Close Tag</li>
-<li>Auto Rename Tag</li>
-<li>Material Theme</li>
-<li>React Native Tools</li>
-</ul>
-<h3 id="个人配置"><a href="#个人配置" class="headerlink" title="个人配置"></a>个人配置</h3><p>工作区设置 &gt; 用户设置 &gt; 默认设置</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"workbench.iconTheme"</span>: <span class="string">"vscode-icons"</span>,</div><div class="line">    <span class="attr">"editor.renderIndentGuides"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"files.autoSave"</span>: <span class="string">"onFocusChange"</span>,</div><div class="line">    <span class="attr">"editor.wordWrap"</span>: <span class="string">"on"</span>,</div><div class="line">    <span class="attr">"eslint.autoFixOnSave"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"search.exclude"</span>: &#123;</div><div class="line">        <span class="attr">"**/.happypack"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">"*.map"</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"workbench.colorTheme"</span>: <span class="string">"Material Theme"</span>,</div><div class="line">    <span class="attr">"editor.renderLineHighlight"</span>: <span class="string">"all"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>配置search.exclude在搜索处要点上排除项使其聚焦即可生效</p>
-<h2 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h2><p>暂时写这么多，以后继续补充，还有就是要尽快熟悉快捷键，熟悉后开发效率能提升上去，工具对我来说还是很重要的，尤其是这样强迫症的我</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/Windows/Windows添加右键菜单/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/10/Windows/Windows添加右键菜单/" itemprop="url">
-                  Windows添加右键菜单
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T21:50:37+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在Windows上装VSCode需要加入右键菜单，包括Sublime也是，故上网搜了下顺便总结下右键菜单的添加方法</p>
-<h2 id="右键菜单"><a href="#右键菜单" class="headerlink" title="右键菜单"></a>右键菜单</h2><h3 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h3><p>win+R，输入regedit命令打开注册表管理器</p>
-<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
-<li>HKEY_CLASSES_ROOT<ul>
-<li>\*<br>  文件<ul>
-<li>\shell</li>
-</ul>
-</li>
-<li>\Directory<br>  文件夹<ul>
-<li>\shell</li>
-<li>\Background<br>  文件夹空白处右键</li>
-</ul>
-</li>
-<li>\Drive<br>  驱动 <ul>
-<li>\shell</li>
-</ul>
-</li>
-<li>\Folder<br>  文件夹和驱动器<ul>
-<li>\shell</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="添加或移除"><a href="#添加或移除" class="headerlink" title="添加或移除"></a>添加或移除</h2><p>次方法适合大多数应用，改为对应程序的名称即可<br>可以添加更多区域的右键菜单，自己添加入即可</p>
-<h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><p>将下段代码保存为.inf文件放在要添加的程序文件夹下安装即可<br>其中VSCode为自己设置的右键名称，以及之后的.exe为对应程序的名称<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[Version]</div><div class="line">Signature=&quot;$Windows NT$&quot;</div><div class="line"></div><div class="line">[DefaultInstall]</div><div class="line">AddReg=VSCode</div><div class="line"></div><div class="line">[VSCode]</div><div class="line">hkcr,&quot;*\\shell\\VSCode&quot;,,,&quot;VSCode&quot;</div><div class="line">hkcr,&quot;*\\shell\\VSCode&quot;,&quot;Icon&quot;,0x20000,&quot;%1%\Code.exe, 0&quot;</div><div class="line">hkcr,&quot;*\\shell\\VSCode\\command&quot;,,,&quot;&quot;&quot;%1%\Code.exe&quot;&quot; &quot;&quot;%%1&quot;&quot; %%*&quot;</div><div class="line"></div><div class="line">hkcr,&quot;directory\\shell\\VSCode&quot;,,,&quot;VSCode&quot;</div><div class="line">hkcr,&quot;directory\\shell\\VSCode&quot;,&quot;Icon&quot;,0x20000,&quot;%1%\Code.exe, 0&quot;</div><div class="line">hkcr,&quot;directory\\shell\\VSCode\\command&quot;,,,&quot;&quot;&quot;%1%\Code.exe&quot;&quot; &quot;&quot;%%1&quot;&quot; %%*&quot;</div></pre></td></tr></table></figure></p>
-<h3 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h3><p>将下段代码保存为.reg文件放在要添加的程序文件夹下运行即可<br>其中VSCode为自己设置的右键名称，以及之后的.exe为对应程序的名称<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Windows Registry Editor Version 5.00</div><div class="line">[-HKEY_CLASSES_ROOT\*\shell\VSCode]</div><div class="line">[-HKEY_CLASSES_ROOT\Directory\shell\VSCode]</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1657,7 +1662,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">92</span>
+                <span class="site-state-item-count">94</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

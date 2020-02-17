@@ -261,6 +261,296 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/Record/面试题收录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/29/Record/面试题收录/" itemprop="url">
+                  面试题收录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T15:25:13+08:00">
+                2018-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在要面试的时候或者平时也会接触到很多面试相关的文章，虽然面试是为了进公司里面涉及的一些问题或许工作中都不会遇到，但面试一直作为考察应聘者作为公司招聘人才的主要手段还是有原因的，一份好的面试题涉及到了我们所学领域的方方面面，如果这些面试题都答不上，如何证明自己能胜任所聘岗位，虽然可能平时工作都没注意到，自己一直用的很得心应手的东西或许真的回答不上来一些相关问题，语言组织能力是一方面，但能做的更好为何不去做！在此记录自己所见的一些喜欢的面试题积累所学，供日后所用</p>
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p>这里的前端主要指javaScript语言相关的所有知识，毕竟前端 === JavaScript，也包含nodeJs相关知识</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><h4 id="获取m长度值为n的数组"><a href="#获取m长度值为n的数组" class="headerlink" title="获取m长度值为n的数组"></a>获取m长度值为n的数组</h4><p>知乎偶然看到的一个问题，此类实现方法很多<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 最简单的</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(m).fill(n)</div><div class="line"><span class="comment">// 稍复杂了，原理一样，利用Array单参数下会创建长度为参数值的数组</span></div><div class="line"><span class="comment">// 需要注意的是这里的keys，当数组没有初始值时会用empty展示，会使数组的遍历方法不会遍历，这里也有兼容性问题</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shit5</span>(<span class="params">m, n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> [...Array(m).keys()].map(<span class="function"><span class="params">e</span> =&gt;</span> n)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 最复杂的一种方法，递归调用传入函数，每次加一个值，直到m减少到1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shit6</span>(<span class="params">m, n</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="function"><span class="params">f</span> =&gt;</span> f(f))</div><div class="line">    (<span class="function"><span class="params">g</span> =&gt;</span> (m, n) =&gt;</div><div class="line">      m === <span class="number">1</span> ? [n] : g(g)(m - <span class="number">1</span>, n).concat(n)</div><div class="line">    )</div><div class="line">    (m, n)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="可以重复绑定的bind函数"><a href="#可以重复绑定的bind函数" class="headerlink" title="可以重复绑定的bind函数"></a>可以重复绑定的bind函数</h4><p>由于js中bind函数只能绑定一次，之后再如何调用bind函数绑定的this都会是第一次调用绑定<br>重写bind函数，将第一次调用的函数保存起来以供之后的每次bind调用都是用此函数去创建绑定的函数<br>至于怎么保存，可以用闭包或者存在函数的属性上都可以</p>
+<h4 id="parseInt结合map考察"><a href="#parseInt结合map考察" class="headerlink" title="parseInt结合map考察"></a>parseInt结合map考察</h4><p>[“1”, “2”, “3”].map(parseInt) 返回 [1,NaN,NaN]</p>
+<h5 id="parseInt-string-radix"><a href="#parseInt-string-radix" class="headerlink" title="parseInt(string, radix)"></a>parseInt(string, radix)</h5><ul>
+<li>string 必需。要被解析的字符串</li>
+<li>radix 可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间<ul>
+<li>如果省略该参数或其值为 ‘0‘，则数字将以 10 为基础来解析。如果它以 ‘”0x”‘ 或 ‘”0X”‘ 开头，将以 16 为基数</li>
+<li>如果该参数小于 2 或者大于 36，则 ‘parseInt()‘ 将返回 ‘NaN‘</li>
+</ul>
+</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h4 id="width-height-padding-margin设置百分比"><a href="#width-height-padding-margin设置百分比" class="headerlink" title="width/height/padding/margin设置百分比"></a>width/height/padding/margin设置百分比</h4><p>width和height分别相对于父元素的width和heihgt计算<br>padding和margin则都相对最近父级块级元素的width计算的  </p>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li>虚拟DOM原理</li>
+<li>setState异步原理</li>
+<li>CMD AMD</li>
+<li>promise all rice 功能 自己实现</li>
+<li>http websocket 差异</li>
+<li>react jquery差异</li>
+<li>Redux 数据流， Provider connect 具体里面做了哪些事情</li>
+<li>webpack plugin 与 loader 区别</li>
+<li>单元素修改react和jquery哪个效率更高</li>
+<li>generator 实现异步执行器描述</li>
+<li>promise.timeout</li>
+<li>svg 与 canvas 的差异</li>
+<li>css position</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/0FG90s7TGP6qWv4rUO5MhQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/0FG90s7TGP6qWv4rUO5MhQ</a></li>
+<li><a href="https://juejin.im/post/5b50a05351882519eb6593ff" target="_blank" rel="noopener">https://juejin.im/post/5b50a05351882519eb6593ff</a></li>
+<li><a href="https://juejin.im/post/5b4de8b16fb9a04fa8672375" target="_blank" rel="noopener">https://juejin.im/post/5b4de8b16fb9a04fa8672375</a></li>
+<li><a href="https://juejin.im/post/5b4d543ce51d4519610dea67" target="_blank" rel="noopener">https://juejin.im/post/5b4d543ce51d4519610dea67</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/构建工具/Webpack源码分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MT">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Taumu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/27/构建工具/Webpack源码分析/" itemprop="url">
+                  Webpack源码分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T10:03:04+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><p>一直对webpack这类的项目有所畏惧，涉及到DSL、AST的概念及模块缓存等，且对于webpack仅仅是使用它都很难做到得心应手的使用，更不用说去看源码理解他的原理了，但终究是要去学习的，无非早晚，本想等自己段位再升升级后再去看（目前也就是个白银哈哈），但刚好最近在搞ssr，里面涉及到了服务端代码的打包，于是遂开始学习webpack相关</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>每当我学习新知识的时候开始都是不知从何下手，最快的上手方法也就是找个例子去仿写练习，其中涉及的知识理解一部分，当持续使用这类知识也在持续学习，渐渐也就能掌握乃至理解原理，直到有了原来如此的感觉，此时我便会想，如果开始学时我就有此时整体的概念可以把控理解、虽不是面面俱到但有整体的方向感，知道总体在围绕怎样的结构来构建的，就如各个官网的精简描述和总结，是多么的形象体贴，贯彻始终<br>如同react native的一次编写,到处运行  </p>
+<p>扯了这么多，如此对比到webpack上就如官网的图，模块打包机</p>
+<h2 id="参看资料"><a href="#参看资料" class="headerlink" title="参看资料"></a>参看资料</h2><ul>
+<li><p><a href="https://segmentfault.com/a/1190000008060440" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008060440</a></p>
+</li>
+<li><p><a href="https://juejin.im/post/5aa3d2056fb9a028c36868aa" target="_blank" rel="noopener">https://juejin.im/post/5aa3d2056fb9a028c36868aa</a></p>
+</li>
+<li><a href="https://lihuanghe.github.io/2016/05/30/webpack-source-analyse.html" target="_blank" rel="noopener">https://lihuanghe.github.io/2016/05/30/webpack-source-analyse.html</a></li>
+<li><a href="http://taobaofed.org/blog/2016/09/09/webpack-flow/" target="_blank" rel="noopener">http://taobaofed.org/blog/2016/09/09/webpack-flow/</a></li>
+<li><a href="https://github.com/lcxfs1991/blog/issues/1" target="_blank" rel="noopener">https://github.com/lcxfs1991/blog/issues/1</a></li>
+<li><p><a href="https://juejin.im/post/5abf33f16fb9a028e46ec352" target="_blank" rel="noopener">https://juejin.im/post/5abf33f16fb9a028e46ec352</a></p>
+</li>
+<li><p><a href="https://segmentfault.com/a/1190000005614604" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005614604</a></p>
+</li>
+<li><a href="https://juejin.im/post/5a1bcdadf265da430e4ee137" target="_blank" rel="noopener">https://juejin.im/post/5a1bcdadf265da430e4ee137</a></li>
+<li><p><a href="https://github.com/happylindz/blog/issues/6" target="_blank" rel="noopener">https://github.com/happylindz/blog/issues/6</a></p>
+</li>
+<li><p><a href="https://webpack.docschina.org/guides/build-performance/#loader" target="_blank" rel="noopener">https://webpack.docschina.org/guides/build-performance/#loader</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/JavaScript/开发记录总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1732,392 +2022,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/编辑器/Vim/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/11/编辑器/Vim/" itemprop="url">
-                  Vim
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T17:01:48+08:00">
-                2018-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Vimtutor"><a href="#Vimtutor" class="headerlink" title="Vimtutor"></a>Vimtutor</h2><ul>
-<li>Normal<ul>
-<li>h</li>
-<li>j</li>
-<li>k</li>
-<li>l</li>
-<li>x</li>
-<li>i</li>
-<li>a</li>
-<li>:<ul>
-<li>q!</li>
-<li>wq</li>
-</ul>
-</li>
-<li>d<ul>
-<li>w</li>
-<li>e</li>
-<li>d</li>
-<li>$</li>
-</ul>
-</li>
-<li>o</li>
-<li>p</li>
-<li>y</li>
-<li>r</li>
-<li>c</li>
-<li>b</li>
-</ul>
-</li>
-<li>Insert<ul>
-<li>esc</li>
-</ul>
-</li>
-</ul>
-<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p>~/.vimrc</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/Command/npm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MT">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Taumu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/10/Command/npm/" itemprop="url">
-                  npm
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T16:06:25+08:00">
-                2018-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
-<li>init</li>
-<li>set</li>
-<li>config</li>
-<li>info</li>
-<li>search</li>
-<li>list<ul>
-<li>-g –depth=0</li>
-</ul>
-</li>
-<li>update</li>
-<li>install</li>
-<li>uninstall</li>
-<li>run</li>
-<li>bin 相对于当前目录的，Node模块的可执行脚本所在的目录</li>
-<li>adduser</li>
-<li>login</li>
-<li>publish</li>
-<li>deprecate</li>
-<li>owner<ul>
-<li>ls</li>
-</ul>
-</li>
-<li>home</li>
-<li>repo</li>
-<li>outdated</li>
-<li>prune</li>
-<li>shrinkwrap</li>
-</ul>
-<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><ul>
-<li><code>--save -S</code></li>
-<li><code>--save-dev -D</code></li>
-<li><code>--save-exact</code> 在package.json文件指定安装模块的确切版本</li>
-<li><code>--unsafe-perm</code></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install &lt;name&gt;@&lt;tag|version&gt;</div><div class="line">npm install --tag &lt;tag&gt;</div></pre></td></tr></table></figure>
-<h3 id="run"><a href="#run" class="headerlink" title="run"></a>run</h3><ul>
-<li>package.json文件有一个scripts字段，可以用于指定脚本命令，供npm run直接调用</li>
-<li>node_modules/.bin目录链接node_modules/package/bin</li>
-<li>start和test属于特殊命令，可以省略run</li>
-<li>pre- 和 post- 脚本<ul>
-<li>npm run为每条命令提供了pre-和post-两个钩子（hook）</li>
-<li>npm restart命令，如果没有设置restart脚本，prerestart和postrestart会依次执行stop和start脚本</li>
-<li>prepublish</li>
-<li>postpublish</li>
-<li>postinstall</li>
-</ul>
-</li>
-</ul>
-<h3 id="link"><a href="#link" class="headerlink" title="link"></a>link</h3><ul>
-<li>npm link 全局</li>
-<li>npm link package 本地</li>
-<li>npm unlink package</li>
-</ul>
-<h3 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h3><ul>
-<li>npm publish –tag <tag\><ul>
-<li>发布指定标签，默认发布标签是latest</li>
-</ul>
-</tag\></li>
-<li>私有模块<ul>
-<li>npm init –scope=<yourscope\></yourscope\></li>
-</ul>
-</li>
-<li>废弃版本<ul>
-<li>npm deprecate package@”&lt; 0.2.3” “critical bug fixed in v0.2.3”</li>
-</ul>
-</li>
-</ul>
-<h3 id="shrinkwrap"><a href="#shrinkwrap" class="headerlink" title="shrinkwrap"></a>shrinkwrap</h3><p>锁定当前项目的依赖模块的版本</p>
-<blockquote>
-<p>运行该命令后，会在当前项目的根目录下生成一个npm-shrinkwrap.json文件<br>内容是node_modules目录下所有已经安装的模块，以及它们的精确版本<br>下次运行npm install命令时，npm发现当前目录下有npm-shrinkwrap.json文件，就会只安装里面提到的模块，且版本也会保持一致</p>
-</blockquote>
-<h2 id="npmrc"><a href="#npmrc" class="headerlink" title=".npmrc"></a>.npmrc</h2><ul>
-<li>prefix 定义全局安装包路径</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">prefix = /home/username/npm</div><div class="line">// export PATH=~/npm/bin:$PATH</div></pre></td></tr></table></figure>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><ul>
-<li>内部变量 $npm<em>package</em>*</li>
-<li>scripts<ul>
-<li>运行脚本</li>
-<li>可使用Linux命令(| &amp;&amp; &amp;)</li>
-</ul>
-</li>
-</ul>
-<h2 id="全局包"><a href="#全局包" class="headerlink" title="全局包"></a>全局包</h2><ul>
-<li>@terminus/herd</li>
-<li>@terminus/nusi-sdk</li>
-<li>@vue/cli</li>
-<li>@vue/cli-service-global</li>
-<li>babel-cli</li>
-<li>create-next-app</li>
-<li>diff-so-fancy</li>
-<li>easy-monitor</li>
-<li>flow-remove-types</li>
-<li>generator-react-server</li>
-<li>genfe-cli</li>
-<li>gitbook</li>
-<li>gitbook-cli</li>
-<li>hexo</li>
-<li>http-server</li>
-<li>lissom</li>
-<li>live-server</li>
-<li>loadtest</li>
-<li>lodash-cli</li>
-<li>ndb</li>
-<li>npm</li>
-<li>npm-check</li>
-<li>react-native-cli</li>
-<li>react-native-git-upgrade</li>
-<li>react-server-cli</li>
-<li>spy-debugger</li>
-<li>think-cli</li>
-<li>typescript</li>
-<li>vue-cli</li>
-<li>yo</li>
-<li>expo-cli</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2167,7 +2071,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">92</span>
+                <span class="site-state-item-count">94</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
