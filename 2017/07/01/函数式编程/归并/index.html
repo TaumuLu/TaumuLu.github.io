@@ -88,17 +88,16 @@
 
 
 <meta name="description" content="前言上周就想来写下reduce这个充满函数式编程方法的理解，奈何自己怠惰了，如今再过一周，觉的还是的写下来，因为觉得reduce的实现真是太强大优美了 理解说起reduce不得不说函数式编程这种编程范式？编程思想，抽象变达实现，我也描述不清，理解就是就是函数调函数，函数传函数，函数相互组合调用来完成功能，对于函数式编程我还需要再研究下 开始好了，再来说我如何关注到reduce，从开始知道这个方法的">
-<meta name="keywords" content="函数式编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redece应用">
-<meta property="og:url" content="http://yoursite.com/2017/07/01/函数式编程/归并/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%BD%92%E5%B9%B6/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="前言上周就想来写下reduce这个充满函数式编程方法的理解，奈何自己怠惰了，如今再过一周，觉的还是的写下来，因为觉得reduce的实现真是太强大优美了 理解说起reduce不得不说函数式编程这种编程范式？编程思想，抽象变达实现，我也描述不清，理解就是就是函数调函数，函数传函数，函数相互组合调用来完成功能，对于函数式编程我还需要再研究下 开始好了，再来说我如何关注到reduce，从开始知道这个方法的">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.511Z">
+<meta property="article:published_time" content="2017-06-30T17:23:40.000Z">
+<meta property="article:modified_time" content="2019-07-21T05:17:02.511Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="函数式编程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redece应用">
-<meta name="twitter:description" content="前言上周就想来写下reduce这个充满函数式编程方法的理解，奈何自己怠惰了，如今再过一周，觉的还是的写下来，因为觉得reduce的实现真是太强大优美了 理解说起reduce不得不说函数式编程这种编程范式？编程思想，抽象变达实现，我也描述不清，理解就是就是函数调函数，函数传函数，函数相互组合调用来完成功能，对于函数式编程我还需要再研究下 开始好了，再来说我如何关注到reduce，从开始知道这个方法的">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> redece应用 | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/归并/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%BD%92%E5%B9%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -340,7 +339,8 @@
 <p>具体为循环要组合的东西组成的数组，接受一个回调函数和一个初始值，此回调函数接受4个参数，分别为前一个值，当前值，当前值的索引，以及当前数组，别看这么多参数是很好理解的，而此初始值也是很有用的，可以为你省去很多麻烦，在这里说下初始值的用法，是你期望调用reduce后返回的值，这个期望值若和你的数组中的元素是相同类型便不必传入初始值，若不相同此时便可传入初始值</p>
 <p>再来就是若调用reduce的数组长度等于1时是不会触发reduce的回调的，若想触发可传入初始值</p>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>这里写过一个方法，我们要计算几个数组内的元素不考虑自身进行全排序，知道自身对应每个数组的索引和每个数组的长度，计算它在排列中的序号</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 归并计算index</span></div><div class="line"><span class="keyword">const</span> getCurrentCount = <span class="function">(<span class="params">indList, lenList</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 只有一个数组不排序，返回自身索引</span></div><div class="line">    <span class="keyword">if</span> (indList.length === <span class="number">1</span>) <span class="keyword">return</span> indList[<span class="number">0</span>];</div><div class="line">    <span class="keyword">return</span> indList.slice().reduceRight(<span class="function">(<span class="params">pre, cur, ind</span>) =&gt;</span> &#123;</div><div class="line">        <span class="comment">// 反向计算，因为最后一项的索引是不用计算直接相加就好，所以用reduceRight方法更合适</span></div><div class="line">        <span class="keyword">return</span> pre + cur * reLenList.slice(<span class="number">0</span>, ind).reduceRight(<span class="function">(<span class="params">p, c</span>) =&gt;</span> p * c);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 归并计算index</span></span><br><span class="line"><span class="keyword">const</span> getCurrentCount = <span class="function">(<span class="params">indList, lenList</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 只有一个数组不排序，返回自身索引</span></span><br><span class="line">    <span class="keyword">if</span> (indList.length === <span class="number">1</span>) <span class="keyword">return</span> indList[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> indList.slice().reduceRight(<span class="function">(<span class="params">pre, cur, ind</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 反向计算，因为最后一项的索引是不用计算直接相加就好，所以用reduceRight方法更合适</span></span><br><span class="line">        <span class="keyword">return</span> pre + cur * reLenList.slice(<span class="number">0</span>, ind).reduceRight(<span class="function">(<span class="params">p, c</span>) =&gt;</span> p * c);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总之还是觉得这些东西都是在自己学习实践后才会更加理解并运用自如，本身便如此</p>
 
       
@@ -365,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/函数式编程/" rel="tag"># 函数式编程</a>
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag"># 函数式编程</a>
           
         </div>
       
@@ -378,7 +378,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/30/数学/圆内接四边形/" rel="next" title="圆内接四边形">
+              <a href="/2017/06/30/%E6%95%B0%E5%AD%A6/%E5%9C%86%E5%86%85%E6%8E%A5%E5%9B%9B%E8%BE%B9%E5%BD%A2/" rel="next" title="圆内接四边形">
                 <i class="fa fa-chevron-left"></i> 圆内接四边形
               </a>
             
@@ -388,7 +388,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/01/函数式编程/函数式编程/" rel="prev" title="函数式编程">
+              <a href="/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="prev" title="函数式编程">
                 函数式编程 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -562,12 +562,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

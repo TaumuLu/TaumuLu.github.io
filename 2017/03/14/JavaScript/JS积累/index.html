@@ -88,17 +88,16 @@
 
 
 <meta name="description" content="前言在此记录自己平时学习知识点时自己恍然大悟的理解及体会，不一定理解准确，但定是当时最棒的理解了 日常积累Scope共享的Scope，所以循环中创建多个函数会只取得最后一次循环变量的赋值 鼠标事件js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决 表达式赋值(operation)()赋值运算再">
-<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS积累">
-<meta property="og:url" content="http://yoursite.com/2017/03/14/JavaScript/JS积累/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/JavaScript/JS%E7%A7%AF%E7%B4%AF/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="前言在此记录自己平时学习知识点时自己恍然大悟的理解及体会，不一定理解准确，但定是当时最棒的理解了 日常积累Scope共享的Scope，所以循环中创建多个函数会只取得最后一次循环变量的赋值 鼠标事件js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决 表达式赋值(operation)()赋值运算再">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-03T09:21:04.998Z">
+<meta property="article:published_time" content="2017-03-14T15:55:28.000Z">
+<meta property="article:modified_time" content="2020-01-03T09:21:04.998Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS积累">
-<meta name="twitter:description" content="前言在此记录自己平时学习知识点时自己恍然大悟的理解及体会，不一定理解准确，但定是当时最棒的理解了 日常积累Scope共享的Scope，所以循环中创建多个函数会只取得最后一次循环变量的赋值 鼠标事件js鼠标拖拽要触发mousemove事件绑定在document元素上，可解决快速移动失效所拖拽元素跟不上的问题，其他类似问题都可绑定在document上解决 表达式赋值(operation)()赋值运算再">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> JS积累 | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/JavaScript/JS积累/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/JavaScript/JS%E7%A7%AF%E7%B4%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -371,16 +370,19 @@
 <h4 id="异步-gt-回调-gt-EventLoop"><a href="#异步-gt-回调-gt-EventLoop" class="headerlink" title="异步 =&gt; 回调 =&gt; EventLoop"></a>异步 =&gt; 回调 =&gt; EventLoop</h4><p>文字不被选中 绑定selectstart 事件，return false</p>
 <h4 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h4><p>in 运算符要求左边的操作数必须是字符串类型或可以转换为字符串类型的其他类型，右边的操作数必须是数组或对象，只有第1个操作数的值是第2个操作数的属性名，才会返回true，否则返回false<br>in 运算符会在整个原型链上查询指定的属性或者键值</p>
 <h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>Promise 是异步的，所以对其 try catch 是没有作用的，只能用自身的then或catch方法去捕获</p>
-<h3 id="Label"><a href="#Label" class="headerlink" title="Label"></a>Label</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">marquee</span> <span class="attr">direction</span>=<span class="string">"up"</span> <span class="attr">behavior</span>=<span class="string">"scroll"</span> <span class="attr">scrollamount</span>=<span class="string">"1"</span> <span class="attr">scrolldelay</span>=<span class="string">"0"</span> <span class="attr">loop</span>=<span class="string">"-1"</span> <span class="attr">width</span>=<span class="string">"1000"</span> <span class="attr">height</span>=<span class="string">"50"</span> <span class="attr">bgcolor</span>=<span class="string">"#0099FF"</span> <span class="attr">hspace</span>=<span class="string">"10"</span> <span class="attr">vspace</span>=<span class="string">"10"</span>&gt;</span></div><div class="line">    指整个Marquee对齐方式; (2)behavior:设置滚动的方式: scroll:表示由一端滚动到另一端,会重复,缺陷是不能无缝滚动。 slide:表示由一段滚动到另一端,不会重复...</div><div class="line"><span class="tag">&lt;/<span class="name">marquee</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">    &lt;script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script src="http://cdn.bootcss.com/html5media/1.1.8/html5media.min.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<h4 id="head"><a href="#head" class="headerlink" title="head"></a>head</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge, chrome=1"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">'viewport'</span> <span class="attr">content</span>=<span class="string">'width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no'</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">media</span>=<span class="string">"only screen and (max-device-width: 480px)"</span> <span class="attr">href</span>=<span class="string">"mobile-device.css"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Label"><a href="#Label" class="headerlink" title="Label"></a>Label</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">marquee</span> <span class="attr">direction</span>=<span class="string">"up"</span> <span class="attr">behavior</span>=<span class="string">"scroll"</span> <span class="attr">scrollamount</span>=<span class="string">"1"</span> <span class="attr">scrolldelay</span>=<span class="string">"0"</span> <span class="attr">loop</span>=<span class="string">"-1"</span> <span class="attr">width</span>=<span class="string">"1000"</span> <span class="attr">height</span>=<span class="string">"50"</span> <span class="attr">bgcolor</span>=<span class="string">"#0099FF"</span> <span class="attr">hspace</span>=<span class="string">"10"</span> <span class="attr">vspace</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">    指整个Marquee对齐方式; (2)behavior:设置滚动的方式: scroll:表示由一端滚动到另一端,会重复,缺陷是不能无缝滚动。 slide:表示由一段滚动到另一端,不会重复...</span><br><span class="line"><span class="tag">&lt;/<span class="name">marquee</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">    &lt;script src="http://cdn.bootcss.com/html5media/1.1.8/html5media.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="head"><a href="#head" class="headerlink" title="head"></a>head</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge, chrome=1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">'viewport'</span> <span class="attr">content</span>=<span class="string">'width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no'</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">media</span>=<span class="string">"only screen and (max-device-width: 480px)"</span> <span class="attr">href</span>=<span class="string">"mobile-device.css"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3><ul>
-<li>小数点保留几位 <fmt:formatnumber type="number" value="${sell.value}" pattern="0" maxfractiondigits="0"></fmt:formatnumber></li>
+<li>小数点保留几位 &lt;fmt:formatNumber type=”number” value=”${sell.value}” pattern=”0” maxFractionDigits=”0”/&gt;</li>
 <li>截取字符串 ${fn:substring(sell.value,0,1)}</li>
 </ul>
 <h3 id="正则表达式-1"><a href="#正则表达式-1" class="headerlink" title="正则表达式"></a>正则表达式</h3><ul>
 <li>验证数字包括负数和小数 <code>const reg = /^(-)?\d+(\.\d+)?$/g;</code></li>
 </ul>
-<h3 id="Code-Snippet"><a href="#Code-Snippet" class="headerlink" title="Code Snippet"></a>Code Snippet</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 为所有元素添加、移除不同颜色边框</span></div><div class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  a.style.outline=<span class="string">"1px solid #"</span>+(~~(<span class="built_in">Math</span>.random()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).toString(<span class="number">16</span>);</div><div class="line">&#125;)</div><div class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">  a.style.outline=<span class="string">"none"</span>;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// &lt;&lt;是左移位，是位操作符的一种</span></div><div class="line"><span class="comment">// 举例说a&lt;&lt;b就是先将a化为二进制数，然后向左移动b个位置</span></div><div class="line"><span class="comment">// 例如：00000001&lt;&lt;2就变成了00000100</span></div></pre></td></tr></table></figure>
+<h3 id="Code-Snippet"><a href="#Code-Snippet" class="headerlink" title="Code Snippet"></a>Code Snippet</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为所有元素添加、移除不同颜色边框</span></span><br><span class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  a.style.outline=<span class="string">"1px solid #"</span>+(~~(<span class="built_in">Math</span>.random()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).toString(<span class="number">16</span>);</span><br><span class="line">&#125;)</span><br><span class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  a.style.outline=<span class="string">"none"</span>;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;&lt;是左移位，是位操作符的一种</span></span><br><span class="line"><span class="comment">// 举例说a&lt;&lt;b就是先将a化为二进制数，然后向左移动b个位置</span></span><br><span class="line"><span class="comment">// 例如：00000001&lt;&lt;2就变成了00000100</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><ul>
 <li>getEventListeners</li>
 <li>monitorEvents unmonitorEvents</li>
@@ -397,13 +399,11 @@
 <p>MVC {<br>    视图(View)：用户界面<br>    控制器(Controller)：业务逻辑<br>    模型(Model)：数据保存</p>
 <pre><code>View 传送指令到 Controller
 Controller 完成业务逻辑后，要求 Model 改变状态
-Model 将新的数据发送到 View，用户得到反馈
-</code></pre><p>}</p>
+Model 将新的数据发送到 View，用户得到反馈</code></pre><p>}</p>
 <p>MVP {<br>    Controller 改名为 Presenter，同时改变了通信方向</p>
 <pre><code>各部分之间的通信，都是双向的
 View 与 Model 不发生联系，都通过 Presenter 传递
-View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里
-</code></pre><p>}</p>
+View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里</code></pre><p>}</p>
 <p>MVVM {<br>    MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致<br>    唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然<br>}</p>
 
       
@@ -441,7 +441,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/里程碑/Hexo搭建博客/" rel="next" title="Hexo搭建博客">
+              <a href="/2017/03/12/%E9%87%8C%E7%A8%8B%E7%A2%91/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="Hexo搭建博客">
                 <i class="fa fa-chevron-left"></i> Hexo搭建博客
               </a>
             
@@ -451,7 +451,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/15/Git/Git安装/" rel="prev" title="Git基础">
+              <a href="/2017/03/15/Git/Git%E5%AE%89%E8%A3%85/" rel="prev" title="Git基础">
                 Git基础 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -593,7 +593,7 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常积累"><span class="nav-number">2.</span> <span class="nav-text">日常积累</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scope"><span class="nav-number">2.0.1.</span> <span class="nav-text">Scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标事件"><span class="nav-number">2.0.2.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式赋值"><span class="nav-number">2.0.3.</span> <span class="nav-text">表达式赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">2.0.4.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数解构赋值"><span class="nav-number">2.0.5.</span> <span class="nav-text">函数参数解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数传递"><span class="nav-number">2.0.6.</span> <span class="nav-text">函数参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js执行机制"><span class="nav-number">2.0.7.</span> <span class="nav-text">js执行机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.0.8.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较操作符"><span class="nav-number">2.0.9.</span> <span class="nav-text">==比较操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stack"><span class="nav-number">2.0.10.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-同步调用"><span class="nav-number">2.0.11.</span> <span class="nav-text">异步/同步调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EventLoop"><span class="nav-number">2.0.12.</span> <span class="nav-text">EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-gt-回调-gt-EventLoop"><span class="nav-number">2.0.13.</span> <span class="nav-text">异步 =&gt; 回调 =&gt; EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in运算符"><span class="nav-number">2.0.14.</span> <span class="nav-text">in运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.0.15.</span> <span class="nav-text">Promise</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label"><span class="nav-number">2.1.</span> <span class="nav-text">Label</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#head"><span class="nav-number">2.1.1.</span> <span class="nav-text">head</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">2.2.</span> <span class="nav-text">JSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式-1"><span class="nav-number">2.3.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Snippet"><span class="nav-number">2.4.</span> <span class="nav-text">Code Snippet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件处理"><span class="nav-number">2.5.</span> <span class="nav-text">事件处理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常积累"><span class="nav-number">2.</span> <span class="nav-text">日常积累</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scope"><span class="nav-number">2.0.1.</span> <span class="nav-text">Scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标事件"><span class="nav-number">2.0.2.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式赋值"><span class="nav-number">2.0.3.</span> <span class="nav-text">表达式赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">2.0.4.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数解构赋值"><span class="nav-number">2.0.5.</span> <span class="nav-text">函数参数解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数传递"><span class="nav-number">2.0.6.</span> <span class="nav-text">函数参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js执行机制"><span class="nav-number">2.0.7.</span> <span class="nav-text">js执行机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.0.8.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较操作符"><span class="nav-number">2.0.9.</span> <span class="nav-text">&#x3D;&#x3D;比较操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stack"><span class="nav-number">2.0.10.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-同步调用"><span class="nav-number">2.0.11.</span> <span class="nav-text">异步&#x2F;同步调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EventLoop"><span class="nav-number">2.0.12.</span> <span class="nav-text">EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步-gt-回调-gt-EventLoop"><span class="nav-number">2.0.13.</span> <span class="nav-text">异步 &#x3D;&gt; 回调 &#x3D;&gt; EventLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in运算符"><span class="nav-number">2.0.14.</span> <span class="nav-text">in运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">2.0.15.</span> <span class="nav-text">Promise</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Label"><span class="nav-number">2.1.</span> <span class="nav-text">Label</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#head"><span class="nav-number">2.1.1.</span> <span class="nav-text">head</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP"><span class="nav-number">2.2.</span> <span class="nav-text">JSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式-1"><span class="nav-number">2.3.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Snippet"><span class="nav-number">2.4.</span> <span class="nav-text">Code Snippet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件处理"><span class="nav-number">2.5.</span> <span class="nav-text">事件处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -625,12 +625,12 @@ View 非常薄，不部署任何业务逻辑，称为&quot;被动视图&quot;（
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

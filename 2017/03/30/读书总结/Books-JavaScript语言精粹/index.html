@@ -87,18 +87,17 @@
 
 
 
-<meta name="description" content="简介JS作者即老道写的，值得多读几遍，且书本较薄易读完 状态目前未完全看完 正文所有为假的值 false null undefined &amp;#x22;&amp;#x22; 0 NaN  对象遍历 for in  遍历对象的所有属性，包括原型上的属性，不可遍历的除外(Enumerable==false)   object.hasOwnPropery(variable)  返回布尔值，确定属性是否为自身对象属性">
-<meta name="keywords" content="读书总结">
+<meta name="description" content="简介JS作者即老道写的，值得多读几遍，且书本较薄易读完 状态目前未完全看完 正文所有为假的值 false null undefined &amp;#x22;&amp;#x22; 0 NaN  对象遍历 for in  遍历对象的所有属性，包括原型上的属性，不可遍历的除外(Enumerable&#x3D;&#x3D;false)   object.hasOwnPropery(variable)  返回布尔值，确定属性是否为自身对象属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript语言精粹">
-<meta property="og:url" content="http://yoursite.com/2017/03/30/读书总结/Books-JavaScript语言精粹/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/Books-JavaScript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="简介JS作者即老道写的，值得多读几遍，且书本较薄易读完 状态目前未完全看完 正文所有为假的值 false null undefined &amp;#x22;&amp;#x22; 0 NaN  对象遍历 for in  遍历对象的所有属性，包括原型上的属性，不可遍历的除外(Enumerable==false)   object.hasOwnPropery(variable)  返回布尔值，确定属性是否为自身对象属性">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.516Z">
+<meta property="og:description" content="简介JS作者即老道写的，值得多读几遍，且书本较薄易读完 状态目前未完全看完 正文所有为假的值 false null undefined &amp;#x22;&amp;#x22; 0 NaN  对象遍历 for in  遍历对象的所有属性，包括原型上的属性，不可遍历的除外(Enumerable&#x3D;&#x3D;false)   object.hasOwnPropery(variable)  返回布尔值，确定属性是否为自身对象属性">
+<meta property="article:published_time" content="2017-03-30T03:00:32.000Z">
+<meta property="article:modified_time" content="2019-07-21T05:17:02.516Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="读书总结">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript语言精粹">
-<meta name="twitter:description" content="简介JS作者即老道写的，值得多读几遍，且书本较薄易读完 状态目前未完全看完 正文所有为假的值 false null undefined &amp;#x22;&amp;#x22; 0 NaN  对象遍历 for in  遍历对象的所有属性，包括原型上的属性，不可遍历的除外(Enumerable==false)   object.hasOwnPropery(variable)  返回布尔值，确定属性是否为自身对象属性">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> JavaScript语言精粹 | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/读书总结/Books-JavaScript语言精粹/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/30/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/Books-JavaScript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -368,49 +367,47 @@
 <h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">描述</th>
+<th align="center">运算符</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">. [] ()</td>
-<td style="text-align:center">提取属性与调用函数</td>
+<tbody><tr>
+<td align="center">. [] ()</td>
+<td align="center">提取属性与调用函数</td>
 </tr>
 <tr>
-<td style="text-align:center">delete new typeof + - !</td>
-<td style="text-align:center">一元运算符</td>
+<td align="center">delete new typeof + - !</td>
+<td align="center">一元运算符</td>
 </tr>
 <tr>
-<td style="text-align:center">* / %</td>
-<td style="text-align:center">乘法、除法、求余</td>
+<td align="center">* / %</td>
+<td align="center">乘法、除法、求余</td>
 </tr>
 <tr>
-<td style="text-align:center">+ -</td>
-<td style="text-align:center">加法/连接、减法</td>
+<td align="center">+ -</td>
+<td align="center">加法/连接、减法</td>
 </tr>
 <tr>
-<td style="text-align:center">&gt;= &lt;= &gt; &lt;</td>
-<td style="text-align:center">不等式运算符</td>
+<td align="center">&gt;= &lt;= &gt; &lt;</td>
+<td align="center">不等式运算符</td>
 </tr>
 <tr>
-<td style="text-align:center">=== !==</td>
-<td style="text-align:center">等式运算符</td>
+<td align="center">=== !==</td>
+<td align="center">等式运算符</td>
 </tr>
 <tr>
-<td style="text-align:center">&amp;&amp;</td>
-<td style="text-align:center">逻辑非</td>
+<td align="center">&amp;&amp;</td>
+<td align="center">逻辑非</td>
 </tr>
 <tr>
-<td style="text-align:center">&#x7C;&#x7C;</td>
-<td style="text-align:center">逻辑或</td>
+<td align="center">&#x7C;&#x7C;</td>
+<td align="center">逻辑或</td>
 </tr>
 <tr>
-<td style="text-align:center">? :</td>
-<td style="text-align:center">三元</td>
+<td align="center">? :</td>
+<td align="center">三元</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
 <li>this值<ul>
 <li>值取决于调用模式</li>
@@ -455,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/读书总结/" rel="tag"># 读书总结</a>
+            <a href="/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/" rel="tag"># 读书总结</a>
           
         </div>
       
@@ -468,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/30/读书总结/Books-你不知道的JavaScript/" rel="next" title="你不知道的JavaScript">
-                <i class="fa fa-chevron-left"></i> 你不知道的JavaScript
+              <a href="/2017/03/28/English/WordBook/" rel="next" title="WordBook">
+                <i class="fa fa-chevron-left"></i> WordBook
               </a>
             
           </div>
@@ -478,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/30/读书总结/Books-JavaScript权威指南/" rel="prev" title="JavaScript权威指南">
-                JavaScript权威指南 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/30/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/Books-%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript/" rel="prev" title="你不知道的JavaScript">
+                你不知道的JavaScript <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -652,12 +649,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

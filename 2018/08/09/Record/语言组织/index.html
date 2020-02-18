@@ -88,17 +88,16 @@
 
 
 <meta name="description" content="语言发表或提问前我都会在sublime上打出自己要说的语言，记录下来并反复阅读以重新组织语言达到自己的预期 next问题 为何要在dev模式下webpack加入WriteFilePlugin插件以生成文件，这样做是方便服务端require文件，但不能从内存中去读区吗，开发时从内存中读区文件速度更快不是吗，不然用webpack-hot-middleware只是为了做webpack的动态入口不浪费吗">
-<meta name="keywords" content="Record">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语言组织">
-<meta property="og:url" content="http://yoursite.com/2018/08/09/Record/语言组织/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/09/Record/%E8%AF%AD%E8%A8%80%E7%BB%84%E7%BB%87/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="语言发表或提问前我都会在sublime上打出自己要说的语言，记录下来并反复阅读以重新组织语言达到自己的预期 next问题 为何要在dev模式下webpack加入WriteFilePlugin插件以生成文件，这样做是方便服务端require文件，但不能从内存中去读区吗，开发时从内存中读区文件速度更快不是吗，不然用webpack-hot-middleware只是为了做webpack的动态入口不浪费吗">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-07T07:05:49.421Z">
+<meta property="article:published_time" content="2018-08-09T06:45:55.000Z">
+<meta property="article:modified_time" content="2020-01-07T07:05:49.421Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="Record">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="语言组织">
-<meta name="twitter:description" content="语言发表或提问前我都会在sublime上打出自己要说的语言，记录下来并反复阅读以重新组织语言达到自己的预期 next问题 为何要在dev模式下webpack加入WriteFilePlugin插件以生成文件，这样做是方便服务端require文件，但不能从内存中去读区吗，开发时从内存中读区文件速度更快不是吗，不然用webpack-hot-middleware只是为了做webpack的动态入口不浪费吗">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> 语言组织 | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/Record/语言组织/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/Record/%E8%AF%AD%E8%A8%80%E7%BB%84%E7%BB%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -338,7 +337,7 @@
 <li>为何要在dev模式下webpack加入WriteFilePlugin插件以生成文件，这样做是方便服务端require文件，但不能从内存中去读区吗，开发时从内存中读区文件速度更快不是吗，不然用webpack-hot-middleware只是为了做webpack的动态入口不浪费吗  </li>
 <li>webpack为何要在开发模式下分别打两份包，重复打包增加编译时间，而且没有用CommonsChunkPlugin提取公共js，node打包模式不会打包node_modules，但web模式会为每一个单独的入口都打包进所有的文件且包括node_modules，这无疑增加了每次改动webpack的编译时间，随着页面、依赖的增多时间会更加长，开发体验会很差</li>
 </ol>
-<h3 id="新方案"><a href="#新方案" class="headerlink" title="新方案"></a>新方案</h3><p>在开发模式下用生产模式的webpack打包，当然需要改动一些配置，只需要打包web环境的包，且以watch方式监听文件变动，路径保存在dist下，这样服务端渲染时还是引用这个路径的包，但要让服务端能正确require这个不是CommonJS规范的文件需要我们做一些hark，这里只要处理挂载到window上的webpackJsonp函数以及next提供的<strong>NEXT_REGISTER_PAGE全局函数，以同样的方式我们挂载到global上，这样保证require时能正确处理，此外我们还要处理下</strong>webpack_require<strong>函数，以web方式打包会将node_modules里的包都打进来，这里有几个问题，有些包可能提供了node和browser环境下的不同包，比如superagent，还有些包不允许引用多次，比如babel-polyfill，所以我们需要在</strong>webpack_require<strong>这个函数上做点手脚，针对以上问题的包忽略或者从路径提取出包名直接require引用，可能有些包还有其他问题不过理论上在</strong>webpack_require__这里都能处理掉  </p>
+<h3 id="新方案"><a href="#新方案" class="headerlink" title="新方案"></a>新方案</h3><p>在开发模式下用生产模式的webpack打包，当然需要改动一些配置，只需要打包web环境的包，且以watch方式监听文件变动，路径保存在dist下，这样服务端渲染时还是引用这个路径的包，但要让服务端能正确require这个不是CommonJS规范的文件需要我们做一些hark，这里只要处理挂载到window上的webpackJsonp函数以及next提供的<strong>NEXT_REGISTER_PAGE全局函数，以同样的方式我们挂载到global上，这样保证require时能正确处理，此外我们还要处理下</strong>webpack_require__函数，以web方式打包会将node_modules里的包都打进来，这里有几个问题，有些包可能提供了node和browser环境下的不同包，比如superagent，还有些包不允许引用多次，比如babel-polyfill，所以我们需要在<strong>webpack_require</strong>这个函数上做点手脚，针对以上问题的包忽略或者从路径提取出包名直接require引用，可能有些包还有其他问题不过理论上在<strong>webpack_require</strong>这里都能处理掉  </p>
 <p>其他问题<br>开发模式下提供监听改动实时打包，在客户端下没有问题，但在服务端有问题，由于node会缓存require的包导致文件变动也不会再次require源文件，这里用delete require.cache[path]的方式删除引用过的包，但并未结束由于用webpack打包，webpack会用一个变量installedModules来缓存所有引用过的包，所以我们还需要清除webpack的缓存，这一点方法很多，通过导出函数来清理即可</p>
 <p>最终<br>至此问题已基本解决，再处理下next的资源文件请求即可，这里可以自行处理，资源文件最好尽快处理，减少无关中间件的执行</p>
 <h3 id="RN回答"><a href="#RN回答" class="headerlink" title="RN回答"></a>RN回答</h3><p>刚好之前的项目是用RN做的，就说下我遇到的坑和理解吧<br>先说RN对原生这块，虽然RN是用前端最熟悉的react来写的，但如其他的回答，如果不懂原生还是很难做好的，不然从打包发布这块就会被卡住，如果需要原生的支持，Xcode的使用也要了解  </p>
@@ -379,7 +378,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/29/Record/面试题收录/" rel="next" title="面试题收录">
+              <a href="/2018/07/29/Record/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E5%BD%95/" rel="next" title="面试题收录">
                 <i class="fa fa-chevron-left"></i> 面试题收录
               </a>
             
@@ -389,7 +388,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/16/JavaScript/JS框架/" rel="prev" title="JS框架">
+              <a href="/2018/12/16/JavaScript/JS%E6%A1%86%E6%9E%B6/" rel="prev" title="JS框架">
                 JS框架 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -563,12 +562,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

@@ -87,18 +87,17 @@
 
 
 
-<meta name="description" content="Init可能出于前端出身且没计算机基础的我，如今还是挺恐惧命令行的，虽然近有改善开始尽可能多的使用命令行Linux命令作为后端必要掌握，前端也不应落后于此，应去自我学习掌握 Shellcat /etc/shells  bash csh ksh sh tcsh zsh  切换shellchsh -s /bin/zsh 模式 交互 交互式 输入输出 不带有选项以外的参数或者-c选项，就会启动一个交互式">
-<meta name="keywords" content="Command">
+<meta name="description" content="Init可能出于前端出身且没计算机基础的我，如今还是挺恐惧命令行的，虽然近有改善开始尽可能多的使用命令行Linux命令作为后端必要掌握，前端也不应落后于此，应去自我学习掌握 Shellcat &#x2F;etc&#x2F;shells  bash csh ksh sh tcsh zsh  切换shellchsh -s &#x2F;bin&#x2F;zsh 模式 交互 交互式 输入输出 不带有选项以外的参数或者-c选项，就会启动一个交互式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://yoursite.com/2017/03/22/Command/Linux/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="Init可能出于前端出身且没计算机基础的我，如今还是挺恐惧命令行的，虽然近有改善开始尽可能多的使用命令行Linux命令作为后端必要掌握，前端也不应落后于此，应去自我学习掌握 Shellcat /etc/shells  bash csh ksh sh tcsh zsh  切换shellchsh -s /bin/zsh 模式 交互 交互式 输入输出 不带有选项以外的参数或者-c选项，就会启动一个交互式">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.503Z">
+<meta property="og:description" content="Init可能出于前端出身且没计算机基础的我，如今还是挺恐惧命令行的，虽然近有改善开始尽可能多的使用命令行Linux命令作为后端必要掌握，前端也不应落后于此，应去自我学习掌握 Shellcat &#x2F;etc&#x2F;shells  bash csh ksh sh tcsh zsh  切换shellchsh -s &#x2F;bin&#x2F;zsh 模式 交互 交互式 输入输出 不带有选项以外的参数或者-c选项，就会启动一个交互式">
+<meta property="article:published_time" content="2017-03-22T09:02:26.000Z">
+<meta property="article:modified_time" content="2019-07-21T05:17:02.503Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="Command">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux">
-<meta name="twitter:description" content="Init可能出于前端出身且没计算机基础的我，如今还是挺恐惧命令行的，虽然近有改善开始尽可能多的使用命令行Linux命令作为后端必要掌握，前端也不应落后于此，应去自我学习掌握 Shellcat /etc/shells  bash csh ksh sh tcsh zsh  切换shellchsh -s /bin/zsh 模式 交互 交互式 输入输出 不带有选项以外的参数或者-c选项，就会启动一个交互式">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> Linux | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -436,7 +435,8 @@
 <li>查看linux文件权限：<code>ls -l 文件名称</code></li>
 <li>查看linux文件夹的权限：<code>ls -ld 文件夹名称</code></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">drwxr-xr-x</div><div class="line">// 第一位表示文件类型，d是目录文件、l是链接文件、-是普通文件、p是管道</div><div class="line">// rwx 第2-4位表示Owner的权限 读写执</div><div class="line">// r-x 第5-7位表示Group的权限 读-执</div><div class="line">// r-x 第8-10位表示Other的权限 读-执</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x</span><br><span class="line">&#x2F;&#x2F; 第一位表示文件类型，d是目录文件、l是链接文件、-是普通文件、p是管道</span><br><span class="line">&#x2F;&#x2F; rwx 第2-4位表示Owner的权限 读写执</span><br><span class="line">&#x2F;&#x2F; r-x 第5-7位表示Group的权限 读-执</span><br><span class="line">&#x2F;&#x2F; r-x 第8-10位表示Other的权限 读-执</span><br></pre></td></tr></table></figure>
+
 <h4 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h4><p>chmod [config] [mode] file…</p>
 <ul>
 <li>config cfvR<ul>
@@ -459,7 +459,8 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod -R a+r *  // 将目前目录下的所有文件与子目录皆设为任何人可读取</div><div class="line">chmod --reference=file1 file2  // 将file2的权限改为和file1相同</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod -R a+r *  // 将目前目录下的所有文件与子目录皆设为任何人可读取</span><br><span class="line">chmod --reference=file1 file2  // 将file2的权限改为和file1相同</span><br></pre></td></tr></table></figure>
+
 <h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><ul>
 <li><a href="https://blog.csdn.net/diyiday/article/details/79024825" target="_blank" rel="noopener">yum安装jenkins - 第一天 - CSDN博客</a></li>
 <li><a href="https://www.cnblogs.com/kex1n/p/5909617.html" target="_blank" rel="noopener">Linux查看系统信息的一些命令及查看已安装软件包的命令 - 小 楼 一 夜 听 春 雨 - 博客园</a></li>
@@ -512,7 +513,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/Record/书签记录/" rel="prev" title="书签记录">
+              <a href="/2017/03/22/Record/%E4%B9%A6%E7%AD%BE%E8%AE%B0%E5%BD%95/" rel="prev" title="书签记录">
                 书签记录 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -686,12 +687,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

@@ -93,10 +93,8 @@
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="记录学习前端的点滴">
-<meta property="og:locale" content="zh-Hans">
+<meta property="article:author" content="MT">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Taumu的博客">
-<meta name="twitter:description" content="记录学习前端的点滴">
 
 
 
@@ -131,7 +129,7 @@
 
 
   <title> Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/IOS/Objective-C学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/IOS/Objective-C%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -283,7 +281,7 @@
             
               
                 
-                <a class="post-title-link" href="/2018/02/25/IOS/Objective-C学习/" itemprop="url">
+                <a class="post-title-link" href="/2018/02/25/IOS/Objective-C%E5%AD%A6%E4%B9%A0/" itemprop="url">
                   Objective-C学习
                 </a>
               
@@ -433,8 +431,7 @@
 <th>实现文件</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>c语言</td>
 <td>.h</td>
 <td>.c</td>
@@ -454,8 +451,7 @@
 <td>.h</td>
 <td>.mm</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="h文件"><a href="#h文件" class="headerlink" title=".h文件"></a>.h文件</h4><ul>
 <li>定义对外的接口</li>
 <li>实例变量和方法声明的头文件</li>
@@ -490,7 +486,8 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// 第一种，旧式声明</div><div class="line">// Test.h</div><div class="line">@interface Test : NSObject &#123;</div><div class="line">    // 权限默认@protected</div><div class="line">    // @public，类外可使用指向-&gt;访问</div><div class="line">    // 实例变量是私有的，在类外部不能使用</div><div class="line">    NSString *_field;</div><div class="line">&#125;</div><div class="line">@property(nonatomic, copy) NSString *field;</div><div class="line">@end</div><div class="line">// Test.m</div><div class="line">@implementation Test</div><div class="line">@synthesize field = _field // 关联到实例变量</div><div class="line">@end</div><div class="line"></div><div class="line">// 第二种，新式声明</div><div class="line">// Test.h</div><div class="line">@interface Test : NSObject </div><div class="line">// 定义属性供外部使用， 生成了getter和setter方法声明</div><div class="line">// Xcode4.4开始，编译器会自动为每一条@property都添加一条对应的@synthesize，不用再写@synthesize</div><div class="line">// @synthesize自动生成实例变量getter和setter实现</div><div class="line">// 不再需要为属性声明实例变量了，因为@synthesize默认会去访问的同名，如果找不到同名实例变量，会自动生成一个私有同名实例变量</div><div class="line">@property(nonatomic, copy) NSString *field;</div><div class="line">@end</div><div class="line">// Test.m</div><div class="line">@implementation Test</div><div class="line">// @synthesize field // property默认添加，可以不用再写了</div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 第一种，旧式声明</span><br><span class="line">&#x2F;&#x2F; Test.h</span><br><span class="line">@interface Test : NSObject &#123;</span><br><span class="line">    &#x2F;&#x2F; 权限默认@protected</span><br><span class="line">    &#x2F;&#x2F; @public，类外可使用指向-&gt;访问</span><br><span class="line">    &#x2F;&#x2F; 实例变量是私有的，在类外部不能使用</span><br><span class="line">    NSString *_field;</span><br><span class="line">&#125;</span><br><span class="line">@property(nonatomic, copy) NSString *field;</span><br><span class="line">@end</span><br><span class="line">&#x2F;&#x2F; Test.m</span><br><span class="line">@implementation Test</span><br><span class="line">@synthesize field &#x3D; _field &#x2F;&#x2F; 关联到实例变量</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 第二种，新式声明</span><br><span class="line">&#x2F;&#x2F; Test.h</span><br><span class="line">@interface Test : NSObject </span><br><span class="line">&#x2F;&#x2F; 定义属性供外部使用， 生成了getter和setter方法声明</span><br><span class="line">&#x2F;&#x2F; Xcode4.4开始，编译器会自动为每一条@property都添加一条对应的@synthesize，不用再写@synthesize</span><br><span class="line">&#x2F;&#x2F; @synthesize自动生成实例变量getter和setter实现</span><br><span class="line">&#x2F;&#x2F; 不再需要为属性声明实例变量了，因为@synthesize默认会去访问的同名，如果找不到同名实例变量，会自动生成一个私有同名实例变量</span><br><span class="line">@property(nonatomic, copy) NSString *field;</span><br><span class="line">@end</span><br><span class="line">&#x2F;&#x2F; Test.m</span><br><span class="line">@implementation Test</span><br><span class="line">&#x2F;&#x2F; @synthesize field &#x2F;&#x2F; property默认添加，可以不用再写了</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><ul>
 <li>@property免去访问器的声明</li>
 <li>@synthesize免去访问器的实现</li>
@@ -641,7 +638,8 @@
 <li>对象方法 +</li>
 <li>类方法 -</li>
 </ul>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承(:)"></a>继承(:)</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 定义</div><div class="line">@interface 类名 : 父类 &#123;</div><div class="line">    定义实例属性</div><div class="line">    // 只做声不能赋值</div><div class="line">&#125;</div><div class="line">定义方法</div><div class="line">// 方法类型 (返回类型)方法名:(参数类型)参数名称 参数二签名:(参数二类型)参数二名称</div><div class="line">// 调用方法</div><div class="line">// [对象 方法名:参数 参数二签名:参数二 参数三签名:参数三]</div><div class="line">// 方法内真正使用参数名，签名只是区分方法的</div><div class="line">@end</div><div class="line">// 实现</div><div class="line">@implementation 类名</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承(:)"></a>继承(:)</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 定义</span><br><span class="line">@interface 类名 : 父类 &#123;</span><br><span class="line">    定义实例属性</span><br><span class="line">    &#x2F;&#x2F; 只做声不能赋值</span><br><span class="line">&#125;</span><br><span class="line">定义方法</span><br><span class="line">&#x2F;&#x2F; 方法类型 (返回类型)方法名:(参数类型)参数名称 参数二签名:(参数二类型)参数二名称</span><br><span class="line">&#x2F;&#x2F; 调用方法</span><br><span class="line">&#x2F;&#x2F; [对象 方法名:参数 参数二签名:参数二 参数三签名:参数三]</span><br><span class="line">&#x2F;&#x2F; 方法内真正使用参数名，签名只是区分方法的</span><br><span class="line">@end</span><br><span class="line">&#x2F;&#x2F; 实现</span><br><span class="line">@implementation 类名</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>OC中任何一个类都是继承NSObject</li>
 <li>自定义初始化方法，以initWith开头<ul>
@@ -650,7 +648,8 @@
 </li>
 <li>点语法只能适用于set/get方法，其他能访问的属性使用-&gt;访问</li>
 </ul>
-<h3 id="Category-类别"><a href="#Category-类别" class="headerlink" title="Category(类别)"></a>Category(类别)</h3><h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@interface 已有类名 (类别名)</div><div class="line">定义方法</div><div class="line">@end</div><div class="line">@implementation NSString (Extend)</div><div class="line">实现方法</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="Category-类别"><a href="#Category-类别" class="headerlink" title="Category(类别)"></a>Category(类别)</h3><h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@interface 已有类名 (类别名)</span><br><span class="line">定义方法</span><br><span class="line">@end</span><br><span class="line">@implementation NSString (Extend)</span><br><span class="line">实现方法</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>命名<ul>
 <li>类名+类别名称</li>
@@ -668,7 +667,8 @@
 <li>一个类是可以定义多个类目的</li>
 <li>类目可以被继承，子类可以使用super调用</li>
 </ul>
-<h3 id="Extension-扩展"><a href="#Extension-扩展" class="headerlink" title="Extension(扩展)"></a>Extension(扩展)</h3><h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@interface 已有类名 (可写可不写)</div><div class="line">定义属性</div><div class="line">定义方法</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="Extension-扩展"><a href="#Extension-扩展" class="headerlink" title="Extension(扩展)"></a>Extension(扩展)</h3><h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@interface 已有类名 (可写可不写)</span><br><span class="line">定义属性</span><br><span class="line">定义方法</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>命名同Category</li>
 <li>Extension是Category的一个特例，和类别相似，但是小括号里面没有扩展的名字，就像匿名的类别</li>
@@ -682,7 +682,8 @@
 <li>类扩展只能针对自定义的类，不能给系统类增加类扩展</li>
 <li>类扩展定义的方法必须在类的实现中进行实现</li>
 </ul>
-<h3 id="Protocol-协议"><a href="#Protocol-协议" class="headerlink" title="Protocol(协议)"></a>Protocol(协议)</h3><h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@protocol 协议名Delegate &lt;父协议|NSObject&gt;</div><div class="line">// 在此声明协议方法</div><div class="line">// @requires修饰的声明方法，代理方必须实现</div><div class="line">// @optional修饰的声明方法，代理方可以不实现</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="Protocol-协议"><a href="#Protocol-协议" class="headerlink" title="Protocol(协议)"></a>Protocol(协议)</h3><h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@protocol 协议名Delegate &lt;父协议|NSObject&gt;</span><br><span class="line">&#x2F;&#x2F; 在此声明协议方法</span><br><span class="line">&#x2F;&#x2F; @requires修饰的声明方法，代理方必须实现</span><br><span class="line">&#x2F;&#x2F; @optional修饰的声明方法，代理方可以不实现</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>命名同Category<ul>
 <li>类名+Delegate</li>
@@ -754,7 +755,8 @@
 </li>
 </ul>
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h2 id="struct结构体"><a href="#struct结构体" class="headerlink" title="struct结构体"></a>struct结构体</h2><p>结构体自定义了一种数据类型<br>结构体名字和结构体变量必须有其一，也可以两者都存在<br>结构体变量可以声明多个<br>结构体成员访问和赋值使用点语法<br>结构体指针成员访问和赋值使用箭头语法<br>只有使用结构体名字声明可以用花括号一次性做初始化  </p>
-<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">struct 结构体名字 &#123;</div><div class="line">    类型 名字;</div><div class="line">    类型 名字;</div><div class="line">    类型 名字;</div><div class="line">    ... </div><div class="line">&#125; 结构体变量, ...;</div><div class="line"></div><div class="line">// 使用typedef可以创建新类型，可以使用structExt定义新的结构体变量</div><div class="line">typedef struct &#123;</div><div class="line">    char *name;</div><div class="line">    int tag;</div><div class="line">&#125; 结构体变量;</div></pre></td></tr></table></figure>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">struct 结构体名字 &#123;</span><br><span class="line">    类型 名字;</span><br><span class="line">    类型 名字;</span><br><span class="line">    类型 名字;</span><br><span class="line">    ... </span><br><span class="line">&#125; 结构体变量, ...;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用typedef可以创建新类型，可以使用structExt定义新的结构体变量</span><br><span class="line">typedef struct &#123;</span><br><span class="line">    char *name;</span><br><span class="line">    int tag;</span><br><span class="line">&#125; 结构体变量;</span><br></pre></td></tr></table></figure>
+
 <h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><ol>
 <li><p>给实例对象发送消息的过程(调用对象方法)<br>根据对象的isA指针去该对象的类方法中查找，如果找到了就执行<br>如果没有找到，就去该类的父类类对象中查找<br>如果没有找到就一直往上找，直到跟类（NSObject）<br>如果都没有找到就报错</p>
 </li>
@@ -782,7 +784,7 @@
 <li>##宏定义中的连接运算符</li>
 <li>类对象宏</li>
 <li>类函数宏</li>
-<li>…、__VA<em>ARGS\</em>_ 定义可变参数宏的，放在参数的最后</li>
+<li>…、__VA_ARGS__ 定义可变参数宏的，放在参数的最后</li>
 </ul>
 <h3 id="SEL类型"><a href="#SEL类型" class="headerlink" title="SEL类型"></a>SEL类型</h3><ul>
 <li>SEL类型的定义<code>typeof struct objc_selector *SEL</code></li>
@@ -795,7 +797,7 @@
 <p>在方法的查找过程中会有缓存，第一次找的时候是一个一个的找，非常耗性能，之后再用到的时候就直接使用</p>
 </blockquote>
 <h4 id="获取SEL类型"><a href="#获取SEL类型" class="headerlink" title="获取SEL类型"></a>获取SEL类型</h4><ul>
-<li>编译时，通过编译器指令\@selector来获取<ul>
+<li>编译时，通过编译器指令@selector来获取<ul>
 <li><code>SEL aSelector = @selector(methodName);</code></li>
 </ul>
 </li>
@@ -900,7 +902,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/15/JavaScript/再谈js继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/15/JavaScript/%E5%86%8D%E8%B0%88js%E7%BB%A7%E6%89%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -922,7 +924,7 @@
             
               
                 
-                <a class="post-title-link" href="/2018/02/15/JavaScript/再谈js继承/" itemprop="url">
+                <a class="post-title-link" href="/2018/02/15/JavaScript/%E5%86%8D%E8%B0%88js%E7%BB%A7%E6%89%BF/" itemprop="url">
                   再谈Js继承
                 </a>
               
@@ -1054,7 +1056,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/JavaScript/Input光标操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/JavaScript/Input%E5%85%89%E6%A0%87%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1076,7 +1078,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/13/JavaScript/Input光标操作/" itemprop="url">
+                <a class="post-title-link" href="/2017/12/13/JavaScript/Input%E5%85%89%E6%A0%87%E6%93%8D%E4%BD%9C/" itemprop="url">
                   Input光标操作
                 </a>
               
@@ -1380,7 +1382,8 @@
 <li>onTouchEvent</li>
 </ul>
 <h4 id="dispatchTouchEvent"><a href="#dispatchTouchEvent" class="headerlink" title="dispatchTouchEvent"></a>dispatchTouchEvent</h4><p>分发事件的方法，在此控制拦截、处理事件以及分发给下级  </p>
-<h5 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 将dispatchTouchEvent的返回值交给上层组件，用作上层判断子view是否消费</div><div class="line">public boolean dispatchTouchEvent(MotionEvent ev) &#123;</div><div class="line">    boolean result = false;             // 默认状态为没有消费过</div><div class="line"></div><div class="line">    if (!onInterceptTouchEvent(ev)) &#123;   // 如果没有拦截交给子View</div><div class="line">        result = child.dispatchTouchEvent(ev);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (!result) &#123;                      // 如果事件没有被子View消费，询问自身onTouchEvent</div><div class="line">        result = onTouchEvent(ev);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result;                      // 如果自身onTouchEvent也没消费，返回false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 将dispatchTouchEvent的返回值交给上层组件，用作上层判断子view是否消费</span><br><span class="line">public boolean dispatchTouchEvent(MotionEvent ev) &#123;</span><br><span class="line">    boolean result &#x3D; false;             &#x2F;&#x2F; 默认状态为没有消费过</span><br><span class="line"></span><br><span class="line">    if (!onInterceptTouchEvent(ev)) &#123;   &#x2F;&#x2F; 如果没有拦截交给子View</span><br><span class="line">        result &#x3D; child.dispatchTouchEvent(ev);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (!result) &#123;                      &#x2F;&#x2F; 如果事件没有被子View消费，询问自身onTouchEvent</span><br><span class="line">        result &#x3D; onTouchEvent(ev);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return result;                      &#x2F;&#x2F; 如果自身onTouchEvent也没消费，返回false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="onInterceptTouchEvent"><a href="#onInterceptTouchEvent" class="headerlink" title="onInterceptTouchEvent"></a>onInterceptTouchEvent</h4><p>拦截事件的方法，dispatchTouchEvent方法分发时会调用，且只关心此方法的返回值，返回true交由自身的onTouchEvent处理，返回false则传递给下级处理<br>顶层Activity和底层View没有此方法，因为两者是事件的起点和终点，拦截没有意义，在dispatchTouchEvent处会直接调用onTouchEvent，不需要拦截判断  </p>
 <h4 id="onTouchEvent"><a href="#onTouchEvent" class="headerlink" title="onTouchEvent"></a>onTouchEvent</h4><p>处理事件的方法，用作消费事件，返回true表示消费此事件，此次和之后的事件不会再流入下级处理，返回false则代表不消费事件，交由下级处理</p>
 <h3 id="事件描述"><a href="#事件描述" class="headerlink" title="事件描述"></a>事件描述</h3><ul>
@@ -1458,7 +1461,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/Java/Java学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/Java/Java%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1480,7 +1483,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/25/Java/Java学习/" itemprop="url">
+                <a class="post-title-link" href="/2017/08/25/Java/Java%E5%AD%A6%E4%B9%A0/" itemprop="url">
                   Java学习
                 </a>
               
@@ -1697,7 +1700,7 @@
 </li>
 <li>Collection<ul>
 <li>List<ul>
-<li><class\>的方式声明类型</class\></li>
+<li>&lt;class&gt;的方式声明类型</li>
 <li>只能放入class类及其衍生类的对象</li>
 <li>add</li>
 <li>get</li>
@@ -2047,7 +2050,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/函数式编程/Lambda表达式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -2069,7 +2072,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/09/函数式编程/Lambda表达式/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/09/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
                   Lambda表达式
                 </a>
               
@@ -2165,7 +2168,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/React全家桶/React高阶组件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/React%E5%85%A8%E5%AE%B6%E6%A1%B6/React%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -2187,7 +2190,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/09/React全家桶/React高阶组件/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/09/React%E5%85%A8%E5%AE%B6%E6%A1%B6/React%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6/" itemprop="url">
                   React高阶组件
                 </a>
               
@@ -2295,7 +2298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/English/英语学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/English/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -2317,7 +2320,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/09/English/英语学习/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/09/English/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" itemprop="url">
                   英语学习
                 </a>
               
@@ -2427,7 +2430,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/编程理解/写最简单的代码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/%E7%BC%96%E7%A8%8B%E7%90%86%E8%A7%A3/%E5%86%99%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BB%A3%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -2449,7 +2452,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/08/编程理解/写最简单的代码/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/08/%E7%BC%96%E7%A8%8B%E7%90%86%E8%A7%A3/%E5%86%99%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BB%A3%E7%A0%81/" itemprop="url">
                   写最简单的代码
                 </a>
               
@@ -2548,7 +2551,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/JavaScript/推拽/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/JavaScript/%E6%8E%A8%E6%8B%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -2570,7 +2573,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/08/JavaScript/推拽/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/08/JavaScript/%E6%8E%A8%E6%8B%BD/" itemprop="url">
                   推拽
                 </a>
               
@@ -2703,7 +2706,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2832,12 +2835,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

@@ -87,18 +87,17 @@
 
 
 
-<meta name="description" content="启动模式 Standard(default) SingleTop SingleTask SingleInstance  SingleTop和SingleTask有额外的钩子函数onNewIntent 使用方式 Manifest.xml中指定Activity启动模式 android:launchMode=”singleTask” 无法指定FLAG_ACTIVITY_CLEAR_TOP Intent中">
-<meta name="keywords" content="Android">
+<meta name="description" content="启动模式 Standard(default) SingleTop SingleTask SingleInstance  SingleTop和SingleTask有额外的钩子函数onNewIntent 使用方式 Manifest.xml中指定Activity启动模式 android:launchMode&#x3D;”singleTask” 无法指定FLAG_ACTIVITY_CLEAR_TOP Intent中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android">
 <meta property="og:url" content="http://yoursite.com/2017/09/24/Android/Android/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="启动模式 Standard(default) SingleTop SingleTask SingleInstance  SingleTop和SingleTask有额外的钩子函数onNewIntent 使用方式 Manifest.xml中指定Activity启动模式 android:launchMode=”singleTask” 无法指定FLAG_ACTIVITY_CLEAR_TOP Intent中">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.502Z">
+<meta property="og:description" content="启动模式 Standard(default) SingleTop SingleTask SingleInstance  SingleTop和SingleTask有额外的钩子函数onNewIntent 使用方式 Manifest.xml中指定Activity启动模式 android:launchMode&#x3D;”singleTask” 无法指定FLAG_ACTIVITY_CLEAR_TOP Intent中">
+<meta property="article:published_time" content="2017-09-24T07:49:36.000Z">
+<meta property="article:modified_time" content="2019-07-21T05:17:02.502Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android">
-<meta name="twitter:description" content="启动模式 Standard(default) SingleTop SingleTask SingleInstance  SingleTop和SingleTask有额外的钩子函数onNewIntent 使用方式 Manifest.xml中指定Activity启动模式 android:launchMode=”singleTask” 无法指定FLAG_ACTIVITY_CLEAR_TOP Intent中">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> Android | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -430,7 +429,8 @@
 <li>onTouchEvent</li>
 </ul>
 <h4 id="dispatchTouchEvent"><a href="#dispatchTouchEvent" class="headerlink" title="dispatchTouchEvent"></a>dispatchTouchEvent</h4><p>分发事件的方法，在此控制拦截、处理事件以及分发给下级  </p>
-<h5 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 将dispatchTouchEvent的返回值交给上层组件，用作上层判断子view是否消费</div><div class="line">public boolean dispatchTouchEvent(MotionEvent ev) &#123;</div><div class="line">    boolean result = false;             // 默认状态为没有消费过</div><div class="line"></div><div class="line">    if (!onInterceptTouchEvent(ev)) &#123;   // 如果没有拦截交给子View</div><div class="line">        result = child.dispatchTouchEvent(ev);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (!result) &#123;                      // 如果事件没有被子View消费，询问自身onTouchEvent</div><div class="line">        result = onTouchEvent(ev);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result;                      // 如果自身onTouchEvent也没消费，返回false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 将dispatchTouchEvent的返回值交给上层组件，用作上层判断子view是否消费</span><br><span class="line">public boolean dispatchTouchEvent(MotionEvent ev) &#123;</span><br><span class="line">    boolean result &#x3D; false;             &#x2F;&#x2F; 默认状态为没有消费过</span><br><span class="line"></span><br><span class="line">    if (!onInterceptTouchEvent(ev)) &#123;   &#x2F;&#x2F; 如果没有拦截交给子View</span><br><span class="line">        result &#x3D; child.dispatchTouchEvent(ev);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (!result) &#123;                      &#x2F;&#x2F; 如果事件没有被子View消费，询问自身onTouchEvent</span><br><span class="line">        result &#x3D; onTouchEvent(ev);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return result;                      &#x2F;&#x2F; 如果自身onTouchEvent也没消费，返回false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="onInterceptTouchEvent"><a href="#onInterceptTouchEvent" class="headerlink" title="onInterceptTouchEvent"></a>onInterceptTouchEvent</h4><p>拦截事件的方法，dispatchTouchEvent方法分发时会调用，且只关心此方法的返回值，返回true交由自身的onTouchEvent处理，返回false则传递给下级处理<br>顶层Activity和底层View没有此方法，因为两者是事件的起点和终点，拦截没有意义，在dispatchTouchEvent处会直接调用onTouchEvent，不需要拦截判断  </p>
 <h4 id="onTouchEvent"><a href="#onTouchEvent" class="headerlink" title="onTouchEvent"></a>onTouchEvent</h4><p>处理事件的方法，用作消费事件，返回true表示消费此事件，此次和之后的事件不会再流入下级处理，返回false则代表不消费事件，交由下级处理</p>
 <h3 id="事件描述"><a href="#事件描述" class="headerlink" title="事件描述"></a>事件描述</h3><ul>
@@ -504,7 +504,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/25/Java/Java学习/" rel="next" title="Java学习">
+              <a href="/2017/08/25/Java/Java%E5%AD%A6%E4%B9%A0/" rel="next" title="Java学习">
                 <i class="fa fa-chevron-left"></i> Java学习
               </a>
             
@@ -514,7 +514,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/13/JavaScript/Input光标操作/" rel="prev" title="Input光标操作">
+              <a href="/2017/12/13/JavaScript/Input%E5%85%89%E6%A0%87%E6%93%8D%E4%BD%9C/" rel="prev" title="Input光标操作">
                 Input光标操作 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -688,12 +688,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

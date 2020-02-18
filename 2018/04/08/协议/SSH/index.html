@@ -87,18 +87,17 @@
 
 
 
-<meta name="description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval=60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
-<meta name="keywords" content="协议">
+<meta name="description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval&#x3D;60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH">
-<meta property="og:url" content="http://yoursite.com/2018/04/08/协议/SSH/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/08/%E5%8D%8F%E8%AE%AE/SSH/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval=60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.512Z">
+<meta property="og:description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval&#x3D;60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
+<meta property="article:published_time" content="2018-04-08T13:36:58.000Z">
+<meta property="article:modified_time" content="2019-07-21T05:17:02.512Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="协议">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSH">
-<meta name="twitter:description" content="SSHSSH是一种网络协议，用于计算机之间的加密登录 密钥生成密钥对，默认RSAssh-keygen 密钥类型 RSA RSA1 DSA ECDSA ED25519  用法 ssh  host user@host -p port -i id_rsa -o ServerAliveInterval=60    ssh-copy-id user@host  登录口令登录登录前提示，登录后保存在文件$HO">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> SSH | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/协议/SSH/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/%E5%8D%8F%E8%AE%AE/SSH/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -361,30 +360,35 @@
 </ul>
 </li>
 <li>ssh-copy-id user@host</li>
-<li><p>/etc/ssh/sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RSAAuthentication yes</div><div class="line">PubkeyAuthentication yes</div><div class="line">AuthorizedKeysFile .ssh/authorized_keys</div></pre></td></tr></table></figure>
-</li>
-<li><p>重启远程主机ssh服务</p>
-<ul>
+<li>/etc/ssh/sshd_config<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure></li>
+<li>重启远程主机ssh服务<ul>
 <li>ubuntu <code>service ssh restart</code></li>
 <li>debian <code>/etc/init.d/ssh restart</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h3><p>远程主机保存用户的公钥 $HOME/.ssh/authorized_keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
+<h3 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h3><p>远程主机保存用户的公钥 $HOME/.ssh/authorized_keys  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <h2 id="ssh"><a href="#ssh" class="headerlink" title=".ssh"></a>.ssh</h2><ul>
 <li>known_hosts</li>
 <li>authorized_keys</li>
 <li>config</li>
 </ul>
-<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Host [Host]  // 配置名</div><div class="line">  HostName [HostName]  // 服务器ip</div><div class="line">  Port [22]  // 端口</div><div class="line">  User [currentUser]  // 用户</div><div class="line">  ProxyCommand [none]  // 代理命令</div><div class="line">  IdentityFile [~/.ssh/id_rsa]  // 密钥文件</div><div class="line">  PasswordAuthentication [no]  // 用户密码</div><div class="line"></div><div class="line">ServerAliveInterval 60  // 每隔60秒发送一次请求给server，然后server响应，从而保持连接</div><div class="line">ServerAliveCountMax 3  // 发出请求后，服务器端没有响应得次数达到3，就自动断开连接</div><div class="line">ConnectTimeout=3  // 连接时超时时间</div><div class="line">ConnectionAttempts=5  // 连接失败后重试次数</div><div class="line">TCPKeepAlive no  // 保持tcp连接</div><div class="line">StrictHostKeyChecking no // 是否记录密匙到known_hosts</div></pre></td></tr></table></figure>
-<h4 id="ProxyCommand"><a href="#ProxyCommand" class="headerlink" title="ProxyCommand"></a>ProxyCommand</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh user@host -W %h:%p</div><div class="line">ssh user@host -W $(<span class="built_in">echo</span> %h|awk -F <span class="string">'test'</span> <span class="string">'&#123;print $2&#125;'</span>):%p 2&gt; /dev/null</div></pre></td></tr></table></figure>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Host gateway</div><div class="line">    HostName 192.168.0.1</div><div class="line">    Port 8888</div><div class="line">    User root</div><div class="line">    ProxyCommand none</div><div class="line">    IdentityFile ~/.ssh/id_rsa</div><div class="line">    PasswordAuthentication no</div><div class="line"></div><div class="line">Host product</div><div class="line">    HostName 192.168.0.2</div><div class="line">    Port 8888</div><div class="line">    User root</div><div class="line">    IdentityFile ~/.ssh/id_rsa_gateway</div><div class="line">    ProxyCommand ssh -q -W gateway %h:%p</div><div class="line">    // ProxyCommand ssh gateway nc %h %p</div><div class="line">    PasswordAuthentication no</div><div class="line"></div><div class="line"></div><div class="line">ssh xzc@180.97.33.108 -p 998 &apos;echo &quot;select * from user;&quot; | mysql xzc_db -uxzc -pxzcpwd&apos; &gt; user.txt</div><div class="line">ssh hisense-paas1 &apos;ssh hisense-test-web &quot;cat test.txt&quot;&apos; &gt; test.txt</div></pre></td></tr></table></figure>
-<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh -CfNg -L 7072:hisense-test-web:6379 hisense-paas1</div><div class="line">// ssh -L &lt;<span class="built_in">local</span> port&gt;:&lt;remote host&gt;:&lt;remote port&gt; &lt;SSH hostname&gt;</div></pre></td></tr></table></figure>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Host [Host]  &#x2F;&#x2F; 配置名</span><br><span class="line">  HostName [HostName]  &#x2F;&#x2F; 服务器ip</span><br><span class="line">  Port [22]  &#x2F;&#x2F; 端口</span><br><span class="line">  User [currentUser]  &#x2F;&#x2F; 用户</span><br><span class="line">  ProxyCommand [none]  &#x2F;&#x2F; 代理命令</span><br><span class="line">  IdentityFile [~&#x2F;.ssh&#x2F;id_rsa]  &#x2F;&#x2F; 密钥文件</span><br><span class="line">  PasswordAuthentication [no]  &#x2F;&#x2F; 用户密码</span><br><span class="line"></span><br><span class="line">ServerAliveInterval 60  &#x2F;&#x2F; 每隔60秒发送一次请求给server，然后server响应，从而保持连接</span><br><span class="line">ServerAliveCountMax 3  &#x2F;&#x2F; 发出请求后，服务器端没有响应得次数达到3，就自动断开连接</span><br><span class="line">ConnectTimeout&#x3D;3  &#x2F;&#x2F; 连接时超时时间</span><br><span class="line">ConnectionAttempts&#x3D;5  &#x2F;&#x2F; 连接失败后重试次数</span><br><span class="line">TCPKeepAlive no  &#x2F;&#x2F; 保持tcp连接</span><br><span class="line">StrictHostKeyChecking no &#x2F;&#x2F; 是否记录密匙到known_hosts</span><br></pre></td></tr></table></figure>
+
+<h4 id="ProxyCommand"><a href="#ProxyCommand" class="headerlink" title="ProxyCommand"></a>ProxyCommand</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host -W %h:%p</span><br><span class="line">ssh user@host -W $(<span class="built_in">echo</span> %h|awk -F <span class="string">'test'</span> <span class="string">'&#123;print $2&#125;'</span>):%p 2&gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Host gateway</span><br><span class="line">    HostName 192.168.0.1</span><br><span class="line">    Port 8888</span><br><span class="line">    User root</span><br><span class="line">    ProxyCommand none</span><br><span class="line">    IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">    PasswordAuthentication no</span><br><span class="line"></span><br><span class="line">Host product</span><br><span class="line">    HostName 192.168.0.2</span><br><span class="line">    Port 8888</span><br><span class="line">    User root</span><br><span class="line">    IdentityFile ~&#x2F;.ssh&#x2F;id_rsa_gateway</span><br><span class="line">    ProxyCommand ssh -q -W gateway %h:%p</span><br><span class="line">    &#x2F;&#x2F; ProxyCommand ssh gateway nc %h %p</span><br><span class="line">    PasswordAuthentication no</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ssh xzc@180.97.33.108 -p 998 &#39;echo &quot;select * from user;&quot; | mysql xzc_db -uxzc -pxzcpwd&#39; &gt; user.txt</span><br><span class="line">ssh hisense-paas1 &#39;ssh hisense-test-web &quot;cat test.txt&quot;&#39; &gt; test.txt</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -CfNg -L 7072:hisense-test-web:6379 hisense-paas1</span><br><span class="line">// ssh -L &lt;<span class="built_in">local</span> port&gt;:&lt;remote host&gt;:&lt;remote port&gt; &lt;SSH hostname&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="ssh免密登录"><a href="#ssh免密登录" class="headerlink" title="ssh免密登录"></a>ssh免密登录</h3><ul>
 <li><a href="https://wiki.centos.org/HowTos/Network/SecuringSSH" target="_blank" rel="noopener">HowTos/Network/SecuringSSH - CentOS Wiki</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host &apos;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&apos; &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host &#39;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh&#x2F;authorized_keys&#39; &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <h3 id="ssh相关命令"><a href="#ssh相关命令" class="headerlink" title="ssh相关命令"></a>ssh相关命令</h3><ul>
 <li>ssh -vvv</li>
 <li>/usr/sbin/sshd -d -p 2222 (在2222端口启动一个带debug输出的sshd)</li>
@@ -412,7 +416,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/协议/" rel="tag"># 协议</a>
+            <a href="/tags/%E5%8D%8F%E8%AE%AE/" rel="tag"># 协议</a>
           
         </div>
       
@@ -609,12 +613,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

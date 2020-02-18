@@ -93,10 +93,8 @@
 <meta property="og:url" content="http://yoursite.com/page/10/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="记录学习前端的点滴">
-<meta property="og:locale" content="zh-Hans">
+<meta property="article:author" content="MT">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Taumu的博客">
-<meta name="twitter:description" content="记录学习前端的点滴">
 
 
 
@@ -131,7 +129,7 @@
 
 
   <title> Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/Node/Node学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/Node/Node%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -283,7 +281,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/27/Node/Node学习/" itemprop="url">
+                <a class="post-title-link" href="/2017/02/27/Node/Node%E5%AD%A6%E4%B9%A0/" itemprop="url">
                   Node学习
                 </a>
               
@@ -362,7 +360,7 @@
 <li>Event事件</li>
 <li>Stream流</li>
 </ul>
-<p>慕课网学习<br>    一、关注<br>        1、nodejs.org看看nodejs的版本升级，新特性的加入，重要bug的修复等<br>        2、www.npmjs.com模块社区，看他人源代码，省力<br>        3、github.com大量的项目和 源码<br>        4、stackoverflow.com技术解答社区以及查询相关资源，环境配置，异常均可找到答案<br>    二、安装事项<br>        1、Node.js版本<br>            偶数位为稳定版，奇数位为开发版<br>        2、Windows下安装，Path下环境变量<br>    三、Node.js<br>        1、全局变量process<br>    四、模块与包管理工具<br>        Commonjs<br>            一套规范<br>            模块独立但不孤立，三个部分定义、标识、引用<br>        1、依赖关系<br>        2、命名空间<br>        3、代码组织<br>        Nodejs通过npm来引入管理模块/包<br>        模块 {<br>            核心模块<br>            文件模块<br>            第三方模块<br>        }<br>        Nodejs模块对象 {<br>            require对象<br>                从外部获取模块的接口，即所获取模块的exports对象<br>            exports对象<br>                公开接口<br>                module.exports     真正的接口<br>                exports            辅助工具，最终返回给调用的是module.exports而不是exports<br>            exports 是指向的 module.exports 的引用<br>            module.exports 初始值为一个空对象 {}，所以 exports 初始值也是 {}<br>            require() 返回的是 module.exports 而不是 exports</p>
+<p>慕课网学习<br>    一、关注<br>        1、nodejs.org看看nodejs的版本升级，新特性的加入，重要bug的修复等<br>        2、<a href="http://www.npmjs.com模块社区，看他人源代码，省力" target="_blank" rel="noopener">www.npmjs.com模块社区，看他人源代码，省力</a><br>        3、github.com大量的项目和 源码<br>        4、stackoverflow.com技术解答社区以及查询相关资源，环境配置，异常均可找到答案<br>    二、安装事项<br>        1、Node.js版本<br>            偶数位为稳定版，奇数位为开发版<br>        2、Windows下安装，Path下环境变量<br>    三、Node.js<br>        1、全局变量process<br>    四、模块与包管理工具<br>        Commonjs<br>            一套规范<br>            模块独立但不孤立，三个部分定义、标识、引用<br>        1、依赖关系<br>        2、命名空间<br>        3、代码组织<br>        Nodejs通过npm来引入管理模块/包<br>        模块 {<br>            核心模块<br>            文件模块<br>            第三方模块<br>        }<br>        Nodejs模块对象 {<br>            require对象<br>                从外部获取模块的接口，即所获取模块的exports对象<br>            exports对象<br>                公开接口<br>                module.exports     真正的接口<br>                exports            辅助工具，最终返回给调用的是module.exports而不是exports<br>            exports 是指向的 module.exports 的引用<br>            module.exports 初始值为一个空对象 {}，所以 exports 初始值也是 {}<br>            require() 返回的是 module.exports 而不是 exports</p>
 <pre><code>        exports和module.exports的关系是:exports 起初是一個指向 module.exports 对象的变量
     }
 五、Nodejs API
@@ -405,29 +403,12 @@
             listeners
                 EventEmitter.listenerCount()
         }
-    }
-</code></pre><p>网上学习<br>    一、Node.js基础<br>        1、Node.js是<br>            Nodejs就是一个解析器<br>            运行在浏览器中的JS的用途是操作DOM，浏览器就提供了document之类的内置对象<br>            运行在NodeJS中的JS的用途是操作磁盘文件或搭建HTTP服务器，NodeJS就相应提供了fs、http等内置对象<br>            NodeJS的目的是为了实现高性能Web服务器，事件机制和异步IO模型<br>        2、模块<br>            编写每个模块时，都有require、exports、module三个预先定义好的变量可供使用<br>            require<br>                在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。<br>                模块名可使用相对路径（以./开头）或绝对路径（以/或C:之类的盘符开头），模块名中的.js扩展名可以省略<br>            exports<br>                当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象<br>            module<br>                访问到当前模块的一些相关信息，最多的用途是替换当前模块的导出对象。如模块导出对象默认是一个普通对象，如果想改成一个函数的话，可以使用<br>            模块初始化<br>                一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。<br>            主模块<br>                通过命令行参数传递给NodeJS以启动程序的模块为主模块。主模块负责调度组成整个程序的其它模块完成工作<br>        3、二进制模块<br>            NodeJS支持使用C/C++编写二进制模块，编译好的二进制模块除了文件扩展名是.node外，和JS模块的使用方式相同<br>    二、代码的组织和部署<br>        1、模块路径解析规则<br>            之前两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，牵一发而动全身。因此，require函数支持第三种形式的路径，写法类似于foo/bar，并依次按照以下规则解析路径，直到找到模块位置<br>                内置模块<br>                node_modules目录<br>                NODE_PATH环境变量<br>        2、包<br>            由多个子模块组成的大模块为包，所有子模块放在同一个目录里<br>            index.js<br>                当模块的文件名是index.js，加载模块时可以使用模块所在目录的路径代替模块文件路径<br>            package.json<br>                自定义入口模块的文件名和存放位置，就需要在包目录下包含一个package.json文件，并在其中指定入口模块的路径。<br>        3、命令程序<br>            用NodeJS编写，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。<br>            Windows<br>                靠.cmd文件来解决问题。假设node-echo.js存放在C:\Users\user\bin目录，并且该目录已经添加到PATH环境变量里了。接下来需要在该目录下新建一个名为node-echo.cmd的文件，文件内容如下：<br>                @node “C:\User\user\bin\node-echo.js” %*<br>                这样处理后，我们就可以在任何目录下使用node-echo命令了。<br>        4、工程目录<br>            编写一个命令行程序，一般我们会同时提供命令行模式和API模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。<br>        5、npm<br>            npm是随同NodeJS一起安装的包管理工具，常见的使用场景有以下几种<br>                允许用户从npm服务器下载别人编写的三方包到本地使用<br>                允许用户从npm服务器下载并安装别人编写的命令行程序到本地使用<br>                允许用户将自己编写的包或命令行程序上传到npm服务器供别人使用<br>            下载三方包<br>                npm install package<br>                下载好之后，包就放在了工程目录下的node_modules目录中，在代码中只需要通过require(‘package’)的方式就好，无需指定三方包路径。<br>                    想要下载指定版本的话，可以在包名后边加上@<version><br>                如果使用到的三方包比较多，在终端下一个包一条命令地安装太繁琐。因此npm对package.json的字段做了扩展，允许在其中申明三方包依赖。<br>                npm会根据包中申明的三方包依赖自动下载进一步依赖的三方包<br>            安装命令行程序<br>                从npm服务上下载安装一个命令行程序的方法与三方包类似。只要package自己配置好了相关的package.json字段，只需要使用命令安装程序。<br>                参数g表示全局安装，npm会自动创建好Linux系统下需要的软链文件或Windows系统下需要的.cmd文件。<br>                Windows默认安装位置</version></p>
-<pre><code>                - %APPDATA%\npm\
-                    - node_modules\
-                        + package\
-                    ...
-                    node-echo.cmd
-        发布代码
-        版本号
-            使用npm下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码
-                语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。
-                    如果只是修复bug，需要更新Z位。
-                    如果是新增了功能，但是向下兼容，需要更新Y位。
-                    如果有大变动，向下不兼容，需要更新X位。
-            版本号有了这个保证后，在申明三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。NPM支持的所有版本号范围指定方式可以查看官方文档。
-        灵机一点
-三、文件操作
-</code></pre><p>Node.js {<br>    基本模块 {<br>        global<br>            唯一全局对象<br>        process {<br>            代表当前Node.js进程<br>            process.nextTick()<br>                下一事件响应中执行<br>        }<br>    }<br>    内置模块 {<br>        fs {<br>            文件系统模块，负责读写文件，可同步异步<br>            读取文件 {<br>                readFile() {<br>                    异步执行<br>                    err 正常读取时返回null，错误时返回错误对象<br>                    data 正常读取时返回string，错误时返回undefined<br>                }<br>                readFileSync() {<br>                    同步执行<br>                    直接返回回调函数的data<br>                }<br>            }<br>            写入文件 {<br>                writeFile() {<br>                    同步执行<br>                    回调函数只返回err参数<br>                }<br>                writeFileSync()<br>            }<br>            stat() {<br>                异步执行<br>                返回stat对象，获取文件详细信息<br>            }<br>            statSync() {<br>                同步执行<br>            }<br>            同步或是异步 {<br>                由于Node环境执行的JavaScript代码是服务器端代码，所以，绝大部分需要在服务器运行期反复执行业务逻辑的代码，必须使用异步代码，否则，同步代码在执行时期，服务器将停止响应，因为JavaScript只有一个执行线程。</p>
+    }</code></pre><p>网上学习<br>    一、Node.js基础<br>        1、Node.js是<br>            Nodejs就是一个解析器<br>            运行在浏览器中的JS的用途是操作DOM，浏览器就提供了document之类的内置对象<br>            运行在NodeJS中的JS的用途是操作磁盘文件或搭建HTTP服务器，NodeJS就相应提供了fs、http等内置对象<br>            NodeJS的目的是为了实现高性能Web服务器，事件机制和异步IO模型<br>        2、模块<br>            编写每个模块时，都有require、exports、module三个预先定义好的变量可供使用<br>            require<br>                在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。<br>                模块名可使用相对路径（以./开头）或绝对路径（以/或C:之类的盘符开头），模块名中的.js扩展名可以省略<br>            exports<br>                当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象<br>            module<br>                访问到当前模块的一些相关信息，最多的用途是替换当前模块的导出对象。如模块导出对象默认是一个普通对象，如果想改成一个函数的话，可以使用<br>            模块初始化<br>                一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。<br>            主模块<br>                通过命令行参数传递给NodeJS以启动程序的模块为主模块。主模块负责调度组成整个程序的其它模块完成工作<br>        3、二进制模块<br>            NodeJS支持使用C/C++编写二进制模块，编译好的二进制模块除了文件扩展名是.node外，和JS模块的使用方式相同<br>    二、代码的组织和部署<br>        1、模块路径解析规则<br>            之前两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，牵一发而动全身。因此，require函数支持第三种形式的路径，写法类似于foo/bar，并依次按照以下规则解析路径，直到找到模块位置<br>                内置模块<br>                node_modules目录<br>                NODE_PATH环境变量<br>        2、包<br>            由多个子模块组成的大模块为包，所有子模块放在同一个目录里<br>            index.js<br>                当模块的文件名是index.js，加载模块时可以使用模块所在目录的路径代替模块文件路径<br>            package.json<br>                自定义入口模块的文件名和存放位置，就需要在包目录下包含一个package.json文件，并在其中指定入口模块的路径。<br>        3、命令程序<br>            用NodeJS编写，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。<br>            Windows<br>                靠.cmd文件来解决问题。假设node-echo.js存放在C:\Users\user\bin目录，并且该目录已经添加到PATH环境变量里了。接下来需要在该目录下新建一个名为node-echo.cmd的文件，文件内容如下：<br>                @node “C:\User\user\bin\node-echo.js” %*<br>                这样处理后，我们就可以在任何目录下使用node-echo命令了。<br>        4、工程目录<br>            编写一个命令行程序，一般我们会同时提供命令行模式和API模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。<br>        5、npm<br>            npm是随同NodeJS一起安装的包管理工具，常见的使用场景有以下几种<br>                允许用户从npm服务器下载别人编写的三方包到本地使用<br>                允许用户从npm服务器下载并安装别人编写的命令行程序到本地使用<br>                允许用户将自己编写的包或命令行程序上传到npm服务器供别人使用<br>            下载三方包<br>                npm install package<br>                下载好之后，包就放在了工程目录下的node_modules目录中，在代码中只需要通过require(‘package’)的方式就好，无需指定三方包路径。<br>                    想要下载指定版本的话，可以在包名后边加上@<version><br>                如果使用到的三方包比较多，在终端下一个包一条命令地安装太繁琐。因此npm对package.json的字段做了扩展，允许在其中申明三方包依赖。<br>                npm会根据包中申明的三方包依赖自动下载进一步依赖的三方包<br>            安装命令行程序<br>                从npm服务上下载安装一个命令行程序的方法与三方包类似。只要package自己配置好了相关的package.json字段，只需要使用命令安装程序。<br>                参数g表示全局安装，npm会自动创建好Linux系统下需要的软链文件或Windows系统下需要的.cmd文件。<br>                Windows默认安装位置<br>                    - %APPDATA%\npm<br>                        - node_modules<br>                            + package<br>                        …<br>                        node-echo.cmd<br>            发布代码<br>            版本号<br>                使用npm下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码<br>                    语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。<br>                        如果只是修复bug，需要更新Z位。<br>                        如果是新增了功能，但是向下兼容，需要更新Y位。<br>                        如果有大变动，向下不兼容，需要更新X位。<br>                版本号有了这个保证后，在申明三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。NPM支持的所有版本号范围指定方式可以查看官方文档。<br>            灵机一点<br>    三、文件操作</p>
+<p>Node.js {<br>    基本模块 {<br>        global<br>            唯一全局对象<br>        process {<br>            代表当前Node.js进程<br>            process.nextTick()<br>                下一事件响应中执行<br>        }<br>    }<br>    内置模块 {<br>        fs {<br>            文件系统模块，负责读写文件，可同步异步<br>            读取文件 {<br>                readFile() {<br>                    异步执行<br>                    err 正常读取时返回null，错误时返回错误对象<br>                    data 正常读取时返回string，错误时返回undefined<br>                }<br>                readFileSync() {<br>                    同步执行<br>                    直接返回回调函数的data<br>                }<br>            }<br>            写入文件 {<br>                writeFile() {<br>                    同步执行<br>                    回调函数只返回err参数<br>                }<br>                writeFileSync()<br>            }<br>            stat() {<br>                异步执行<br>                返回stat对象，获取文件详细信息<br>            }<br>            statSync() {<br>                同步执行<br>            }<br>            同步或是异步 {<br>                由于Node环境执行的JavaScript代码是服务器端代码，所以，绝大部分需要在服务器运行期反复执行业务逻辑的代码，必须使用异步代码，否则，同步代码在执行时期，服务器将停止响应，因为JavaScript只有一个执行线程。</p>
 <pre><code>            服务器启动时如果需要读取配置文件，或者结束时需要写入到状态文件时，可以使用同步代码，因为这些代码只在启动和结束时执行一次，不影响服务器正常运行时的异步执行。
         }
     }
-}
-</code></pre><p>}</p>
+}</code></pre><p>}</p>
 <p>核心模块 {<br>    util {<br>        inherits(constructor, superConstructor)<br>        inspect(object, [showHidden], [depth], [colors])<br>    }<br>    events {<br>        EventEmitter {<br>            on(event, listener)<br>            once(event, listener)<br>            emit(event, [arg1], [arg2], […])<br>            removeListener(event, listener)<br>            removeAllListeners([event])</p>
 <pre><code>        事件 {
             error
@@ -579,8 +560,7 @@ url {
 }
 querystring {
     parse()
-}
-</code></pre><p>}</p>
+}</code></pre><p>}</p>
 <p>node-inspector</p>
 <p>调试工具（基于npm安装）：node-inspector</p>
 <p>执行流程：</p>
@@ -633,7 +613,7 @@ querystring {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/25/Record/记录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/25/Record/%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -655,7 +635,7 @@ querystring {
             
               
                 
-                <a class="post-title-link" href="/2017/01/25/Record/记录/" itemprop="url">
+                <a class="post-title-link" href="/2017/01/25/Record/%E8%AE%B0%E5%BD%95/" itemprop="url">
                   记录
                 </a>
               
@@ -844,7 +824,7 @@ querystring {
 <li>千咲</li>
 <li>秋良</li>
 </ul>
-<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Lissom介绍"><a href="#Lissom介绍" class="headerlink" title="Lissom介绍"></a>Lissom介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">RSS(Really Simple Syndication)</div><div class="line">shadowsocks-R</div><div class="line"></div><div class="line">lissom</div><div class="line">是什么？</div><div class="line">轻量级服务端渲染框架(ssr)</div><div class="line">做什么？</div><div class="line">ssr带来的好处无非就两点SEO和首屏渲染</div><div class="line">为什么会有？</div><div class="line">目前项目接入ssr的成本高、侵入性强，对于老项目迁移成本会很高，除去ssr化必须做的改动外，框架自身的约束带来的改动更大，且限制更多，开发体验也不够友好</div><div class="line">怎么好用了？</div><div class="line">提升开发体验，提高用户体验</div><div class="line">更专注于ssr，以最小代价引入ssr，除去ssr化必须的改动外，迁移项目的成本也很低</div><div class="line">支持按需加载、异步操作</div><div class="line">是我要为你做ssr，无需改动原有打包配置、目录结构、技术栈等</div><div class="line">将来还会怎么更好用？</div><div class="line">服务端支持引入dll</div><div class="line">支持其他框架服务端渲染，如vue</div><div class="line">更友好的处理异步操作方式期待react新的服务器渲染器</div><div class="line">到哪里去了解和使用？</div><div class="line">https://github.com/TaumuLu/lissom</div></pre></td></tr></table></figure>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Lissom介绍"><a href="#Lissom介绍" class="headerlink" title="Lissom介绍"></a>Lissom介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">RSS(Really Simple Syndication)</span><br><span class="line">shadowsocks-R</span><br><span class="line"></span><br><span class="line">lissom</span><br><span class="line">是什么？</span><br><span class="line">轻量级服务端渲染框架(ssr)</span><br><span class="line">做什么？</span><br><span class="line">ssr带来的好处无非就两点SEO和首屏渲染</span><br><span class="line">为什么会有？</span><br><span class="line">目前项目接入ssr的成本高、侵入性强，对于老项目迁移成本会很高，除去ssr化必须做的改动外，框架自身的约束带来的改动更大，且限制更多，开发体验也不够友好</span><br><span class="line">怎么好用了？</span><br><span class="line">提升开发体验，提高用户体验</span><br><span class="line">更专注于ssr，以最小代价引入ssr，除去ssr化必须的改动外，迁移项目的成本也很低</span><br><span class="line">支持按需加载、异步操作</span><br><span class="line">是我要为你做ssr，无需改动原有打包配置、目录结构、技术栈等</span><br><span class="line">将来还会怎么更好用？</span><br><span class="line">服务端支持引入dll</span><br><span class="line">支持其他框架服务端渲染，如vue</span><br><span class="line">更友好的处理异步操作方式期待react新的服务器渲染器</span><br><span class="line">到哪里去了解和使用？</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;TaumuLu&#x2F;lissom</span><br></pre></td></tr></table></figure>
           
         
       
@@ -884,7 +864,7 @@ querystring {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/24/JavaScript/JS继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/24/JavaScript/JS%E7%BB%A7%E6%89%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -906,7 +886,7 @@ querystring {
             
               
                 
-                <a class="post-title-link" href="/2016/02/24/JavaScript/JS继承/" itemprop="url">
+                <a class="post-title-link" href="/2016/02/24/JavaScript/JS%E7%BB%A7%E6%89%BF/" itemprop="url">
                   JS继承
                 </a>
               
@@ -1001,19 +981,19 @@ querystring {
 <blockquote>
 <p>解决了创建多个相似对象的问题，工厂函数的名字并不是类的名字，虽然可以用new操作符，但无法使用instanceof来判断所创建的对象的类型。另外，如果把成员函数的函数体定义在工厂函数的内部的话，创建对象时会重复的创建成员函数实例，函数也是一种对象，因此浪费内存。</p>
 </blockquote>
-<p> <strong> 问题 </strong><br> 对象识别问题，方法重复创建</p>
+<p> ** 问题 **<br> 对象识别问题，方法重复创建</p>
 </li>
 <li><p>构造函数模式：<br>原理：创建一个新对象，将构造函数的作用域赋给新对象（this的作用），执行构造函数的代码来为新对象添加属性</p>
 <blockquote>
 <p>构造函数类似工厂函数，所不同的是构造函数的名字就是类名，可以用new操作符来创建对象。用构造函数创建对象的好处是所生成的对象可以用instanceof来判断所属的类。创建的新对象有constroctor属性指向构造函数</p>
 </blockquote>
-<p> <strong> 问题 </strong><br> 方法重复创建</p>
+<p> ** 问题 **<br> 方法重复创建</p>
 </li>
 <li><p>原型模式：<br>原理：将属性和方法定义在构造函数原型对象中。</p>
 <blockquote>
 <p>每个函数都有一个prototype属性，是一个指针，指向一个对象，其用途就是包含着所有实例共享的属性和方法。原型是对象的模板，可以用prototype属性来定义一个类，原型模式同构造函数一样可以用instanceof判断所创建的对象的类型</p>
 </blockquote>
-<p> <strong> 问题 </strong><br> 共享所有属性和方法，对引用类型而言有问题。原型模式的构造函数不能带任何参数</p>
+<p> ** 问题 **<br> 共享所有属性和方法，对引用类型而言有问题。原型模式的构造函数不能带任何参数</p>
 </li>
 <li><p>组合使用构造函数和原型模式：<br>原理：结合各自利弊</p>
 <blockquote>
@@ -1026,67 +1006,58 @@ querystring {
 <blockquote>
 <p>在特殊情况下用来为对象创建构造函数</p>
 </blockquote>
-<p> <strong> 问题 </strong><br> 对象识别问题</p>
+<p> ** 问题 **<br> 对象识别问题</p>
 </li>
 <li><p>稳妥构造函数：<br>原理：同寄生构造函数模式，区别在于方法不引用 this，不用 new 操作符创建</p>
-<p> <strong> 问题 </strong><br> 对象识别问题</p>
+<p> ** 问题 **<br> 对象识别问题</p>
 </li>
 </ol>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>主要为构造函数和原型模式最为重要，寄生构造函数模式和稳妥构造函数只为特殊情况下使用，不过思想值得学习</p>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承分为接口继承和实现继承，对JavaScript来说只能依靠实现继承，原理为原型链实现</p>
 <ol>
-<li>原型链<br>在之前创建对象的各类方法上加入了原型链而实现继承。从而可以让构造函数的原型对象继承另一个构造函数和原型对象，使其原型对象成为他们的实例（因此而拥有他们的方法和属性），之后在此构造函数上创建的实例就拥有这两个构造函数和其原型对象的所有属性和方法<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 超类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params"></span>) </span>&#123;      </div><div class="line">    <span class="keyword">this</span>.name = par;</div><div class="line">&#125;</div><div class="line">parent.prototype.getname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 子类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params"></span>) </span>&#123;       </div><div class="line">    <span class="keyword">this</span>.age = <span class="number">11</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//替换原型，继承parent</span></div><div class="line">child.prototype = <span class="keyword">new</span> parent();       </div><div class="line">child.prototype.getage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> child();</div><div class="line"></div><div class="line">alert(test.name);       <span class="comment">// par</span></div><div class="line">alert(test.getname());  <span class="comment">// par</span></div><div class="line"></div><div class="line">alert(test.age);        <span class="comment">// 11</span></div><div class="line">alert(test.getage());   <span class="comment">// 11</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>原型链<br>在之前创建对象的各类方法上加入了原型链而实现继承。从而可以让构造函数的原型对象继承另一个构造函数和原型对象，使其原型对象成为他们的实例（因此而拥有他们的方法和属性），之后在此构造函数上创建的实例就拥有这两个构造函数和其原型对象的所有属性和方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 超类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params"></span>) </span>&#123;      </span><br><span class="line">    <span class="keyword">this</span>.name = par;</span><br><span class="line">&#125;</span><br><span class="line">parent.prototype.getname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params"></span>) </span>&#123;       </span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">11</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//替换原型，继承parent</span></span><br><span class="line">child.prototype = <span class="keyword">new</span> parent();       </span><br><span class="line">child.prototype.getage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> child();</span><br><span class="line"></span><br><span class="line">alert(test.name);       <span class="comment">// par</span></span><br><span class="line">alert(test.getname());  <span class="comment">// par</span></span><br><span class="line"></span><br><span class="line">alert(test.age);        <span class="comment">// 11</span></span><br><span class="line">alert(test.getage());   <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
 <p>本质为重写child的原型对象，换了一个新原型为 parent的实例，即作为实例因此就拥有 parent实例所拥有的全部属性和方法</p>
 <blockquote>
 <p>内部生成一个指针，为 [[prototype]]，指向 parent的原型</p>
 </blockquote>
-<pre><code>本质上扩展了原型搜素机制，即 child的实例搜索其属性方法时，先搜索child.prototype的原型，没有找到再往上搜索 parent.prototype的原型
-
-所有引用类型都继承 Object，也是通过原型链实现的
-
-用instanceof和isPrototype都能识别对象，返回true
-
-给child原型添加方法的代码一定要放在替换child的原型语句之后。在 child原型上使用字面量添加的方法会再次重写原型链，使继承无效
-
-** 问题 **
-通过原型实现的继承会共享属性和方法
-创建的子类型实例时，不能向超类型的构造函数传递参数
-</code></pre><ol>
-<li>借用构造函数<br>也叫伪造对象或经典继承<br>在子类型构造函数的内部调用超类型构造函数<br>通过 apply()和 call()方法来实现<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 超类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params">oname</span>) </span>&#123;      </div><div class="line">    <span class="keyword">this</span>.name = oname;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 子类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">oname, oage</span>) </span>&#123;      </div><div class="line">    <span class="comment">// 继承了parent还传递了参数 </span></div><div class="line">    parent.call(<span class="keyword">this</span>, oname);       </div><div class="line">    <span class="keyword">this</span>.age = oage;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> child();</div><div class="line"></div><div class="line">alert(test.name);       <span class="comment">// oname</span></div><div class="line">alert(test.age);        <span class="comment">// oage</span></div></pre></td></tr></table></figure>
+<p> 本质上扩展了原型搜素机制，即 child的实例搜索其属性方法时，先搜索child.prototype的原型，没有找到再往上搜索 parent.prototype的原型</p>
+<p> 所有引用类型都继承 Object，也是通过原型链实现的</p>
+<p> 用instanceof和isPrototype都能识别对象，返回true</p>
+<p> 给child原型添加方法的代码一定要放在替换child的原型语句之后。在 child原型上使用字面量添加的方法会再次重写原型链，使继承无效</p>
+<p> ** 问题 **<br> 通过原型实现的继承会共享属性和方法<br> 创建的子类型实例时，不能向超类型的构造函数传递参数</p>
 </li>
+<li><p>借用构造函数<br>也叫伪造对象或经典继承<br>在子类型构造函数的内部调用超类型构造函数<br>通过 apply()和 call()方法来实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 超类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params">oname</span>) </span>&#123;      </span><br><span class="line">    <span class="keyword">this</span>.name = oname;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">oname, oage</span>) </span>&#123;      </span><br><span class="line">    <span class="comment">// 继承了parent还传递了参数 </span></span><br><span class="line">    parent.call(<span class="keyword">this</span>, oname);       </span><br><span class="line">    <span class="keyword">this</span>.age = oage;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> child();</span><br><span class="line"></span><br><span class="line">alert(test.name);       <span class="comment">// oname</span></span><br><span class="line">alert(test.age);        <span class="comment">// oage</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><strong> 问题 </strong><br>同构造函数，方法重复创建</p>
-<ol>
-<li>组合继承<br>也叫为经典继承<br>使用原型链来实现对原型属性和方法的继承，使用构造函数来实现对实例属性的继承<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 超类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params">oname</span>) </span>&#123;      </div><div class="line">    <span class="keyword">this</span>.name = oname;</div><div class="line">    <span class="keyword">this</span>.arrays = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">&#125;</div><div class="line">parent.prototype.getname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 子类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">oname, oage</span>) </span>&#123;       </div><div class="line">    <span class="comment">// 继承parent传递参数</span></div><div class="line">    parent.call(<span class="keyword">this</span>, oname);</div><div class="line">    <span class="keyword">this</span>.age = oage;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 替换原型，继承parent</span></div><div class="line">child.prototype = <span class="keyword">new</span> parent();       </div><div class="line">child.prototype.getage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> one = <span class="keyword">new</span> child();</div><div class="line"><span class="keyword">var</span> two = <span class="keyword">new</span> child();</div><div class="line"></div><div class="line">alert(one.name);        <span class="comment">// oname</span></div><div class="line">alert(one.getname());   <span class="comment">// oname</span></div><div class="line"></div><div class="line">one.arrays.push(<span class="string">"4"</span>);</div><div class="line">alert(one.arrays);      <span class="comment">// 1,2,3,4</span></div><div class="line">alert(one.age);         <span class="comment">// oage</span></div><div class="line">alert(one.getage());    <span class="comment">// oage</span></div><div class="line"></div><div class="line"></div><div class="line">alert(two.name);        <span class="comment">// oname</span></div><div class="line">alert(two.getname());   <span class="comment">// oname</span></div><div class="line"></div><div class="line">alert(two.arrays);      <span class="comment">// 1,2,3</span></div><div class="line">alert(two.age);         <span class="comment">// oage</span></div><div class="line">alert(two.getage());    <span class="comment">// oage</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>** 问题 **<br>同构造函数，方法重复创建</p>
+<ol start="3">
+<li><p>组合继承<br>也叫为经典继承<br>使用原型链来实现对原型属性和方法的继承，使用构造函数来实现对实例属性的继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 超类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params">oname</span>) </span>&#123;      </span><br><span class="line">    <span class="keyword">this</span>.name = oname;</span><br><span class="line">    <span class="keyword">this</span>.arrays = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line">parent.prototype.getname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">oname, oage</span>) </span>&#123;       </span><br><span class="line">    <span class="comment">// 继承parent传递参数</span></span><br><span class="line">    parent.call(<span class="keyword">this</span>, oname);</span><br><span class="line">    <span class="keyword">this</span>.age = oage;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 替换原型，继承parent</span></span><br><span class="line">child.prototype = <span class="keyword">new</span> parent();       </span><br><span class="line">child.prototype.getage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> one = <span class="keyword">new</span> child();</span><br><span class="line"><span class="keyword">var</span> two = <span class="keyword">new</span> child();</span><br><span class="line"></span><br><span class="line">alert(one.name);        <span class="comment">// oname</span></span><br><span class="line">alert(one.getname());   <span class="comment">// oname</span></span><br><span class="line"></span><br><span class="line">one.arrays.push(<span class="string">"4"</span>);</span><br><span class="line">alert(one.arrays);      <span class="comment">// 1,2,3,4</span></span><br><span class="line">alert(one.age);         <span class="comment">// oage</span></span><br><span class="line">alert(one.getage());    <span class="comment">// oage</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alert(two.name);        <span class="comment">// oname</span></span><br><span class="line">alert(two.getname());   <span class="comment">// oname</span></span><br><span class="line"></span><br><span class="line">alert(two.arrays);      <span class="comment">// 1,2,3</span></span><br><span class="line">alert(two.age);         <span class="comment">// oage</span></span><br><span class="line">alert(two.getage());    <span class="comment">// oage</span></span><br></pre></td></tr></table></figure>
 <p>同结合各自利弊，很完美了。但还差一点</p>
-<pre><code>** 问题 **
-我自己的问题，当时看的时候就有个问题，即通过child.prototype=new parent()替换了原型，继承了parent，按之前原型链说的应该连同parent构造函数中非其原型中的name和arrays属性一同继承，成为child原型的属性，因此实例one改变引用类型arrays，那么实例two的array也会改变，结果不然
-
-原因是调用了两次parent构造函数，第一次是替换原型时，第二次为在child构造函数中调用parent构造函数，所以在child原型中的这两个同名属性就被屏蔽了
-</code></pre><ol>
-<li>原型式继承<br>目的就是让已有的对象利用原型的共享性都共享一个属性<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">O</span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">    F.prototype = O;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> ** 问题 **<br> 我自己的问题，当时看的时候就有个问题，即通过child.prototype=new parent()替换了原型，继承了parent，按之前原型链说的应该连同parent构造函数中非其原型中的name和arrays属性一同继承，成为child原型的属性，因此实例one改变引用类型arrays，那么实例two的array也会改变，结果不然</p>
+<p> 原因是调用了两次parent构造函数，第一次是替换原型时，第二次为在child构造函数中调用parent构造函数，所以在child原型中的这两个同名属性就被屏蔽了</p>
 </li>
-</ol>
+<li><p>原型式继承<br>目的就是让已有的对象利用原型的共享性都共享一个属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">O</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    F.prototype = O;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用了原型的方法，即拥有原型的特性</p>
 <blockquote>
 <p>ECMAScript 5新増了 Object.create()规范了原型是继承<br>该方法接受两个参数，第一个参数为用作新对象原型的对象。第二个参数为为这个新对象定义额外属性的对象，格式与 Object.defineProperties()的第二个参数格式相同</p>
 </blockquote>
-<ol>
-<li>寄生式继承<br>目的是让已有的对象利用构造函数来添加一个方法<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">original</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> clone = <span class="built_in">Object</span>(original);</div><div class="line">    clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        alert(<span class="string">"Hi"</span>);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> clone;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-</ol>
+<li><p>寄生式继承<br>目的是让已有的对象利用构造函数来添加一个方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">original</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clone = <span class="built_in">Object</span>(original);</span><br><span class="line">    clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"Hi"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用了构造函数的方法，即拥有构造函数的特性<br>方法会重复创建</p>
-<ol>
-<li>寄生组合式继承<br>目的：<br>组合继承会调用两次超类型，之前说过，因此需要解决<br>通过借用构造函数来继承属性，通过原型链的混成形式，即利用原型式继承来继承方法<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 超类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params">oname</span>) </span>&#123;      </div><div class="line">    <span class="keyword">this</span>.name = oname;</div><div class="line">    <span class="keyword">this</span>.arrays = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">&#125;</div><div class="line">parent.prototype.getname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 子类型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">oname, oage</span>) </span>&#123;       </div><div class="line">    parent.call(<span class="keyword">this</span>, oname);</div><div class="line">    <span class="keyword">this</span>.age = oage;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 之前的方法继承</span></div><div class="line"><span class="comment">// child.prototype=new parent();       </span></div><div class="line"><span class="comment">// 现在的方法继承</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">child, parent</span>) </span>&#123;        </div><div class="line">    <span class="comment">// 获取即复制 parent.prototype的原型得到其副本</span></div><div class="line">    <span class="keyword">var</span> prototype = <span class="built_in">Object</span>(parent.prototype);     </div><div class="line">    <span class="comment">// 添加副本的 constructor属性并改为指向 child</span></div><div class="line">    prototype.constructor = child;                </div><div class="line">    <span class="comment">// 再将副本赋值给子类型的原型</span></div><div class="line">    child.prototype = prototype;                  </div><div class="line">&#125;</div><div class="line"></div><div class="line">child.prototype.getage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<ol start="6">
+<li><p>寄生组合式继承<br>目的：<br>组合继承会调用两次超类型，之前说过，因此需要解决<br>通过借用构造函数来继承属性，通过原型链的混成形式，即利用原型式继承来继承方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 超类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parent</span>(<span class="params">oname</span>) </span>&#123;      </span><br><span class="line">    <span class="keyword">this</span>.name = oname;</span><br><span class="line">    <span class="keyword">this</span>.arrays = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line">parent.prototype.getname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">oname, oage</span>) </span>&#123;       </span><br><span class="line">    parent.call(<span class="keyword">this</span>, oname);</span><br><span class="line">    <span class="keyword">this</span>.age = oage;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 之前的方法继承</span></span><br><span class="line"><span class="comment">// child.prototype=new parent();       </span></span><br><span class="line"><span class="comment">// 现在的方法继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">child, parent</span>) </span>&#123;        </span><br><span class="line">    <span class="comment">// 获取即复制 parent.prototype的原型得到其副本</span></span><br><span class="line">    <span class="keyword">var</span> prototype = <span class="built_in">Object</span>(parent.prototype);     </span><br><span class="line">    <span class="comment">// 添加副本的 constructor属性并改为指向 child</span></span><br><span class="line">    prototype.constructor = child;                </span><br><span class="line">    <span class="comment">// 再将副本赋值给子类型的原型</span></span><br><span class="line">    child.prototype = prototype;                  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">child.prototype.getage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>再创建child的实例和组合式继承的结果一样</p>
-<pre><code>这样做的好处是只调用了一次 parent函数，避免在child.prototype上创建了不必要、多余的属性。（即之前讲到被屏蔽的）
-</code></pre><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在我看来创建对象有是三种</p>
+<p> 这样做的好处是只调用了一次 parent函数，避免在child.prototype上创建了不必要、多余的属性。（即之前讲到被屏蔽的）</p>
+</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在我看来创建对象有是三种</p>
 <ul>
 <li>一是直接调用，通过在对象上定义，再返回对象，即工厂模式</li>
 <li>二是用new调用，通过 this将定义的指向到创建的对象上，即构造函数</li>
@@ -1144,7 +1115,7 @@ querystring {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/20/CSS/CSS布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/20/CSS/CSS%E5%B8%83%E5%B1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1166,7 +1137,7 @@ querystring {
             
               
                 
-                <a class="post-title-link" href="/2016/02/20/CSS/CSS布局/" itemprop="url">
+                <a class="post-title-link" href="/2016/02/20/CSS/CSS%E5%B8%83%E5%B1%80/" itemprop="url">
                   CSS布局
                 </a>
               
@@ -1250,7 +1221,7 @@ querystring {
 <h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><ul>
 <li>首先看浮动的影响：元素浮动之后，会影响内联框（通常是文本）的排列，这是我们希望看到的。<br>文档中的普通流就会表现得和浮动框不存在一样，当浮动框高度超出包含框的时候，也就会出现包含框不会自动伸高来闭合浮动元素（“高度塌陷”现象）。顾名思义，就是漂浮于普通流之上，这是我们不希望看到的。</li>
 </ul>
-<p><strong> 因此清除浮动即是在解决浮动元素其父元素高度塌陷问题 </strong></p>
+<p>** 因此清除浮动即是在解决浮动元素其父元素高度塌陷问题 **</p>
 <ul>
 <li>解决方法：<br>  在我看来解决方案大体分为两类<ul>
 <li>一类是借助 clear 这个“天然属性”来解决</li>
@@ -1305,10 +1276,12 @@ querystring {
 </ul>
 <h4 id="关于IE的Layout"><a href="#关于IE的Layout" class="headerlink" title="关于IE的Layout"></a>关于IE的Layout</h4><blockquote>
 <p>Layout 是 IE 浏览器渲染引擎的一个内部组成部分。在 IE 浏览器中，一个元素要么自己对自身的内容进行组织和计算大小， 要么依赖于包含块来计算尺寸和组织内容。为了协调这两种方式的矛盾，渲染引擎采用了 ‘hasLayout’ 属性，属性值可以为 true 或 false。 当一个元素的 ‘hasLayout’ 属性值为 true 时触发，我们说这个元素有一个布局（layout），或拥有布局。<br>可以通过 hasLayout 属性来判断一个元素是否拥有 layout ，object.currentStyle.hasLayout</p>
+</blockquote>
+<blockquote>
 <p>hasLayout与BFC 有很多相似之处，在 IE 中，元素使用“布局”概念来控制尺寸和定位，分为拥有布局和没有布局两种情况，拥有布局的元素由它控制本身及其子元素的尺寸和定位，而没有布局的元素则通过父元素（最近的拥有布局的祖先元素）来控制尺寸和定位，而一个元素是否拥有布局则由 hasLayout 属性告知浏览器，它是个布尔型变量，true 代表元素拥有布局，false 代表元素没有布局，<br>hasLayout 只是一个 IE 下专有的属性，hasLayout 为 true 的元素浏览器会赋予它一系列的效果</p>
 </blockquote>
 <p>注意：hasLayout 在 IE 8 及之后的 IE 版本中已经被抛弃，所以在实际开发中只需针对 IE 8 以下的浏览器为某些元素触发 hasLayout</p>
-<p><strong> 触发layout </strong><br>一个元素触发 hasLayout 会影响一个元素的尺寸和定位，这样会消耗更多的系统资源，因此 IE 默认只为一部分的元素触发 hasLayout （即默认有部分元素会触发 hasLayout ，这与 BFC 基本完全由开发者通过特定 CSS 触发并不一样）。<br>除了 IE 默认会触发 hasLayout 的元素外，Web 开发者还可以使用特定的 CSS 触发元素的 hasLayout 。<br>通过为元素设置 CSS，可以触发 hasLayout （即把元素的 hasLayout 属性设置为 true）。</p>
+<p>** 触发layout **<br>一个元素触发 hasLayout 会影响一个元素的尺寸和定位，这样会消耗更多的系统资源，因此 IE 默认只为一部分的元素触发 hasLayout （即默认有部分元素会触发 hasLayout ，这与 BFC 基本完全由开发者通过特定 CSS 触发并不一样）。<br>除了 IE 默认会触发 hasLayout 的元素外，Web 开发者还可以使用特定的 CSS 触发元素的 hasLayout 。<br>通过为元素设置 CSS，可以触发 hasLayout （即把元素的 hasLayout 属性设置为 true）。</p>
 <p>zoom 是除了在 IE 5.0 中外，总是能触发 hasLayout 。zoom 用于设置或检索元素的缩放比例，为元素设置 zoom: 1 既可以触发元素的 hasLayout 同时不会对元素造成多余的影响。因此使用 zoom: 1 来触发元素的 hasLayout 。</p>
 <h3 id="再回到清除浮动上"><a href="#再回到清除浮动上" class="headerlink" title="再回到清除浮动上"></a>再回到清除浮动上</h3><p>先看一下清理浮动的各种方法</p>
 <ol>
@@ -1324,7 +1297,8 @@ querystring {
 </li>
 </ol>
 <p>由此看来最好的清除浮动方法为使用 :after伪元素来清除浮动</p>
-<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-pseudo">:after</span> &#123; </div><div class="line">    <span class="attribute">content</span>:<span class="string">""</span>; </div><div class="line">    <span class="attribute">display</span>:block; </div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>; </div><div class="line">    <span class="attribute">visibility</span>:hidden; </div><div class="line">    <span class="attribute">clear</span>:both; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">    <span class="attribute">content</span>:<span class="string">""</span>; </span><br><span class="line">    <span class="attribute">display</span>:block; </span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>; </span><br><span class="line">    <span class="attribute">visibility</span>:hidden; </span><br><span class="line">    <span class="attribute">clear</span>:both; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li><p>display:block使生成的元素以块级元素显示,占满剩余空间</p>
 </li>
@@ -1340,7 +1314,9 @@ querystring {
 <blockquote>
 <p>除了clear：both用来清除浮动的，其他代码都是为了隐藏掉content生成的内容，因此其他版本的清除浮动可能会有font-size：0，line-height：0</p>
 </blockquote>
-<p><strong> 精益求精 </strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.clearfix:after &#123; </div><div class="line">    content:"\200B"; </div><div class="line">    display:block; </div><div class="line">    height:0; </div><div class="line">    clear:both; </div><div class="line">&#125;</div><div class="line">.clearfix &#123; </div><div class="line">    *zoom:1; </div><div class="line">&#125;</div><div class="line">.cf:before, .cf:after &#123;</div><div class="line">    content:""; </div><div class="line">    display:table; </div><div class="line">&#125;</div><div class="line">.cf:after &#123; </div><div class="line">    clear:both; </div><div class="line">&#125;</div><div class="line">.cf &#123; </div><div class="line">    zoom:1; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>** 精益求精 **</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">    <span class="attribute">content</span>:<span class="string">"\200B"</span>; </span><br><span class="line">    <span class="attribute">display</span>:block; </span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>; </span><br><span class="line">    <span class="attribute">clear</span>:both; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123; </span><br><span class="line">    *zoom:1; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cf</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.cf</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">""</span>; </span><br><span class="line">    <span class="attribute">display</span>:table; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cf</span><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">    <span class="attribute">clear</span>:both; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.cf</span> &#123; </span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注意：上面的方法用到了:before伪元素，它是用来处理margin边距重叠的，由于内部元素float创建了BFC，导致内部元素的margin-top和上一个盒子的margin-bottom发生叠加，如果这不是你所希望的，那么就可以加上:before，如果只是单纯的闭合浮动，after就够了</p>
 </blockquote>
@@ -1351,13 +1327,15 @@ querystring {
 <li>display:inline-block</li>
 </ol>
 <ul>
-<li><p>display:table-cell<br>会让元素表现得像单元格一样，IE8+以上浏览器才支持<br>与display:inline-block一样，会跟随内部元素的宽度显示。但是单元格有个非常神奇的特性，就是你宽度值设置地再大，实际宽度也不会超过表格容器的宽度<br>因此，如果把display:table-cell这个BFC元素宽度设置的很大。比如9999px。那其实就跟block水平元素自动适应容器空间效果一样了<br><strong> 有两点制约 </strong><br>一是IE8+以上浏览器兼容。二是应付连续英文字符换行有些吃力（可以嵌套table-layout:fixed解决）。总体来看，适用的场景要比overflow:hidden大很多</p>
-</li>
-<li><p>overflow:auto/hidden<br>由于overflow有剪裁和出现滚动条等隐患，不适合作为整站通用类，类似清除浮动的通用类语句</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.clearfix &#123; </div><div class="line">    *zoom: 1; </div><div class="line">&#125;</div><div class="line">.clearfix:after &#123; </div><div class="line">    content: ''; </div><div class="line">    display: table; </div><div class="line">    clear: both; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>display:table-cell<br>会让元素表现得像单元格一样，IE8+以上浏览器才支持<br>与display:inline-block一样，会跟随内部元素的宽度显示。但是单元格有个非常神奇的特性，就是你宽度值设置地再大，实际宽度也不会超过表格容器的宽度<br>因此，如果把display:table-cell这个BFC元素宽度设置的很大。比如9999px。那其实就跟block水平元素自动适应容器空间效果一样了</li>
+</ul>
+<p>** 有两点制约 **<br>一是IE8+以上浏览器兼容。二是应付连续英文字符换行有些吃力（可以嵌套table-layout:fixed解决）。总体来看，适用的场景要比overflow:hidden大很多</p>
+<ul>
+<li>overflow:auto/hidden<br>由于overflow有剪裁和出现滚动条等隐患，不适合作为整站通用类，类似清除浮动的通用类语句<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span> &#123; </span><br><span class="line">    *zoom: 1; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>; </span><br><span class="line">    <span class="attribute">display</span>: table; </span><br><span class="line">    <span class="attribute">clear</span>: both; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+两栏或多栏自适应布局的通用类语句是（block水平标签，需配合浮动）<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这是zxx.lib.cssCSS样式库中.cell的由来！*/</span></span><br><span class="line"><span class="selector-class">.cell</span> &#123; </span><br><span class="line">    <span class="attribute">display</span>: table-cell; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">9999px</span>; </span><br><span class="line">    *display: inline-block; </span><br><span class="line">    *<span class="selector-tag">width</span>: <span class="selector-tag">auto</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<p>两栏或多栏自适应布局的通用类语句是（block水平标签，需配合浮动）<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/* 这是zxx.lib.cssCSS样式库中.cell的由来！*/</div><div class="line">.cell &#123; </div><div class="line">    display: table-cell; </div><div class="line">    width: 9999px; </div><div class="line">    *display: inline-block; </div><div class="line">    *width: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>存在浮动元素，清除浮动于是，就有了.fix + .l/.r + .cell的无敌组合，可以多栏，也可以无限嵌套<br>如果是局部且确认安全，或有连续英文字符换行的隐患，也可以使用.fix + .l/.r + .ovh的无敌组合，可以多栏，也可以无限嵌套</p>
 </blockquote>
@@ -1380,7 +1358,8 @@ querystring {
 <li>负的margin</li>
 <li>设置父元素字体为0</li>
 <li>丢失结束标签</li>
-<li>jquery方法<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">""</span>).contents().filter(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.nodeType === <span class="number">3</span>; &#125;).remove();</div></pre></td></tr></table></figure>
+<li>jquery方法<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">""</span>).contents().filter(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.nodeType === <span class="number">3</span>; &#125;).remove();</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h4 id="全兼容的样式解决方法"><a href="#全兼容的样式解决方法" class="headerlink" title="全兼容的样式解决方法"></a>全兼容的样式解决方法</h4><p>在父元素中设置font-size:0,用来兼容chrome等，使用letter-space:-N px来兼容safari</p>
@@ -1426,7 +1405,7 @@ querystring {
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+    <a class="extend prev" rel="prev" href="/page/9/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
   </nav>
 
 
@@ -1555,12 +1534,12 @@ querystring {
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

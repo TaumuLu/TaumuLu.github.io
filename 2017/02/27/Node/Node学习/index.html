@@ -88,17 +88,16 @@
 
 
 <meta name="description" content="基础全局对象 global console log() error() trace()process argv stdout write()   stdin resume()   stderr nextTick(callback)    NodeJS有三大核心 CallBack回调 Event事件 Stream流  慕课网学习    一、关注        1、nodejs.org看看nodejs">
-<meta name="keywords" content="Node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node学习">
-<meta property="og:url" content="http://yoursite.com/2017/02/27/Node/Node学习/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/Node/Node%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="基础全局对象 global console log() error() trace()process argv stdout write()   stdin resume()   stderr nextTick(callback)    NodeJS有三大核心 CallBack回调 Event事件 Stream流  慕课网学习    一、关注        1、nodejs.org看看nodejs">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-16T03:38:54.000Z">
+<meta property="article:published_time" content="2017-02-27T08:46:55.000Z">
+<meta property="article:modified_time" content="2019-10-16T03:38:54.000Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="Node">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node学习">
-<meta name="twitter:description" content="基础全局对象 global console log() error() trace()process argv stdout write()   stdin resume()   stderr nextTick(callback)    NodeJS有三大核心 CallBack回调 Event事件 Stream流  慕课网学习    一、关注        1、nodejs.org看看nodejs">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> Node学习 | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/Node/Node学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/Node/Node%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -357,7 +356,7 @@
 <li>Event事件</li>
 <li>Stream流</li>
 </ul>
-<p>慕课网学习<br>    一、关注<br>        1、nodejs.org看看nodejs的版本升级，新特性的加入，重要bug的修复等<br>        2、www.npmjs.com模块社区，看他人源代码，省力<br>        3、github.com大量的项目和 源码<br>        4、stackoverflow.com技术解答社区以及查询相关资源，环境配置，异常均可找到答案<br>    二、安装事项<br>        1、Node.js版本<br>            偶数位为稳定版，奇数位为开发版<br>        2、Windows下安装，Path下环境变量<br>    三、Node.js<br>        1、全局变量process<br>    四、模块与包管理工具<br>        Commonjs<br>            一套规范<br>            模块独立但不孤立，三个部分定义、标识、引用<br>        1、依赖关系<br>        2、命名空间<br>        3、代码组织<br>        Nodejs通过npm来引入管理模块/包<br>        模块 {<br>            核心模块<br>            文件模块<br>            第三方模块<br>        }<br>        Nodejs模块对象 {<br>            require对象<br>                从外部获取模块的接口，即所获取模块的exports对象<br>            exports对象<br>                公开接口<br>                module.exports     真正的接口<br>                exports            辅助工具，最终返回给调用的是module.exports而不是exports<br>            exports 是指向的 module.exports 的引用<br>            module.exports 初始值为一个空对象 {}，所以 exports 初始值也是 {}<br>            require() 返回的是 module.exports 而不是 exports</p>
+<p>慕课网学习<br>    一、关注<br>        1、nodejs.org看看nodejs的版本升级，新特性的加入，重要bug的修复等<br>        2、<a href="http://www.npmjs.com模块社区，看他人源代码，省力" target="_blank" rel="noopener">www.npmjs.com模块社区，看他人源代码，省力</a><br>        3、github.com大量的项目和 源码<br>        4、stackoverflow.com技术解答社区以及查询相关资源，环境配置，异常均可找到答案<br>    二、安装事项<br>        1、Node.js版本<br>            偶数位为稳定版，奇数位为开发版<br>        2、Windows下安装，Path下环境变量<br>    三、Node.js<br>        1、全局变量process<br>    四、模块与包管理工具<br>        Commonjs<br>            一套规范<br>            模块独立但不孤立，三个部分定义、标识、引用<br>        1、依赖关系<br>        2、命名空间<br>        3、代码组织<br>        Nodejs通过npm来引入管理模块/包<br>        模块 {<br>            核心模块<br>            文件模块<br>            第三方模块<br>        }<br>        Nodejs模块对象 {<br>            require对象<br>                从外部获取模块的接口，即所获取模块的exports对象<br>            exports对象<br>                公开接口<br>                module.exports     真正的接口<br>                exports            辅助工具，最终返回给调用的是module.exports而不是exports<br>            exports 是指向的 module.exports 的引用<br>            module.exports 初始值为一个空对象 {}，所以 exports 初始值也是 {}<br>            require() 返回的是 module.exports 而不是 exports</p>
 <pre><code>        exports和module.exports的关系是:exports 起初是一個指向 module.exports 对象的变量
     }
 五、Nodejs API
@@ -400,29 +399,12 @@
             listeners
                 EventEmitter.listenerCount()
         }
-    }
-</code></pre><p>网上学习<br>    一、Node.js基础<br>        1、Node.js是<br>            Nodejs就是一个解析器<br>            运行在浏览器中的JS的用途是操作DOM，浏览器就提供了document之类的内置对象<br>            运行在NodeJS中的JS的用途是操作磁盘文件或搭建HTTP服务器，NodeJS就相应提供了fs、http等内置对象<br>            NodeJS的目的是为了实现高性能Web服务器，事件机制和异步IO模型<br>        2、模块<br>            编写每个模块时，都有require、exports、module三个预先定义好的变量可供使用<br>            require<br>                在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。<br>                模块名可使用相对路径（以./开头）或绝对路径（以/或C:之类的盘符开头），模块名中的.js扩展名可以省略<br>            exports<br>                当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象<br>            module<br>                访问到当前模块的一些相关信息，最多的用途是替换当前模块的导出对象。如模块导出对象默认是一个普通对象，如果想改成一个函数的话，可以使用<br>            模块初始化<br>                一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。<br>            主模块<br>                通过命令行参数传递给NodeJS以启动程序的模块为主模块。主模块负责调度组成整个程序的其它模块完成工作<br>        3、二进制模块<br>            NodeJS支持使用C/C++编写二进制模块，编译好的二进制模块除了文件扩展名是.node外，和JS模块的使用方式相同<br>    二、代码的组织和部署<br>        1、模块路径解析规则<br>            之前两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，牵一发而动全身。因此，require函数支持第三种形式的路径，写法类似于foo/bar，并依次按照以下规则解析路径，直到找到模块位置<br>                内置模块<br>                node_modules目录<br>                NODE_PATH环境变量<br>        2、包<br>            由多个子模块组成的大模块为包，所有子模块放在同一个目录里<br>            index.js<br>                当模块的文件名是index.js，加载模块时可以使用模块所在目录的路径代替模块文件路径<br>            package.json<br>                自定义入口模块的文件名和存放位置，就需要在包目录下包含一个package.json文件，并在其中指定入口模块的路径。<br>        3、命令程序<br>            用NodeJS编写，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。<br>            Windows<br>                靠.cmd文件来解决问题。假设node-echo.js存放在C:\Users\user\bin目录，并且该目录已经添加到PATH环境变量里了。接下来需要在该目录下新建一个名为node-echo.cmd的文件，文件内容如下：<br>                @node “C:\User\user\bin\node-echo.js” %*<br>                这样处理后，我们就可以在任何目录下使用node-echo命令了。<br>        4、工程目录<br>            编写一个命令行程序，一般我们会同时提供命令行模式和API模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。<br>        5、npm<br>            npm是随同NodeJS一起安装的包管理工具，常见的使用场景有以下几种<br>                允许用户从npm服务器下载别人编写的三方包到本地使用<br>                允许用户从npm服务器下载并安装别人编写的命令行程序到本地使用<br>                允许用户将自己编写的包或命令行程序上传到npm服务器供别人使用<br>            下载三方包<br>                npm install package<br>                下载好之后，包就放在了工程目录下的node_modules目录中，在代码中只需要通过require(‘package’)的方式就好，无需指定三方包路径。<br>                    想要下载指定版本的话，可以在包名后边加上@<version><br>                如果使用到的三方包比较多，在终端下一个包一条命令地安装太繁琐。因此npm对package.json的字段做了扩展，允许在其中申明三方包依赖。<br>                npm会根据包中申明的三方包依赖自动下载进一步依赖的三方包<br>            安装命令行程序<br>                从npm服务上下载安装一个命令行程序的方法与三方包类似。只要package自己配置好了相关的package.json字段，只需要使用命令安装程序。<br>                参数g表示全局安装，npm会自动创建好Linux系统下需要的软链文件或Windows系统下需要的.cmd文件。<br>                Windows默认安装位置</version></p>
-<pre><code>                - %APPDATA%\npm\
-                    - node_modules\
-                        + package\
-                    ...
-                    node-echo.cmd
-        发布代码
-        版本号
-            使用npm下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码
-                语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。
-                    如果只是修复bug，需要更新Z位。
-                    如果是新增了功能，但是向下兼容，需要更新Y位。
-                    如果有大变动，向下不兼容，需要更新X位。
-            版本号有了这个保证后，在申明三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。NPM支持的所有版本号范围指定方式可以查看官方文档。
-        灵机一点
-三、文件操作
-</code></pre><p>Node.js {<br>    基本模块 {<br>        global<br>            唯一全局对象<br>        process {<br>            代表当前Node.js进程<br>            process.nextTick()<br>                下一事件响应中执行<br>        }<br>    }<br>    内置模块 {<br>        fs {<br>            文件系统模块，负责读写文件，可同步异步<br>            读取文件 {<br>                readFile() {<br>                    异步执行<br>                    err 正常读取时返回null，错误时返回错误对象<br>                    data 正常读取时返回string，错误时返回undefined<br>                }<br>                readFileSync() {<br>                    同步执行<br>                    直接返回回调函数的data<br>                }<br>            }<br>            写入文件 {<br>                writeFile() {<br>                    同步执行<br>                    回调函数只返回err参数<br>                }<br>                writeFileSync()<br>            }<br>            stat() {<br>                异步执行<br>                返回stat对象，获取文件详细信息<br>            }<br>            statSync() {<br>                同步执行<br>            }<br>            同步或是异步 {<br>                由于Node环境执行的JavaScript代码是服务器端代码，所以，绝大部分需要在服务器运行期反复执行业务逻辑的代码，必须使用异步代码，否则，同步代码在执行时期，服务器将停止响应，因为JavaScript只有一个执行线程。</p>
+    }</code></pre><p>网上学习<br>    一、Node.js基础<br>        1、Node.js是<br>            Nodejs就是一个解析器<br>            运行在浏览器中的JS的用途是操作DOM，浏览器就提供了document之类的内置对象<br>            运行在NodeJS中的JS的用途是操作磁盘文件或搭建HTTP服务器，NodeJS就相应提供了fs、http等内置对象<br>            NodeJS的目的是为了实现高性能Web服务器，事件机制和异步IO模型<br>        2、模块<br>            编写每个模块时，都有require、exports、module三个预先定义好的变量可供使用<br>            require<br>                在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。<br>                模块名可使用相对路径（以./开头）或绝对路径（以/或C:之类的盘符开头），模块名中的.js扩展名可以省略<br>            exports<br>                当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象<br>            module<br>                访问到当前模块的一些相关信息，最多的用途是替换当前模块的导出对象。如模块导出对象默认是一个普通对象，如果想改成一个函数的话，可以使用<br>            模块初始化<br>                一个模块中的JS代码仅在模块第一次被使用时执行一次，并在执行过程中初始化模块的导出对象。之后，缓存起来的导出对象被重复利用。<br>            主模块<br>                通过命令行参数传递给NodeJS以启动程序的模块为主模块。主模块负责调度组成整个程序的其它模块完成工作<br>        3、二进制模块<br>            NodeJS支持使用C/C++编写二进制模块，编译好的二进制模块除了文件扩展名是.node外，和JS模块的使用方式相同<br>    二、代码的组织和部署<br>        1、模块路径解析规则<br>            之前两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，牵一发而动全身。因此，require函数支持第三种形式的路径，写法类似于foo/bar，并依次按照以下规则解析路径，直到找到模块位置<br>                内置模块<br>                node_modules目录<br>                NODE_PATH环境变量<br>        2、包<br>            由多个子模块组成的大模块为包，所有子模块放在同一个目录里<br>            index.js<br>                当模块的文件名是index.js，加载模块时可以使用模块所在目录的路径代替模块文件路径<br>            package.json<br>                自定义入口模块的文件名和存放位置，就需要在包目录下包含一个package.json文件，并在其中指定入口模块的路径。<br>        3、命令程序<br>            用NodeJS编写，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。<br>            Windows<br>                靠.cmd文件来解决问题。假设node-echo.js存放在C:\Users\user\bin目录，并且该目录已经添加到PATH环境变量里了。接下来需要在该目录下新建一个名为node-echo.cmd的文件，文件内容如下：<br>                @node “C:\User\user\bin\node-echo.js” %*<br>                这样处理后，我们就可以在任何目录下使用node-echo命令了。<br>        4、工程目录<br>            编写一个命令行程序，一般我们会同时提供命令行模式和API模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。<br>        5、npm<br>            npm是随同NodeJS一起安装的包管理工具，常见的使用场景有以下几种<br>                允许用户从npm服务器下载别人编写的三方包到本地使用<br>                允许用户从npm服务器下载并安装别人编写的命令行程序到本地使用<br>                允许用户将自己编写的包或命令行程序上传到npm服务器供别人使用<br>            下载三方包<br>                npm install package<br>                下载好之后，包就放在了工程目录下的node_modules目录中，在代码中只需要通过require(‘package’)的方式就好，无需指定三方包路径。<br>                    想要下载指定版本的话，可以在包名后边加上@<version><br>                如果使用到的三方包比较多，在终端下一个包一条命令地安装太繁琐。因此npm对package.json的字段做了扩展，允许在其中申明三方包依赖。<br>                npm会根据包中申明的三方包依赖自动下载进一步依赖的三方包<br>            安装命令行程序<br>                从npm服务上下载安装一个命令行程序的方法与三方包类似。只要package自己配置好了相关的package.json字段，只需要使用命令安装程序。<br>                参数g表示全局安装，npm会自动创建好Linux系统下需要的软链文件或Windows系统下需要的.cmd文件。<br>                Windows默认安装位置<br>                    - %APPDATA%\npm<br>                        - node_modules<br>                            + package<br>                        …<br>                        node-echo.cmd<br>            发布代码<br>            版本号<br>                使用npm下载和发布代码时都会接触到版本号。NPM使用语义版本号来管理代码<br>                    语义版本号分为X.Y.Z三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。<br>                        如果只是修复bug，需要更新Z位。<br>                        如果是新增了功能，但是向下兼容，需要更新Y位。<br>                        如果有大变动，向下不兼容，需要更新X位。<br>                版本号有了这个保证后，在申明三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。NPM支持的所有版本号范围指定方式可以查看官方文档。<br>            灵机一点<br>    三、文件操作</p>
+<p>Node.js {<br>    基本模块 {<br>        global<br>            唯一全局对象<br>        process {<br>            代表当前Node.js进程<br>            process.nextTick()<br>                下一事件响应中执行<br>        }<br>    }<br>    内置模块 {<br>        fs {<br>            文件系统模块，负责读写文件，可同步异步<br>            读取文件 {<br>                readFile() {<br>                    异步执行<br>                    err 正常读取时返回null，错误时返回错误对象<br>                    data 正常读取时返回string，错误时返回undefined<br>                }<br>                readFileSync() {<br>                    同步执行<br>                    直接返回回调函数的data<br>                }<br>            }<br>            写入文件 {<br>                writeFile() {<br>                    同步执行<br>                    回调函数只返回err参数<br>                }<br>                writeFileSync()<br>            }<br>            stat() {<br>                异步执行<br>                返回stat对象，获取文件详细信息<br>            }<br>            statSync() {<br>                同步执行<br>            }<br>            同步或是异步 {<br>                由于Node环境执行的JavaScript代码是服务器端代码，所以，绝大部分需要在服务器运行期反复执行业务逻辑的代码，必须使用异步代码，否则，同步代码在执行时期，服务器将停止响应，因为JavaScript只有一个执行线程。</p>
 <pre><code>            服务器启动时如果需要读取配置文件，或者结束时需要写入到状态文件时，可以使用同步代码，因为这些代码只在启动和结束时执行一次，不影响服务器正常运行时的异步执行。
         }
     }
-}
-</code></pre><p>}</p>
+}</code></pre><p>}</p>
 <p>核心模块 {<br>    util {<br>        inherits(constructor, superConstructor)<br>        inspect(object, [showHidden], [depth], [colors])<br>    }<br>    events {<br>        EventEmitter {<br>            on(event, listener)<br>            once(event, listener)<br>            emit(event, [arg1], [arg2], […])<br>            removeListener(event, listener)<br>            removeAllListeners([event])</p>
 <pre><code>        事件 {
             error
@@ -574,8 +556,7 @@ url {
 }
 querystring {
     parse()
-}
-</code></pre><p>}</p>
+}</code></pre><p>}</p>
 <p>node-inspector</p>
 <p>调试工具（基于npm安装）：node-inspector</p>
 <p>执行流程：</p>
@@ -624,7 +605,7 @@ querystring {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/25/Record/记录/" rel="next" title="记录">
+              <a href="/2017/01/25/Record/%E8%AE%B0%E5%BD%95/" rel="next" title="记录">
                 <i class="fa fa-chevron-left"></i> 记录
               </a>
             
@@ -634,7 +615,7 @@ querystring {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/12/里程碑/开始/" rel="prev" title="开启博客之旅">
+              <a href="/2017/03/12/%E9%87%8C%E7%A8%8B%E7%A2%91/%E5%BC%80%E5%A7%8B/" rel="prev" title="开启博客之旅">
                 开启博客之旅 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -808,12 +789,12 @@ querystring {
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

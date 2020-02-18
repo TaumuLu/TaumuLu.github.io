@@ -87,18 +87,17 @@
 
 
 
-<meta name="description" content="安装Hexo 安装hexonpm install hexo-cli -g 生成博客hexo init blogcd blog 安装依赖npm install注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息 本地启动查看hexo server 生成网页hexo generate可以在 public 目录查看整个网站的文件 部署到Git">
-<meta name="keywords" content="里程碑">
+<meta name="description" content="安装Hexo 安装hexonpm install hexo-cli -g 生成博客hexo init blogcd blog 安装依赖npm install    注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息4. 本地启动查看hexo server5. 生成网页hexo generate可以在 public 目录查看整个网站的文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo搭建博客">
-<meta property="og:url" content="http://yoursite.com/2017/03/12/里程碑/Hexo搭建博客/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/12/%E9%87%8C%E7%A8%8B%E7%A2%91/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Taumu的博客">
-<meta property="og:description" content="安装Hexo 安装hexonpm install hexo-cli -g 生成博客hexo init blogcd blog 安装依赖npm install注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息 本地启动查看hexo server 生成网页hexo generate可以在 public 目录查看整个网站的文件 部署到Git">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-21T05:17:02.517Z">
+<meta property="og:description" content="安装Hexo 安装hexonpm install hexo-cli -g 生成博客hexo init blogcd blog 安装依赖npm install    注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息4. 本地启动查看hexo server5. 生成网页hexo generate可以在 public 目录查看整个网站的文">
+<meta property="article:published_time" content="2017-03-12T12:31:00.000Z">
+<meta property="article:modified_time" content="2019-07-21T05:17:02.517Z">
+<meta property="article:author" content="MT">
+<meta property="article:tag" content="里程碑">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建博客">
-<meta name="twitter:description" content="安装Hexo 安装hexonpm install hexo-cli -g 生成博客hexo init blogcd blog 安装依赖npm install注意：可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息 本地启动查看hexo server 生成网页hexo generate可以在 public 目录查看整个网站的文件 部署到Git">
 
 
 
@@ -133,7 +132,7 @@
 
 
   <title> Hexo搭建博客 | Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/里程碑/Hexo搭建博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/%E9%87%8C%E7%A8%8B%E7%A2%91/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -336,37 +335,39 @@
         <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol>
 <li>安装hexo<br><code>npm install hexo-cli -g</code></li>
 <li>生成博客<br><code>hexo init blog</code><br><code>cd blog</code></li>
-<li>安装依赖<br><code>npm install</code><br><em>注意：</em>可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息</li>
-<li>本地启动查看<br><code>hexo server</code></li>
-<li>生成网页<br><code>hexo generate</code><br>可以在 public 目录查看整个网站的文件</li>
-<li>部署到Git<br><code>hexo deploy</code><br>需要安装部署插件<br><code>npm install hexo-deployer-git --save</code></li>
+<li>安装依赖<br><code>npm install</code>  </li>
 </ol>
+<p><em>注意：</em>可能会报错原因是fsevents是在macOS下的依赖包，当前是64位win系统，因此只报warning信息<br>4. 本地启动查看<br><code>hexo server</code><br>5. 生成网页<br><code>hexo generate</code><br>可以在 public 目录查看整个网站的文件<br>6. 部署到Git<br><code>hexo deploy</code><br>需要安装部署插件<br><code>npm install hexo-deployer-git --save</code></p>
 <h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><ol>
 <li>创建git仓库</li>
-<li>仓库名命名为 <username>.github.io</username></li>
+<li>仓库名命名为 <userName>.github.io</li>
 <li>Settings点击Launch automatic page generator将这个仓库生成静态网页</li>
 <li>填写Page name和Tagline点击Continue to layouts完成</li>
 </ol>
 <h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><ul>
-<li><p>全局配置 _config.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> <span class="string">zh-CN</span> <span class="comment">#语言</span></div><div class="line"><span class="attr">theme:</span> <span class="string">next</span></div><div class="line"><span class="string">...</span></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">git</span></div><div class="line"><span class="attr">    repo:</span> <span class="string">github地址.git</span></div><div class="line"><span class="attr">    branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>主题配置 themes/[next]/_config.yml</p>
-</li>
+<li>全局配置 _config.yml<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span> <span class="comment">#语言</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">github地址.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
+<li>主题配置 themes/[next]/_config.yml</li>
 </ul>
-<h3 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Git使用</div><div class="line">date: 2017-03-15 08:37:42</div><div class="line">tags: Git </div><div class="line">categories: Tools</div><div class="line">comments: true</div><div class="line">---</div><div class="line"></div><div class="line">// tags   设置文章的标签</div><div class="line">// categories   设置文章分类</div><div class="line">// comments   设置是否显示评论</div></pre></td></tr></table></figure>
-<h3 id="社交链接"><a href="#社交链接" class="headerlink" title="社交链接"></a>社交链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">social:</div><div class="line">  GitHub: https://github.com/chaserr</div><div class="line">  Zhihu: https://www.zhihu.com/people/Taumu</div><div class="line"></div><div class="line">social_icons:</div><div class="line">  enable: true</div><div class="line">  GitHub: github</div><div class="line">  Zhihu: globe</div><div class="line">  # Twitter: twitter</div><div class="line">  # Weibo: weibo</div></pre></td></tr></table></figure>
-<h3 id="开启评论"><a href="#开启评论" class="headerlink" title="开启评论"></a>开启评论</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># disqus评论,  与多说类似, 国内一般使用多说</div><div class="line"># disqus_shortname: </div><div class="line">duoshuo_shortname: #填写你的多说域名</div><div class="line"></div><div class="line"># 多说热评文章 true 或者 false</div><div class="line">duoshuo_hotartical: true</div><div class="line"></div><div class="line"># 多说分享服务</div><div class="line">duoshuo_share: true</div><div class="line">duoshuo_info:</div><div class="line">  ua_enable: true</div><div class="line">  admin_enable: false</div><div class="line">  user_id:</div><div class="line">      admin_nickname:</div></pre></td></tr></table></figure>
+<h3 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Git使用</span><br><span class="line">date: 2017-03-15 08:37:42</span><br><span class="line">tags: Git </span><br><span class="line">categories: Tools</span><br><span class="line">comments: true</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; tags   设置文章的标签</span><br><span class="line">&#x2F;&#x2F; categories   设置文章分类</span><br><span class="line">&#x2F;&#x2F; comments   设置是否显示评论</span><br></pre></td></tr></table></figure>
+
+<h3 id="社交链接"><a href="#社交链接" class="headerlink" title="社交链接"></a>社交链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:&#x2F;&#x2F;github.com&#x2F;chaserr</span><br><span class="line">  Zhihu: https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;Taumu</span><br><span class="line"></span><br><span class="line">social_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  GitHub: github</span><br><span class="line">  Zhihu: globe</span><br><span class="line">  # Twitter: twitter</span><br><span class="line">  # Weibo: weibo</span><br></pre></td></tr></table></figure>
+
+<h3 id="开启评论"><a href="#开启评论" class="headerlink" title="开启评论"></a>开启评论</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># disqus评论,  与多说类似, 国内一般使用多说</span><br><span class="line"># disqus_shortname: </span><br><span class="line">duoshuo_shortname: #填写你的多说域名</span><br><span class="line"></span><br><span class="line"># 多说热评文章 true 或者 false</span><br><span class="line">duoshuo_hotartical: true</span><br><span class="line"></span><br><span class="line"># 多说分享服务</span><br><span class="line">duoshuo_share: true</span><br><span class="line">duoshuo_info:</span><br><span class="line">  ua_enable: true</span><br><span class="line">  admin_enable: false</span><br><span class="line">  user_id:</span><br><span class="line">      admin_nickname:</span><br></pre></td></tr></table></figure>
+
 <h2 id="开始写博客"><a href="#开始写博客" class="headerlink" title="开始写博客"></a>开始写博客</h2><ol>
 <li>生成文章<br><code>hexo new &quot;标题&quot;</code></li>
-<li>生成页面<br><code>hexo new page &quot;页面&quot;</code><br><strong> 所有源文件都在source文件夹下 </strong></li>
+<li>生成页面<br><code>hexo new page &quot;页面&quot;</code></li>
 </ol>
-<h2 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h2><p>需改全局配置 _config.yml 下的 theme 为要替换的主题<br>然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
+<p>** 所有源文件都在source文件夹下 **</p>
+<h2 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h2><p>需改全局配置 _config.yml 下的 theme 为要替换的主题<br>然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
 <h2 id="管理Hexo博客源文件和Git页面"><a href="#管理Hexo博客源文件和Git页面" class="headerlink" title="管理Hexo博客源文件和Git页面"></a>管理Hexo博客源文件和Git页面</h2><ul>
 <li>建立分支hexo管理源文件<br><code>git checkout -b hexo</code></li>
 </ul>
-<h2 id="附：hexo命令行使用"><a href="#附：hexo命令行使用" class="headerlink" title="附：hexo命令行使用"></a>附：hexo命令行使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">hexo help                   // 查看帮助</div><div class="line">hexo init                   // 初始化一个目录</div><div class="line">hexo new &quot;postName&quot;         // 新建文章</div><div class="line">hexo new page &quot;pageName&quot;    // 新建页面</div><div class="line">hexo generate               // 生成网页，可以在 public 目录查看整个网站的文件</div><div class="line">hexo server                 // 本地预览，&apos;Ctrl+C&apos;关闭</div><div class="line">hexo deploy                 // 部署.deploy目录</div><div class="line">hexo clean</div><div class="line">// 清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**</div></pre></td></tr></table></figure>
-<p><strong> 简写 </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure></p>
+<h2 id="附：hexo命令行使用"><a href="#附：hexo命令行使用" class="headerlink" title="附：hexo命令行使用"></a>附：hexo命令行使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo help                   &#x2F;&#x2F; 查看帮助</span><br><span class="line">hexo init                   &#x2F;&#x2F; 初始化一个目录</span><br><span class="line">hexo new &quot;postName&quot;         &#x2F;&#x2F; 新建文章</span><br><span class="line">hexo new page &quot;pageName&quot;    &#x2F;&#x2F; 新建页面</span><br><span class="line">hexo generate               &#x2F;&#x2F; 生成网页，可以在 public 目录查看整个网站的文件</span><br><span class="line">hexo server                 &#x2F;&#x2F; 本地预览，&#39;Ctrl+C&#39;关闭</span><br><span class="line">hexo deploy                 &#x2F;&#x2F; 部署.deploy目录</span><br><span class="line">hexo clean</span><br><span class="line">&#x2F;&#x2F; 清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**</span><br></pre></td></tr></table></figure>
+<p>** 简写 ** </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n &#x3D;&#x3D; hexo new</span><br><span class="line">hexo g &#x3D;&#x3D; hexo generate</span><br><span class="line">hexo s &#x3D;&#x3D; hexo server</span><br><span class="line">hexo d &#x3D;&#x3D; hexo deploy</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -390,7 +391,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/里程碑/" rel="tag"># 里程碑</a>
+            <a href="/tags/%E9%87%8C%E7%A8%8B%E7%A2%91/" rel="tag"># 里程碑</a>
           
         </div>
       
@@ -403,7 +404,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/里程碑/开始/" rel="next" title="开启博客之旅">
+              <a href="/2017/03/12/%E9%87%8C%E7%A8%8B%E7%A2%91/%E5%BC%80%E5%A7%8B/" rel="next" title="开启博客之旅">
                 <i class="fa fa-chevron-left"></i> 开启博客之旅
               </a>
             
@@ -413,7 +414,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/14/JavaScript/JS积累/" rel="prev" title="JS积累">
+              <a href="/2017/03/14/JavaScript/JS%E7%A7%AF%E7%B4%AF/" rel="prev" title="JS积累">
                 JS积累 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -587,12 +588,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>

@@ -93,10 +93,8 @@
 <meta property="og:url" content="http://yoursite.com/page/6/index.html">
 <meta property="og:site_name" content="Taumu的博客">
 <meta property="og:description" content="记录学习前端的点滴">
-<meta property="og:locale" content="zh-Hans">
+<meta property="article:author" content="MT">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Taumu的博客">
-<meta name="twitter:description" content="记录学习前端的点滴">
 
 
 
@@ -131,7 +129,7 @@
 
 
   <title> Taumu的博客 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -261,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/编程理解/编程思想/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/%E7%BC%96%E7%A8%8B%E7%90%86%E8%A7%A3/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -283,7 +281,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/02/编程理解/编程思想/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/02/%E7%BC%96%E7%A8%8B%E7%90%86%E8%A7%A3/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" itemprop="url">
                   编程思想
                 </a>
               
@@ -399,7 +397,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/函数式编程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -421,7 +419,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/01/函数式编程/函数式编程/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" itemprop="url">
                   函数式编程
                 </a>
               
@@ -544,7 +542,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/函数式编程/归并/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%BD%92%E5%B9%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -566,7 +564,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/01/函数式编程/归并/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/01/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/%E5%BD%92%E5%B9%B6/" itemprop="url">
                   redece应用
                 </a>
               
@@ -628,7 +626,8 @@
 <p>具体为循环要组合的东西组成的数组，接受一个回调函数和一个初始值，此回调函数接受4个参数，分别为前一个值，当前值，当前值的索引，以及当前数组，别看这么多参数是很好理解的，而此初始值也是很有用的，可以为你省去很多麻烦，在这里说下初始值的用法，是你期望调用reduce后返回的值，这个期望值若和你的数组中的元素是相同类型便不必传入初始值，若不相同此时便可传入初始值</p>
 <p>再来就是若调用reduce的数组长度等于1时是不会触发reduce的回调的，若想触发可传入初始值</p>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>这里写过一个方法，我们要计算几个数组内的元素不考虑自身进行全排序，知道自身对应每个数组的索引和每个数组的长度，计算它在排列中的序号</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 归并计算index</span></div><div class="line"><span class="keyword">const</span> getCurrentCount = <span class="function">(<span class="params">indList, lenList</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 只有一个数组不排序，返回自身索引</span></div><div class="line">    <span class="keyword">if</span> (indList.length === <span class="number">1</span>) <span class="keyword">return</span> indList[<span class="number">0</span>];</div><div class="line">    <span class="keyword">return</span> indList.slice().reduceRight(<span class="function">(<span class="params">pre, cur, ind</span>) =&gt;</span> &#123;</div><div class="line">        <span class="comment">// 反向计算，因为最后一项的索引是不用计算直接相加就好，所以用reduceRight方法更合适</span></div><div class="line">        <span class="keyword">return</span> pre + cur * reLenList.slice(<span class="number">0</span>, ind).reduceRight(<span class="function">(<span class="params">p, c</span>) =&gt;</span> p * c);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 归并计算index</span></span><br><span class="line"><span class="keyword">const</span> getCurrentCount = <span class="function">(<span class="params">indList, lenList</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 只有一个数组不排序，返回自身索引</span></span><br><span class="line">    <span class="keyword">if</span> (indList.length === <span class="number">1</span>) <span class="keyword">return</span> indList[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> indList.slice().reduceRight(<span class="function">(<span class="params">pre, cur, ind</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 反向计算，因为最后一项的索引是不用计算直接相加就好，所以用reduceRight方法更合适</span></span><br><span class="line">        <span class="keyword">return</span> pre + cur * reLenList.slice(<span class="number">0</span>, ind).reduceRight(<span class="function">(<span class="params">p, c</span>) =&gt;</span> p * c);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总之还是觉得这些东西都是在自己学习实践后才会更加理解并运用自如，本身便如此</p>
 
           
@@ -670,7 +669,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/数学/圆内接四边形/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/%E6%95%B0%E5%AD%A6/%E5%9C%86%E5%86%85%E6%8E%A5%E5%9B%9B%E8%BE%B9%E5%BD%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -692,7 +691,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/30/数学/圆内接四边形/" itemprop="url">
+                <a class="post-title-link" href="/2017/06/30/%E6%95%B0%E5%AD%A6/%E5%9C%86%E5%86%85%E6%8E%A5%E5%9B%9B%E8%BE%B9%E5%BD%A2/" itemprop="url">
                   圆内接四边形
                 </a>
               
@@ -750,7 +749,7 @@
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天写一个效果，计算圆中的矩形宽高，随即想到圆的内接四边形，及其如何面积最大，当然内接四边形为正方形最大了，求其宽高即边长</p>
 <h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>知道自己数学差，但没想到如此的差，故此写一写，以后肯定会有这方面的学习补充，数学虐我千百遍 我待数学如初恋</p>
 <h2 id="共式"><a href="#共式" class="headerlink" title="共式"></a>共式</h2><h3 id="勾股定理"><a href="#勾股定理" class="headerlink" title="勾股定理"></a>勾股定理</h3><p>a<em>a + b</em>b = c*c，其中c是斜边长</p>
-<h3 id="内接最大四边形"><a href="#内接最大四边形" class="headerlink" title="内接最大四边形"></a>内接最大四边形</h3><p>a = b<br>c<em>c = 2 </em> a<em>a，a是直角边长<br>c = sqrt(2) </em> a，sqrt(2)是计算机函数的”根号2”</p>
+<h3 id="内接最大四边形"><a href="#内接最大四边形" class="headerlink" title="内接最大四边形"></a>内接最大四边形</h3><p>a = b<br>c<em>c = 2 * a</em>a，a是直角边长<br>c = sqrt(2) * a，sqrt(2)是计算机函数的”根号2”</p>
 
           
         
@@ -791,7 +790,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/计算机基础/并发和并行/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -813,7 +812,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/04/计算机基础/并发和并行/" itemprop="url">
+                <a class="post-title-link" href="/2017/06/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C/" itemprop="url">
                   并发和并行
                 </a>
               
@@ -1044,7 +1043,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/数学/弧度和度/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/17/%E6%95%B0%E5%AD%A6/%E5%BC%A7%E5%BA%A6%E5%92%8C%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1066,7 +1065,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/17/数学/弧度和度/" itemprop="url">
+                <a class="post-title-link" href="/2017/05/17/%E6%95%B0%E5%AD%A6/%E5%BC%A7%E5%BA%A6%E5%92%8C%E5%BA%A6/" itemprop="url">
                   弧度和度
                 </a>
               
@@ -1201,7 +1200,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/13/动漫/命运石之门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/13/%E5%8A%A8%E6%BC%AB/%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1223,7 +1222,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/13/动漫/命运石之门/" itemprop="url">
+                <a class="post-title-link" href="/2017/05/13/%E5%8A%A8%E6%BC%AB/%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A8/" itemprop="url">
                   命运石之门
                 </a>
               
@@ -1326,7 +1325,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/CSS/CSS-Grid布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/CSS/CSS-Grid%E5%B8%83%E5%B1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1348,7 +1347,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/07/CSS/CSS-Grid布局/" itemprop="url">
+                <a class="post-title-link" href="/2017/05/07/CSS/CSS-Grid%E5%B8%83%E5%B1%80/" itemprop="url">
                   CSS-Grid布局
                 </a>
               
@@ -1475,7 +1474,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/CSS/CSS-Flex布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/CSS/CSS-Flex%E5%B8%83%E5%B1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MT">
@@ -1497,7 +1496,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/07/CSS/CSS-Flex布局/" itemprop="url">
+                <a class="post-title-link" href="/2017/05/07/CSS/CSS-Flex%E5%B8%83%E5%B1%80/" itemprop="url">
                   CSS-Flex布局
                 </a>
               
@@ -1617,7 +1616,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -1746,12 +1745,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Mist
   </a>
 </div>
